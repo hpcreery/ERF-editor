@@ -86,5 +86,5 @@ app.on('activate', function () {
 
 ipcMain.on('synchronous-message', (event, arg) => {
 	console.log(arg) // prints "ping"
-	event.returnValue = 'pong'
+	event.sender.send('synchronous-reply', 'pong')
   })

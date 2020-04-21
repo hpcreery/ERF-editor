@@ -13,7 +13,7 @@ const ReadFiles = (props) => {
 	var contents = fs.readFileSync(props.dir, 'utf8')
 	return (
 		<div>
-			From Function {contents}
+			From Function: {contents}
 		</div>
 	)
 }
@@ -25,7 +25,9 @@ class App extends Component {
 	componentDidMount() {
 		
 		ipc.send('synchronous-message', 'ping')
-		console.log(ipc.send('synchronous-message', 'ping')) // prints "pong"
+		ipc.on('synchronous-reply', (event, arg) => {
+			console.log(arg) // prints "pong"
+		  })
 		
 
 	}
