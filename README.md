@@ -1,8 +1,7 @@
-# react-electron-boilerplate
+# ERF Editor
 
-Very clean and simple boilerplate to creating an electron app housing electron power.
+Only the start to a custom ERF Editor
 
-_Only contains files necessary for getting started, ie a boilerplate._
 
 ## For Starters
 
