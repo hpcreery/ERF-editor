@@ -4,7 +4,10 @@ const { app, ipcMain } = require('electron')
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 
-const { default: installExtension, REACT_DEVELOPER_TOOLS } = require('electron-devtools-installer');
+const {
+	default: installExtension,
+	REACT_DEVELOPER_TOOLS,
+} = require('electron-devtools-installer')
 
 const path = require('path')
 const url = require('url')
@@ -19,6 +22,7 @@ function createWindow() {
 		width: 800,
 		height: 600,
 		webPreferences: { nodeIntegration: true },
+		titleBarStyle: 'hidden', //frameless
 	})
 
 	// and load the index.html of the app.
@@ -30,20 +34,22 @@ function createWindow() {
 			slashes: true,
 		})
 	mainWindow.loadURL(startUrl)
-	
+
 	// Open the DevTools.
 	if (startUrl == process.env.ELECTRON_START_URL) {
 		mainWindow.webContents.openDevTools()
-		
+
 		// Install React Dev Tools for or Dev Session
-		installExtension(REACT_DEVELOPER_TOOLS).then((name) => {
-			console.log(`Added Extension:  ${name}, to use extension reload election (Ctrl+R)`);
-		})
-		.catch((err) => {
-			console.log('An error occurred: ', err)
-		});
+		installExtension(REACT_DEVELOPER_TOOLS)
+			.then((name) => {
+				console.log(
+					`Added Extension:  ${name}, to use extension reload election (Ctrl+R)`
+				)
+			})
+			.catch((err) => {
+				console.log('An error occurred: ', err)
+			})
 	}
-	
 
 	// Emitted when the window is closed.
 	mainWindow.on('closed', function () {
@@ -54,15 +60,12 @@ function createWindow() {
 	})
 
 	// Install React Dev Tools
-
 }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow)
-
-
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
@@ -87,4 +90,4 @@ app.on('activate', function () {
 ipcMain.on('synchronous-message', (event, arg) => {
 	console.log(arg) // prints "ping"
 	event.sender.send('synchronous-reply', 'pong')
-  })
+})
