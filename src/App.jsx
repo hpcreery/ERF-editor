@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { render } from "react-dom";
 import logo from './logo.svg'
 import './App.css'
-import ReadFiles from './components/Fileparser'
+import ReadFiles from './components/Fileparser' // Components can only live in src folder where index resides
 
 
 const electron = window.require('electron')
