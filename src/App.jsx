@@ -1,47 +1,20 @@
 import React, { Component } from 'react'
-import { render } from "react-dom";
+import { render } from 'react-dom'
 import logo from './logo.svg'
 import './App.css'
 import ReadFiles from './components/Fileparser' // Components can only live in src folder where index resides
-
 
 const electron = window.require('electron')
 //const path = window.require('path')
 const ipc = electron.ipcRenderer
 const fs = window.require('fs')
 //const dir = path.join(__dirname, '/../public/cmpetch.erf')
-//const dir =
-//	'/Users/Professional/Documents/MyPrograms/JavaScript/Genesis/erfeditor/ERF-editor/public/cmpetch.erf'
-const dirc = 'C:\\Users\\huntercreery\\Documents\\Projects\\JS\\ERF\\editor\\public\\cmpetch.erf'	
-
-// const ReadFiles = (props) => {
-// 	var contents = fs.readFileSync(props.dir, 'utf8')
-// 	var lines = contents.split('\n')
-// 	for (var i = 0; i < lines.length; i++) {
-// 		// cont each line
-// 	}
-// 	return <div>From File: {contents}</div>
-// }
-
-
-
-// class ReadFiles extends Component {
-	
-// 	componentWillMount() {
-// 		this.contents = fs.readFileSync(this.props.dir, 'utf8')
-// 		var lines = this.contents.split('\n')
-// 		for (var i = 0; i < lines.length; i++) {
-// 			// cont each line
-		
-// 		}
-// 	}
-// 	render() {
-// 		return <div>From File: {this.contents}</div>
-// 	}
-// }
+const dirc =
+	'/Users/Professional/Documents/MyPrograms/JavaScript/Genesis/erfeditor/ERF-editor/public/cmpetch.erf'
+//const dirc =
+//	'C:\\Users\\huntercreery\\Documents\\Projects\\JS\\ERF\\editor\\public\\cmpetch.erf'
 
 class App extends Component {
-
 	componentDidMount() {
 		ipc.send('synchronous-message', 'ping')
 		ipc.on('synchronous-reply', (event, arg) => {
