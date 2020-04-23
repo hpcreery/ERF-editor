@@ -1,18 +1,16 @@
 import React, { Component } from 'react'
-import { render } from 'react-dom'
-import logo from './logo.svg'
 import './App.css'
 import ReadFiles from './components/Fileparser' // Components can only live in src folder where index resides
 
 const electron = window.require('electron')
 //const path = window.require('path')
 const ipc = electron.ipcRenderer
-const fs = window.require('fs')
+//const fs = window.require('fs')
 //const dir = path.join(__dirname, '/../public/cmpetch.erf')
-const dirc =
-	'/Users/Professional/Documents/MyPrograms/JavaScript/Genesis/erfeditor/ERF-editor/public/cmpetch.erf'
 //const dirc =
-//	'C:\\Users\\huntercreery\\Documents\\Projects\\JS\\ERF\\editor\\public\\cmpetch.erf'
+//	'/Users/Professional/Documents/MyPrograms/JavaScript/Genesis/erfeditor/ERF-editor/public/cmpetch.erf'
+const dirc =
+	'C:\\Users\\huntercreery\\Documents\\Projects\\JS\\ERF\\editor\\public\\cmpetch.erf'
 
 class App extends Component {
 	componentDidMount() {
@@ -27,11 +25,6 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<div className="App-header">
-					<img src={logo} className="App-logo" alt="logo" />
-					<h2>Welcome to The Running App</h2>
-				</div>
-				<p className="App-intro">Hello Electron! </p>
 				<ReadFiles dir={dirc} />
 			</div>
 		)
