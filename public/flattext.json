@@ -1,0 +1,1677 @@
+[
+    {
+        "id": 12,
+        "parent": "true",
+        "object": ".name",
+        "string": "NLSE(\"Etch Compensation\")\r",
+        "comment": "comment"
+    },
+    {
+        "id": 13,
+        "parent": "true",
+        "object": ".uid",
+        "string": " valor_dfm_etch_compensation\r",
+        "comment": "comment"
+    },
+    {
+        "id": 14,
+        "parent": "true",
+        "object": ".menu",
+        "string": "1 NLSE(\"DFM\") 6 NLSE(\"Yield_Improvement\") 6\r",
+        "comment": "comment"
+    },
+    {
+        "id": 16,
+        "parent": "true",
+        "object": ".param",
+        "string": "layer,pp_layers,1,  NLSE(\"Layers :\")\r",
+        "comment": "comment"
+    },
+    {
+        "id": 17,
+        "parent": "true",
+        "object": ".param",
+        "string": "p_mil,pp_mil_line,2, NLSE(\"Line/Arc  enlarge by :\"),0,10\r",
+        "comment": "comment"
+    },
+    {
+        "id": 18,
+        "parent": "true",
+        "object": ".param",
+        "string": "p_mil,pp_mil_surf,3, NLSE(\"Surface   enlarge by :\"),0,10\r",
+        "comment": "comment"
+    },
+    {
+        "id": 19,
+        "parent": "true",
+        "object": ".param",
+        "string": "p_mil,pp_mil_pad,4,  NLSE(\"Pad       enlarge by :\"),0,10\r",
+        "comment": "comment"
+    },
+    {
+        "id": 20,
+        "parent": "true",
+        "object": ".param",
+        "string": "p_mil,pp_mil_smd_w,5,NLSE(\"SMD Width enlarge by :\"),0,10\r",
+        "comment": "comment"
+    },
+    {
+        "id": 21,
+        "parent": "true",
+        "object": ".param",
+        "string": "p_mil,pp_mil_smd_h,5,NLSE(\"Height:\"),0,10\r",
+        "comment": "comment"
+    },
+    {
+        "id": 22,
+        "parent": "true",
+        "object": ".param",
+        "string": "p_mil,pp_mil_space,6,NLSE(\"Minimum Spacing      :\"),0,10\r",
+        "comment": "comment"
+    },
+    {
+        "id": 23,
+        "parent": "true",
+        "object": ".param",
+        "string": "radio,pp_text,7, NLSE(\"Enlarge Text  :\"),NLSE(\"Yes\");NLSE(\"No\");\r",
+        "comment": "comment"
+    },
+    {
+        "id": 24,
+        "parent": "true",
+        "object": ".param",
+        "string": "radio,pp_shave,8,NLSE(\"Use Shaves    :\"),NLSE(\"Yes\");NLSE(\"No\");\r",
+        "comment": "comment"
+    },
+    {
+        "id": 25,
+        "parent": "true",
+        "object": ".param",
+        "string": "radio,pp_select,9,NLSE(\"Use Features :\"),NLSE(\"All\");NLSE(\"Selected\");\r",
+        "comment": "comment"
+    },
+    {
+        "id": 28,
+        "parent": "true",
+        "object": ".model",
+        "string": "nvg_inner_0.5oz\r",
+        "comment": "comment"
+    },
+    {
+        "id": 29,
+        "parent": "true",
+        "object": ".units",
+        "string": "inch\r",
+        "comment": "comment"
+    },
+    {
+        "id": 30,
+        "parent": "true",
+        "object": ".colors",
+        "string": "991010 999910 109010 \r",
+        "comment": "comment"
+    },
+    {
+        "id": 32,
+        "parent": "true",
+        "object": ".ranges\r",
+        "string": "",
+        "comment": "comment"
+    },
+    {
+        "id": 33,
+        "parent": ".ranges\r",
+        "object": "enlarge_smd",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - smd pads that have been enlarged. (Note: this function operates on all rect. and oval pads - they do not need the .smd attribute).  \r"
+    },
+    {
+        "id": 34,
+        "parent": ".ranges\r",
+        "object": "enlarge_pad",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - round and square pads that have been enlarged.  \r"
+    },
+    {
+        "id": 35,
+        "parent": ".ranges\r",
+        "object": "enlarge_line",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - lines and arcs that have been enlarged. (Note: text is included in this catagory, but can be ignored by using the parameters).  \r"
+    },
+    {
+        "id": 36,
+        "parent": ".ranges\r",
+        "object": "enlarge_text",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - not used after  Genesis version 3.2. Included to maintain backwards compatability.  \r"
+    },
+    {
+        "id": 37,
+        "parent": ".ranges\r",
+        "object": "enlarge_surface",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - surfaces that have been enlarged.  \r"
+    },
+    {
+        "id": 38,
+        "parent": ".ranges\r",
+        "object": "space_pad",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - not used by the function. For pad spacing problems see ospace_pad below.  \r"
+    },
+    {
+        "id": 39,
+        "parent": ".ranges\r",
+        "object": "space_line",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - lines and arcs that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 40,
+        "parent": ".ranges\r",
+        "object": "space_text",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - not used by the function. For line (text) spacing see space_line above.  \r"
+    },
+    {
+        "id": 41,
+        "parent": ".ranges\r",
+        "object": "space_surface",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - surfaces that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 42,
+        "parent": ".ranges\r",
+        "object": "pad_repaired",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - pads that have been increased and then shaved to protect spacing (active only when use shaves parameter is set to yes).  \r"
+    },
+    {
+        "id": 43,
+        "parent": ".ranges\r",
+        "object": "unprocessed",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - reports all features that were not processed by this function (special symbols, unprocessed text etc.)  \r"
+    },
+    {
+        "id": 44,
+        "parent": ".ranges\r",
+        "object": "part_line",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - lines and arcs that were enlarged, but by less than the required amount due to spacing problems.  \r"
+    },
+    {
+        "id": 45,
+        "parent": ".ranges\r",
+        "object": "part_surface",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - surfaces that were enlarged, but by less than the required amount due to spacing problems.  \r"
+    },
+    {
+        "id": 46,
+        "parent": ".ranges\r",
+        "object": "part_pad",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - pads that were enlarged, but by less than the required amount due to spacing problems (active only when use shaves parameter is set to no).  \r"
+    },
+    {
+        "id": 47,
+        "parent": ".ranges\r",
+        "object": "pad_neg",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - pads that have already been shaved previously and thus cannot be modfied again by this function.  \r"
+    },
+    {
+        "id": 48,
+        "parent": ".ranges\r",
+        "object": "shave_prob",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - pads that need shaving but where the shave cannot be added (active only when use shaves parameter is set to yes).  \r"
+    },
+    {
+        "id": 49,
+        "parent": ".ranges\r",
+        "object": "ospace_pad",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - pads that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 50,
+        "parent": ".ranges\r",
+        "object": "ospace_smd",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - smd pads that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 51,
+        "parent": ".ranges\r",
+        "object": "space_smd",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - smd pads that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 52,
+        "parent": ".ranges\r",
+        "object": "smd_repaired",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - smd pads that have been increased and then shaved to protect spacing (active only when use shaves parameter is set to yes).  \r"
+    },
+    {
+        "id": 53,
+        "parent": ".ranges\r",
+        "object": "part_smd",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - smd pads that were enlarged, but by less than the required amount due to spacing problems.  \r"
+    },
+    {
+        "id": 54,
+        "parent": ".ranges\r",
+        "object": "smd_neg",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - smd pads that have already been shaved previously and thus cannot be modfied again by this function.  \r"
+    },
+    {
+        "id": 56,
+        "parent": "true",
+        "object": ".pdef\r",
+        "string": "",
+        "comment": "comment"
+    },
+    {
+        "id": 57,
+        "parent": ".pdef\r",
+        "object": "pp_layers",
+        "string": "   = .type=signal|mixed&context=board&pol=positive&side=inner  \r"
+    },
+    {
+        "id": 58,
+        "parent": ".pdef\r",
+        "object": "pp_mil_smd_w",
+        "string": "   = 1  \r"
+    },
+    {
+        "id": 59,
+        "parent": ".pdef\r",
+        "object": "pp_mil_smd_h",
+        "string": "   = 1  \r"
+    },
+    {
+        "id": 60,
+        "parent": ".pdef\r",
+        "object": "pp_mil_pad",
+        "string": "   = 1  \r"
+    },
+    {
+        "id": 61,
+        "parent": ".pdef\r",
+        "object": "pp_mil_line",
+        "string": "   = 1  \r"
+    },
+    {
+        "id": 62,
+        "parent": ".pdef\r",
+        "object": "pp_mil_surf",
+        "string": "   = 0  \r"
+    },
+    {
+        "id": 63,
+        "parent": ".pdef\r",
+        "object": "pp_mil_space",
+        "string": "   = 4  \r"
+    },
+    {
+        "id": 64,
+        "parent": ".pdef\r",
+        "object": "pp_text",
+        "string": "   = No  \r"
+    },
+    {
+        "id": 65,
+        "parent": ".pdef\r",
+        "object": "pp_shave",
+        "string": "   = Yes  \r"
+    },
+    {
+        "id": 66,
+        "parent": ".pdef\r",
+        "object": "pp_select",
+        "string": "   = All  \r"
+    },
+    {
+        "id": 68,
+        "parent": "true",
+        "object": ".vars\r",
+        "string": "",
+        "comment": "comment"
+    },
+    {
+        "id": 69,
+        "parent": ".vars\r",
+        "object": "aper_res",
+        "string": "   =  0.1  ",
+        "comment": " Variable - aperture resolution for all features being created by this function.  \r"
+    },
+    {
+        "id": 72,
+        "parent": "true",
+        "object": ".model",
+        "string": "nvg_inner_1oz\r",
+        "comment": "comment"
+    },
+    {
+        "id": 73,
+        "parent": "true",
+        "object": ".units",
+        "string": "inch\r",
+        "comment": "comment"
+    },
+    {
+        "id": 74,
+        "parent": "true",
+        "object": ".colors",
+        "string": "991010 999910 109010 \r",
+        "comment": "comment"
+    },
+    {
+        "id": 76,
+        "parent": "true",
+        "object": ".ranges\r",
+        "string": "",
+        "comment": "comment"
+    },
+    {
+        "id": 77,
+        "parent": ".ranges\r",
+        "object": "enlarge_smd",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - smd pads that have been enlarged. (Note: this function operates on all rect. and oval pads - they do not need the .smd attribute).  \r"
+    },
+    {
+        "id": 78,
+        "parent": ".ranges\r",
+        "object": "enlarge_pad",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - round and square pads that have been enlarged.  \r"
+    },
+    {
+        "id": 79,
+        "parent": ".ranges\r",
+        "object": "enlarge_line",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - lines and arcs that have been enlarged. (Note: text is included in this catagory, but can be ignored by using the parameters).  \r"
+    },
+    {
+        "id": 80,
+        "parent": ".ranges\r",
+        "object": "enlarge_text",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - not used after  Genesis version 3.2. Included to maintain backwards compatability.  \r"
+    },
+    {
+        "id": 81,
+        "parent": ".ranges\r",
+        "object": "enlarge_surface",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - surfaces that have been enlarged.  \r"
+    },
+    {
+        "id": 82,
+        "parent": ".ranges\r",
+        "object": "space_pad",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - not used by the function. For pad spacing problems see ospace_pad below.  \r"
+    },
+    {
+        "id": 83,
+        "parent": ".ranges\r",
+        "object": "space_line",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - lines and arcs that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 84,
+        "parent": ".ranges\r",
+        "object": "space_text",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - not used by the function. For line (text) spacing see space_line above.  \r"
+    },
+    {
+        "id": 85,
+        "parent": ".ranges\r",
+        "object": "space_surface",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - surfaces that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 86,
+        "parent": ".ranges\r",
+        "object": "pad_repaired",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - pads that have been increased and then shaved to protect spacing (active only when use shaves parameter is set to yes).  \r"
+    },
+    {
+        "id": 87,
+        "parent": ".ranges\r",
+        "object": "unprocessed",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - reports all features that were not processed by this function (special symbols, unprocessed text etc.)  \r"
+    },
+    {
+        "id": 88,
+        "parent": ".ranges\r",
+        "object": "part_line",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - lines and arcs that were enlarged, but by less than the required amount due to spacing problems.  \r"
+    },
+    {
+        "id": 89,
+        "parent": ".ranges\r",
+        "object": "part_surface",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - surfaces that were enlarged, but by less than the required amount due to spacing problems.  \r"
+    },
+    {
+        "id": 90,
+        "parent": ".ranges\r",
+        "object": "part_pad",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - pads that were enlarged, but by less than the required amount due to spacing problems (active only when use shaves parameter is set to no).  \r"
+    },
+    {
+        "id": 91,
+        "parent": ".ranges\r",
+        "object": "pad_neg",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - pads that have already been shaved previously and thus cannot be modfied again by this function.  \r"
+    },
+    {
+        "id": 92,
+        "parent": ".ranges\r",
+        "object": "shave_prob",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - pads that need shaving but where the shave cannot be added (active only when use shaves parameter is set to yes).  \r"
+    },
+    {
+        "id": 93,
+        "parent": ".ranges\r",
+        "object": "ospace_pad",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - pads that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 94,
+        "parent": ".ranges\r",
+        "object": "ospace_smd",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - smd pads that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 95,
+        "parent": ".ranges\r",
+        "object": "space_smd",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - smd pads that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 96,
+        "parent": ".ranges\r",
+        "object": "smd_repaired",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - smd pads that have been increased and then shaved to protect spacing (active only when use shaves parameter is set to yes).  \r"
+    },
+    {
+        "id": 97,
+        "parent": ".ranges\r",
+        "object": "part_smd",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - smd pads that were enlarged, but by less than the required amount due to spacing problems.  \r"
+    },
+    {
+        "id": 98,
+        "parent": ".ranges\r",
+        "object": "smd_neg",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - smd pads that have already been shaved previously and thus cannot be modfied again by this function.  \r"
+    },
+    {
+        "id": 100,
+        "parent": "true",
+        "object": ".pdef\r",
+        "string": "",
+        "comment": "comment"
+    },
+    {
+        "id": 101,
+        "parent": ".pdef\r",
+        "object": "pp_layers",
+        "string": "   = .type=signal|mixed&context=board&pol=positive&side=inner  \r"
+    },
+    {
+        "id": 102,
+        "parent": ".pdef\r",
+        "object": "pp_mil_smd_w",
+        "string": "   = 2  \r"
+    },
+    {
+        "id": 103,
+        "parent": ".pdef\r",
+        "object": "pp_mil_smd_h",
+        "string": "   = 2  \r"
+    },
+    {
+        "id": 104,
+        "parent": ".pdef\r",
+        "object": "pp_mil_pad",
+        "string": "   = 2  \r"
+    },
+    {
+        "id": 105,
+        "parent": ".pdef\r",
+        "object": "pp_mil_line",
+        "string": "   = 2  \r"
+    },
+    {
+        "id": 106,
+        "parent": ".pdef\r",
+        "object": "pp_mil_surf",
+        "string": "   = 0  \r"
+    },
+    {
+        "id": 107,
+        "parent": ".pdef\r",
+        "object": "pp_mil_space",
+        "string": "   = 6  \r"
+    },
+    {
+        "id": 108,
+        "parent": ".pdef\r",
+        "object": "pp_text",
+        "string": "   = No  \r"
+    },
+    {
+        "id": 109,
+        "parent": ".pdef\r",
+        "object": "pp_shave",
+        "string": "   = Yes  \r"
+    },
+    {
+        "id": 110,
+        "parent": ".pdef\r",
+        "object": "pp_select",
+        "string": "   = All  \r"
+    },
+    {
+        "id": 112,
+        "parent": "true",
+        "object": ".vars\r",
+        "string": "",
+        "comment": "comment"
+    },
+    {
+        "id": 113,
+        "parent": ".vars\r",
+        "object": "aper_res",
+        "string": "   =  0.1  ",
+        "comment": " Variable - aperture resolution for all features being created by this function.  \r"
+    },
+    {
+        "id": 116,
+        "parent": "true",
+        "object": ".model",
+        "string": "nvg_inner_2oz\r",
+        "comment": "comment"
+    },
+    {
+        "id": 117,
+        "parent": "true",
+        "object": ".units",
+        "string": "inch\r",
+        "comment": "comment"
+    },
+    {
+        "id": 118,
+        "parent": "true",
+        "object": ".colors",
+        "string": "991010 999910 109010 \r",
+        "comment": "comment"
+    },
+    {
+        "id": 120,
+        "parent": "true",
+        "object": ".ranges\r",
+        "string": "",
+        "comment": "comment"
+    },
+    {
+        "id": 121,
+        "parent": ".ranges\r",
+        "object": "enlarge_smd",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - smd pads that have been enlarged. (Note: this function operates on all rect. and oval pads - they do not need the .smd attribute).  \r"
+    },
+    {
+        "id": 122,
+        "parent": ".ranges\r",
+        "object": "enlarge_pad",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - round and square pads that have been enlarged.  \r"
+    },
+    {
+        "id": 123,
+        "parent": ".ranges\r",
+        "object": "enlarge_line",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - lines and arcs that have been enlarged. (Note: text is included in this catagory, but can be ignored by using the parameters).  \r"
+    },
+    {
+        "id": 124,
+        "parent": ".ranges\r",
+        "object": "enlarge_text",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - not used after  Genesis version 3.2. Included to maintain backwards compatability.  \r"
+    },
+    {
+        "id": 125,
+        "parent": ".ranges\r",
+        "object": "enlarge_surface",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - surfaces that have been enlarged.  \r"
+    },
+    {
+        "id": 126,
+        "parent": ".ranges\r",
+        "object": "space_pad",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - not used by the function. For pad spacing problems see ospace_pad below.  \r"
+    },
+    {
+        "id": 127,
+        "parent": ".ranges\r",
+        "object": "space_line",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - lines and arcs that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 128,
+        "parent": ".ranges\r",
+        "object": "space_text",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - not used by the function. For line (text) spacing see space_line above.  \r"
+    },
+    {
+        "id": 129,
+        "parent": ".ranges\r",
+        "object": "space_surface",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - surfaces that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 130,
+        "parent": ".ranges\r",
+        "object": "pad_repaired",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - pads that have been increased and then shaved to protect spacing (active only when use shaves parameter is set to yes).  \r"
+    },
+    {
+        "id": 131,
+        "parent": ".ranges\r",
+        "object": "unprocessed",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - reports all features that were not processed by this function (special symbols, unprocessed text etc.)  \r"
+    },
+    {
+        "id": 132,
+        "parent": ".ranges\r",
+        "object": "part_line",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - lines and arcs that were enlarged, but by less than the required amount due to spacing problems.  \r"
+    },
+    {
+        "id": 133,
+        "parent": ".ranges\r",
+        "object": "part_surface",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - surfaces that were enlarged, but by less than the required amount due to spacing problems.  \r"
+    },
+    {
+        "id": 134,
+        "parent": ".ranges\r",
+        "object": "part_pad",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - pads that were enlarged, but by less than the required amount due to spacing problems (active only when use shaves parameter is set to no).  \r"
+    },
+    {
+        "id": 135,
+        "parent": ".ranges\r",
+        "object": "pad_neg",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - pads that have already been shaved previously and thus cannot be modfied again by this function.  \r"
+    },
+    {
+        "id": 136,
+        "parent": ".ranges\r",
+        "object": "shave_prob",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - pads that need shaving but where the shave cannot be added (active only when use shaves parameter is set to yes).  \r"
+    },
+    {
+        "id": 137,
+        "parent": ".ranges\r",
+        "object": "ospace_pad",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - pads that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 138,
+        "parent": ".ranges\r",
+        "object": "ospace_smd",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - smd pads that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 139,
+        "parent": ".ranges\r",
+        "object": "space_smd",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - smd pads that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 140,
+        "parent": ".ranges\r",
+        "object": "smd_repaired",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - smd pads that have been increased and then shaved to protect spacing (active only when use shaves parameter is set to yes).  \r"
+    },
+    {
+        "id": 141,
+        "parent": ".ranges\r",
+        "object": "part_smd",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - smd pads that were enlarged, but by less than the required amount due to spacing problems.  \r"
+    },
+    {
+        "id": 142,
+        "parent": ".ranges\r",
+        "object": "smd_neg",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - smd pads that have already been shaved previously and thus cannot be modfied again by this function.  \r"
+    },
+    {
+        "id": 144,
+        "parent": "true",
+        "object": ".pdef\r",
+        "string": "",
+        "comment": "comment"
+    },
+    {
+        "id": 145,
+        "parent": ".pdef\r",
+        "object": "pp_layers",
+        "string": "   = .type=signal|mixed&context=board&pol=positive&side=inner  \r"
+    },
+    {
+        "id": 146,
+        "parent": ".pdef\r",
+        "object": "pp_mil_smd_w",
+        "string": "   = 4  \r"
+    },
+    {
+        "id": 147,
+        "parent": ".pdef\r",
+        "object": "pp_mil_smd_h",
+        "string": "   = 4  \r"
+    },
+    {
+        "id": 148,
+        "parent": ".pdef\r",
+        "object": "pp_mil_pad",
+        "string": "   = 4  \r"
+    },
+    {
+        "id": 149,
+        "parent": ".pdef\r",
+        "object": "pp_mil_line",
+        "string": "   = 4  \r"
+    },
+    {
+        "id": 150,
+        "parent": ".pdef\r",
+        "object": "pp_mil_surf",
+        "string": "   = 0  \r"
+    },
+    {
+        "id": 151,
+        "parent": ".pdef\r",
+        "object": "pp_mil_space",
+        "string": "   = 8  \r"
+    },
+    {
+        "id": 152,
+        "parent": ".pdef\r",
+        "object": "pp_text",
+        "string": "   = No  \r"
+    },
+    {
+        "id": 153,
+        "parent": ".pdef\r",
+        "object": "pp_shave",
+        "string": "   = Yes  \r"
+    },
+    {
+        "id": 154,
+        "parent": ".pdef\r",
+        "object": "pp_select",
+        "string": "   = All  \r"
+    },
+    {
+        "id": 156,
+        "parent": "true",
+        "object": ".vars\r",
+        "string": "",
+        "comment": "comment"
+    },
+    {
+        "id": 157,
+        "parent": ".vars\r",
+        "object": "aper_res",
+        "string": "   =  0.1  ",
+        "comment": " Variable - aperture resolution for all features being created by this function.  \r"
+    },
+    {
+        "id": 160,
+        "parent": "true",
+        "object": ".model",
+        "string": "nvg_outer_0.5oz\r",
+        "comment": "comment"
+    },
+    {
+        "id": 161,
+        "parent": "true",
+        "object": ".units",
+        "string": "inch\r",
+        "comment": "comment"
+    },
+    {
+        "id": 162,
+        "parent": "true",
+        "object": ".colors",
+        "string": "991010 999910 109010 \r",
+        "comment": "comment"
+    },
+    {
+        "id": 164,
+        "parent": "true",
+        "object": ".ranges\r",
+        "string": "",
+        "comment": "comment"
+    },
+    {
+        "id": 165,
+        "parent": ".ranges\r",
+        "object": "enlarge_smd",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - smd pads that have been enlarged. (Note: this function operates on all rect. and oval pads - they do not need the .smd attribute).  \r"
+    },
+    {
+        "id": 166,
+        "parent": ".ranges\r",
+        "object": "enlarge_pad",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - round and square pads that have been enlarged.  \r"
+    },
+    {
+        "id": 167,
+        "parent": ".ranges\r",
+        "object": "enlarge_line",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - lines and arcs that have been enlarged. (Note: text is included in this catagory, but can be ignored by using the parameters).  \r"
+    },
+    {
+        "id": 168,
+        "parent": ".ranges\r",
+        "object": "enlarge_text",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - not used after  Genesis version 3.2. Included to maintain backwards compatability.  \r"
+    },
+    {
+        "id": 169,
+        "parent": ".ranges\r",
+        "object": "enlarge_surface",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - surfaces that have been enlarged.  \r"
+    },
+    {
+        "id": 170,
+        "parent": ".ranges\r",
+        "object": "space_pad",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - not used by the function. For pad spacing problems see ospace_pad below.  \r"
+    },
+    {
+        "id": 171,
+        "parent": ".ranges\r",
+        "object": "space_line",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - lines and arcs that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 172,
+        "parent": ".ranges\r",
+        "object": "space_text",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - not used by the function. For line (text) spacing see space_line above.  \r"
+    },
+    {
+        "id": 173,
+        "parent": ".ranges\r",
+        "object": "space_surface",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - surfaces that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 174,
+        "parent": ".ranges\r",
+        "object": "pad_repaired",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - pads that have been increased and then shaved to protect spacing (active only when use shaves parameter is set to yes).  \r"
+    },
+    {
+        "id": 175,
+        "parent": ".ranges\r",
+        "object": "unprocessed",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - reports all features that were not processed by this function (special symbols, unprocessed text etc.)  \r"
+    },
+    {
+        "id": 176,
+        "parent": ".ranges\r",
+        "object": "part_line",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - lines and arcs that were enlarged, but by less than the required amount due to spacing problems.  \r"
+    },
+    {
+        "id": 177,
+        "parent": ".ranges\r",
+        "object": "part_surface",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - surfaces that were enlarged, but by less than the required amount due to spacing problems.  \r"
+    },
+    {
+        "id": 178,
+        "parent": ".ranges\r",
+        "object": "part_pad",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - pads that were enlarged, but by less than the required amount due to spacing problems (active only when use shaves parameter is set to no).  \r"
+    },
+    {
+        "id": 179,
+        "parent": ".ranges\r",
+        "object": "pad_neg",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - pads that have already been shaved previously and thus cannot be modfied again by this function.  \r"
+    },
+    {
+        "id": 180,
+        "parent": ".ranges\r",
+        "object": "shave_prob",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - pads that need shaving but where the shave cannot be added (active only when use shaves parameter is set to yes).  \r"
+    },
+    {
+        "id": 181,
+        "parent": ".ranges\r",
+        "object": "ospace_pad",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - pads that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 182,
+        "parent": ".ranges\r",
+        "object": "ospace_smd",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - smd pads that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 183,
+        "parent": ".ranges\r",
+        "object": "space_smd",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - smd pads that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 184,
+        "parent": ".ranges\r",
+        "object": "smd_repaired",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - smd pads that have been increased and then shaved to protect spacing (active only when use shaves parameter is set to yes).  \r"
+    },
+    {
+        "id": 185,
+        "parent": ".ranges\r",
+        "object": "part_smd",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - smd pads that were enlarged, but by less than the required amount due to spacing problems.  \r"
+    },
+    {
+        "id": 186,
+        "parent": ".ranges\r",
+        "object": "smd_neg",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - smd pads that have already been shaved previously and thus cannot be modfied again by this function.  \r"
+    },
+    {
+        "id": 188,
+        "parent": "true",
+        "object": ".pdef\r",
+        "string": "",
+        "comment": "comment"
+    },
+    {
+        "id": 189,
+        "parent": ".pdef\r",
+        "object": "pp_layers",
+        "string": "   = .type=signal|mixed&context=board&pol=positive&side=outer  \r"
+    },
+    {
+        "id": 190,
+        "parent": ".pdef\r",
+        "object": "pp_mil_smd_w",
+        "string": "   = 1  \r"
+    },
+    {
+        "id": 191,
+        "parent": ".pdef\r",
+        "object": "pp_mil_smd_h",
+        "string": "   = 1  \r"
+    },
+    {
+        "id": 192,
+        "parent": ".pdef\r",
+        "object": "pp_mil_pad",
+        "string": "   = 1  \r"
+    },
+    {
+        "id": 193,
+        "parent": ".pdef\r",
+        "object": "pp_mil_line",
+        "string": "   = 1  \r"
+    },
+    {
+        "id": 194,
+        "parent": ".pdef\r",
+        "object": "pp_mil_surf",
+        "string": "   = 0  \r"
+    },
+    {
+        "id": 195,
+        "parent": ".pdef\r",
+        "object": "pp_mil_space",
+        "string": "   = 4  \r"
+    },
+    {
+        "id": 196,
+        "parent": ".pdef\r",
+        "object": "pp_text",
+        "string": "   = No  \r"
+    },
+    {
+        "id": 197,
+        "parent": ".pdef\r",
+        "object": "pp_shave",
+        "string": "   = Yes  \r"
+    },
+    {
+        "id": 198,
+        "parent": ".pdef\r",
+        "object": "pp_select",
+        "string": "   = All  \r"
+    },
+    {
+        "id": 200,
+        "parent": "true",
+        "object": ".vars\r",
+        "string": "",
+        "comment": "comment"
+    },
+    {
+        "id": 201,
+        "parent": ".vars\r",
+        "object": "aper_res",
+        "string": "   =  0.1  ",
+        "comment": " Variable - aperture resolution for all features being created by this function.  \r"
+    },
+    {
+        "id": 204,
+        "parent": "true",
+        "object": ".model",
+        "string": "nvg_outer_1oz\r",
+        "comment": "comment"
+    },
+    {
+        "id": 205,
+        "parent": "true",
+        "object": ".units",
+        "string": "inch\r",
+        "comment": "comment"
+    },
+    {
+        "id": 206,
+        "parent": "true",
+        "object": ".colors",
+        "string": "991010 999910 109010 \r",
+        "comment": "comment"
+    },
+    {
+        "id": 208,
+        "parent": "true",
+        "object": ".ranges\r",
+        "string": "",
+        "comment": "comment"
+    },
+    {
+        "id": 209,
+        "parent": ".ranges\r",
+        "object": "enlarge_smd",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - smd pads that have been enlarged. (Note: this function operates on all rect. and oval pads - they do not need the .smd attribute).  \r"
+    },
+    {
+        "id": 210,
+        "parent": ".ranges\r",
+        "object": "enlarge_pad",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - round and square pads that have been enlarged.  \r"
+    },
+    {
+        "id": 211,
+        "parent": ".ranges\r",
+        "object": "enlarge_line",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - lines and arcs that have been enlarged. (Note: text is included in this catagory, but can be ignored by using the parameters).  \r"
+    },
+    {
+        "id": 212,
+        "parent": ".ranges\r",
+        "object": "enlarge_text",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - not used after  Genesis version 3.2. Included to maintain backwards compatability.  \r"
+    },
+    {
+        "id": 213,
+        "parent": ".ranges\r",
+        "object": "enlarge_surface",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - surfaces that have been enlarged.  \r"
+    },
+    {
+        "id": 214,
+        "parent": ".ranges\r",
+        "object": "space_pad",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - not used by the function. For pad spacing problems see ospace_pad below.  \r"
+    },
+    {
+        "id": 215,
+        "parent": ".ranges\r",
+        "object": "space_line",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - lines and arcs that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 216,
+        "parent": ".ranges\r",
+        "object": "space_text",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - not used by the function. For line (text) spacing see space_line above.  \r"
+    },
+    {
+        "id": 217,
+        "parent": ".ranges\r",
+        "object": "space_surface",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - surfaces that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 218,
+        "parent": ".ranges\r",
+        "object": "pad_repaired",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - pads that have been increased and then shaved to protect spacing (active only when use shaves parameter is set to yes).  \r"
+    },
+    {
+        "id": 219,
+        "parent": ".ranges\r",
+        "object": "unprocessed",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - reports all features that were not processed by this function (special symbols, unprocessed text etc.)  \r"
+    },
+    {
+        "id": 220,
+        "parent": ".ranges\r",
+        "object": "part_line",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - lines and arcs that were enlarged, but by less than the required amount due to spacing problems.  \r"
+    },
+    {
+        "id": 221,
+        "parent": ".ranges\r",
+        "object": "part_surface",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - surfaces that were enlarged, but by less than the required amount due to spacing problems.  \r"
+    },
+    {
+        "id": 222,
+        "parent": ".ranges\r",
+        "object": "part_pad",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - pads that were enlarged, but by less than the required amount due to spacing problems (active only when use shaves parameter is set to no).  \r"
+    },
+    {
+        "id": 223,
+        "parent": ".ranges\r",
+        "object": "pad_neg",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - pads that have already been shaved previously and thus cannot be modfied again by this function.  \r"
+    },
+    {
+        "id": 224,
+        "parent": ".ranges\r",
+        "object": "shave_prob",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - pads that need shaving but where the shave cannot be added (active only when use shaves parameter is set to yes).  \r"
+    },
+    {
+        "id": 225,
+        "parent": ".ranges\r",
+        "object": "ospace_pad",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - pads that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 226,
+        "parent": ".ranges\r",
+        "object": "ospace_smd",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - smd pads that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 227,
+        "parent": ".ranges\r",
+        "object": "space_smd",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - smd pads that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 228,
+        "parent": ".ranges\r",
+        "object": "smd_repaired",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - smd pads that have been increased and then shaved to protect spacing (active only when use shaves parameter is set to yes).  \r"
+    },
+    {
+        "id": 229,
+        "parent": ".ranges\r",
+        "object": "part_smd",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - smd pads that were enlarged, but by less than the required amount due to spacing problems.  \r"
+    },
+    {
+        "id": 230,
+        "parent": ".ranges\r",
+        "object": "smd_neg",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - smd pads that have already been shaved previously and thus cannot be modfied again by this function.  \r"
+    },
+    {
+        "id": 232,
+        "parent": "true",
+        "object": ".pdef\r",
+        "string": "",
+        "comment": "comment"
+    },
+    {
+        "id": 233,
+        "parent": ".pdef\r",
+        "object": "pp_layers",
+        "string": "   = .type=signal|mixed&context=board&pol=positive&side=outer  \r"
+    },
+    {
+        "id": 234,
+        "parent": ".pdef\r",
+        "object": "pp_mil_smd_w",
+        "string": "   = 2  \r"
+    },
+    {
+        "id": 235,
+        "parent": ".pdef\r",
+        "object": "pp_mil_smd_h",
+        "string": "   = 2  \r"
+    },
+    {
+        "id": 236,
+        "parent": ".pdef\r",
+        "object": "pp_mil_pad",
+        "string": "   = 2  \r"
+    },
+    {
+        "id": 237,
+        "parent": ".pdef\r",
+        "object": "pp_mil_line",
+        "string": "   = 2  \r"
+    },
+    {
+        "id": 238,
+        "parent": ".pdef\r",
+        "object": "pp_mil_surf",
+        "string": "   = 0  \r"
+    },
+    {
+        "id": 239,
+        "parent": ".pdef\r",
+        "object": "pp_mil_space",
+        "string": "   = 6  \r"
+    },
+    {
+        "id": 240,
+        "parent": ".pdef\r",
+        "object": "pp_text",
+        "string": "   = No  \r"
+    },
+    {
+        "id": 241,
+        "parent": ".pdef\r",
+        "object": "pp_shave",
+        "string": "   = Yes  \r"
+    },
+    {
+        "id": 242,
+        "parent": ".pdef\r",
+        "object": "pp_select",
+        "string": "   = All  \r"
+    },
+    {
+        "id": 244,
+        "parent": "true",
+        "object": ".vars\r",
+        "string": "",
+        "comment": "comment"
+    },
+    {
+        "id": 245,
+        "parent": ".vars\r",
+        "object": "aper_res",
+        "string": "   =  0.1  ",
+        "comment": " Variable - aperture resolution for all features being created by this function.  \r"
+    },
+    {
+        "id": 248,
+        "parent": "true",
+        "object": ".model",
+        "string": "nvg_outer_2oz\r",
+        "comment": "comment"
+    },
+    {
+        "id": 249,
+        "parent": "true",
+        "object": ".units",
+        "string": "inch\r",
+        "comment": "comment"
+    },
+    {
+        "id": 250,
+        "parent": "true",
+        "object": ".colors",
+        "string": "991010 999910 109010 \r",
+        "comment": "comment"
+    },
+    {
+        "id": 252,
+        "parent": "true",
+        "object": ".ranges\r",
+        "string": "",
+        "comment": "comment"
+    },
+    {
+        "id": 253,
+        "parent": ".ranges\r",
+        "object": "enlarge_smd",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - smd pads that have been enlarged. (Note: this function operates on all rect. and oval pads - they do not need the .smd attribute).  \r"
+    },
+    {
+        "id": 254,
+        "parent": ".ranges\r",
+        "object": "enlarge_pad",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - round and square pads that have been enlarged.  \r"
+    },
+    {
+        "id": 255,
+        "parent": ".ranges\r",
+        "object": "enlarge_line",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - lines and arcs that have been enlarged. (Note: text is included in this catagory, but can be ignored by using the parameters).  \r"
+    },
+    {
+        "id": 256,
+        "parent": ".ranges\r",
+        "object": "enlarge_text",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - not used after  Genesis version 3.2. Included to maintain backwards compatability.  \r"
+    },
+    {
+        "id": 257,
+        "parent": ".ranges\r",
+        "object": "enlarge_surface",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - surfaces that have been enlarged.  \r"
+    },
+    {
+        "id": 258,
+        "parent": ".ranges\r",
+        "object": "space_pad",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - not used by the function. For pad spacing problems see ospace_pad below.  \r"
+    },
+    {
+        "id": 259,
+        "parent": ".ranges\r",
+        "object": "space_line",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - lines and arcs that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 260,
+        "parent": ".ranges\r",
+        "object": "space_text",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - not used by the function. For line (text) spacing see space_line above.  \r"
+    },
+    {
+        "id": 261,
+        "parent": ".ranges\r",
+        "object": "space_surface",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - surfaces that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 262,
+        "parent": ".ranges\r",
+        "object": "pad_repaired",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - pads that have been increased and then shaved to protect spacing (active only when use shaves parameter is set to yes).  \r"
+    },
+    {
+        "id": 263,
+        "parent": ".ranges\r",
+        "object": "unprocessed",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - reports all features that were not processed by this function (special symbols, unprocessed text etc.)  \r"
+    },
+    {
+        "id": 264,
+        "parent": ".ranges\r",
+        "object": "part_line",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - lines and arcs that were enlarged, but by less than the required amount due to spacing problems.  \r"
+    },
+    {
+        "id": 265,
+        "parent": ".ranges\r",
+        "object": "part_surface",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - surfaces that were enlarged, but by less than the required amount due to spacing problems.  \r"
+    },
+    {
+        "id": 266,
+        "parent": ".ranges\r",
+        "object": "part_pad",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - pads that were enlarged, but by less than the required amount due to spacing problems (active only when use shaves parameter is set to no).  \r"
+    },
+    {
+        "id": 267,
+        "parent": ".ranges\r",
+        "object": "pad_neg",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - pads that have already been shaved previously and thus cannot be modfied again by this function.  \r"
+    },
+    {
+        "id": 268,
+        "parent": ".ranges\r",
+        "object": "shave_prob",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - pads that need shaving but where the shave cannot be added (active only when use shaves parameter is set to yes).  \r"
+    },
+    {
+        "id": 269,
+        "parent": ".ranges\r",
+        "object": "ospace_pad",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - pads that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 270,
+        "parent": ".ranges\r",
+        "object": "ospace_smd",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - smd pads that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 271,
+        "parent": ".ranges\r",
+        "object": "space_smd",
+        "string": "   =  1000 , 1001 , 1002",
+        "comment": " Range - smd pads that cannot be modified due to spacing problems.  \r"
+    },
+    {
+        "id": 272,
+        "parent": ".ranges\r",
+        "object": "smd_repaired",
+        "string": "   =  0 , 1 , 1000",
+        "comment": " Range - smd pads that have been increased and then shaved to protect spacing (active only when use shaves parameter is set to yes).  \r"
+    },
+    {
+        "id": 273,
+        "parent": ".ranges\r",
+        "object": "part_smd",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - smd pads that were enlarged, but by less than the required amount due to spacing problems.  \r"
+    },
+    {
+        "id": 274,
+        "parent": ".ranges\r",
+        "object": "smd_neg",
+        "string": "   =  0 , 1000 , 1001",
+        "comment": " Range - smd pads that have already been shaved previously and thus cannot be modfied again by this function.  \r"
+    },
+    {
+        "id": 276,
+        "parent": "true",
+        "object": ".pdef\r",
+        "string": "",
+        "comment": "comment"
+    },
+    {
+        "id": 277,
+        "parent": ".pdef\r",
+        "object": "pp_layers",
+        "string": "   = .type=signal|mixed&context=board&pol=positive&side=outer  \r"
+    },
+    {
+        "id": 278,
+        "parent": ".pdef\r",
+        "object": "pp_mil_smd_w",
+        "string": "   = 4  \r"
+    },
+    {
+        "id": 279,
+        "parent": ".pdef\r",
+        "object": "pp_mil_smd_h",
+        "string": "   = 4  \r"
+    },
+    {
+        "id": 280,
+        "parent": ".pdef\r",
+        "object": "pp_mil_pad",
+        "string": "   = 4  \r"
+    },
+    {
+        "id": 281,
+        "parent": ".pdef\r",
+        "object": "pp_mil_line",
+        "string": "   = 4  \r"
+    },
+    {
+        "id": 282,
+        "parent": ".pdef\r",
+        "object": "pp_mil_surf",
+        "string": "   = 0  \r"
+    },
+    {
+        "id": 283,
+        "parent": ".pdef\r",
+        "object": "pp_mil_space",
+        "string": "   = 8  \r"
+    },
+    {
+        "id": 284,
+        "parent": ".pdef\r",
+        "object": "pp_text",
+        "string": "   = No  \r"
+    },
+    {
+        "id": 285,
+        "parent": ".pdef\r",
+        "object": "pp_shave",
+        "string": "   = Yes  \r"
+    },
+    {
+        "id": 286,
+        "parent": ".pdef\r",
+        "object": "pp_select",
+        "string": "   = All  \r"
+    },
+    {
+        "id": 288,
+        "parent": "true",
+        "object": ".vars\r",
+        "string": "",
+        "comment": "comment"
+    },
+    {
+        "id": 289,
+        "parent": ".vars\r",
+        "object": "aper_res",
+        "string": "   =  0.1  ",
+        "comment": " Variable - aperture resolution for all features being created by this function.  \r"
+    },
+    {
+        "id": 313,
+        "parent": ".vars\r",
+        "object": "",
+        "string": ""
+    }
+]

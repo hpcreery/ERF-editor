@@ -39,7 +39,7 @@ const fs = window.require('fs')
 
 class ReadFiles extends Component {
 
-	jsonstruct = (startline) => {
+	jsonstruct = () => {
 		this.jsonERF = {
 			"header": {},
 			"params": {},
@@ -73,7 +73,7 @@ class ReadFiles extends Component {
 				}
 			} else if (this.lines[i].startsWith('#')) {
 			} else if (this.lines[i].startsWith(' ')) {
-			} else if (this.lines[i].startsWith('\n')) {
+			} else if (this.lines[i].startsWith('\r')) {
 			} else {
 				var invalue = this.erf[i].string.split(' ').slice(1).join(' ').concat('')
 				var inobject = this.erf[i].string.split(' ').shift()
@@ -99,31 +99,58 @@ class ReadFiles extends Component {
 				}
 			}
 		}
-		//console.log(this.erf)
-		//console.log()
+		//console.log(JSON.stringify(this.erf))
+		//console.log(jsonERF)
 	}
 
 	modelstruct = () => {
-		
+		this.jsonERF = []
+		for (var i = 0; i < this.lines.length; i++) {
+			
+			if (this.lines[i].startsWith('.')) {
+				var value = this.lines[i].split(' ').slice(1).join(' ').concat('')
+				var object = this.lines[i].split(' ').shift()
+				this.jsonERF.push({ 'id': i, 'type': 'header', 'object': object, 'string': value})
+				//this.erf.push({'string': this.lines[i] })
+				if (object === '.model') {
+					//this.jsonERF.models[value] = {'id': i, 'object': object, 'value': value}
+					var workingmodel = value
+				}
+			} else if (this.lines[i].startsWith('#')) {
+			} else if (this.lines[i].startsWith(' ')) {
+			} else if (this.lines[i].startsWith('\r')) {
+			} else {
+				var invalue = this.lines[i].split(' ').slice(1).join(' ').concat('')
+				var inobject = this.lines[i].split(' ').shift()
+				var invalue = invalue.split('#')
+				var comment = invalue[1]
+				var invalue = invalue[0]
+				this.jsonERF.push({ 'id': i, 'model': workingmodel, 'type': object, 'object': inobject, 'string': invalue, 'comment': comment})
+
+			}
+			
+		}
+		//console.log(JSON.stringify(this.erf))
+		//console.log(this.jsonERF)
 	}
 
 	componentDidMount() {
 		//this.jsonstruct() // run after react mount to init data
-		this.modelstruct()
+		//this.modelstruct()
 	}
 
 	componentWillMount() {
 		this.contents = fs.readFileSync(this.props.dir, 'utf8')
 		this.lines = this.contents.split('\n')
-		//this.modelstruct()
-		this.jsonstruct()
+		this.filelength = this.lines.length
+		this.modelstruct()
+		//this.jsonstruct()
 	}
 	render() {
 		
 		return( 
 			<div className="Text-object">
-				HI
-				<Pretty jsonERF={this.jsonERF}/>
+				<Pretty jsonERF={this.jsonERF} filelength={this.filelength}/>
 			</div>
 			
 		)
