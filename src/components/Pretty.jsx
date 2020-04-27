@@ -30,6 +30,7 @@ export class Pretty extends Component {
 	constructor(props) {
         super(props)
         
+        
         this.opendir = this.props.opendir
 	}
 
@@ -401,7 +402,7 @@ export class Pretty extends Component {
 		const { jsonERF, filelength, ERFmodels, dir } = this.props
 		//console.log(jsonERF)
 		//console.log(JSON.stringify(jsonERF))
-        console.log(dir)
+        this.dir = dir
         
 
 		return (
