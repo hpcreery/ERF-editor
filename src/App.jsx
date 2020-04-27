@@ -4,10 +4,8 @@ import ReadFiles from './components/Fileparser' // Components can only live in s
 
 const electron = window.require('electron')
 const dialog = electron.remote.dialog
-//const path = window.require('path')
 const ipc = electron.ipcRenderer
-//const fs = window.require('fs')
-//const dir = path.join(__dirname, '/../public/cmpetch.erf')
+
 var dirc =
 //	'/Users/Professional/Documents/MyPrograms/JavaScript/Genesis/erfeditor/ERF-editor/public/cmpetch.erf'
 //const dirc =

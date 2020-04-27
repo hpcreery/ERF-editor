@@ -17,11 +17,7 @@ import {
 } from 'semantic-ui-react'
 import {
 	Link,
-	DirectLink,
-	Element,
-	Events,
 	animateScroll as scroll,
-	scrollSpy,
 	scroller,
 } from 'react-scroll'
 import './Theme.css'
@@ -342,34 +338,7 @@ export class Pretty extends Component {
 							</Grid>
 						)
 				}
-				// return (
-				// 	<div>
-				// 		<Input
-				// 			type="text"
-				// 			placeholder={jsonERF.comment}
-				// 			size="small"
-				// 			fluid
-				// 			defaultValue={jsonERF.string}
-				// 			className="densegrid"
-				// 		>
-				// 			<Popup
-				// 				wide="very"
-				// 				position="bottom left"
-				// 				content={jsonERF.comment}
-				// 				trigger={
-				// 					<Label className="Objectname">
-				// 						{jsonERF.object}
-				// 					</Label>
-				// 				}
-				// 			/>
-				// 			<input />
-				// 		</Input>
-
-				// 		<br />
-				// 	</div>
-				// )
 		}
-		//}
 	}
 
     handlescroll = (location) => {
@@ -420,17 +389,11 @@ export class Pretty extends Component {
                         </Sticky>
 						
                         <button onClick={() => this.opendir()}>
-            Push me
-          </button>
-						{/* <Segment>
-							{jsonERF.map((ERF) => this.contentmaker(ERF))}
-						</Segment> */}
+                            Push me
+                        </button>
+						
 					</Grid.Column>
 				</Grid>
-				{/* {this[`20_ref`].current.scrollIntoView({
-					behavior: 'smooth',
-					block: 'start',
-				})} */}
 			</div>
 		)
 	}

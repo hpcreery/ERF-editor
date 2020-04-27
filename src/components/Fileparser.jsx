@@ -2,17 +2,9 @@ import React, { Component } from 'react'
 import './Theme.css'
 import Pretty from './Pretty'
 
-//import { appendFile } from 'fs'
-//const electron = window.require('electron')
-//const path = window.require('path')
-//const ipc = electron.ipcRenderer
 const fs = window.require('fs')
 const electron = window.require('electron').remote
 const dialog = electron.dialog
-
-//const dir = path.join($dirname, '/../public/cmpetch.erf')
-//const dir =
-//('/Users/Professional/Documents/MyPrograms/JavaScript/Genesis/erfeditor/ERF-editor/public/cmpetch.erf')
 
 // 0205 p. 1002
 // Init
@@ -63,7 +55,7 @@ class ReadFiles extends Component {
 
 	
 
-	
+	// This Data model is out not used due to convoluted methods
 	jsonstruct = () => {
 		this.jsonERF = {
 			header: {},
