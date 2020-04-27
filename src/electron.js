@@ -3,6 +3,7 @@ const electron = require('electron')
 const { app, ipcMain } = require('electron')
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+const { dialog } = require('electron')
 
 const {
 	default: installExtension,
@@ -59,6 +60,8 @@ function createWindow() {
 		mainWindow = null
 	})
 
+
+
 	// Install React Dev Tools
 }
 
@@ -90,4 +93,6 @@ app.on('activate', function () {
 ipcMain.on('synchronous-message', (event, arg) => {
 	console.log(arg) // prints "ping"
 	event.sender.send('synchronous-reply', 'pong')
+	//const pathArray = dialog.showOpenDialog({properties: ['openDirectory']})
+	//console.log(dialog.showOpenDialog({properties: ['openDirectory']}))
 })

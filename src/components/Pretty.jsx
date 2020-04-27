@@ -28,7 +28,9 @@ import './Theme.css'
 
 export class Pretty extends Component {
 	constructor(props) {
-		super(props)
+        super(props)
+        
+        this.opendir = this.props.opendir
 	}
 
 	static propTypes = {}
@@ -48,7 +50,8 @@ export class Pretty extends Component {
 	contentmaker = (jsonERF) => {
 		this.col1 = 4
 		this.col2 = 10
-		this.col3 = 2
+        this.col3 = 2
+        
 		switch (jsonERF.type) {
 			case 'header':
 				switch (jsonERF.object) {
@@ -70,7 +73,8 @@ export class Pretty extends Component {
 													type: 'submit',
 													content: 'Go',
 												}}
-												placeholder="Navigate to..."
+                                                placeholder="Navigate to..."
+                                                defaultValue={this.dir}
 											/>
 										</Menu.Item>
 									</Menu>
@@ -394,10 +398,11 @@ export class Pretty extends Component {
 		)
 	}
 	render() {
-		const { jsonERF, filelength, ERFmodels } = this.props
+		const { jsonERF, filelength, ERFmodels, dir } = this.props
 		//console.log(jsonERF)
 		//console.log(JSON.stringify(jsonERF))
-		console.log(ERFmodels)
+        console.log(dir)
+        
 
 		return (
 			<div ref={this.titleRef} className="Table">
@@ -413,7 +418,9 @@ export class Pretty extends Component {
                         </Menu>
                         </Sticky>
 						
-
+                        <button onClick={() => this.opendir()}>
+            Push me
+          </button>
 						{/* <Segment>
 							{jsonERF.map((ERF) => this.contentmaker(ERF))}
 						</Segment> */}

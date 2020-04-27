@@ -7,6 +7,9 @@ import Pretty from './Pretty'
 //const path = window.require('path')
 //const ipc = electron.ipcRenderer
 const fs = window.require('fs')
+const electron = window.require('electron').remote
+const dialog = electron.dialog
+
 //const dir = path.join($dirname, '/../public/cmpetch.erf')
 //const dir =
 //('/Users/Professional/Documents/MyPrograms/JavaScript/Genesis/erfeditor/ERF-editor/public/cmpetch.erf')
@@ -34,6 +37,33 @@ const fs = window.require('fs')
 // =======
 
 class ReadFiles extends Component {
+
+	
+	constructor(props) {
+		super(props)
+		this.opendir = this.props.opendir
+		
+		console.log(this.state.dir)
+
+	}
+	state = {dir: this.props.dir}
+
+	componentWillReceiveProps(nextProps) {
+		this.setState({dir: String(nextProps.dir)})
+		console.log('File parser recieved props')
+		console.log(String(nextProps.dir))
+
+		this.contents = fs.readFileSync(String(nextProps.dir), 'utf8')
+		this.lines = this.contents.split('\n')
+		this.modelstruct()
+	}
+	
+
+
+
+	
+
+	
 	jsonstruct = () => {
 		this.jsonERF = {
 			header: {},
@@ -202,25 +232,34 @@ class ReadFiles extends Component {
 	}
 
 	componentDidMount() {
+		//console.log(dialog.showOpenDialog())
 		//this.jsonstruct() // run after react mount to init data
 		//this.modelstruct()
 	}
 
 	componentWillMount() {
-		this.contents = fs.readFileSync(this.props.dir, 'utf8')
+		this.contents = fs.readFileSync(this.state.dir, 'utf8')
 		this.lines = this.contents.split('\n')
 		this.filelength = this.lines.length
 		this.modelstruct() // main model structure
 		//this.jsonstruct()
 	}
+
+
 	render() {
+		
+		console.log(this.state.dir)
 		return (
 			<div className="File-Contents">
 				<Pretty
 					jsonERF={this.jsonERF}
 					filelength={this.filelength}
 					ERFmodels={this.ERFmodels}
+					dir={this.state.dir}
+					opendir={this.props.opendir}
 				/>
+				{console.log(this.jsonERF)}
+				
 			</div>
 		)
 	}
