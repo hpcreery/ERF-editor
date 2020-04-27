@@ -76,6 +76,7 @@ export class Pretty extends Component {
 										</Menu.Item>
 									</Menu>
 								</Sticky>
+                                <Divider />
 							</div>
 						)
 					case '.uid':
@@ -88,6 +89,7 @@ export class Pretty extends Component {
                                 >
                                     UID: {jsonERF.string}
                                 </Segment>
+                                <Divider />
 							</div>
 						)
 					case '.menu':
@@ -100,6 +102,7 @@ export class Pretty extends Component {
                                 >
                                     MENU: {jsonERF.string}
                                 </Segment>
+                                <Divider />
 							</div>
 						)
 					case '.model':
@@ -385,12 +388,13 @@ export class Pretty extends Component {
 
                         <Menu vertical>
                         {ERFmodels.map((ERF) => this.linkmaker(ERF))}
-                        </Menu>
-                        </Sticky>
-						
                         <button onClick={() => this.opendir()}>
                             Push me
                         </button>
+                        </Menu>
+                        </Sticky>
+						
+                        
 						
 					</Grid.Column>
 				</Grid>

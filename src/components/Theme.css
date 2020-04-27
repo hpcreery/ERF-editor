@@ -6,7 +6,7 @@
 }
 
 .Label {
-	color: black;
+	color: black !important;
 	padding: 10px 10px 10px 10px !important;
 }
 

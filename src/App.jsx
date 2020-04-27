@@ -36,12 +36,16 @@ class App extends Component {
 		ipc.on('synchronous-reply', (event, arg) => {
 			console.log(arg) // prints "pong"
 		})
+
 		
 	}
+	componentWillMount() {
 
+	}
 	componentDidUpdate() {}
 
 	render() {
+
 		return (
 			<div>
 				<div className="App">
