@@ -1,0 +1,44 @@
+.File-Contents {
+	padding: 20px !important;
+	color: black;
+	text-align: left;
+	text-indent: 0px;
+}
+
+.Label {
+	color: black;
+	padding: 10px 10px 10px 10px !important;
+}
+
+.Objectname {
+	text-align: left !important;
+	flex: none !important;
+	box-sizing: border-box !important;
+}
+
+.Commentline {
+	padding: 0px !important;
+	color: black;
+	text-align: left;
+	text-indent: 20px;
+}
+
+.Zero-o {
+	padding: 0px 0px 0px 0px !important;
+}
+
+.Table {
+	font-size: small;
+}
+
+.Condensed {
+	padding-top: 0rem !important;
+	padding-bottom: 0rem !important;
+}
+
+.densegrid.grid {
+	margin: 3px !important;
+}
+.densegrid.grid .column {
+	padding: 3px !important;
+}
