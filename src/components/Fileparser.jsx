@@ -152,6 +152,7 @@ class ReadFiles extends Component {
 
 	modelstruct = () => {
 		this.jsonERF = []
+		this.ERFmodels = []
 		for (var i = 0; i < this.lines.length; i++) {
 			if (this.lines[i].startsWith('.')) {
 				var value = this.lines[i]
@@ -170,6 +171,7 @@ class ReadFiles extends Component {
 				if (object === '.model') {
 					//this.jsonERF.models[value] = {'id': i, 'object': object, 'value': value}
 					var workingmodel = value
+					this.ERFmodels.push(value)
 				}
 			} else if (this.lines[i].startsWith('#')) {
 			} else if (this.lines[i].startsWith(' ')) {
@@ -214,7 +216,11 @@ class ReadFiles extends Component {
 	render() {
 		return (
 			<div className="File-Contents">
-				<Pretty jsonERF={this.jsonERF} filelength={this.filelength} />
+				<Pretty
+					jsonERF={this.jsonERF}
+					filelength={this.filelength}
+					ERFmodels={this.ERFmodels}
+				/>
 			</div>
 		)
 	}

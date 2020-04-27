@@ -14,6 +14,15 @@ import {
 	Menu,
 	Table,
 } from 'semantic-ui-react'
+import {
+	Link,
+	DirectLink,
+	Element,
+	Events,
+	animateScroll as scroll,
+	scrollSpy,
+	scroller,
+} from 'react-scroll'
 import './Theme.css'
 
 export class Pretty extends Component {
@@ -115,6 +124,7 @@ export class Pretty extends Component {
 											<Segment
 												secondary
 												className="Label"
+												name={jsonERF.string}
 											>
 												MODEL: {jsonERF.string}
 											</Segment>
@@ -308,10 +318,25 @@ export class Pretty extends Component {
 		//}
 	}
 
+	linkmaker = (ERFmodel) => {
+		return (
+			<Link
+				activeClass="active"
+				className="test4"
+				to={ERFmodel}
+				spy={true}
+				smooth={true}
+				duration={500}
+			>
+				{ERFmodel}
+			</Link>
+		)
+	}
 	render() {
-		const { jsonERF, filelength } = this.props
+		const { jsonERF, filelength, ERFmodels } = this.props
 		//console.log(jsonERF)
 		//console.log(JSON.stringify(jsonERF))
+		console.log(ERFmodels)
 
 		return (
 			<div ref={this.titleRef} className="Table">
@@ -326,6 +351,8 @@ export class Pretty extends Component {
 						{jsonERF.map((ERF) => this.contentmaker(ERF))}
 					</Grid.Column>
 					<Grid.Column width={4} className="densegrid">
+						{ERFmodels.map((ERF) => this.linkmaker(ERF))}
+
 						{/* <Segment>
 							{jsonERF.map((ERF) => this.contentmaker(ERF))}
 						</Segment> */}
