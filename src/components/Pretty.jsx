@@ -12,7 +12,8 @@ import {
 	Rail,
 	Grid,
 	Menu,
-	Table,
+    Table,
+    Header
 } from 'semantic-ui-react'
 import {
 	Link,
@@ -44,11 +45,14 @@ export class Pretty extends Component {
 		)
 	}
 
-	headermaker = (jsonERF) => {
+	contentmaker = (jsonERF) => {
+		this.col1 = 4
+		this.col2 = 10
+		this.col3 = 2
 		switch (jsonERF.type) {
 			case 'header':
 				switch (jsonERF.object) {
-					case '.name':
+                    case '.name':
 						return (
 							<div>
 								<Sticky offset={41} context={this.titleRef}>
@@ -75,48 +79,34 @@ export class Pretty extends Component {
 						)
 					case '.uid':
 						return (
-							<div ref="hello">
-								<Sticky offset={41} context={this.titleRef}>
-									<Menu>
-										<Menu.Item>
-											<Icon name="file alternate" />
-										</Menu.Item>
-										<Menu.Item>
-											ERF: {jsonERF.string}
-										</Menu.Item>
-
-										<Menu.Item position="right">
-											<Input
-												action={{
-													type: 'submit',
-													content: 'Go',
-												}}
-												placeholder="Navigate to..."
-											/>
-										</Menu.Item>
-									</Menu>
-								</Sticky>
+							<div>
+                                <Segment
+                                    secondary
+                                    className="Label"
+                                    name={jsonERF.string}
+                                >
+                                    UID: {jsonERF.string}
+                                </Segment>
 							</div>
 						)
 					case '.menu':
-						return
-					case '.param':
-						return
-				}
-		}
-	}
-	contentmaker = (jsonERF) => {
-		this.col1 = 4
-		this.col2 = 10
-		this.col3 = 2
-		switch (jsonERF.type) {
-			case 'header':
-				switch (jsonERF.object) {
+						return(
+							<div>
+                                <Segment
+                                    secondary
+                                    className="Label"
+                                    name={jsonERF.string}
+                                >
+                                    MENU: {jsonERF.string}
+                                </Segment>
+							</div>
+						)
 					case '.model':
 						return (
 							<div>
+                                <Divider />
 								<Table>
-									<Table.Header colSpan="3">
+									<Table.Header name={jsonERF.string}>
 										<Sticky
 											offset={93}
 											context={this.titleRef}
@@ -124,29 +114,45 @@ export class Pretty extends Component {
 											<Segment
 												secondary
 												className="Label"
-												name={jsonERF.string}
+												
 											>
 												MODEL: {jsonERF.string}
 											</Segment>
 										</Sticky>
 									</Table.Header>
 								</Table>
+                                
 							</div>
 						)
 					case '.units':
+                        this.units = jsonERF.string
 						return
 					case '.colors':
 						return
 					case '.ranges\r':
 						return (
 							<div>
-								<Label color="black">Ranges</Label>
+								<Header dividing className='Headers'>
+                                    Ranges
+                                </Header>
 							</div>
 						)
 					case '.pdef\r':
-						return
+						return(
+							<div>
+								<Header dividing className='Headers'>
+                                    Parameter Defaults
+                                </Header>
+							</div>
+						)
 					case '.vars\r':
-						return
+						return(
+							<div>
+								<Header dividing className='Headers'>
+                                    Variables
+                                </Header>
+							</div>
+						)
 				}
 
 			case 'sub':
@@ -174,7 +180,7 @@ export class Pretty extends Component {
 									/>
 								</Grid.Column>
 								<Grid.Column width={this.col3}>
-									units
+                                {this.units}
 								</Grid.Column>
 							</Grid>
 						)
@@ -191,29 +197,74 @@ export class Pretty extends Component {
 									width={this.col1}
 									textAlign="right"
 								>
-									<Popup
-										content={jsonERF.comment}
-										position="top center"
-										trigger={
+									
 											<Label size="large">
 												{jsonERF.object}
 											</Label>
-										}
-									/>
+						
 								</Grid.Column>
 								<Grid.Column width={this.col2}>
-									<Input
+                                <Grid
+								columns={4}
+								verticalAlign="middle"
+								className="densegrid"
+							>
+                                <Grid.Column
+                                width={1}
+                                textAlign='center'>
+
+                                    =
+                                </Grid.Column>
+                                <Grid.Column
+									width={5}
+									textAlign="right"
+								>
+                                     <Input
 										type="text"
 										placeholder="Incrimental Values"
 										defaultValue={jsonERF.string}
-										label={{ content: 'mils' }} // Change mils to dynamic
-										labelPosition="right"
 										fluid
+										
 										size="small"
 									/>
+
+                                </Grid.Column>
+                                   
+                                <Grid.Column
+									width={5}
+									textAlign="right"
+								>
+                                     <Input
+										type="text"
+										placeholder="Incrimental Values"
+										defaultValue={jsonERF.string}
+										fluid
+										
+										size="small"
+									/>
+
+                                </Grid.Column>
+                                <Grid.Column
+									width={5}
+									textAlign="right"
+								>
+                                     <Input
+										type="text"
+										placeholder="Incrimental Values"
+										defaultValue={jsonERF.string}
+										fluid
+										
+										size="small"
+									/>
+
+                                </Grid.Column>
+                                    </Grid>
 								</Grid.Column>
 								<Grid.Column width={this.col3}>
-									units
+                                <Popup
+										content={jsonERF.comment}
+										position="top center"
+										trigger={<Label><Icon name="info"/>info</Label>} />
 								</Grid.Column>
 							</Grid>
 						)
@@ -228,15 +279,11 @@ export class Pretty extends Component {
 									width={this.col1}
 									textAlign="right"
 								>
-									<Popup
-										content={jsonERF.comment}
-										position="top center"
-										trigger={
+									
 											<Label size="large">
 												{jsonERF.object}
 											</Label>
-										}
-									/>
+
 								</Grid.Column>
 								<Grid.Column width={this.col2}>
 									<Input
@@ -248,7 +295,10 @@ export class Pretty extends Component {
 									/>
 								</Grid.Column>
 								<Grid.Column width={this.col3}>
-									units
+                                <Popup
+										content={jsonERF.comment}
+										position="top center"
+										trigger={<Label><Icon name="info"/>info</Label>} />
 								</Grid.Column>
 							</Grid>
 						)
@@ -263,15 +313,11 @@ export class Pretty extends Component {
 									width={this.col1}
 									textAlign="right"
 								>
-									<Popup
-										content={jsonERF.comment}
-										position="top center"
-										trigger={
+									
 											<Label size="large">
 												{jsonERF.object}
 											</Label>
-										}
-									/>
+
 								</Grid.Column>
 								<Grid.Column width={this.col2}>
 									<Input
@@ -283,52 +329,67 @@ export class Pretty extends Component {
 									/>
 								</Grid.Column>
 								<Grid.Column width={this.col3}>
-									units
+                                <Popup
+										content={jsonERF.comment}
+										position="top center"
+										trigger={<Label><Icon name="info"/>info</Label>} />
 								</Grid.Column>
 							</Grid>
 						)
 				}
-				return (
-					<div>
-						<Input
-							type="text"
-							placeholder={jsonERF.comment}
-							size="small"
-							fluid
-							defaultValue={jsonERF.string}
-							className="densegrid"
-						>
-							<Popup
-								wide="very"
-								position="bottom left"
-								content={jsonERF.comment}
-								trigger={
-									<Label className="Objectname">
-										{jsonERF.object}
-									</Label>
-								}
-							/>
-							<input />
-						</Input>
+				// return (
+				// 	<div>
+				// 		<Input
+				// 			type="text"
+				// 			placeholder={jsonERF.comment}
+				// 			size="small"
+				// 			fluid
+				// 			defaultValue={jsonERF.string}
+				// 			className="densegrid"
+				// 		>
+				// 			<Popup
+				// 				wide="very"
+				// 				position="bottom left"
+				// 				content={jsonERF.comment}
+				// 				trigger={
+				// 					<Label className="Objectname">
+				// 						{jsonERF.object}
+				// 					</Label>
+				// 				}
+				// 			/>
+				// 			<input />
+				// 		</Input>
 
-						<br />
-					</div>
-				)
+				// 		<br />
+				// 	</div>
+				// )
 		}
 		//}
 	}
 
+    handlescroll = (location) => {
+        scroller.scrollTo(location, {
+            duration: 500,
+            smooth: true,
+            offset: -100, // Scrolls to element + 50 pixels down the page
+          })
+    }
+
 	linkmaker = (ERFmodel) => {
 		return (
+
 			<Link
 				activeClass="active"
-				className="test4"
 				to={ERFmodel}
 				spy={true}
 				smooth={true}
-				duration={500}
+                duration={500}
+                offset={-93}
+                isDynamic={true}
 			>
-				{ERFmodel}
+                <Menu.Item>{ERFmodel}</Menu.Item>
+                
+				
 			</Link>
 		)
 	}
@@ -342,16 +403,16 @@ export class Pretty extends Component {
 			<div ref={this.titleRef} className="Table">
 				<Grid columns={2}>
 					<Grid.Column width={12} className="densegrid">
-						{jsonERF.map((ERF) => this.headermaker(ERF))}
-						{/* <Grid.Column width={this.col1}>asdf</Grid.Column>
-							<Grid.Column width={this.col1}>asdf</Grid.Column>
-							<Grid.Column width={this.col1}>asdf</Grid.Column> */}
-						{/* {jsonERF.map((ERF) => this.columnmaker(ERF))}
-						This is cool */}
 						{jsonERF.map((ERF) => this.contentmaker(ERF))}
 					</Grid.Column>
 					<Grid.Column width={4} className="densegrid">
-						{ERFmodels.map((ERF) => this.linkmaker(ERF))}
+                    <Sticky offset={41} context={this.titleRef}>
+
+                        <Menu vertical>
+                        {ERFmodels.map((ERF) => this.linkmaker(ERF))}
+                        </Menu>
+                        </Sticky>
+						
 
 						{/* <Segment>
 							{jsonERF.map((ERF) => this.contentmaker(ERF))}

@@ -37,8 +37,12 @@
 }
 
 .densegrid.grid {
-	margin: 3px !important;
+	margin: 1px !important;
 }
 .densegrid.grid .column {
-	padding: 3px !important;
+	padding: 1px !important;
+}
+
+.Headers {
+	padding: 10px 0px 5px 10px !important;
 }

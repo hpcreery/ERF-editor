@@ -8,9 +8,9 @@ const ipc = electron.ipcRenderer
 //const fs = window.require('fs')
 //const dir = path.join(__dirname, '/../public/cmpetch.erf')
 const dirc =
-	'/Users/Professional/Documents/MyPrograms/JavaScript/Genesis/erfeditor/ERF-editor/public/cmpetch.erf'
+//	'/Users/Professional/Documents/MyPrograms/JavaScript/Genesis/erfeditor/ERF-editor/public/cmpetch.erf'
 //const dirc =
-//	'C:\\Users\\huntercreery\\Documents\\Projects\\JS\\ERF\\editor\\public\\cmpetch.erf'
+	'C:\\Users\\huntercreery\\Documents\\Projects\\JS\\ERF\\editor\\public\\cmpetch.erf'
 
 class App extends Component {
 	componentDidMount() {
