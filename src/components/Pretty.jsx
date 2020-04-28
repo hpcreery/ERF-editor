@@ -12,22 +12,17 @@ import {
 	Rail,
 	Grid,
 	Menu,
-    Table,
-    Header
+	Table,
+	Header,
 } from 'semantic-ui-react'
-import {
-	Link,
-	animateScroll as scroll,
-	scroller,
-} from 'react-scroll'
+import { Link, animateScroll as scroll, scroller } from 'react-scroll'
 import './Theme.css'
 
 export class Pretty extends Component {
 	constructor(props) {
-        super(props)
-        
-        
-        this.opendir = this.props.opendir
+		super(props)
+
+		this.opendir = this.props.opendir
 	}
 
 	static propTypes = {}
@@ -47,12 +42,12 @@ export class Pretty extends Component {
 	contentmaker = (jsonERF) => {
 		this.col1 = 4
 		this.col2 = 10
-        this.col3 = 2
-        
+		this.col3 = 2
+
 		switch (jsonERF.type) {
 			case 'header':
 				switch (jsonERF.object) {
-                    case '.name':
+					case '.name':
 						return (
 							<div>
 								<Sticky offset={41} context={this.titleRef}>
@@ -70,45 +65,45 @@ export class Pretty extends Component {
 													type: 'submit',
 													content: 'Go',
 												}}
-                                                placeholder="Navigate to..."
-                                                defaultValue={this.dir}
+												placeholder="Navigate to..."
+												defaultValue={this.dir}
 											/>
 										</Menu.Item>
 									</Menu>
 								</Sticky>
-                                <Divider />
+								<Divider />
 							</div>
 						)
 					case '.uid':
 						return (
 							<div>
-                                <Segment
-                                    secondary
-                                    className="Label"
-                                    name={jsonERF.string}
-                                >
-                                    UID: {jsonERF.string}
-                                </Segment>
-                                <Divider />
+								<Segment
+									secondary
+									className="Label"
+									name={jsonERF.string}
+								>
+									UID: {jsonERF.string}
+								</Segment>
+								<Divider />
 							</div>
 						)
 					case '.menu':
-						return(
+						return (
 							<div>
-                                <Segment
-                                    secondary
-                                    className="Label"
-                                    name={jsonERF.string}
-                                >
-                                    MENU: {jsonERF.string}
-                                </Segment>
-                                <Divider />
+								<Segment
+									secondary
+									className="Label"
+									name={jsonERF.string}
+								>
+									MENU: {jsonERF.string}
+								</Segment>
+								<Divider />
 							</div>
 						)
 					case '.model':
 						return (
 							<div>
-                                <Divider />
+								<Divider />
 								<Table>
 									<Table.Header name={jsonERF.string}>
 										<Sticky
@@ -118,43 +113,41 @@ export class Pretty extends Component {
 											<Segment
 												secondary
 												className="Label"
-												
 											>
 												MODEL: {jsonERF.string}
 											</Segment>
 										</Sticky>
 									</Table.Header>
 								</Table>
-                                
 							</div>
 						)
 					case '.units':
-                        this.units = jsonERF.string
+						this.units = jsonERF.string
 						return
 					case '.colors':
 						return
 					case '.ranges\r':
 						return (
 							<div>
-								<Header dividing className='Headers'>
-                                    Ranges
-                                </Header>
+								<Header dividing className="Headers">
+									Ranges
+								</Header>
 							</div>
 						)
 					case '.pdef\r':
-						return(
+						return (
 							<div>
-								<Header dividing className='Headers'>
-                                    Parameter Defaults
-                                </Header>
+								<Header dividing className="Headers">
+									Parameter Defaults
+								</Header>
 							</div>
 						)
 					case '.vars\r':
-						return(
+						return (
 							<div>
-								<Header dividing className='Headers'>
-                                    Variables
-                                </Header>
+								<Header dividing className="Headers">
+									Variables
+								</Header>
 							</div>
 						)
 				}
@@ -184,7 +177,7 @@ export class Pretty extends Component {
 									/>
 								</Grid.Column>
 								<Grid.Column width={this.col3}>
-                                {this.units}
+									{this.units}
 								</Grid.Column>
 							</Grid>
 						)
@@ -201,74 +194,70 @@ export class Pretty extends Component {
 									width={this.col1}
 									textAlign="right"
 								>
-									
-											<Label size="large">
-												{jsonERF.object}
-											</Label>
-						
+									<Label size="large">{jsonERF.object}</Label>
 								</Grid.Column>
 								<Grid.Column width={this.col2}>
-                                <Grid
-								columns={4}
-								verticalAlign="middle"
-								className="densegrid"
-							>
-                                <Grid.Column
-                                width={1}
-                                textAlign='center'>
+									<Grid
+										columns={4}
+										verticalAlign="middle"
+										className="densegrid"
+									>
+										<Grid.Column
+											width={1}
+											textAlign="center"
+										>
+											=
+										</Grid.Column>
+										<Grid.Column
+											width={5}
+											textAlign="right"
+										>
+											<Input
+												type="text"
+												placeholder="Incrimental Values"
+												defaultValue={jsonERF.string}
+												fluid
+												size="small"
+											/>
+										</Grid.Column>
 
-                                    =
-                                </Grid.Column>
-                                <Grid.Column
-									width={5}
-									textAlign="right"
-								>
-                                     <Input
-										type="text"
-										placeholder="Incrimental Values"
-										defaultValue={jsonERF.string}
-										fluid
-										
-										size="small"
-									/>
-
-                                </Grid.Column>
-                                   
-                                <Grid.Column
-									width={5}
-									textAlign="right"
-								>
-                                     <Input
-										type="text"
-										placeholder="Incrimental Values"
-										defaultValue={jsonERF.string}
-										fluid
-										
-										size="small"
-									/>
-
-                                </Grid.Column>
-                                <Grid.Column
-									width={5}
-									textAlign="right"
-								>
-                                     <Input
-										type="text"
-										placeholder="Incrimental Values"
-										defaultValue={jsonERF.string}
-										fluid
-										
-										size="small"
-									/>
-
-                                </Grid.Column>
-                                    </Grid>
+										<Grid.Column
+											width={5}
+											textAlign="right"
+										>
+											<Input
+												type="text"
+												placeholder="Incrimental Values"
+												defaultValue={jsonERF.string}
+												fluid
+												size="small"
+											/>
+										</Grid.Column>
+										<Grid.Column
+											width={5}
+											textAlign="right"
+										>
+											<Input
+												type="text"
+												placeholder="Incrimental Values"
+												defaultValue={jsonERF.string}
+												fluid
+												size="small"
+											/>
+										</Grid.Column>
+									</Grid>
 								</Grid.Column>
 								<Grid.Column width={this.col3}>
-                                <Popup
+									<Popup
 										content={jsonERF.comment}
 										position="top center"
-										trigger={<Label><Icon name="info"/>info</Label>} />
+										trigger={
+											<Label>
+												<Icon name="info" />
+												info
+											</Label>
+										}
+									/>
 								</Grid.Column>
 							</Grid>
 						)
@@ -283,11 +272,7 @@ export class Pretty extends Component {
 									width={this.col1}
 									textAlign="right"
 								>
-									
-											<Label size="large">
-												{jsonERF.object}
-											</Label>
-
+									<Label size="large">{jsonERF.object}</Label>
 								</Grid.Column>
 								<Grid.Column width={this.col2}>
 									<Input
@@ -299,10 +284,16 @@ export class Pretty extends Component {
 									/>
 								</Grid.Column>
 								<Grid.Column width={this.col3}>
-                                <Popup
+									<Popup
 										content={jsonERF.comment}
 										position="top center"
-										trigger={<Label><Icon name="info"/>info</Label>} />
+										trigger={
+											<Label>
+												<Icon name="info" />
+												info
+											</Label>
+										}
+									/>
 								</Grid.Column>
 							</Grid>
 						)
@@ -317,11 +308,7 @@ export class Pretty extends Component {
 									width={this.col1}
 									textAlign="right"
 								>
-									
-											<Label size="large">
-												{jsonERF.object}
-											</Label>
-
+									<Label size="large">{jsonERF.object}</Label>
 								</Grid.Column>
 								<Grid.Column width={this.col2}>
 									<Input
@@ -333,10 +320,16 @@ export class Pretty extends Component {
 									/>
 								</Grid.Column>
 								<Grid.Column width={this.col3}>
-                                <Popup
+									<Popup
 										content={jsonERF.comment}
 										position="top center"
-										trigger={<Label><Icon name="info"/>info</Label>} />
+										trigger={
+											<Label>
+												<Icon name="info" />
+												info
+											</Label>
+										}
+									/>
 								</Grid.Column>
 							</Grid>
 						)
@@ -344,29 +337,26 @@ export class Pretty extends Component {
 		}
 	}
 
-    handlescroll = (location) => {
-        scroller.scrollTo(location, {
-            duration: 500,
-            smooth: true,
-            offset: -100, // Scrolls to element + 50 pixels down the page
-          })
-    }
+	handlescroll = (location) => {
+		scroller.scrollTo(location, {
+			duration: 500,
+			smooth: true,
+			offset: -100, // Scrolls to element + 50 pixels down the page
+		})
+	}
 
 	linkmaker = (ERFmodel) => {
 		return (
-
 			<Link
 				activeClass="active"
 				to={ERFmodel}
 				spy={true}
 				smooth={true}
-                duration={500}
-                offset={-93}
-                isDynamic={true}
+				duration={500}
+				offset={-93}
+				isDynamic={true}
 			>
-                <Menu.Item>{ERFmodel}</Menu.Item>
-                
-				
+				<Menu.Item>{ERFmodel}</Menu.Item>
 			</Link>
 		)
 	}
@@ -374,8 +364,7 @@ export class Pretty extends Component {
 		const { jsonERF, filelength, ERFmodels, dir } = this.props
 		//console.log(jsonERF)
 		//console.log(JSON.stringify(jsonERF))
-        this.dir = dir
-        
+		this.dir = dir
 
 		return (
 			<div ref={this.titleRef} className="Table">
@@ -384,18 +373,14 @@ export class Pretty extends Component {
 						{jsonERF.map((ERF) => this.contentmaker(ERF))}
 					</Grid.Column>
 					<Grid.Column width={4} className="densegrid">
-                    <Sticky offset={41} context={this.titleRef}>
-
-                        <Menu vertical>
-                        {ERFmodels.map((ERF) => this.linkmaker(ERF))}
-                        <button onClick={() => this.opendir()}>
-                            Push me
-                        </button>
-                        </Menu>
-                        </Sticky>
-						
-                        
-						
+						<Sticky offset={41} context={this.titleRef}>
+							<Menu vertical>
+								{ERFmodels.map((ERF) => this.linkmaker(ERF))}
+								<button onClick={() => this.opendir()}>
+									Push me
+								</button>
+							</Menu>
+						</Sticky>
 					</Grid.Column>
 				</Grid>
 			</div>

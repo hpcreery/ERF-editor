@@ -29,19 +29,16 @@ const dialog = electron.dialog
 // =======
 
 class ReadFiles extends Component {
-
-	
 	constructor(props) {
 		super(props)
 		this.opendir = this.props.opendir
-		
-		console.log(this.state.dir)
 
+		console.log(this.state.dir)
 	}
-	state = {dir: this.props.dir}
+	state = { dir: this.props.dir }
 
 	componentWillReceiveProps(nextProps) {
-		this.setState({dir: String(nextProps.dir)})
+		this.setState({ dir: String(nextProps.dir) })
 		console.log('File parser recieved props')
 		console.log(String(nextProps.dir))
 
@@ -49,11 +46,6 @@ class ReadFiles extends Component {
 		this.lines = this.contents.split('\n')
 		this.modelstruct()
 	}
-	
-
-
-
-	
 
 	// This Data model is out not used due to convoluted methods
 	jsonstruct = () => {
@@ -237,9 +229,7 @@ class ReadFiles extends Component {
 		//this.jsonstruct()
 	}
 
-
 	render() {
-		
 		console.log(this.state.dir)
 		return (
 			<div className="File-Contents">
@@ -251,7 +241,6 @@ class ReadFiles extends Component {
 					opendir={this.props.opendir}
 				/>
 				{console.log(this.jsonERF)}
-				
 			</div>
 		)
 	}

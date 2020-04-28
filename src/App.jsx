@@ -7,11 +7,9 @@ const dialog = electron.remote.dialog
 const ipc = electron.ipcRenderer
 
 var dirc =
-//	'/Users/Professional/Documents/MyPrograms/JavaScript/Genesis/erfeditor/ERF-editor/public/cmpetch.erf'
+	'/Users/Professional/Documents/MyPrograms/JavaScript/Genesis/erfeditor/ERF-editor/public/cmpetch.erf'
 //const dirc =
-	'C:\\Users\\huntercreery\\Documents\\Projects\\JS\\ERF\\editor\\public\\cmpetch.erf'
-
-
+//	'C:\\Users\\huntercreery\\Documents\\Projects\\JS\\ERF\\editor\\public\\cmpetch.erf'
 
 class App extends Component {
 	state = {
@@ -24,32 +22,26 @@ class App extends Component {
 		//this.setState(dialog.showOpenDialog({ properties: ['openFile'] }))
 		this.openedir = dialog.showOpenDialogSync({ properties: ['openFile'] })
 		console.log(this.openedir)
-		this.setState({dir: this.openedir})
+		this.setState({ dir: this.openedir })
 	}
-
-		
-
-	
 
 	componentDidMount() {
 		ipc.send('synchronous-message', 'ping')
 		ipc.on('synchronous-reply', (event, arg) => {
 			console.log(arg) // prints "pong"
 		})
-
-		
 	}
-	componentWillMount() {
-
-	}
+	componentWillMount() {}
 	componentDidUpdate() {}
 
 	render() {
-
 		return (
 			<div>
 				<div className="App">
-					<ReadFiles dir={this.state.dir} opendir={this.directoryopener} />
+					<ReadFiles
+						dir={this.state.dir}
+						opendir={this.directoryopener}
+					/>
 				</div>
 			</div>
 		)
