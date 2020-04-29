@@ -53,13 +53,23 @@
 }
 
 .FirstInput>input {
-	border-color: var(--firstrangecolor) !important;
+	border-color: var(--firstrangecolor)  !important;
+	border-width: 0.105rem !important
 }
 
 .SecondInput>input {
 	border-color: var(--secondrangecolor) !important;
+	border-width: 0.105rem !important
 }
 
 .ThirdInput>input {
 	border-color: var(--thirdrangecolor) !important;
+	border-width: 0.105rem !important
+
+}
+
+.ThirdInput>input::selection {
+	border-color: var(--secondrangecolor) !important;
+	border-width: 1.9px !important
+
 }

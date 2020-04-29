@@ -13,17 +13,22 @@ import {
 	Grid,
 	Menu,
 	Table,
-	Header,
+    Header,
+    Placeholder,
+    Ref,
+    Sidebar,
 } from 'semantic-ui-react'
 import { Link, animateScroll as scroll, scroller } from 'react-scroll'
 import './Theme.css'
+var Chart = require('chart.js');
 
 export class Pretty extends Component {
 	constructor(props) {
 		super(props)
 
 		this.opendir = this.props.opendir
-	}
+    }
+    state = { dir: this.props.dir }
 
     static propTypes = {}
     
@@ -36,7 +41,9 @@ export class Pretty extends Component {
 
     }
 
-	titleRef = createRef()
+    titleRef = createRef()
+    bodyRef = createRef()
+
 	titleBar = (name) => {
 		return (
 			<div>
@@ -69,14 +76,7 @@ export class Pretty extends Component {
 										</Menu.Item>
 
 										<Menu.Item position="right">
-											<Input
-												action={{
-													type: 'submit',
-													content: 'Go',
-												}}
-												placeholder="Navigate to..."
-												defaultValue={this.dir}
-											/>
+                                            {this.state.dir}
 										</Menu.Item>
 									</Menu>
 								</Sticky>
@@ -398,7 +398,78 @@ export class Pretty extends Component {
 				<Menu.Item>{ERFmodel}</Menu.Item>
 			</Link>
 		)
-	}
+    }
+    
+    componentWillReceiveProps(nextProps) {
+		this.setState({ dir: String(nextProps.dir) })
+		console.log('Pretty recieved props')
+        console.log(String(nextProps.dir))
+    }
+    chartRef = React.createRef();
+    componentDidMount() {
+        const chartref = this.chartRef.current.getContext("2d");
+        new Chart(chartref, {
+            type: 'bar',
+            
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green'],
+                datasets: [{
+                    label: ' Severity || Mils',
+                    steppedLine: 'after',
+                    data: [0, 1, 3, 5],
+
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)'
+
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 99, 132, 1)',
+                        
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)'
+                    ],
+                    borderWidth: 1
+                },
+                {
+                    label: ' Severity || Mils',
+                    data: [0, 9, 13, 15],
+
+                    steppedLine: 'after',
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes:[{
+                        stacked: true
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    }
+
 	render() {
 		const { jsonERF, filelength, ERFmodels, dir } = this.props
 		//console.log(jsonERF)
@@ -407,21 +478,41 @@ export class Pretty extends Component {
 
 		return (
 			<div ref={this.titleRef} className="Table">
-				<Grid columns={2}>
-					<Grid.Column width={12} className="densegrid">
+
+    
+				<Grid columns={3}>
+					<Grid.Column width={8} className="densegrid">
 						{jsonERF.map((ERF) => this.contentmaker(ERF))}
 					</Grid.Column>
-					<Grid.Column width={4} className="densegrid">
+					<Grid.Column width={3} className="densegrid">
 						<Sticky offset={41} context={this.titleRef}>
 							<Menu vertical>
-								{ERFmodels.map((ERF) => this.linkmaker(ERF))}
-								<button onClick={() => this.opendir()}>
-									Push me
-								</button>
+                            <Menu.Item onClick={() => this.opendir()}>
+									Open ERF
+							</Menu.Item>
+							{ERFmodels.map((ERF) => this.linkmaker(ERF))}
+
+								
 							</Menu>
+                            <div ref={this.bodyRef} className="Table"></div>
 						</Sticky>
+
+                        
+                        
+                        
+                        
+					</Grid.Column>
+                    <Grid.Column width={5} className="densegrid">
+						<Sticky offset={41} context={this.titleRef}>
+                        <canvas
+                            id="myChart"
+                            ref={this.chartRef}
+                        />
+                        </Sticky>
 					</Grid.Column>
 				</Grid>
+
+
 			</div>
 		)
 	}
