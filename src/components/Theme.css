@@ -46,3 +46,20 @@
 .Headers {
 	padding: 10px 0px 5px 10px !important;
 }
+
+
+.NoInput>input {
+	border-color: rgba(175, 66, 236, 0.68) !important;
+}
+
+.FirstInput>input {
+	border-color: var(--firstrangecolor) !important;
+}
+
+.SecondInput>input {
+	border-color: var(--secondrangecolor) !important;
+}
+
+.ThirdInput>input {
+	border-color: var(--thirdrangecolor) !important;
+}

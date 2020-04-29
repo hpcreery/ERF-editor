@@ -25,7 +25,16 @@ export class Pretty extends Component {
 		this.opendir = this.props.opendir
 	}
 
-	static propTypes = {}
+    static propTypes = {}
+    
+    handlerangeChange = (e, { id, location, string }) => console.log(id + location + string + e.target.value)
+    handlebasicChange = (e, {id, string}) => console.log(id + string + e.target.value)
+    rangeseperator = (ranges) => {
+        const found = ranges.match(/\d+/g)
+        //console.log(found)
+        return found
+
+    }
 
 	titleRef = createRef()
 	titleBar = (name) => {
@@ -125,6 +134,11 @@ export class Pretty extends Component {
 						this.units = jsonERF.string
 						return
 					case '.colors':
+                        this.colors = this.rangeseperator(jsonERF.string)
+                        console.log(this.colors)
+                        document.documentElement.style.setProperty("--firstrangecolor", '#'+this.colors[0])
+                        document.documentElement.style.setProperty("--secondrangecolor", '#'+this.colors[1]);
+                        document.documentElement.style.setProperty("--thirdrangecolor", '#'+this.colors[2]);
 						return
 					case '.ranges\r':
 						return (
@@ -173,11 +187,14 @@ export class Pretty extends Component {
 										placeholder="Incrimental Values"
 										defaultValue={jsonERF.string}
 										fluid
-										size="small"
+                                        size="small"
+                                        id={jsonERF.id}
+                                        string={jsonERF.string}
+                                        onChange={this.handlebasicChange}
 									/>
 								</Grid.Column>
 								<Grid.Column width={this.col3}>
-									{this.units}
+									
 								</Grid.Column>
 							</Grid>
 						)
@@ -212,12 +229,18 @@ export class Pretty extends Component {
 											width={5}
 											textAlign="right"
 										>
+                                            
 											<Input
-												type="text"
+                                                className='FirstInput'
+                                                type="text"
 												placeholder="Incrimental Values"
-												defaultValue={jsonERF.string}
+												defaultValue={this.rangeseperator(jsonERF.string)[0]}
 												fluid
-												size="small"
+                                                size="small"
+                                                id={jsonERF.id}
+                                                string={jsonERF.string}
+                                                location='0'
+                                                onChange={this.handlerangeChange}
 											/>
 										</Grid.Column>
 
@@ -226,10 +249,15 @@ export class Pretty extends Component {
 											textAlign="right"
 										>
 											<Input
+                                            className='SecondInput'
 												type="text"
 												placeholder="Incrimental Values"
-												defaultValue={jsonERF.string}
-												fluid
+												defaultValue={this.rangeseperator(jsonERF.string)[1]}
+                                                fluid
+                                                id={jsonERF.id}
+                                                string={jsonERF.string}
+                                                location='1'
+                                                onChange={this.handlerangeChange}
 												size="small"
 											/>
 										</Grid.Column>
@@ -238,10 +266,15 @@ export class Pretty extends Component {
 											textAlign="right"
 										>
 											<Input
+                                            className='ThirdInput'
 												type="text"
 												placeholder="Incrimental Values"
-												defaultValue={jsonERF.string}
-												fluid
+												defaultValue={this.rangeseperator(jsonERF.string)[2]}
+                                                fluid
+                                                id={jsonERF.id}
+                                                string={jsonERF.string}
+                                                location='2'
+                                                onChange={this.handlerangeChange}
 												size="small"
 											/>
 										</Grid.Column>
@@ -280,7 +313,10 @@ export class Pretty extends Component {
 										placeholder="Incrimental Values"
 										defaultValue={jsonERF.string}
 										fluid
-										size="small"
+                                        size="small"
+                                        id={jsonERF.id}
+                                        string={jsonERF.string}
+                                        onChange={this.handlebasicChange}
 									/>
 								</Grid.Column>
 								<Grid.Column width={this.col3}>
@@ -316,7 +352,10 @@ export class Pretty extends Component {
 										placeholder="Incrimental Values"
 										defaultValue={jsonERF.string}
 										fluid
-										size="small"
+                                        size="small"
+                                        id={jsonERF.id}
+                                        string={jsonERF.string}
+                                        onChange={this.handlebasicChange}
 									/>
 								</Grid.Column>
 								<Grid.Column width={this.col3}>
@@ -364,7 +403,7 @@ export class Pretty extends Component {
 		const { jsonERF, filelength, ERFmodels, dir } = this.props
 		//console.log(jsonERF)
 		//console.log(JSON.stringify(jsonERF))
-		this.dir = dir
+		//this.dir = dir
 
 		return (
 			<div ref={this.titleRef} className="Table">

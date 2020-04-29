@@ -5,10 +5,7 @@ const { app, ipcMain } = require('electron')
 const BrowserWindow = electron.BrowserWindow
 const { dialog } = require('electron')
 
-const {
-	default: installExtension,
-	REACT_DEVELOPER_TOOLS,
-} = require('electron-devtools-installer')
+
 
 const path = require('path')
 const url = require('url')
@@ -20,8 +17,8 @@ let mainWindow
 function createWindow() {
 	// Create the browser window.
 	mainWindow = new BrowserWindow({
-		width: 800,
-		height: 600,
+		width: 1025,
+		height: 800,
 		webPreferences: { nodeIntegration: true },
 		titleBarStyle: 'hidden', //frameless
 	})
@@ -38,6 +35,10 @@ function createWindow() {
 
 	// Open the DevTools.
 	if (startUrl == process.env.ELECTRON_START_URL) {
+		const {
+			default: installExtension,
+			REACT_DEVELOPER_TOOLS,
+		} = require('electron-devtools-installer')
 		mainWindow.webContents.openDevTools()
 
 		// Install React Dev Tools for or Dev Session
