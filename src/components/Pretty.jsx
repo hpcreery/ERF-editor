@@ -416,42 +416,20 @@ export class Pretty extends Component {
                 datasets: [{
                     label: ' Severity || Mils',
                     steppedLine: 'after',
-                    data: [0, 1, 3, 5],
+                    data: [1, 1, 3, 5],
 
-                    backgroundColor: [
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 99, 132, 0.2)',
-                        
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)'
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
 
-                    ],
-                    borderColor: [
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)'
-                    ],
+                    borderColor: 'rgba(255, 99, 132, 1)',
                     borderWidth: 1
                 },
                 {
                     label: ' Severity || Mils',
-                    data: [0, 9, 13, 15],
+                    data: [12, 9, 13, 25],
 
                     steppedLine: 'after',
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)'
-                    ],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
                     borderWidth: 1
                 }]
             },
@@ -507,6 +485,7 @@ export class Pretty extends Component {
                         <canvas
                             id="myChart"
                             ref={this.chartRef}
+                            height="300"
                         />
                         </Sticky>
 					</Grid.Column>
