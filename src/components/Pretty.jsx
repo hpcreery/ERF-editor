@@ -434,7 +434,7 @@ export class Pretty extends Component {
 	componentDidMount() {
 		const chartref = this.chartRef.current.getContext('2d')
 		new Chart(chartref, {
-			type: 'bar',
+			type: 'horizontalBar',
 
 			data: {
 				labels: ['Red', 'Blue', 'Yellow', 'Green'],
@@ -461,14 +461,22 @@ export class Pretty extends Component {
 				],
 			},
 			options: {
+        tooltips : {
+          backgroundColor: 'rgba(255, 255, 255, 0.9)',
+          titleFontColor: '#000',
+          bodyFontColor: '#000',
+          borderColor: 'rgba(0, 0, 0, 0.3)',
+          borderWidth: 1
+        },
 				scales: {
 					xAxes: [
 						{
-							stacked: true,
+							stacked: false,
 						},
 					],
 					yAxes: [
 						{
+              stacked: true,
 							ticks: {
 								beginAtZero: true,
 							},

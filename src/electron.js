@@ -17,7 +17,7 @@ let mainWindow
 function createWindow() {
 	// Create the browser window.
 	mainWindow = new BrowserWindow({
-		width: 1025,
+width: 1025,
 		height: 800,
 		webPreferences: { nodeIntegration: true },
 		titleBarStyle: 'hidden', //frameless

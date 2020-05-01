@@ -46,10 +46,57 @@ class ReadFiles extends Component {
 		this.lines = this.contents.split('\n')
 		this.modelstruct()
 	}
+	graphstruct = () => {
+		this.graphERF = {}
+		for (var i = 0; i < this.lines.length; i++) {
+			this.erf[i] = { string: this.lines[i] }
 
+			if (this.lines[i].startsWith('.')) {
+				var value = this.erf[i].string
+					.split(' ')
+					.slice(1)
+					.join(' ')
+					.concat('')
+				var object = this.erf[i].string.split(' ').shift()
+				if (object === '.range\r') {
+					this.workingrange = value
+				}
+			} else if (this.lines[i].startsWith('#')) {
+			} else if (this.lines[i].startsWith(' ')) {
+			} else if (this.lines[i].startsWith('\r')) {
+			} else {
+				var invalue = this.erf[i].string
+					.split(' ')
+					.slice(1)
+					.join(' ')
+					.concat('')
+				var inobject = this.erf[i].string.split(' ').shift()
+				var invalue = invalue.split('#')
+				var comment = invalue[1]
+				var invalue = invalue[0]
+
+				// Line format:
+				// object + ' ' + value + '#' + comment
+
+				if (object === '.colors') {
+
+				}
+				if (object === '.ranges\r') {
+
+				}
+				if (object === '.pdef\r') {
+
+				}
+				if (object === '.vars\r') {
+
+				}
+			}
+		}
+
+	}
 	// This Data model is out not used due to convoluted methods
 	jsonstruct = () => {
-		this.jsonERF = {
+		this.rawjsonERF = {
 			header: {},
 			params: {},
 			models: {},
@@ -71,41 +118,41 @@ class ReadFiles extends Component {
 					object === '.menu' ||
 					object === '.modify'
 				) {
-					this.jsonERF.header[object] = {
+					this.rawjsonERF.header[object] = {
 						id: i,
 						object: object,
 						value: value,
 					}
 				}
 				if (object === '.param') {
-					this.jsonERF.params[i] = {
+					this.rawjsonERF.params[i] = {
 						id: i,
 						object: object,
 						value: value,
 					}
 				}
 				if (object === '.model') {
-					this.jsonERF.models[value] = {
+					this.rawjsonERF.models[value] = {
 						id: i,
 						object: object,
 						value: value,
 					}
-					var workingmodel = this.jsonERF.models[value].value
+					var workingmodel = this.rawjsonERF.models[value].value
 				}
 				if (object === '.ranges\r') {
-					this.jsonERF.models[workingmodel].ranges = {
+					this.rawjsonERF.models[workingmodel].ranges = {
 						id: i,
 						object: object,
 					}
 				}
 				if (object === '.pdef\r') {
-					this.jsonERF.models[workingmodel].pdef = {
+					this.rawjsonERF.models[workingmodel].pdef = {
 						id: i,
 						object: object,
 					}
 				}
 				if (object === '.vars\r') {
-					this.jsonERF.models[workingmodel].vars = {
+					this.rawjsonERF.models[workingmodel].vars = {
 						id: i,
 						object: object,
 					}
@@ -128,14 +175,14 @@ class ReadFiles extends Component {
 				// object + ' ' + value + '#' + comment
 
 				if (object === '.colors') {
-					this.jsonERF.models[workingmodel].colors = {
+					this.rawjsonERF.models[workingmodel].colors = {
 						id: i,
 						object: object,
 						value: value,
 					}
 				}
 				if (object === '.ranges\r') {
-					this.jsonERF.models[workingmodel].ranges[inobject] = {
+					this.rawjsonERF.models[workingmodel].ranges[inobject] = {
 						id: i,
 						object: inobject,
 						value: invalue,
@@ -143,7 +190,7 @@ class ReadFiles extends Component {
 					}
 				}
 				if (object === '.pdef\r') {
-					this.jsonERF.models[workingmodel].pdef[inobject] = {
+					this.rawjsonERF.models[workingmodel].pdef[inobject] = {
 						id: i,
 						object: inobject,
 						value: invalue,
@@ -151,7 +198,7 @@ class ReadFiles extends Component {
 					}
 				}
 				if (object === '.vars\r') {
-					this.jsonERF.models[workingmodel].vars[inobject] = {
+					this.rawjsonERF.models[workingmodel].vars[inobject] = {
 						id: i,
 						object: inobject,
 						value: invalue,
@@ -161,7 +208,7 @@ class ReadFiles extends Component {
 			}
 		}
 		//console.log(JSON.stringify(this.erf))
-		//console.log(jsonERF)
+		console.log(this.rawjsonERF)
 	}
 
 	modelstruct = () => {
@@ -226,7 +273,7 @@ class ReadFiles extends Component {
 		this.lines = this.contents.split('\n')
 		this.filelength = this.lines.length
 		this.modelstruct() // main model structure
-		//this.jsonstruct()
+		this.jsonstruct()
 	}
 
 	render() {
