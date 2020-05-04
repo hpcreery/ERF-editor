@@ -50,7 +50,7 @@ export class Rangegraph extends Component {
 				labels: this.ERFmodels,
 				datasets: [
 					{
-						label: ' Severity',
+						label: ' Mils',
 						steppedLine: 'after',
 						data: this.rangeplot[this.graphrange].red,
 						backgroundColor: 'rgba(99, 10, 10, 0.5)',
@@ -58,7 +58,7 @@ export class Rangegraph extends Component {
 						borderWidth: 1,
 					},
 					{
-						label: ' Severity',
+						label: ' Mils',
 						data: this.rangeplot[this.graphrange].yellow,
 						steppedLine: 'after',
 						backgroundColor: 'rgba(99, 99, 10, 0.5)',
@@ -66,7 +66,7 @@ export class Rangegraph extends Component {
 						borderWidth: 1,
 					},
 					{
-						label: ' Severity',
+						label: ' Mils',
 						data: this.rangeplot[this.graphrange].green,
 						steppedLine: 'after',
 						backgroundColor: 'rgba(10, 90, 10, 0.5)',
