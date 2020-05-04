@@ -46,6 +46,7 @@ class ReadFiles extends Component {
 		this.lines = this.contents.split('\n')
 		this.modelstruct()
 	}
+	//range.model.color
 	graphstruct = () => {
 		this.graphERF = {}
 		for (var i = 0; i < this.lines.length; i++) {
@@ -79,20 +80,12 @@ class ReadFiles extends Component {
 				// object + ' ' + value + '#' + comment
 
 				if (object === '.colors') {
-
-				}
-				if (object === '.ranges\r') {
-
-				}
-				if (object === '.pdef\r') {
-
-				}
-				if (object === '.vars\r') {
-
+				} else if (object === '.ranges\r') {
+				} else if (object === '.pdef\r') {
+				} else if (object === '.vars\r') {
 				}
 			}
 		}
-
 	}
 	// This Data model is out not used due to convoluted methods
 	jsonstruct = () => {
@@ -102,6 +95,7 @@ class ReadFiles extends Component {
 			models: {},
 		}
 		this.erf = {}
+		this.modelgraph = []
 		for (var i = 0; i < this.lines.length; i++) {
 			this.erf[i] = { string: this.lines[i] }
 
@@ -138,6 +132,8 @@ class ReadFiles extends Component {
 						value: value,
 					}
 					var workingmodel = this.rawjsonERF.models[value].value
+
+					//this.modelgraph.push(value)
 				}
 				if (object === '.ranges\r') {
 					this.rawjsonERF.models[workingmodel].ranges = {

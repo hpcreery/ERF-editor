@@ -17,9 +17,12 @@ import {
 	Placeholder,
 	Ref,
 	Sidebar,
+	Dropdown,
 } from 'semantic-ui-react'
 import { Link, animateScroll as scroll, scroller } from 'react-scroll'
+import Rangegraph from './Graph'
 import './Theme.css'
+
 var Chart = require('chart.js')
 
 export class Pretty extends Component {
@@ -32,13 +35,43 @@ export class Pretty extends Component {
 
 	static propTypes = {}
 
-	handlerangeChange = (e, { id, location, string }) =>
+	rangeplot = {
+		titles: [],
+	}
+
+	handleRangeChange = (e, { id, location, string }) =>
 		console.log(id + location + string + e.target.value)
-	handlebasicChange = (e, { id, string }) =>
+	handleBasicChange = (e, { id, string }) =>
 		console.log(id + string + e.target.value)
-	rangeseperator = (ranges) => {
+	rangeSeperator(value, object) {
+		const found = value.match(/\d+/g)
+		//vendors.some( vendor => vendor['Name'] === 'Magenic' )
+		this.rangePlotterData(found, object)
+		return found
+	}
+	rangePlotterData(found, object) {
+		if (this.rangeplot.titles.some((title) => title.text === object)) {
+		} else {
+			this.rangeplot.titles.push({
+				key: object,
+				text: object,
+				value: object,
+			})
+			//console.log(this.rangeplot.titles)
+		}
+		if (this.rangeplot[object] == undefined) {
+			this.rangeplot[object] = { red: [], yellow: [], green: [] }
+		}
+		if (object) {
+			this.rangeplot[object].red.push(found[0])
+			this.rangeplot[object].yellow.push(found[1])
+			this.rangeplot[object].green.push(found[2])
+		}
+		return null
+	}
+
+	colorSeperator = (ranges) => {
 		const found = ranges.match(/\d+/g)
-		//console.log(found)
 		return found
 	}
 
@@ -56,7 +89,7 @@ export class Pretty extends Component {
 		)
 	}
 
-	contentmaker = (jsonERF) => {
+	contentMaker = (jsonERF) => {
 		this.col1 = 4
 		this.col2 = 10
 		this.col3 = 2
@@ -135,7 +168,7 @@ export class Pretty extends Component {
 						this.units = jsonERF.string
 						return
 					case '.colors':
-						this.colors = this.rangeseperator(jsonERF.string)
+						this.colors = this.colorSeperator(jsonERF.string)
 						console.log(this.colors)
 						document.documentElement.style.setProperty(
 							'--firstrangecolor',
@@ -200,7 +233,7 @@ export class Pretty extends Component {
 										size="small"
 										id={jsonERF.id}
 										string={jsonERF.string}
-										onChange={this.handlebasicChange}
+										onChange={this.handleBasicChange}
 									/>
 								</Grid.Column>
 								<Grid.Column width={this.col3}></Grid.Column>
@@ -209,6 +242,11 @@ export class Pretty extends Component {
 				}
 				switch (jsonERF.parent) {
 					case '.ranges\r':
+						this.rangevalue = this.rangeSeperator(
+							jsonERF.string,
+							jsonERF.object
+						)
+						//this.rangePlotterData(this.rangevalue, jsonERF.object)
 						return (
 							<Grid
 								columns={3}
@@ -242,9 +280,7 @@ export class Pretty extends Component {
 												type="text"
 												placeholder="Incrimental Values"
 												defaultValue={
-													this.rangeseperator(
-														jsonERF.string
-													)[0]
+													this.rangevalue[0]
 												}
 												fluid
 												size="small"
@@ -252,7 +288,7 @@ export class Pretty extends Component {
 												string={jsonERF.string}
 												location="0"
 												onChange={
-													this.handlerangeChange
+													this.handleRangeChange
 												}
 											/>
 										</Grid.Column>
@@ -266,16 +302,14 @@ export class Pretty extends Component {
 												type="text"
 												placeholder="Incrimental Values"
 												defaultValue={
-													this.rangeseperator(
-														jsonERF.string
-													)[1]
+													this.rangevalue[1]
 												}
 												fluid
 												id={jsonERF.id}
 												string={jsonERF.string}
 												location="1"
 												onChange={
-													this.handlerangeChange
+													this.handleRangeChange
 												}
 												size="small"
 											/>
@@ -289,16 +323,14 @@ export class Pretty extends Component {
 												type="text"
 												placeholder="Incrimental Values"
 												defaultValue={
-													this.rangeseperator(
-														jsonERF.string
-													)[2]
+													this.rangevalue[2]
 												}
 												fluid
 												id={jsonERF.id}
 												string={jsonERF.string}
 												location="2"
 												onChange={
-													this.handlerangeChange
+													this.handleRangeChange
 												}
 												size="small"
 											/>
@@ -341,7 +373,7 @@ export class Pretty extends Component {
 										size="small"
 										id={jsonERF.id}
 										string={jsonERF.string}
-										onChange={this.handlebasicChange}
+										onChange={this.handleBasicChange}
 									/>
 								</Grid.Column>
 								<Grid.Column width={this.col3}>
@@ -380,7 +412,7 @@ export class Pretty extends Component {
 										size="small"
 										id={jsonERF.id}
 										string={jsonERF.string}
-										onChange={this.handlebasicChange}
+										onChange={this.handleBasicChange}
 									/>
 								</Grid.Column>
 								<Grid.Column width={this.col3}>
@@ -432,59 +464,55 @@ export class Pretty extends Component {
 	}
 	chartRef = React.createRef()
 	componentDidMount() {
-		const chartref = this.chartRef.current.getContext('2d')
-		new Chart(chartref, {
-			type: 'horizontalBar',
-
-			data: {
-				labels: ['Red', 'Blue', 'Yellow', 'Green'],
-				datasets: [
-					{
-						label: ' Severity || Mils',
-						steppedLine: 'after',
-						data: [1, 1, 3, 5],
-
-						backgroundColor: 'rgba(255, 99, 132, 0.2)',
-
-						borderColor: 'rgba(255, 99, 132, 1)',
-						borderWidth: 1,
-					},
-					{
-						label: ' Severity || Mils',
-						data: [12, 9, 13, 25],
-
-						steppedLine: 'after',
-						backgroundColor: 'rgba(75, 192, 192, 0.2)',
-						borderColor: 'rgba(75, 192, 192, 1)',
-						borderWidth: 1,
-					},
-				],
-			},
-			options: {
-        tooltips : {
-          backgroundColor: 'rgba(255, 255, 255, 0.9)',
-          titleFontColor: '#000',
-          bodyFontColor: '#000',
-          borderColor: 'rgba(0, 0, 0, 0.3)',
-          borderWidth: 1
-        },
-				scales: {
-					xAxes: [
-						{
-							stacked: false,
-						},
-					],
-					yAxes: [
-						{
-              stacked: true,
-							ticks: {
-								beginAtZero: true,
-							},
-						},
-					],
-				},
-			},
-		})
+		// const chartref = this.chartRef.current.getContext('2d')
+		// new Chart(chartref, {
+		// 	type: 'horizontalBar',
+		// 	data: {
+		// 		labels: ['Red', 'Blue', 'Yellow', 'Green'],
+		// 		datasets: [
+		// 			{
+		// 				label: ' Severity || Mils',
+		// 				steppedLine: 'after',
+		// 				data: [1, 1, 3, 5],
+		// 				backgroundColor: 'rgba(255, 99, 132, 0.2)',
+		// 				borderColor: 'rgba(255, 99, 132, 1)',
+		// 				borderWidth: 1,
+		// 			},
+		// 			{
+		// 				label: ' Severity || Mils',
+		// 				data: [12, 9, 13, 25],
+		// 				steppedLine: 'after',
+		// 				backgroundColor: 'rgba(75, 192, 192, 0.2)',
+		// 				borderColor: 'rgba(75, 192, 192, 1)',
+		// 				borderWidth: 1,
+		// 			},
+		// 		],
+		// 	},
+		// 	options: {
+		// 		tooltips: {
+		// 			backgroundColor: 'rgba(255, 255, 255, 0.9)',
+		// 			titleFontColor: '#000',
+		// 			bodyFontColor: '#000',
+		// 			borderColor: 'rgba(0, 0, 0, 0.3)',
+		// 			borderWidth: 1,
+		// 		},
+		// 		scales: {
+		// 			xAxes: [
+		// 				{
+		// 					stacked: false,
+		// 				},
+		// 			],
+		// 			yAxes: [
+		// 				{
+		// 					stacked: true,
+		// 					ticks: {
+		// 						beginAtZero: true,
+		// 					},
+		// 				},
+		// 			],
+		// 		},
+		// 	},
+		// })
 	}
 
 	render() {
@@ -508,16 +536,31 @@ export class Pretty extends Component {
 						</Sticky>
 					</Grid.Column>
 					<Grid.Column width={8} className="densegrid">
-						{jsonERF.map((ERF) => this.contentmaker(ERF))}
+						{jsonERF.map((ERF) => this.contentMaker(ERF))}
 					</Grid.Column>
 
 					<Grid.Column width={5} className="densegrid">
 						<Sticky offset={41} context={this.titleRef}>
-							<canvas
-								id="myChart"
-								ref={this.chartRef}
-								height="300"
+							<Menu>
+								<Menu.Item position="left">Range:</Menu.Item>
+
+								<Dropdown
+									multiple
+									selection
+									options={this.rangeplot.titles}
+									placeholder="I close on change"
+									className="OverCanvas"
+								/>
+							</Menu>
+							<Divider />
+						</Sticky>
+
+						<Sticky offset={115} context={this.titleRef}>
+							<Rangegraph
+								rangeplot={this.rangeplot}
+								ERFmodels={ERFmodels}
 							/>
+							{console.log(ERFmodels)}
 						</Sticky>
 					</Grid.Column>
 				</Grid>

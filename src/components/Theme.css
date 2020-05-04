@@ -47,29 +47,34 @@
 	padding: 10px 0px 5px 10px !important;
 }
 
-
-.NoInput>input {
+.NoInput > input {
 	border-color: rgba(175, 66, 236, 0.68) !important;
 }
 
-.FirstInput>input {
-	border-color: var(--firstrangecolor)  !important;
-	border-width: 0.105rem !important
+.FirstInput > input {
+	border-color: var(--firstrangecolor) !important;
+	border-width: 0.105rem !important;
 }
 
-.SecondInput>input {
+.SecondInput > input {
 	border-color: var(--secondrangecolor) !important;
-	border-width: 0.105rem !important
+	border-width: 0.105rem !important;
 }
 
-.ThirdInput>input {
+.ThirdInput > input {
 	border-color: var(--thirdrangecolor) !important;
-	border-width: 0.105rem !important
-
+	border-width: 0.105rem !important;
 }
 
-.ThirdInput>input::selection {
+.ThirdInput > input::selection {
 	border-color: var(--secondrangecolor) !important;
-	border-width: 1.9px !important
+	border-width: 1.9px !important;
+}
 
+canvas {
+	z-index: -1 !important;
+}
+
+.OverCanvas {
+	z-index: 20 !important;
 }
