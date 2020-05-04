@@ -29,9 +29,11 @@ export class Pretty extends Component {
 	constructor(props) {
 		super(props)
 
-		this.opendir = this.props.opendir
+    this.opendir = this.props.opendir
+    this.ERFmodels = this.props.ERFmodels
+    
 	}
-	state = { dir: this.props.dir }
+	state = { dir: this.props.dir, graphstate: this.props.graphstate }
 
 	static propTypes = {}
 
@@ -73,7 +75,15 @@ export class Pretty extends Component {
 	colorSeperator = (ranges) => {
 		const found = ranges.match(/\d+/g)
 		return found
-	}
+  }
+  
+  graphState = (newgraphstate) => {
+    this.rangeplot = {
+      titles: [],
+    }
+    this.setState({ graphstate: newgraphstate })
+    console.log(newgraphstate)
+  }
 
 	titleRef = createRef()
 	bodyRef = createRef()
@@ -257,7 +267,7 @@ export class Pretty extends Component {
 									width={this.col1}
 									textAlign="right"
 								>
-									<Label size="large">{jsonERF.object}</Label>
+									<Label size="large" onClick={() => this.graphState(jsonERF.object)}>{jsonERF.object}</Label>
 								</Grid.Column>
 								<Grid.Column width={this.col2}>
 									<Grid
@@ -342,7 +352,7 @@ export class Pretty extends Component {
 										content={jsonERF.comment}
 										position="top center"
 										trigger={
-											<Label>
+											<Label >
 												<Icon name="info" />
 												info
 											</Label>
@@ -458,11 +468,16 @@ export class Pretty extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		this.setState({ dir: String(nextProps.dir) })
+    //this.setState({ ERFmodels: nextProps.ERFmodels })
+    this.ERFmodels = nextProps.ERFmodels
+    this.setState({ dir: String(nextProps.dir) })
 		console.log('Pretty recieved props')
 		console.log(String(nextProps.dir))
-	}
-	chartRef = React.createRef()
+  }
+  componentWillMount() {
+    
+  }
+	//chartRef = React.createRef()
 	componentDidMount() {
 		// const chartref = this.chartRef.current.getContext('2d')
 		// new Chart(chartref, {
@@ -516,7 +531,7 @@ export class Pretty extends Component {
 	}
 
 	render() {
-		const { jsonERF, filelength, ERFmodels, dir } = this.props
+		const { jsonERF, filelength, dir } = this.props
 		//console.log(jsonERF)
 		//console.log(JSON.stringify(jsonERF))
 		//this.dir = dir
@@ -530,7 +545,7 @@ export class Pretty extends Component {
 								<Menu.Item onClick={() => this.opendir()}>
 									Open ERF
 								</Menu.Item>
-								{ERFmodels.map((ERF) => this.linkmaker(ERF))}
+								{this.ERFmodels.map((ERF) => this.linkmaker(ERF))}
 							</Menu>
 							<div ref={this.bodyRef} className="Table"></div>
 						</Sticky>
@@ -558,9 +573,10 @@ export class Pretty extends Component {
 						<Sticky offset={115} context={this.titleRef}>
 							<Rangegraph
 								rangeplot={this.rangeplot}
-								ERFmodels={ERFmodels}
+                ERFmodels={this.ERFmodels}
+                graphstate={this.state.graphstate}
 							/>
-							{console.log(ERFmodels)}
+							{console.log(this.ERFmodels)}
 						</Sticky>
 					</Grid.Column>
 				</Grid>
