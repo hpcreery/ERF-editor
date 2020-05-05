@@ -32,23 +32,14 @@ class ReadFiles extends Component {
 	constructor(props) {
 		super(props)
 		this.opendir = this.props.opendir
-
-		console.log(this.state.dir)
+		//console.log(this.state.dir)
+		this.colorarrays = {}
 	}
 	state = { dir: this.props.dir }
 
-	componentWillReceiveProps(nextProps) {
-		this.setState({ dir: String(nextProps.dir) })
-		console.log('File parser recieved props')
-		console.log(String(nextProps.dir))
-
-		this.contents = fs.readFileSync(String(nextProps.dir), 'utf8')
-		this.lines = this.contents.split('\n')
-		this.modelstruct()
-	}
 	//range.model.color
 	graphstruct = () => {
-		this.graphERF = {}
+		this.plotdata = {}
 		for (var i = 0; i < this.lines.length; i++) {
 			this.erf[i] = { string: this.lines[i] }
 
@@ -59,8 +50,24 @@ class ReadFiles extends Component {
 					.join(' ')
 					.concat('')
 				var object = this.erf[i].string.split(' ').shift()
-				if (object === '.range\r') {
-					this.workingrange = value
+				if (
+					object === '.name' ||
+					object === '.uid' ||
+					object === '.menu' ||
+					object === '.modify'
+				) {
+				}
+				if (object === '.param') {
+				}
+				if (object === '.model') {
+				}
+				if (object === '.ranges\r') {
+					//this.plotdata[object] = {}
+					var workingrange = object
+				}
+				if (object === '.pdef\r') {
+				}
+				if (object === '.vars\r') {
 				}
 			} else if (this.lines[i].startsWith('#')) {
 			} else if (this.lines[i].startsWith(' ')) {
@@ -80,12 +87,31 @@ class ReadFiles extends Component {
 				// object + ' ' + value + '#' + comment
 
 				if (object === '.colors') {
-				} else if (object === '.ranges\r') {
-				} else if (object === '.pdef\r') {
-				} else if (object === '.vars\r') {
+				}
+				if (object === '.ranges\r') {
+					const rangearray = invalue.match(/\d+/g)
+					this.colorArraySort(rangearray, inobject)
+				}
+				if (object === '.pdef\r') {
+				}
+				if (object === '.vars\r') {
 				}
 			}
 		}
+		console.log(this.plotdata)
+	}
+
+	colorArraySort(rangearray, object) {
+		if (this.plotdata[object] == undefined) {
+			this.plotdata[object] = { red: [], yellow: [], green: [] }
+		}
+		if (object) {
+			this.plotdata[object].red.push(rangearray[0])
+			this.plotdata[object].yellow.push(rangearray[1])
+			this.plotdata[object].green.push(rangearray[2])
+		}
+		//console.log(this.colorarrays)
+		return null
 	}
 	// This Data model is out not used due to convoluted methods
 	jsonstruct = () => {
@@ -270,6 +296,21 @@ class ReadFiles extends Component {
 		this.filelength = this.lines.length
 		this.modelstruct() // main model structure
 		this.jsonstruct()
+		this.graphstruct()
+		console.log('there has been an update to the data structures')
+	}
+
+	componentWillReceiveProps(nextProps) {
+		this.setState({ dir: String(nextProps.dir) })
+		console.log('File parser recieved props')
+		console.log(String(nextProps.dir))
+
+		this.contents = fs.readFileSync(String(nextProps.dir), 'utf8')
+		this.lines = this.contents.split('\n')
+		this.modelstruct() // main model structure
+		this.jsonstruct()
+		this.graphstruct()
+		console.log('there has been an update to the data structures')
 	}
 
 	render() {
@@ -282,8 +323,9 @@ class ReadFiles extends Component {
 					ERFmodels={this.ERFmodels}
 					dir={this.state.dir}
 					opendir={this.props.opendir}
+					plotdata={this.plotdata}
 				/>
-				{console.log(this.jsonERF)}
+				{console.log(this.plotdata)}
 			</div>
 		)
 	}

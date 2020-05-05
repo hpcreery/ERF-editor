@@ -29,17 +29,15 @@ export class Pretty extends Component {
 	constructor(props) {
 		super(props)
 
-    this.opendir = this.props.opendir
-    this.ERFmodels = this.props.ERFmodels
-    
+		this.opendir = this.props.opendir
+		this.ERFmodels = this.props.ERFmodels
+		this.plotdata = this.props.plotdata
+		this.graphrange = Object.keys(this.plotdata)[0]
+		console.log(' this is the first range to graph ' + this.graphrange)
 	}
-	state = { dir: this.props.dir, graphstate: this.props.graphstate }
+	state = { dir: this.props.dir, graph: this.graphrange }
 
 	static propTypes = {}
-
-	rangeplot = {
-		titles: [],
-	}
 
 	handleRangeChange = (e, { id, location, string }) =>
 		console.log(id + location + string + e.target.value)
@@ -48,42 +46,19 @@ export class Pretty extends Component {
 	rangeSeperator(value, object) {
 		const found = value.match(/\d+/g)
 		//vendors.some( vendor => vendor['Name'] === 'Magenic' )
-		this.rangePlotterData(found, object)
 		return found
-	}
-	rangePlotterData(found, object) {
-		if (this.rangeplot.titles.some((title) => title.text === object)) {
-		} else {
-			this.rangeplot.titles.push({
-				key: object,
-				text: object,
-				value: object,
-			})
-			//console.log(this.rangeplot.titles)
-		}
-		if (this.rangeplot[object] == undefined) {
-			this.rangeplot[object] = { red: [], yellow: [], green: [] }
-		}
-		if (object) {
-			this.rangeplot[object].red.push(found[0])
-			this.rangeplot[object].yellow.push(found[1])
-			this.rangeplot[object].green.push(found[2])
-		}
-		return null
 	}
 
 	colorSeperator = (ranges) => {
 		const found = ranges.match(/\d+/g)
 		return found
-  }
-  
-  graphState = (newgraphstate) => {
-    this.rangeplot = {
-      titles: [],
-    }
-    this.setState({ graphstate: newgraphstate })
-    console.log(newgraphstate)
-  }
+	}
+
+	graphChange = (newgraphrange) => {
+		this.graphrange = newgraphrange
+		this.setState({ graph: this.graphrange })
+		console.log(this.graphrange)
+	}
 
 	titleRef = createRef()
 	bodyRef = createRef()
@@ -267,7 +242,14 @@ export class Pretty extends Component {
 									width={this.col1}
 									textAlign="right"
 								>
-									<Label size="large" onClick={() => this.graphState(jsonERF.object)}>{jsonERF.object}</Label>
+									<Label
+										size="large"
+										onClick={() =>
+											this.graphChange(jsonERF.object)
+										}
+									>
+										{jsonERF.object}
+									</Label>
 								</Grid.Column>
 								<Grid.Column width={this.col2}>
 									<Grid
@@ -352,7 +334,7 @@ export class Pretty extends Component {
 										content={jsonERF.comment}
 										position="top center"
 										trigger={
-											<Label >
+											<Label>
 												<Icon name="info" />
 												info
 											</Label>
@@ -468,15 +450,15 @@ export class Pretty extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-    //this.setState({ ERFmodels: nextProps.ERFmodels })
-    this.ERFmodels = nextProps.ERFmodels
-    this.setState({ dir: String(nextProps.dir) })
-		console.log('Pretty recieved props')
-		console.log(String(nextProps.dir))
-  }
-  componentWillMount() {
-    
-  }
+		//this.setState({ ERFmodels: nextProps.ERFmodels })
+		this.ERFmodels = nextProps.ERFmodels
+		this.plotdata = nextProps.plotdata
+		this.setState({ dir: String(nextProps.dir) })
+		console.log(this.plotdata)
+	}
+	componentWillMount() {}
+
+	componentWillUpdate() {}
 	//chartRef = React.createRef()
 	componentDidMount() {
 		// const chartref = this.chartRef.current.getContext('2d')
@@ -545,7 +527,9 @@ export class Pretty extends Component {
 								<Menu.Item onClick={() => this.opendir()}>
 									Open ERF
 								</Menu.Item>
-								{this.ERFmodels.map((ERF) => this.linkmaker(ERF))}
+								{this.ERFmodels.map((ERF) =>
+									this.linkmaker(ERF)
+								)}
 							</Menu>
 							<div ref={this.bodyRef} className="Table"></div>
 						</Sticky>
@@ -558,23 +542,15 @@ export class Pretty extends Component {
 						<Sticky offset={41} context={this.titleRef}>
 							<Menu>
 								<Menu.Item position="left">Range:</Menu.Item>
-
-								<Dropdown
-									multiple
-									selection
-									options={this.rangeplot.titles}
-									placeholder="I close on change"
-									className="OverCanvas"
-								/>
 							</Menu>
 							<Divider />
 						</Sticky>
 
 						<Sticky offset={115} context={this.titleRef}>
 							<Rangegraph
-								rangeplot={this.rangeplot}
-                ERFmodels={this.ERFmodels}
-                graphstate={this.state.graphstate}
+								plotdata={this.plotdata}
+								ERFmodels={this.ERFmodels}
+								graphrange={this.graphrange}
 							/>
 							{console.log(this.ERFmodels)}
 						</Sticky>

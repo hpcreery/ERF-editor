@@ -5,8 +5,6 @@ const { app, ipcMain } = require('electron')
 const BrowserWindow = electron.BrowserWindow
 const { dialog } = require('electron')
 
-
-
 const path = require('path')
 const url = require('url')
 
@@ -17,7 +15,7 @@ let mainWindow
 function createWindow() {
 	// Create the browser window.
 	mainWindow = new BrowserWindow({
-width: 1025,
+		width: 1025,
 		height: 800,
 		webPreferences: { nodeIntegration: true },
 		titleBarStyle: 'hidden', //frameless
@@ -60,8 +58,6 @@ width: 1025,
 		// when you should delete the corresponding element.
 		mainWindow = null
 	})
-
-
 
 	// Install React Dev Tools
 }

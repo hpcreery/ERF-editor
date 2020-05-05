@@ -6,23 +6,20 @@ import './Theme.css'
 export class Rangegraph extends Component {
 	constructor(props) {
 		super(props)
-		this.rangeplot = this.props.rangeplot
+		this.plotdata = this.props.plotdata
 		this.ERFmodels = this.props.ERFmodels
-		
-		this.state = {
-			
-		}
-		
+		this.graphrange = this.props.graphrange
+
+		this.state = {}
 	}
 	static propTypes = {}
-	graphrange = 'space_pad'
 
 	graphFilter = (workingrange) => {
 		var colors = ['red', 'yellow', 'green']
 		colors.forEach((color) => {
 			workingrange[color].forEach(this.filter)
 		})
-		//this.rangeplot[this.state.currentrange].green.forEach(this.filter)
+		//this.plotdata[this.state.currentrange].green.forEach(this.filter)
 		console.log(workingrange)
 	}
 
@@ -35,13 +32,11 @@ export class Rangegraph extends Component {
 
 	chartRef = React.createRef()
 	//rangeChart = new Chart()
-	
+
 	buildChart = () => {
-		this.graphFilter(this.rangeplot[this.graphrange])
-		if (typeof this.rangeChart !== "undefined") this.rangeChart.destroy();
+		this.graphFilter(this.plotdata[this.graphrange])
+		if (typeof this.rangeChart !== 'undefined') this.rangeChart.destroy()
 
-
-		
 		const chartref = this.chartRef.current.getContext('2d')
 		this.rangeChart = new Chart(chartref, {
 			type: 'horizontalBar',
@@ -52,14 +47,14 @@ export class Rangegraph extends Component {
 					{
 						label: ' Mils',
 						steppedLine: 'after',
-						data: this.rangeplot[this.graphrange].red,
+						data: this.plotdata[this.graphrange].red,
 						backgroundColor: 'rgba(99, 10, 10, 0.5)',
 						borderColor: 'rgba(99, 10, 10, 1)',
 						borderWidth: 1,
 					},
 					{
 						label: ' Mils',
-						data: this.rangeplot[this.graphrange].yellow,
+						data: this.plotdata[this.graphrange].yellow,
 						steppedLine: 'after',
 						backgroundColor: 'rgba(99, 99, 10, 0.5)',
 						borderColor: 'rgba(99, 99, 10, 1)',
@@ -67,7 +62,7 @@ export class Rangegraph extends Component {
 					},
 					{
 						label: ' Mils',
-						data: this.rangeplot[this.graphrange].green,
+						data: this.plotdata[this.graphrange].green,
 						steppedLine: 'after',
 						backgroundColor: 'rgba(10, 90, 10, 0.5)',
 						borderColor: 'rgba(10, 90, 10, 1)',
@@ -76,7 +71,6 @@ export class Rangegraph extends Component {
 				],
 			},
 			options: {
-				
 				tooltips: {
 					backgroundColor: 'rgba(255, 255, 255, 0.9)',
 					titleFontColor: '#000',
@@ -101,49 +95,41 @@ export class Rangegraph extends Component {
 				},
 			},
 		})
-		
 	}
 
 	componentDidMount() {
-		//this.graphFilter(this.rangeplot[this.graphrange])
-		//this.graphFilter(this.rangeplot[this.state.currentrange])
-		//console.log(this.rangeplot[this.state.currentrange].green)
-		
+		//this.graphFilter(this.plotdata[this.graphrange])
+		//this.graphFilter(this.plotdata[this.state.currentrange])
+		//console.log(this.plotdata[this.state.currentrange].green)
+
 		this.buildChart()
 		//this.rangeChart.update()
 	}
 
 	componentDidReceiveProps(nextProps) {
-		//this.graphFilter(nextProps.rangeplot.green)
-		//this.rangeplot = nextProps.rangeplot
-		//this.graphrange = nextProps.graphstate
-		//this.graphFilter(this.rangeplot[this.graphrange])
+		//this.graphFilter(nextProps.plotdata.green)
+		//this.plotdata = nextProps.plotdata
+		//this.graphrange = nextProps.graphrange
+		//this.graphFilter(this.plotdata[this.graphrange])
 		//this.rangeChart.update()
-		//this.buildChart(true)
-		
-		
-
+		this.buildChart
 	}
 	componentWillReceiveProps(nextProps) {
-		this.rangeplot = nextProps.rangeplot
-		console.log(this.rangeplot)
-		//this.setState({ graphstate: nextProps.graphstate })
-		this.graphrange = nextProps.graphstate
-		console.log(this.rangeplot[this.graphrange])
+		this.plotdata = nextProps.plotdata
+		this.graphrange = nextProps.graphrange
 		this.ERFmodels = nextProps.ERFmodels
-		
-		
-		
+		console.log(this.plotdata[this.graphrange])
+		this.buildChart()
 	}
 
 	componentDidUpdate() {
-		//this.graphFilter(this.rangeplot[this.graphrange])
-		//console.log(this.rangeplot[this.graphrange].red)
-		
-		console.log(this.rangeplot[this.graphrange])
+		//this.graphFilter(this.plotdata[this.graphrange])
+		//console.log(this.plotdata[this.graphrange].red)
+
+		console.log(this.plotdata[this.graphrange])
 		console.log('We got something here')
 		//this.rangeChart.update()
-		this.buildChart()
+		//this.buildChart()
 		//this.rangeChart.update()
 	}
 
