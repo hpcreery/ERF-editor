@@ -1,0 +1,507 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1255">
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <meta name="ProgId" content="Word.Document">
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <meta name="Generator" content="Microsoft Word 9">
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <meta name="Originator" content="Microsoft Word 9">
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="File-List" href="./pp_clean_pinholes_files/filelist.xml">
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  <title>pp_add_point</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Frontline</o:Author>
+  <o:LastAuthor>Frontline</o:LastAuthor>
+  <o:Revision>1</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2004-03-15T09:39:00Z</o:Created>
+  <o:LastSaved>2004-03-15T09:39:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Company>Frontline PCB</o:Company>
+  <o:Lines>1</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:Version>9.6926</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+  <style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Times;
+	panose-1:0 0 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 0 0 0 1 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-update:auto;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-language:AR-SA;}
+h1
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-7.65pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	mso-list:l0 level1 lfo2;
+	tab-stops:list 46.35pt;
+	font-size:20.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:0pt;
+	mso-bidi-language:AR-SA;}
+h2
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-language:AR-SA;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	tab-stops:center 216.0pt right 432.0pt;
+	font-size:36.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	border:double windowtext 9.0pt;
+	mso-border-alt:thin-thick-thin-medium-gap windowtext 9.0pt;
+	padding:0cm;
+	mso-ansi-language:EN-AU;
+	mso-bidi-language:AR-SA;
+	font-weight:bold;}
+em
+	{mso-ansi-font-size:9.5pt;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	font-weight:bold;
+	font-style:normal;}
+p.body, li.body, div.body
+	{mso-style-name:body;
+	mso-style-update:auto;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:Times;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	mso-bidi-language:AR-SA;}
+p.cellbody, li.cellbody, div.cellbody
+	{mso-style-name:cellbody;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.cellheading, li.cellheading, div.cellheading
+	{mso-style-name:cellheading;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.5pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:282154719;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1738974644 979897624 67698689 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-style-link:"Heading 1";
+	mso-level-tab-stop:46.35pt;
+	mso-level-number-position:left;
+	text-indent:-7.65pt;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Arial;}
+@list l1
+	{mso-list-id:1135218110;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-515845966 -442830492 262281906 -2121655256 -1369518726 1326102520 1207463436 454165444 -289503606 1877322;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+  </style>
+</head>
+
+
+<body style="">
+
+
+
+
+
+
+
+<div class="Section1">
+
+<table style="width: 826px; height: 112px;" border="1" cellpadding="0">
+
+
+
+
+
+
+ <tbody>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+
+  <td style="padding: 0.75pt; background: silver none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 174px;">
+  
+      
+      
+      
+      
+      
+      <p class="cellheading">Screen Name<o:p></o:p></p>
+
+
+
+
+
+
+  </td>
+
+
+
+
+
+
+  <td style="padding: 0.75pt; background: silver none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 45px;">
+  
+      
+      
+      
+      
+      
+      <p class="cellheading"><em><span style="font-family: Arial;">Parameter</span></em> <span style=""><o:p></o:p></span></p>
+
+
+
+
+
+
+  </td>
+
+
+
+
+
+
+  <td style="padding: 0.75pt; background: silver none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 98px;">
+  
+      
+      
+      
+      
+      
+      <p style="width: 62px;" class="cellheading">Type<o:p></o:p></p>
+
+
+
+
+
+
+  </td>
+
+
+
+
+
+
+  <td style="padding: 0.75pt; background: silver none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 574px;">
+  
+      
+      
+      
+      
+      
+      <p class="cellheading">Description<o:p></o:p></p>
+
+
+
+
+
+
+  </td>
+
+
+
+
+
+
+ </tr>
+
+
+
+
+
+
+ <tr>
+
+
+
+
+
+
+  <td style="padding: 0.75pt; width: 174px;">
+  
+      
+      
+      
+      
+      
+      <p class="cellbody">Add Test Points<o:p></o:p></p>
+
+
+
+
+
+
+  </td>
+
+
+
+
+
+
+  <td style="padding: 0.75pt; width: 45px;">
+  
+      
+      
+      
+      
+      
+      <p class="cellbody"><big class="cellbody" style="font-weight: bold; font-style: italic;"><big><font size="+1"><big><big><em><span style="font-size: 9.5pt; font-family: Courier; font-weight: normal;">pp_add_point</span></em></big></big></font></big></big></p>
+
+
+
+
+
+
+  </td>
+
+
+
+
+
+
+  <td style="padding: 0.75pt; width: 98px;">
+  
+      
+      
+      
+      
+      
+      <p class="cellbody"><o:p></o:p>menu</p>
+
+
+
+
+
+
+  </td>
+
+
+
+
+
+
+  <td style="padding: 0.75pt; width: 574px;">
+  
+      
+      
+
+
+  
+      
+      
+      
+      
+      
+      <p class="cellbody">Define whether to add test points at the end of&nbsp;the tie
+lines. These test points are added as pads, and are added outside the
+profile. They are assigned the .test_req attribute.</p>
+
+      </td>
+
+    </tr>
+
+  
+  </tbody>
+</table>
+
+<p class="MsoNormal"><o:p></o:p></p>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

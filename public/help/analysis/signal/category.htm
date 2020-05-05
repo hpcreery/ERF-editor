@@ -1,0 +1,1469 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./category_files/filelist.xml">
+<title>Signal Layers Checks </title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Gery Masschaele</o:Author>
+  <o:LastAuthor>Frontline</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>5</o:TotalTime>
+  <o:Created>2004-02-10T11:31:00Z</o:Created>
+  <o:LastSaved>2004-02-25T13:14:00Z</o:LastSaved>
+  <o:Pages>4</o:Pages>
+  <o:Words>1094</o:Words>
+  <o:Characters>6241</o:Characters>
+  <o:Company>Orbotech</o:Company>
+  <o:Lines>52</o:Lines>
+  <o:Paragraphs>12</o:Paragraphs>
+  <o:CharactersWithSpaces>7664</o:CharactersWithSpaces>
+  <o:Version>9.6926</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Times;
+	panose-1:0 0 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 0 0 0 1 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:20.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-family:Arial;
+	mso-font-kerning:16.0pt;}
+h2
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:62.0pt;
+	margin-right:0cm;
+	margin-bottom:26.0pt;
+	margin-left:108.0pt;
+	text-indent:-108.0pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:26.0pt;
+	font-family:Times;
+	mso-bidi-font-family:Arial;
+	color:black;
+	font-style:italic;}
+h3
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:14.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:Arial;}
+h4
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h5
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:5;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+h6
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:6;
+	font-size:7.5pt;
+	font-family:"Times New Roman";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p.anchorincolumn, li.anchorincolumn, div.anchorincolumn
+	{mso-style-name:anchorincolumn;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:Times;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+p.appendixtoc, li.appendixtoc, div.appendixtoc
+	{mso-style-name:appendixtoc;
+	margin-top:30.0pt;
+	margin-right:0cm;
+	margin-bottom:2.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:15.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:blue;
+	font-weight:bold;
+	font-style:italic;}
+p.body, li.body, div.body
+	{mso-style-name:body;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:Times;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+p.bodyindent, li.bodyindent, div.bodyindent
+	{mso-style-name:bodyindent;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.callout-cent, li.callout-cent, div.callout-cent
+	{mso-style-name:callout-cent;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+p.callout-left, li.callout-left, div.callout-left
+	{mso-style-name:callout-left;
+	margin-top:1.0pt;
+	margin-right:0cm;
+	margin-bottom:1.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:9.5pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+p.cellbody, li.cellbody, div.cellbody
+	{mso-style-name:cellbody;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.5pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+p.cellheading, li.cellheading, div.cellheading
+	{mso-style-name:cellheading;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.5pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.chapovertoc, li.chapovertoc, div.chapovertoc
+	{mso-style-name:chapovertoc;
+	margin-top:34.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:blue;
+	font-weight:bold;
+	font-style:italic;}
+p.code, li.code, div.code
+	{mso-style-name:code;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:18.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.5pt;
+	font-family:Courier;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.covermain, li.covermain, div.covermain
+	{mso-style-name:covermain;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:20.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.footnote, li.footnote, div.footnote
+	{mso-style-name:footnote;
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:27.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-9.0pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.heading1toc, li.heading1toc, div.heading1toc
+	{mso-style-name:heading1toc;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:1.0pt;
+	margin-left:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:13.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:blue;}
+p.heading2toc, li.heading2toc, div.heading2toc
+	{mso-style-name:heading2toc;
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:1.0pt;
+	margin-left:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:blue;}
+p.mapping-table-cell, li.mapping-table-cell, div.mapping-table-cell
+	{mso-style-name:mapping-table-cell;
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:2.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.mapping-table-title, li.mapping-table-title, div.mapping-table-title
+	{mso-style-name:mapping-table-title;
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:2.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tablefootnote, li.tablefootnote, div.tablefootnote
+	{mso-style-name:tablefootnote;
+	margin-top:2.0pt;
+	margin-right:7.2pt;
+	margin-bottom:0cm;
+	margin-left:21.6pt;
+	margin-bottom:.0001pt;
+	text-indent:-14.4pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+p.xdocnametoc, li.xdocnametoc, div.xdocnametoc
+	{mso-style-name:xdocnametoc;
+	margin-top:18.0pt;
+	margin-right:0cm;
+	margin-bottom:15.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:20.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.xfigure, li.xfigure, div.xfigure
+	{mso-style-name:xfigure;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+@page Section1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:384064593;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1331892666 -1464948510 -1801969882 1413912006 980832724 -1573720914 1781302542 255338904 -164458190 -1761731262;}
+@list l1
+	{mso-list-id:872308534;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1325884004 412899558 -659286350 65316948 493774320 350626144 -547044874 -2003637084 7649508 -1908353250;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+@list l2
+	{mso-list-id:1653410060;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1686572066 958162074 -353709334 -161689370 -1178021176 -336291102 1296879926 -1830357918 -456242460 1867173102;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+</head>
+
+<body lang=EN-US link=blue vlink=blue style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<h2>Signal Layers Checks </h2>
+
+<p class=body>The Signal Layer action is a read-only action intended to find
+potential manufacturability defects in signal and mixed layers, and generate
+statistics. The action can operate on any layer, but is mainly intended for
+signal layers. It uses the layer itself and any NC (drill or rout) layer that
+pierces it. Categories, reports and attributes are generated. </p>
+
+<p class=body>The following tests can be applied to signal layers, as listed in
+the Action Screen and below:</p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:11.0pt;font-family:Times;color:black'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>Spacing - reports
+spacing violations between pads, circuits and nets, and between text to text.
+Also reports shorts and spacing between different CAD nets and close distances
+between non-touching features on same CAD or Layer nets. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:11.0pt;font-family:Times;color:black'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>Drill - reports distance
+violations between NPTHs/PTHs/Vias to pads, circuits, annular rings, and
+copper. Also reports missing pads. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:11.0pt;font-family:Times;color:black'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>Rout - reports distance
+violations between edge of rout features to pads, circuits, etc. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:11.0pt;font-family:Times;color:black'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>Size - reports sizes of
+pads, shaved lines, text, line neckdowns, arcs and shaved arcs. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:11.0pt;font-family:Times;color:black'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>Sliver - reports on
+slivers between lines and pads or between pads and pads. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:11.0pt;font-family:Times;color:black'>6.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>Stubs - reports
+unconnected line endpoints. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:11.0pt;font-family:Times;color:black'>7.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>Center - not implemented
+at present. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:11.0pt;font-family:Times;color:black'>8.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>SMD - lists SMD pads,
+reports on pitch of SMD pads, and identifies SMD packages. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:11.0pt;font-family:Times;color:black'>9.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>Bottleneck - reports
+thin copper surfaces. <o:p></o:p></span></p>
+
+<h3 style='margin-top:20.0pt'><i><span style='font-size:19.0pt;font-family:
+Times;color:black'>Attributes<o:p></o:p></span></i></h3>
+
+<p class=body>A summary of Feature and Component attributes used during the
+Signal Layer Checks is shown below.</p>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><i><span style='font-size:15.0pt;font-family:Times;color:black'>Feature
+Attributes<o:p></o:p></span></i></h6>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td width=121 style='width:90.75pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Attribute Name</p>
+  </td>
+  <td width=457 style='width:342.75pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Description</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=121 style='width:90.75pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>.nomenclature</span></b></em>
+  </p>
+  </td>
+  <td width=457 style='width:342.75pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>This attribute defines a feature as a nomenclature legend
+  feature. The attribute affects the fabrication analysis by directing spacing
+  checks between such features into a new category (Text to text).</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=121 style='width:90.75pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><b><i><span style='font-family:"Courier New"'>.pad_usage<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=457 style='width:342.75pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>The <em><b><span style='font-family:Courier'>.pad_usage</span></b></em>
+  attribute can be attached to a feature and can one of five values:</p>
+  <p class=MsoNormal style='margin-top:1.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:46.8pt;text-indent:-10.8pt;mso-list:l2 level1 lfo4;
+  tab-stops:list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;
+  mso-bidi-font-size:9.5pt;font-family:Arial;color:black'>*<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><![endif]><em><b><span
+  style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Helvetica;
+  color:black'>toeprint </span></b></em><span style='font-size:9.5pt;
+  font-family:Helvetica;color:black'><o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-top:1.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:46.8pt;text-indent:-10.8pt;mso-list:l2 level1 lfo4;
+  tab-stops:list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;
+  mso-bidi-font-size:9.5pt;font-family:Arial;color:black'>*<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><![endif]><em><b><span
+  style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Helvetica;
+  color:black'>via </span></b></em><span style='font-size:9.5pt;font-family:
+  Helvetica;color:black'><o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-top:1.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:46.8pt;text-indent:-10.8pt;mso-list:l2 level1 lfo4;
+  tab-stops:list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;
+  mso-bidi-font-size:9.5pt;font-family:Arial;color:black'>*<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><![endif]><em><b><span
+  style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Helvetica;
+  color:black'>g_fiducial </span></b></em><span style='font-size:9.5pt;
+  font-family:Helvetica;color:black'><o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-top:1.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:46.8pt;text-indent:-10.8pt;mso-list:l2 level1 lfo4;
+  tab-stops:list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;
+  mso-bidi-font-size:9.5pt;font-family:Arial;color:black'>*<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><![endif]><em><b><span
+  style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Helvetica;
+  color:black'>l_fiducial </span></b></em><span style='font-size:9.5pt;
+  font-family:Helvetica;color:black'><o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-top:1.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:46.8pt;text-indent:-10.8pt;mso-list:l2 level1 lfo4;
+  tab-stops:list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;
+  mso-bidi-font-size:9.5pt;font-family:Arial;color:black'>*<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><![endif]><em><b><span
+  style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Helvetica;
+  color:black'>tooling_hole </span></b></em><span style='font-size:9.5pt;
+  font-family:Helvetica;color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=121 style='width:90.75pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><b><i><span style='font-family:"Courier New"'>.smd<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=457 style='width:342.75pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>This attribute should be attached to outer layer pads which
+  are lands for SMD components. It is set by the 'Set SMD Attribute' Cleanup
+  Action. </p>
+  </td>
+ </tr>
+ <tr>
+  <td width=121 style='width:90.75pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><b><i><span style='font-family:"Courier New"'>.drill<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=457 style='width:342.75pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>This attribute is attached to hole features in drill
+  layers. It defines the type of the drill and is used extensively during
+  fabrication analysis. </p>
+  </td>
+ </tr>
+ <tr>
+  <td width=121 style='width:90.75pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><b><i><span style='font-family:"Courier New"'>.pattern_fill<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=457 style='width:342.75pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>This attribute is attached to features which are added
+  during a pattern fill operation, either manually or through the Copper
+  Balance DFM action.</p>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:
+  5.0pt;margin-left:90.0pt;text-indent:-36.0pt;mso-list:l1 level1 lfo6;
+  tab-stops:list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;
+  mso-bidi-font-size:11.0pt;font-family:Arial;color:black'>*<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+  color:black'>If a line / arc has this attribute attached, then it will not be
+  reported in the line histogram display. <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><i><span style='font-size:15.0pt;font-family:Times;color:black'>Component
+Attributes<o:p></o:p></span></i></h6>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='background:#A6A6A6;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Attribute Name</p>
+  </td>
+  <td style='background:#A6A6A6;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Description</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>.toep_spacing_req</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>This attribute is specifically attached to components for
+  reporting in the Toeprint to Toeprint category. It defines the maximum
+  spacing within which to report pad to pad spacing measurements</p>
+  <p class=cellbody>Range: 1-500</p>
+  <p class=cellbody>Units: inch/mm </p>
+  </td>
+ </tr>
+</table>
+
+<p class=body style='margin-left:0cm'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h3 style='margin-top:20.0pt'><i><span style='font-size:19.0pt;font-family:
+Times;color:black'>Special Reports<o:p></o:p></span></i></h3>
+
+<p class=body>In addition to a textual listing of all the categories and
+histograms (for all layers), the following special reports are created:</p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Parallel
+Line Spacing<o:p></o:p></span></i></h6>
+
+<p class=body>This report lists the total length, in which spacing runs parallel
+between lines, for every spacing width in the design (in user definable width
+increments). This report is very useful in planning and forecasting yields.</p>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td colspan=3 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Parallel Spacing Summary </p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>#</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Spacing (ml)</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Total Length ()</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>1</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>6.0 - 6.2</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>16.732</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>2</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>8.4 - 8.6</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>55.740</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>3</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>10.0 - 10.2</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>10.622</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>4</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>13.4 - 13.6</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>12.194</p>
+  </td>
+ </tr>
+</table>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Line
+Length Summary<o:p></o:p></span></i></h6>
+
+<p class=body>This report lists the total length of all lines of the same width
+for every line width in the design (in user definable width increments).</p>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td colspan=3 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Line Length Summary </p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>#</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Line width (ml)</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Total Length ()</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>1</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>8.0 - 8.2</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>27.367</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>2</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>8.8 - 9.0</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>7.067</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>3</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>9.8 - 10.0</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>0.068</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>4</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>10.0 - 10.2</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>6.456</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>5</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>11.8 - 12.0 </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>0.058</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>6</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>12.0 - 12.2 </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>8.174</p>
+  </td>
+ </tr>
+</table>
+
+<h3 style='margin-top:20.0pt'><i><span style='font-size:19.0pt;font-family:
+Times;color:black'>Result Attributes<o:p></o:p></span></i></h3>
+
+<p class=body>&nbsp;</p>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Attribute</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Description</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_par_space</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical parallel spacing value over all parallel spacing
+  measurements</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_p2p</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimum spacing between any two pads that belong to
+  different nets</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_p2p</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical pad to pad spacing</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_p2c</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimum spacing between any different net pad and conductor</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_p2c</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical spacing between any different net pad and conductor</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_c2c</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimum spacing between any different net conductors</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_c2c</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical spacing between any different net conductors</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_self_spacing</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimal spacing between two non-touching same net features
+  (minimum sliver width)</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_self_spacing</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical spacing between two non-touching same net features</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_text2text</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimum spacing between any two text features</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_text2text</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical spacing between any two text features</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...dra_npth2p</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>The DRA of the NPTH to Pad category</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_npth2p</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimum distance from an NPTH to a pad that does not touch
+  it</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_npth2p</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical distance from an NPTH to a pad that does not touch
+  it</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...dra_npth2c</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>The DRA for the NPTH to Pad category</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_npth2c</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimum distance from an NPTH to a non pad that does not
+  touch it</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_npth2c </span></b></em></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical distance from an NPTH to a non pad that does not
+  touch it</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...dra_pth2c</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>The DRA for the PTH to Copper category</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_pth2c</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimal measurement in the PTH to Copper category</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_pth2c</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical measurement in the PTH to Copper category</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...dra_via2c</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>The DRA for the Via to Copper category</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_via2c</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimal measurement in the Via to Copper category</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_via2c</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical measurement in the Via to Copper category</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...dra_ar</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>DRA for annular ring</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_ar</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimal annular ring measurement</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_ar</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical annular ring measurement</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...dra_pth_ar</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>The DRA for PTH annular ring</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_pth_ar</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimal PTH annular ring measurement value</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_pth_ar</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical PTH annular ring measurement value</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...dra_via_ar</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>DRA for via annular ring</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_via_ar</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimal via annular ring measurement value </p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_via_ar</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical via annular ring measurement value</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_reg</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimal PTH Registration measurement value </p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_reg </span></b></em></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical PTH Registration measurement value </p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...dra_npth_ar</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>DRA for NPTH annular ring</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_npth_ar</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimal NPTH annular ring measurement value</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_npth_ar</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical NPTH annular ring measurement value</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_npth_reg</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimal NPTH Registration measurement value</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_npth_reg </span></b></em></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical NPTH Registration measurement value</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_r2c</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimal Rout to Copper distance </p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_r2c</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical Rout to Copper distance </p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_pad </span></b></em></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimal pad diameter</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_pad </span></b></em></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical pad diameter</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_line</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimal line width</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_line</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical line width</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_shaved_line</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimal (original) width of a shaved line </p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_shaved_line</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical (original) width of a shaved line </p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_sliver</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimal sliver width</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_sliver</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical sliver width</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...num_stub</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Number of stubs alarms</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_stub</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical stub width</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_smd_pad </span></b></em></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimal SMD pad size</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_smd_pad</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical SMD pad size</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_smd_pitch</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimal SMD pitch (distance between adjacent pad centers)</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_smd_pitch</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical SMD pitch </p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_smd_package</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Small dimension of the smallest SMD package</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_smd_package</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical small dimension of the SMD packages</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_conductor_width</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimum value of all conductor width measurements</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_conductor_width</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical value of conductor width measurements</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_arc</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimal width of arcs</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_arc</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical width of arcs</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...min_shaved_arc</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimal (original) width of shaved arcs</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...typ_shaved_arc</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Typical (original) width of shaved arcs</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...num_miss_via </span></b></em></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Number of Missing Pad for PTH alarms</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...num_miss_pth</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Number of Missing Pad for Via alarms</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><b><span style='font-family:Courier'>...dra</span></b></em>
+  </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Overall DRA of a board is the minimum of all DRAs for
+  categories for which a DRA is defined: <em><b><span style='font-family:Courier'>dra_npth2p,
+  dra_npth2c, dra_pth2c, dra_via2c, dra_ar, dra_pth_ar, dra_via_ar</span></b></em>
+  </p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><b><i><span style='font-family:"Courier New"'>...num_npthtc<o:p></o:p></span></i></b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Number if all the cases of NPTH touches Copper alarms. </p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>
+

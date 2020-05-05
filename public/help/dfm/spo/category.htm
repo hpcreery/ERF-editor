@@ -1,0 +1,614 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1255">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./category_files/filelist.xml">
+<link rel=Edit-Time-Data href="./category_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Solder Paste Optimization</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Frontline</o:Author>
+  <o:LastAuthor>Frontline</o:LastAuthor>
+  <o:Revision>9</o:Revision>
+  <o:TotalTime>5</o:TotalTime>
+  <o:Created>2004-03-21T12:49:00Z</o:Created>
+  <o:LastSaved>2004-03-21T12:54:00Z</o:LastSaved>
+  <o:Pages>3</o:Pages>
+  <o:Words>867</o:Words>
+  <o:Characters>4947</o:Characters>
+  <o:Company>Frontline PCB</o:Company>
+  <o:Lines>41</o:Lines>
+  <o:Paragraphs>9</o:Paragraphs>
+  <o:CharactersWithSpaces>6075</o:CharactersWithSpaces>
+  <o:Version>9.6926</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Times;
+	panose-1:0 0 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:"Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1 -369098753 63 0 4129023 0;}
+@font-face
+	{font-family:"\@Arial Unicode MS";
+	mso-font-charset:128;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1 -369098753 63 0 4129023 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-update:auto;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-language:AR-SA;}
+h1
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-7.65pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	mso-list:l1 level1 lfo2;
+	tab-stops:list 46.35pt;
+	font-size:20.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:0pt;
+	mso-bidi-language:AR-SA;}
+h2
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-language:AR-SA;}
+h3
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";}
+h5
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:5;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";}
+h6
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:6;
+	font-size:7.5pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	tab-stops:center 216.0pt right 432.0pt;
+	font-size:36.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	border:double windowtext 9.0pt;
+	mso-border-alt:thin-thick-thin-medium-gap windowtext 9.0pt;
+	padding:0cm;
+	mso-ansi-language:EN-AU;
+	mso-bidi-language:AR-SA;
+	font-weight:bold;}
+em
+	{mso-ansi-font-size:9.5pt;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	font-weight:bold;
+	font-style:normal;}
+p.body, li.body, div.body
+	{mso-style-name:body;
+	mso-style-update:auto;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:Times;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	mso-bidi-language:AR-SA;}
+p.cellbody, li.cellbody, div.cellbody
+	{mso-style-name:cellbody;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Arial Unicode MS";
+	color:black;}
+p.cellheading, li.cellheading, div.cellheading
+	{mso-style-name:cellheading;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.5pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Arial Unicode MS";
+	color:black;
+	font-weight:bold;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:32537382;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1383517344 -1247787352 67392414 1423373718 992541664 1194896574 1653261774 -39959756 2083947016 -283872498;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+@list l1
+	{mso-list-id:282154719;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1738974644 979897624 67698689 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l1:level1
+	{mso-level-style-link:"Heading 1";
+	mso-level-tab-stop:46.35pt;
+	mso-level-number-position:left;
+	text-indent:-7.65pt;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Arial;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+</head>
+
+<body lang=EN-US style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<h3 style='margin-top:20.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><i><span style='font-size:19.0pt;font-family:Times;color:black'>Solder
+Paste Optimization<o:p></o:p></span></i></h3>
+
+<p class=body>Solder Paste Optimization (SPO) is a read-write DFM action
+designed to create a new Solder Paste layer or modify an existing one, derived
+from an external copper layer.<o:p></o:p></p>
+
+<p class=body>The purpose is to modify SMD/Test Vias/ Ground pads according to
+user-defined parameters so that the modified pads will act as the input for the
+creation of a solder paste application stencil. <o:p></o:p></p>
+
+<p class=body>A pad can be modified (resized) by an absolute value, a factor,
+or a specified distance. Separate rules apply to different pads. <o:p></o:p></p>
+
+<p class=body>SMD pads can be resized proportionately or disproportionately
+(that is, their heights can be changed by a ratio different from their widths).
+They can be resized disproportionately only when their symbols are standard
+system symbols that have width and height, such as rectangles and ellipses.
+Since pad sizes can be modified only when SMD pad sizes fall within the SMD
+Size ranges, separate paste pads can be created for different size ranges of
+SMD pads. By adding attributes to components in the component layers, you can
+control the way and amount by which their paste pads are reduced, and even
+control the paste pad shape. <o:p></o:p></p>
+
+<p class=body>When special predefined arrangements of solder paste on pads are
+required to be retained without change, the appropriate ERF variable <em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+font-weight:normal;mso-bidi-font-weight:bold'>modify_non_centered</span></em>
+should be No. All other criteria are applied to all other pads, including
+staggered and/or cross-hatched.<o:p></o:p></p>
+
+<p class=body>Ground pads are round pads that are not defined as SMD or Test
+Point pads that were either user-selected or their diameters match the
+user-specified diameters. Paste pads for ground pads are created as
+user-definable thermal pads. <o:p></o:p></p>
+
+<p class=body>Affected layers can also be paste layers, or signal/mixed outer
+layers (with all the SMD pads).<o:p></o:p></p>
+
+<p class=body>When a solder paste layer exists before the initialization of
+Solder Paste Optimization, a backup layer will be created with the name
+&lt;layer_name&gt;+++. For example, if the existing solder paste layer is
+named: <em><span style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:
+Courier;font-weight:normal;mso-bidi-font-weight:bold'>sp1</span></em> , the
+backup layer will be <em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;font-weight:normal;mso-bidi-font-weight:bold'>sp1+++.</span></em>
+<o:p></o:p></p>
+
+<p class=body>The rules that apply to each type of pad is explained in the
+following sections: SMD Pads, Test Via Pads, Ground Pads.<o:p></o:p></p>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><i><span style='font-size:15.0pt;font-family:Times;color:black'>SMD Pads<o:p></o:p></span></i></h6>
+
+<p class=body>Paste pads for SMD pads can be created only when an SMD pad fits
+within the ranges defined in the SMD Ranges parameters. The paste pad
+characteristics will be derived from the SMD shape and size, and shrunk by the
+values specified in the relevant parameter. Shrinkage can be by an absolute
+value, a distance, or by a factor.<o:p></o:p></p>
+
+<p class=body>SMD pads can be shrunk proportionately or disproportionately,
+that is, width can be shrunk differently than height shrinkage. Of course, the
+shape has to have a width and height, such as a rectangle or an ellipse. Only
+standard system symbols can be shrunk disproportionately. A pad that does not
+have width and height, such as a round pad, or is not derived from a standard
+system symbol, will be shrunk proportionately only. Non-system symbols
+(user-defined) will be converted to standard system symbols if they are
+similar. If they are not similar, they will not be resized.<o:p></o:p></p>
+
+<p class=body>&nbsp;<o:p></o:p></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" alt="" style='width:281.25pt;
+ height:144.75pt'>
+ <v:imagedata src="./category_files/image001.png" o:href="..\..\..\..\DFM%20Actions%20Source%20Material\DFM%20Actions-119.png"/>
+</v:shape><![endif]--><![if !vml]><img width=375 height=193
+src="./category_files/image001.png" border=0 v:shapes="_x0000_i1025"><![endif]><span
+style='font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Additional
+Controls<o:p></o:p></span></i></h6>
+
+<p class=body>Attributes may be applied by the user to a component and thus to
+all SMD pads belonging to the component toeprints. These attributes override
+the values specified in the parameters. The attributes are as follows:<o:p></o:p></p>
+
+<h5 style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><span style='font-size:9.0pt;font-family:Times;color:black'>&nbsp;<o:p></o:p></span></h5>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Attribute<o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Description<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal;mso-bidi-font-weight:bold'>.spo_w_mode,
+  .spo_w_fact, .spo_w_val</span></em> <o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>To shrink pad widths by values other than those specified
+  in the parameters.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal;mso-bidi-font-weight:bold'>.spo_h_mode,
+  .spo_h_fact, .spo_h_val</span></em> <o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>To shrink pad heights by values other than those specified
+  in the parameters.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal;mso-bidi-font-weight:bold'>.spo_s_mode,
+  .spo_s_fact, .spo_s_val</span></em> <o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>To shrink pads proportionately by values other than those
+  specified in the parameters.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal;mso-bidi-font-weight:bold'>.spo_shape</span></em>
+  <o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>This attribute is the name of an Genesis 2000 standard
+  symbol. The SPO DFM action will create a paste pad in the given symbol, and
+  base its width and height on the SMD pad's width and height (only their
+  order, and not their size). The SPO DFM action will not shrink these paste
+  pads. If the given paste pad is not fully contained by the SMD pad, it will
+  be reported as a measurement.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>.spo_move_center<o:p></o:p></p>
+  <p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1026" type="#_x0000_t75"
+   alt="" style='width:110.25pt;height:82.5pt'>
+   <v:imagedata src="./category_files/image002.png" o:href="..\..\..\..\DFM%20Actions%20Source%20Material\DFM%20Actions-120.png"/>
+  </v:shape><![endif]--><![if !vml]><img width=147 height=110
+  src="./category_files/image002.png" border=0 v:shapes="_x0000_i1026"><![endif]><span
+  style='font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>To move the paste pad from the SMD pad center. <o:p></o:p></p>
+  <p class=cellbody>A positive value will move the paste from the component
+  center out.<o:p></o:p></p>
+  <p class=cellbody>A negative value will move the paste towards the component
+  center.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:54.0pt'><b><span style='font-size:9.5pt;font-family:Helvetica;
+mso-bidi-font-family:"Arial Unicode MS";color:black;mso-bidi-language:HE'>Note:
+</span></b><span style='font-size:11.0pt;font-family:Times;color:black'>When
+specifying a </span><em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;color:black;font-weight:normal;mso-bidi-font-weight:
+bold'>.spo_*_mode</span></em><span style='font-size:11.0pt;font-family:Times;
+color:black'> attribute, you must also specify either a </span><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black;font-weight:normal;mso-bidi-font-weight:bold'>.spo_*_fact</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> or a </span><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black;font-weight:normal;mso-bidi-font-weight:bold'>.spo_*_val</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> attribute (as
+required), otherwise it will be ignored. Specification of only a </span><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black;font-weight:normal;mso-bidi-font-weight:bold'>.spo_*_fact</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> or a</span><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black;font-weight:normal;mso-bidi-font-weight:bold'> .spo_*_val</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> attribute without a </span><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black;font-weight:normal;mso-bidi-font-weight:bold'>.spo_*_mode</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> attribute will also be
+ignored.<o:p></o:p></span></p>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><i><span style='font-size:15.0pt;font-family:Times;color:black'>Test Via
+Pads<o:p></o:p></span></i></h6>
+
+<p class=body>Paste pads shapes and sizes are derived directly from Test Via
+points shapes and sizes. Size reduction is proportionate, according to
+user-specified parameter values. If the Test Via Mode parameter is specified as
+None, the paste pads will not be modified. Test Via pads will be identified by
+their <em><span style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:
+Courier;font-weight:normal;mso-bidi-font-weight:bold'>.test_point</span></em>
+attributes.<o:p></o:p></p>
+
+<p class=body>&nbsp;<o:p></o:p></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1027" type="#_x0000_t75"
+ alt="" style='width:284.25pt;height:101.25pt'>
+ <v:imagedata src="./category_files/image003.png" o:href="..\..\..\..\DFM%20Actions%20Source%20Material\DFM%20Actions-121.png"/>
+</v:shape><![endif]--><![if !vml]><img width=379 height=135
+src="./category_files/image003.png" border=0 v:shapes="_x0000_i1027"><![endif]><span
+style='font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><i><span style='font-size:15.0pt;font-family:Times;color:black'>Ground
+Pads<o:p></o:p></span></i></h6>
+
+<p class=body>Paste pads derived from ground pads are in the shape of round
+thermal pads, whose characteristics are user-specified in the ERF variables. <o:p></o:p></p>
+
+<p class=body>Ground pads can be selected individually in the Graphic Editor,
+or by specifying up to three pad diameters. In all cases, ground pads must be
+round and their attributes must not be <em><span style='font-size:9.5pt;
+font-family:Courier;mso-bidi-font-family:Courier;font-weight:normal;mso-bidi-font-weight:
+bold'>.smd</span></em> or <em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;font-weight:normal;mso-bidi-font-weight:bold'>.test_point</span></em>
+<o:p></o:p></p>
+
+<p class=body>If user-specified parameters do not succeed in creating a valid
+thermal pad, a message will be recorded in the log, and the ground pad will
+reported as missing or un-modified.<o:p></o:p></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1028" type="#_x0000_t75"
+ alt="" style='width:277.5pt;height:108.75pt'>
+ <v:imagedata src="./category_files/image004.png" o:href="..\..\..\..\DFM%20Actions%20Source%20Material\DFM%20Actions-122.png"/>
+</v:shape><![endif]--><![if !vml]><img width=370 height=145
+src="./category_files/image004.png" border=0 v:shapes="_x0000_i1028"><![endif]><span
+style='font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Typical
+Report<o:p></o:p></span></i></h6>
+
+<p class=body>&nbsp;<o:p></o:p></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1029" type="#_x0000_t75"
+ alt="" style='width:284.25pt;height:213pt'>
+ <v:imagedata src="./category_files/image005.png" o:href="..\..\..\..\DFM%20Actions%20Source%20Material\DFM%20Actions-125.png"/>
+</v:shape><![endif]--><![if !vml]><img width=379 height=284
+src="./category_files/image005.png" border=0 v:shapes="_x0000_i1029"><![endif]><span
+style='font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Result
+Attributes<o:p></o:p></span></i></h6>
+
+<p class=body>These attributes are produced once for each layer:<o:p></o:p></p>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Result Attribute<o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Description<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal;mso-bidi-font-weight:bold'>&lt;layer_name&gt;_&lt;category_name&gt;
+  = number</span></em> <o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Where:<o:p></o:p></p>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal;mso-bidi-font-weight:bold'>layer_name
+  = </span></em>the layer to which this attribute belongs<o:p></o:p></p>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal;mso-bidi-font-weight:bold'>category_name
+  = </span></em>name of category measurement.<o:p></o:p></p>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal;mso-bidi-font-weight:bold'>number</span></em>
+  = number of occurrences of this measurement.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal;mso-bidi-font-weight:bold'>&lt;category_name&gt;</span></em>
+  <o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Total number of occurrences of this measurement in all the
+  layers together.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Ranges<o:p></o:p></span></i></h6>
+
+<p class=body>It is not recommended to change the ranges on this DFM Action.
+The categories are divided to two groups, categories that are reported in the
+red range (e.g., <em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;font-weight:normal;mso-bidi-font-weight:bold'>paste_center_not_moved</span></em>
+or <em><span style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:
+Courier;font-weight:normal;mso-bidi-font-weight:bold'>smd_missing_paste</span></em>
+) and the categories that are reported in the green range (e.g., <em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+font-weight:normal;mso-bidi-font-weight:bold'>smd_added_paste</span></em> , <em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+font-weight:normal;mso-bidi-font-weight:bold'>centered_paste</span></em> or <em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+font-weight:normal;mso-bidi-font-weight:bold'>gnd_modified_paste</span></em> ).<o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>
+

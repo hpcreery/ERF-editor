@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta name="Generator" content="Microsoft Office HTML Filter 2.0">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <meta name="Originator" content="Microsoft Word 9">
+  <title>ar</title>
+  <style>
+<!--
+ 
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Arial;}
+h1
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:20.0pt;
+	font-family:Arial;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:Arial;
+	font-style:italic;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Arial;}
+h4
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-style:italic;}
+h6
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:7.5pt;
+	font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.cellbody, li.cellbody, div.cellbody
+	{
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:9.5pt;
+	font-family:Helvetica;
+	color:black;}
+p.body, li.body, div.body
+	{
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:18.0pt;
+	font-size:11.0pt;
+	font-family:Times;
+	color:black;}
+-->
+  </style>
+</head>
+<body link="blue" lang="EN-US" vlink="purple">
+<div class="Section1">
+<table border="1" cellpadding="0">
+  <tbody>
+    <tr>
+      <td
+ style="padding: 0.75pt; background: rgb(166, 166, 166) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">
+      <p class="cellbody"><b>Purpose</b></p>
+      </td>
+      <td style="padding: 0.75pt;">
+      <p class="cellbody">When an annular ring around a plated through
+hole is too small, the hole may shift during drilling and cause
+insufficient plating later.</p>
+      <p class="cellbody"><img style="height: 138px; width: 364px;"
+ alt="" id="_x0000_i1025" src="ar_files/image001.png"></p>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="padding: 0.75pt; background: rgb(166, 166, 166) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">
+      <p class="cellbody"><b>Function</b></p>
+      <p class="MsoNormal">&nbsp;</p>
+      </td>
+      <td style="padding: 0.75pt;">
+      <p class="cellbody">Reports for PTHs (or vias) embedded in copper
+the shortest distance between drill and laminate, if the distance is
+less than the <em><b><span style="font-family: Courier;">pp_d2c</span></b></em>
+action parameter. The measurement takes into account both negative and
+positive data. Measurements are spacing segments representing the
+shortest distance from the drill to laminate. An option is available to
+allow breakouts by specifying the breakout angle (as defined by the ERF
+parameters<em><b><span style="font-family: Courier;"> pth_breakout_angle</span></b></em>
+and <em><b><span style="font-family: Courier;">via_breakout_angle</span></b></em>
+). Range of breakout angle values = 0-180 where 0 means No Breakouts
+Allowed. <br>
+      </p>
+      <p class="cellbody">For more info , see below</p>
+      <p class="cellbody">&nbsp;</p>
+      <p class="cellbody">&nbsp;<img id="_x0000_i1026"
+ src="ar_files/image003.png" height="82" width="94"></p>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="padding: 0.75pt; background: rgb(166, 166, 166) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">
+      <p class="cellbody"><b>Activation</b></p>
+      </td>
+      <td style="padding: 0.75pt;">
+      <p class="cellbody">After selecting the Drill test, set the ERF
+variable <em><b><span style="font-family: Courier;">classify_pad_ar</span></b></em>
+to <em><b>No</b></em> .</p>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="padding: 0.75pt; background: rgb(166, 166, 166) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">
+      <p class="cellbody"><b>Known Limitations</b></p>
+      </td>
+      <td style="padding: 0.75pt;">
+      <p class="cellbody">If no single pad gives the drill the same
+annular ring value as the value calculated for all copper elements,
+then no pad will be associated with the measurement and an <em><b><span
+ style="font-family: Courier;">r0</span></b></em> will be inserted
+instead (a drawn surface, for instance).</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h6 style="margin: 15pt 0cm 7pt;"><i><span
+ style="font-size: 12pt; font-family: Helvetica; color: black;">Annular
+Ring Measurement</span></i></h6>
+<p class="body">This section describes the possible modifications of
+annular ring
+measurements in cases where breakouts are allowed by the designer of
+the board.
+</p>
+<p class="body">The normal procedure requires two values:</p>
+<p class="MsoNormal"
+ style="margin: 6pt 0cm 6pt 72pt; text-indent: -12.25pt;"><span
+ style="font-size: 10pt; font-family: Symbol; color: black;">·</span><span
+ style="font-size: 7pt; font-family: Times New Roman; color: black;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 11pt; font-family: Times; color: black;">RM_AR,
+Reliability Margin for Annular Ring as received from the customer (the
+implementation of the RM_AR does not allow the specification of a
+breakout). </span></p>
+<p class="MsoNormal"
+ style="margin: 6pt 0cm 6pt 72pt; text-indent: -12.25pt;"><span
+ style="font-size: 10pt; font-family: Symbol; color: black;">·</span><span
+ style="font-size: 7pt; font-family: Times New Roman; color: black;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 11pt; font-family: Times; color: black;">DRA,
+Design
+Registration Allowance is generated by the analysis (the maximum
+misregistration permitted by a design while still meeting all other
+requirements). </span></p>
+<p class="body">For example, if the minimum annular ring width = 4,
+RM_AR =1,
+then DRA=4-1=3.</p>
+<p class="body">If the user specifies that the RM should allow a
+breakout (RM_AR=0),
+the measurement will be extended to the outer perimeter of the drill
+hole in
+the position of a theoretical breakout, as in the following figure: </p>
+<p class="MsoNormal"><img id="_x0000_i1027" src="ar_files/image004.png"
+ height="137" width="382"></p>
+<p class="body">The breakout angle is defined in the ERF parameter<em><b><span
+ style="font-size: 9.5pt; font-family: Courier;">
+via_breakout_angle</span></b></em> or <em><b><span
+ style="font-size: 9.5pt; font-family: Courier;">pth_breakout_angle</span></b></em>
+.The range is 0-180, where 0 means no breakout is allowed.</p>
+<p class="body">When you do specify a breakout, RM_AR must be specified
+as zero, and
+the system will automatically calculate an extended Annular Ring
+measurement
+based on the size of the AR and drill. The AR size that is reported is
+larger
+than the actual AR size by an amount that depends on the AR and drill
+sizes
+(see example below).</p>
+<p class="body">The system assumes a drill that is centered within the
+AR and an
+AR that is a circle. If the AR is any other shape the system will
+construct a
+circle from this shape and plan the breakout on the constructed
+circular AR.
+The following figure will clarify:</p>
+<h1><span style="font-size: 9pt; font-family: Times; color: black;">&nbsp;</span></h1>
+<p class="MsoNormal"><img id="_x0000_i1028" src="ar_files/image005.png"
+ height="162" width="469"></p>
+<p class="body">&nbsp;</p>
+<h6 style="margin: 15pt 0cm 7pt;"><i><span
+ style="font-size: 12pt; font-family: Helvetica; color: black;">Example</span></i></h6>
+<p class="body">The following example describes an annular ring with a
+90<em><sup><span style="font-size: 9pt;"> 0</span></sup></em> breakout
+angle:</p>
+<p class="body">Outer radius = 20, Inner radius = 10. The annular ring
+width = 5.
+In this case, since RM=0, the minimum annular ring = 5.81 and DRA =
+5.81 - 0 =
+5.81. </p>
+<p class="MsoNormal"><img id="_x0000_i1029" src="ar_files/image006.png"
+ height="137" width="382"></p>
+<p class="MsoNormal">&nbsp;</p>
+</div>
+</body>
+</html>

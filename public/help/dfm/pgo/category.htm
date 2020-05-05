@@ -1,0 +1,573 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1255">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./category_files/filelist.xml">
+<link rel=Edit-Time-Data href="./category_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Power &amp; Ground Optimization </title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Frontline</o:Author>
+  <o:LastAuthor>Frontline</o:LastAuthor>
+  <o:Revision>9</o:Revision>
+  <o:TotalTime>11</o:TotalTime>
+  <o:Created>2004-03-22T07:37:00Z</o:Created>
+  <o:LastSaved>2004-03-22T07:54:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>1027</o:Words>
+  <o:Characters>5857</o:Characters>
+  <o:Company>Frontline PCB</o:Company>
+  <o:Lines>48</o:Lines>
+  <o:Paragraphs>11</o:Paragraphs>
+  <o:CharactersWithSpaces>7192</o:CharactersWithSpaces>
+  <o:Version>9.6926</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Times;
+	panose-1:0 0 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:"Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1 -369098753 63 0 4129023 0;}
+@font-face
+	{font-family:"\@Arial Unicode MS";
+	mso-font-charset:128;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1 -369098753 63 0 4129023 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-update:auto;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-language:AR-SA;}
+h1
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-7.65pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	mso-list:l1 level1 lfo2;
+	tab-stops:list 46.35pt;
+	font-size:20.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:0pt;
+	mso-bidi-language:AR-SA;}
+h2
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-language:AR-SA;}
+h3
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";}
+h6
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:6;
+	font-size:7.5pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	tab-stops:center 216.0pt right 432.0pt;
+	border:none;
+	mso-border-alt:thin-thick-thin-medium-gap windowtext 9.0pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 0cm 0cm;
+	font-size:36.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-AU;
+	mso-bidi-language:AR-SA;
+	font-weight:bold;}
+em
+	{mso-ansi-font-size:9.5pt;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	font-weight:bold;
+	font-style:normal;}
+p.body, li.body, div.body
+	{mso-style-name:body;
+	mso-style-update:auto;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:Times;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	mso-bidi-language:AR-SA;}
+p.code, li.code, div.code
+	{mso-style-name:code;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:18.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.5pt;
+	font-family:Courier;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:279150219;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-402508236 -329512054 844675928 -665923246 -1169243132 1378913496 -905669924 -2063463382 239609930 596925902;}
+@list l1
+	{mso-list-id:282154719;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1738974644 979897624 67698689 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l1:level1
+	{mso-level-style-link:"Heading 1";
+	mso-level-tab-stop:46.35pt;
+	mso-level-number-position:left;
+	text-indent:-7.65pt;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Arial;}
+@list l2
+	{mso-list-id:918518573;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1583412716 124446106 -871454420 -1509123168 -196678786 13041566 -231150682 -460265370 639007344 -1856619864;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+@list l3
+	{mso-list-id:1013263291;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1024296952 1059754510 -943966744 1425305320 1014275904 -78984752 -882472586 403881656 1409040470 -1604555652;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1030"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<h3 style='margin-top:20.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><i><span style='font-size:19.0pt;font-family:Times;color:black'>Power
+&amp; Ground Optimization <o:p></o:p></span></i></h3>
+
+<p class=body>Power &amp; Ground Optimization (PGO) is a read-write action that
+optimizes the sizes of features in the power &amp; ground layer in relation to
+drills and to each other. Optimization of features is performed according to
+parameters provided by the user. </p>
+
+<p class=body>The PGO action works only on negative power and ground layers. It
+enables the enlargement of clearances, thermals and donuts (NFPs). NFPs
+(Non-Functional Pads) that are represented as positive circles with inner
+negative circles, will be transformed to Genesis 2000 standard donuts that are
+sized accordingly. Square symbols (as clearances), square donuts or thermals
+are not supported by PGO. Drill markers (clearances that are smaller than the
+drill, and have the same center) will not be modified or reported.</p>
+
+<p class=body>To maintain layer connectivity, a minimal width of connector is
+defined using the ERF variable<em><span style='font-size:9.5pt;font-family:
+Courier;mso-bidi-font-family:Courier;font-weight:normal'> min_connector</span></em>.
+This minimal connector assures that two drills that were connected with a
+connection path of at least the value of <em><span style='font-size:9.5pt;
+font-family:Courier;mso-bidi-font-family:Courier;font-weight:normal'>min_connector</span></em>
+will remain connected with that minimal path width, in order to maintain the
+connectivity of the layer and the net-list of the board. If two drills are
+connected with a path width less than<em><span style='font-size:9.5pt;
+font-family:Courier;mso-bidi-font-family:Courier;font-weight:normal'>
+min_connector</span></em>, the algorithm assumes they are unconnected and they
+may get disconnected during optimization. To avoid this, it is recommended to
+set<em><span style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:
+Courier;font-weight:normal'> min_connector </span></em>to the smallest
+permissible value, and verify that no connectors are narrower than this value. </p>
+
+<p class=body>If you wish to avoid using the<em><span style='font-size:9.5pt;
+font-family:Courier;mso-bidi-font-family:Courier;font-weight:normal'>
+min_connector </span></em>option, set its value to 0 (zero); the optimization
+process will assume that areas separated by clearances are unconnected, and
+that areas connected with the smallest connectors are considered connected.</p>
+
+<p class=body>Optimized pads must have precisely the same centers as the drills.
+Pads that do not have the same center will be reported as unregistered.</p>
+
+<p class=body>It is expected, however, that a small number of features, that
+are close to, or touching, the rout clearance or plane separators, will not be
+optimized even though this will not cause violations.</p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>The
+Enlargement Mechanism<o:p></o:p></span></i></h6>
+
+<p class=body>The guiding principle of the Enlargement Mechanism is to identify
+pads for optimization and attempt to enlarge them to the optimal value
+specified. If a violation occurs when attempting this, the algorithm retracts
+and enlarges only to the minimal value. If there still is a violation, it does
+not act at all.</p>
+
+<p class=body>The enlargement mechanism proceeds in the following stages:</p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo4;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:11.0pt;font-family:Times;color:black'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:7.0pt;color:black'>&nbsp; </span><span style='font-size:11.0pt;
+font-family:Times;color:black'>Identifies pads requiring optimization (checks
+if pads are smaller than the optimal specified value).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo4;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:11.0pt;font-family:Times;color:black'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:7.0pt;color:black'>&nbsp; </span><span style='font-size:11.0pt;
+font-family:Times;color:black'>Enlarges features (annular ring or spacing) to
+optimal value.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo4;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:11.0pt;font-family:Times;color:black'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:7.0pt;color:black'>&nbsp; </span><span style='font-size:11.0pt;
+font-family:Times;color:black'>If a violation/s is created, optimal enlargement
+will be undone and the feature enlarged to minimal value only. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo4;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:11.0pt;font-family:Times;color:black'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:7.0pt;color:black'><span style="mso-spacerun:
+yes">&nbsp;&nbsp;</span></span><span style='font-size:11.0pt;font-family:Helvetica;
+color:black'>If a violation/s is still created, it does not enlarge at all. <o:p></o:p></span></p>
+
+<p class=body>The following figure depicts this process:</p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" alt="" style='width:156pt;
+ height:78.75pt'>
+ <v:imagedata src="./category_files/image001.png" o:href="..\..\..\..\DFM%20Actions%20Source%20Material\DFM%20Actions-136.png"/>
+</v:shape><![endif]--><![if !vml]><img width=208 height=105
+src="./category_files/image001.png" v:shapes="_x0000_i1025"><![endif]></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:36.0pt'><em><span style='font-size:9.5pt;mso-bidi-font-size:12.0pt'>Note:</span></em><span
+style='font-size:7.0pt;color:black'>&nbsp;&nbsp; </span><span style='font-size:
+11.0pt;font-family:Times;color:black'>The 'Power &amp; Ground Optimization'
+action only enlarges pads and does not shrink them. A pad will not be shrunk if
+it is larger than the optimal value. <o:p></o:p></span></p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Violations<o:p></o:p></span></i></h6>
+
+<p class=body>The following are considered violations that will abort the
+enlargement process:</p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l3 level1 lfo6;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+color:black'>*<span style='font:7.0pt "Helvetica"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Helvetica;
+color:black'>When enlarging a pad causes it to encroach (break) into the inner
+ring of a another thermal or a donut. Or, conversely, when the inner ring of an
+enlarged thermal or a donut, is itself encroached (broken) by some other
+feature because of the enlargement.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l3 level1 lfo6;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Helvetica;
+color:black'>When the enlargement decreases the width of a tie (in percentage
+terms) to less than the</span><em><span style='font-size:9.5pt;font-family:
+Courier;mso-bidi-font-family:Courier;color:black;font-weight:normal'>
+pp_min_ties</span></em><span style='font-size:11.0pt;font-family:Helvetica;
+color:black'> parameter (specifying the minimal ties percentage required to
+remain with copper). <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l3 level1 lfo6;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Helvetica;
+color:black'>A difficult to detect violation such as the disconnection of two
+drills that are supposed to be electrically connected (drills with thermal pads
+around them or with no pads at all). The difficulty of this check lies in the
+fact that we need a minimal connector width to ensure the connection is wide
+enough. If two shapes are closer than the</span><em><span style='font-size:
+9.5pt;font-family:Courier;mso-bidi-font-family:Courier;color:black;font-weight:
+normal'> min_connector</span></em><span style='font-size:11.0pt;font-family:
+Helvetica;color:black'> ERF variable, they will considered touching.<o:p></o:p></span></p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Thermals/Donuts<o:p></o:p></span></i></h6>
+
+<p class=body>Enlarging thermals and donuts sometimes requires the enlargement
+of their air gaps/NFP-spacing. If a thermal/donut needs to be enlarged together
+with its the air-gap/NFP-spacing, the mechanism operates as follows:</p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:90.0pt;text-indent:-10.8pt;mso-list:l2 level1 lfo8;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Helvetica;color:black'>The annular ring and the
+air-gap/NFP-spacing are enlarged to the optimal. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:90.0pt;text-indent:-10.8pt;mso-list:l2 level1 lfo8;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Helvetica;color:black'>Where violations occur,
+the mechanism will attempt to enlarge to the optimal size. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:90.0pt;text-indent:-10.8pt;mso-list:l2 level1 lfo8;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Helvetica;color:black'>Where this fails, it
+will enlarge the AR to the minimal value, together with the air-gap/spacing. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:90.0pt;text-indent:-10.8pt;mso-list:l2 level1 lfo8;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Helvetica;color:black'>When this fails, it will
+try to enlarge only the AR to the minimum.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:90.0pt;text-indent:-10.8pt;mso-list:l2 level1 lfo8;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Helvetica;color:black'>If not, it will try to
+enlarge only the air-gap/spacing. <o:p></o:p></span></p>
+
+<p class=body>The figure below depicts this logic in schematic form:</p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1026" type="#_x0000_t75"
+ alt="" style='width:284.25pt;height:84pt'>
+ <v:imagedata src="./category_files/image002.png" o:href="..\..\..\..\DFM%20Actions%20Source%20Material\DFM%20Actions-137.png"/>
+</v:shape><![endif]--><![if !vml]><img width=379 height=112
+src="./category_files/image002.png" v:shapes="_x0000_i1026"><![endif]><span
+style='font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=body>When enlarging NFPs represented as positive rings containing
+negative inner rings, they will be changed to Genesis 2000 standard donuts. </p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Plane
+Separators / Rout Clearances<o:p></o:p></span></i></h6>
+
+<p class=body>When running PGO globally, and where a rout clearance does not
+exist, the PGO will try to create a temporary one. </p>
+
+<p class=body>At first, the action will try to create it using the lines
+describing the rout (when the ERF variable<em><span style='font-size:9.5pt;
+font-family:Courier;mso-bidi-font-family:Courier;font-weight:normal'> use_rout </span></em>=
+Yes, and only when one rout layer runs through the power &amp; ground layer). </p>
+
+<p class=body>If the rout layer is not acceptable for creating the rout
+clearance, or when the ERF variable <em><span style='font-size:9.5pt;
+font-family:Courier;mso-bidi-font-family:Courier;font-weight:normal'>use_rout</span></em>
+= No, the action will create a rout clearance out of the profile of the board. </p>
+
+<p class=body>If none exist, the action will continue the process, ignoring the
+lack of a rout clearance. In case the action did create a rout clearance, it
+will be removed at the end of the run. </p>
+
+<p class=body>A small number of shapes that are close to plane separators might
+not be optimized properly.</p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Local
+Run<o:p></o:p></span></i></h6>
+
+<p class=body>Considering the fact that a local run can isolate drills inside the
+locally defined area from drills outside it, a local run will act upon the
+inner drills/features and ignore the others. Therefore, it is recommended to
+use PGO in the Global mode only. </p>
+
+<p class=body>Pads on the Power &amp; Ground layer that need to be modified
+will be reported according to the modification performed. If they were modified
+according to the optimal value they will be reported as modified. If they were
+modified by the minimal value - they will be reported as partially modified.
+Those that were not modified will be reported as such. Beside these categories
+there is a category for NPTH drills that have thermals or donuts pads around
+them, and a category for pads that were not recognized as a clearance, thermal,
+donut (or negative over positive NFP).<o:p></o:p></p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Result
+Attributes<o:p></o:p></span></i></h6>
+
+<p class=body>The following attributes are produced once for each layer and
+once as a summary of all the layers together</p>
+
+<p class=code><span style='mso-bidi-font-family:Courier'>&lt;layer_name&gt;_&lt;category_name&gt;
+= number<o:p></o:p></span></p>
+
+<p class=body>where<em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;font-weight:normal'> layer_name</span></em> is the
+layer this attribute belongs to.<br>
+<em><span style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+font-weight:normal'>category_name</span></em> is the name of the category
+measurement.<br>
+<em><span style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+font-weight:normal'>number</span></em> is the number of times this measurement
+occurs.</p>
+
+<p class=body>For example: </p>
+
+<p class=code><span style='mso-bidi-font-family:Courier'>pg3_undefined_shape =
+4<o:p></o:p></span></p>
+
+<p class=body>means that in layer<em><span style='font-size:9.5pt;font-family:
+Courier;mso-bidi-font-family:Courier;font-weight:normal'> pg3 </span></em>there
+are <em><span style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:
+Courier;font-weight:normal'>4</span></em> shapes that are drilled and their
+shapes are not supported by the action.</p>
+
+<p class=body><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=body><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>
+

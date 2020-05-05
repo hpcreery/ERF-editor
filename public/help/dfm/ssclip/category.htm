@@ -1,0 +1,421 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1255">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./category_files/filelist.xml">
+<title>Silk Screen Optimization</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Frontline</o:Author>
+  <o:LastAuthor>Frontline</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>2</o:TotalTime>
+  <o:Created>2004-03-21T12:25:00Z</o:Created>
+  <o:LastSaved>2004-03-21T12:30:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>271</o:Words>
+  <o:Characters>1547</o:Characters>
+  <o:Company>Frontline PCB</o:Company>
+  <o:Lines>12</o:Lines>
+  <o:Paragraphs>3</o:Paragraphs>
+  <o:CharactersWithSpaces>1899</o:CharactersWithSpaces>
+  <o:Version>9.6926</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Times;
+	panose-1:0 0 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:"Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1 -369098753 63 0 4129023 0;}
+@font-face
+	{font-family:"\@Arial Unicode MS";
+	mso-font-charset:128;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1 -369098753 63 0 4129023 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-update:auto;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-language:AR-SA;}
+h1
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-7.65pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	mso-list:l0 level1 lfo2;
+	tab-stops:list 46.35pt;
+	font-size:20.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:0pt;
+	mso-bidi-language:AR-SA;}
+h2
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-language:AR-SA;}
+h3
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";}
+h6
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:6;
+	font-size:7.5pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	tab-stops:center 216.0pt right 432.0pt;
+	border:none;
+	mso-border-alt:thin-thick-thin-medium-gap windowtext 9.0pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 0cm 0cm;
+	font-size:36.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-AU;
+	mso-bidi-language:AR-SA;
+	font-weight:bold;}
+em
+	{mso-ansi-font-size:9.5pt;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	font-weight:bold;
+	font-style:normal;}
+p.body, li.body, div.body
+	{mso-style-name:body;
+	mso-style-update:auto;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:Times;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	mso-bidi-language:AR-SA;}
+p.cellbody, li.cellbody, div.cellbody
+	{mso-style-name:cellbody;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Arial Unicode MS";
+	color:black;}
+p.cellheading, li.cellheading, div.cellheading
+	{mso-style-name:cellheading;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.5pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Arial Unicode MS";
+	color:black;
+	font-weight:bold;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:282154719;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1738974644 979897624 67698689 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-style-link:"Heading 1";
+	mso-level-tab-stop:46.35pt;
+	mso-level-number-position:left;
+	text-indent:-7.65pt;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Arial;}
+@list l1
+	{mso-list-id:817115372;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-222818394 -697145580 -358333848 189196868 -517827576 2056129190 -806077288 317082144 199381758 1641471318;}
+@list l2
+	{mso-list-id:1416323966;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1235363528 558379752 935879824 2143073266 -564087670 -1218022468 -1746534258 -979210414 506647900 -854943824;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+@list l3
+	{mso-list-id:2010938027;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1855704176 2014488312 108715472 22301160 -1339768070 1735136922 -2005336494 526918738 -781795230 521147104;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+</head>
+
+<body lang=EN-US style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<h3 style='margin-top:20.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><i><span style='font-size:19.0pt;font-family:Times;color:black'>Silk
+Screen Optimization<o:p></o:p></span></i></h3>
+
+<p class=body>Silk Screen Optimization is a read-write DFM action designed to
+prevent silk screen features from encroaching upon exposed signal layer
+features. All silkscreen layer features are tested against corresponding
+soldermask layer and drill layer features. Offending features are modified in a
+manner that:</p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l3 level1 lfo4;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+color:black'>*</span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:11.0pt;
+font-family:Arial;mso-bidi-font-family:Times;color:black'></span><span
+style='font-size:7.0pt;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='font-size:11.0pt;font-family:Times;color:black'>Eliminates parts of silk
+screen from exposed and drilled outer layer areas.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l3 level1 lfo4;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:11.0pt;
+font-family:Arial;mso-bidi-font-family:Times;color:black'></span><span
+style='font-size:7.0pt;color:black'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='font-size:11.0pt;font-family:Times;color:black'>Keeps modified silk
+screen features recognizable by making the least possible modifications.<o:p></o:p></span></p>
+
+<p class=body>This action operates in three modes:</p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:11.0pt;font-family:Times;color:black'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'></span><em><span
+style='font-size:11.0pt;font-family:Times;color:black;font-weight:normal'>Clipping
+</span></em><span style='font-size:11.0pt;font-family:Times;color:black'>-
+parts of silk screen lines are clipped where they cross soldermask openings and
+drills. As a result, an original line is broken into a series of shorter lines
+with spaces to provide requested distance to soldermask and drill features.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:11.0pt;font-family:Times;color:black'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><em><span
+style='font-size:11.0pt;font-family:Times;color:black;font-weight:normal'>Merging</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> - a negative mask for
+the drill or soldermask feature is added to the silk screen layer to ensure
+proper spacing between the silk screen and exposed signal layer and drills.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:11.0pt;font-family:Times;color:black'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><em><span
+style='font-size:11.0pt;font-family:Times;color:black;font-weight:normal'>Clip&amp;Merge</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> - a combination of both
+of the above methods. Unscratched positive round lines are clipped, and the
+rest of the features are merged.<o:p></o:p></span></p>
+
+<p class=body>This action operates only on silk screen layers. Relevant solder
+mask, drill and rout layers can be referenced (if they exist for the processed
+layer).</p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:90.0pt;text-indent:-36.0pt;mso-list:l2 level1 lfo8;tab-stops:list 36.0pt'><![if !supportLists]><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:11.0pt;
+font-family:Arial;mso-bidi-font-family:Times;color:black'>*</span><span
+style='font-size:7.0pt;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:11.0pt;font-family:Times;color:black'>More than 2
+SS layers can be optimized for a step. <o:p></o:p></span></p>
+
+<p class=body>&nbsp;</p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Special
+Reports<o:p></o:p></span></i></h6>
+
+<p class=body>Reports total thieving features added to each layer.<o:p></o:p></p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Result
+Attributes<o:p></o:p></span></i></h6>
+
+<p class=body>Count of measurements for relevant category is reported for each
+layer and a grand total is supplied for all layers. <o:p></o:p></p>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Attribute<o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Description<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>..._Clipped</span></em> <o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Number of clipped locations <o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>..._Not_Clipped</span></em> <o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Number of unclipped locations<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>..._Not_Clipped_by_SM</span></em>
+  <o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Number of unclipped locations<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>..._Merged</span></em> <o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Number of merged locations<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>..._Not_Merged_by_SM</span></em>
+  <o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Number of unmerged locations<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>..._Not_Merged_by_DRL</span></em>
+  <o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Number of unmerged locations<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>
+

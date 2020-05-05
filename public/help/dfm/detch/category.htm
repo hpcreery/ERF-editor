@@ -1,0 +1,388 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1255">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./category_files/filelist.xml">
+<link rel=Edit-Time-Data href="./category_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Dynamic Etch Compensation</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Frontline</o:Author>
+  <o:LastAuthor>Frontline</o:LastAuthor>
+  <o:Revision>6</o:Revision>
+  <o:TotalTime>6</o:TotalTime>
+  <o:Created>2004-03-25T14:44:00Z</o:Created>
+  <o:LastSaved>2004-03-28T10:38:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>315</o:Words>
+  <o:Characters>1797</o:Characters>
+  <o:Company>Frontline PCB</o:Company>
+  <o:Lines>14</o:Lines>
+  <o:Paragraphs>3</o:Paragraphs>
+  <o:CharactersWithSpaces>2206</o:CharactersWithSpaces>
+  <o:Version>9.6926</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Times;
+	panose-1:0 0 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:"Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1 -369098753 63 0 4129023 0;}
+@font-face
+	{font-family:"\@Arial Unicode MS";
+	mso-font-charset:128;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1 -369098753 63 0 4129023 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-update:auto;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-language:AR-SA;}
+h1
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-7.65pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	mso-list:l0 level1 lfo2;
+	tab-stops:list 46.35pt;
+	font-size:20.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:0pt;
+	mso-bidi-language:AR-SA;}
+h2
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-language:AR-SA;}
+h3
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";}
+h6
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:6;
+	font-size:7.5pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	tab-stops:center 216.0pt right 432.0pt;
+	border:none;
+	mso-border-alt:thin-thick-thin-medium-gap windowtext 9.0pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 0cm 0cm;
+	font-size:36.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-AU;
+	mso-bidi-language:AR-SA;
+	font-weight:bold;}
+em
+	{mso-ansi-font-size:9.5pt;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	font-weight:bold;
+	font-style:normal;}
+p.body, li.body, div.body
+	{mso-style-name:body;
+	mso-style-update:auto;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:Times;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	mso-bidi-language:AR-SA;}
+p.code, li.code, div.code
+	{mso-style-name:code;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:18.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.5pt;
+	font-family:Courier;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:282154719;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1738974644 979897624 67698689 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-style-link:"Heading 1";
+	mso-level-tab-stop:46.35pt;
+	mso-level-number-position:left;
+	text-indent:-7.65pt;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Arial;}
+@list l1
+	{mso-list-id:735519425;
+	mso-list-type:hybrid;
+	mso-list-template-ids:903893878 1029708766 -1993070986 -960329412 1080735352 -879063854 -701848904 143024720 630516574 853171570;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F02D;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+@list l2
+	{mso-list-id:1577473904;
+	mso-list-type:hybrid;
+	mso-list-template-ids:903893878 1029708766 -1993070986 -960329412 1080735352 -879063854 -701848904 143024720 630516574 853171570;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F02D;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1051"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<h3 style='margin-top:20.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><i><span style='font-size:19.0pt;font-family:Times;color:black'>Dynamic
+Etch Compensation<o:p></o:p></span></i></h3>
+
+<p class=body>The Dynamic Etch Compensation DFM action is designed to meet the
+special need of the HDI (High Density Interconnect) fabricator, where etching
+process behavior is not uniform.</p>
+
+<p class=body>The Dynamic Etch Compensation action adds copper consistently
+around existing copper to compensate for uneven etching. Each feature is
+enlarged by a (compensation) value defined as a function of the feature type,
+spacing between a feature and its neighbors, and the neighbors' types. Features
+are enlarged evenly. The compensation stops when minimum spacing is reached or
+the compensation value is optimal, whichever occurs first.</p>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><i><span style='font-size:15.0pt;font-family:Times;color:black'>Predefined
+Compensation Functions<o:p></o:p></span></i></h6>
+
+<p class=body>A new class of system predefined functions (in addition to .zero)
+was introduced in Genesis v8.1.</p>
+
+<p class=body><em><span style='font-size:9.5pt;font-family:"Courier New"'>.a/b</span></em>
+where a and b are non-negative numbers in the current (editor) units. This
+encodes the following function: </p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l2 level1 lfo4;tab-stops:list 54.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Arial;
+color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:Times;color:black'>the
+compensation value is </span><em><span style='mso-ansi-font-size:12.0pt;
+font-family:Helvetica;color:black;font-weight:normal'>0</span></em><span
+style='font-family:Times;color:black'> for spacing between 0 and a <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo6;tab-stops:list 54.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Arial;
+color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:Times;color:black'>the
+compensation value is </span><em><span style='mso-ansi-font-size:12.0pt;
+font-family:Helvetica;color:black;font-weight:normal'>b</span></em><span
+style='font-family:Times;color:black'> for spacing greater than a. <o:p></o:p></span></p>
+
+<p class=body>In formal language, this functions would be defined as follows: </p>
+
+<p class=code><span style='mso-bidi-font-family:Courier'>.comment .a/b system
+predefined function <o:p></o:p></span></p>
+
+<p class=code><span style='mso-bidi-font-family:Courier'>.units current editor
+units (mil/micron) <o:p></o:p></span></p>
+
+<p class=code><span style='mso-bidi-font-family:Courier'>.maxrule horizontal <o:p></o:p></span></p>
+
+<p class=code><span style='mso-bidi-font-family:Courier'>.interpolation steps <o:p></o:p></span></p>
+
+<p class=code><span style='mso-bidi-font-family:Courier'>.points <o:p></o:p></span></p>
+
+<p class=code><span style='mso-bidi-font-family:Courier'>0 0 <o:p></o:p></span></p>
+
+<p class=code><span style='mso-bidi-font-family:Courier'>a b <o:p></o:p></span></p>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><i><span style='font-size:15.0pt;font-family:Times;color:black'>Enhancements
+to Surface Compensation Action<o:p></o:p></span></i></h6>
+
+<p class=body>The Surfaces Compensation action was improved to produce much
+smoother surfaces. When compensating special pads, the action worked on many
+small, dense surfaces, but produced inferior results. The improved algorithm in
+the Surfaces Compensation action performs advanced surface smoothing after
+surfaces compensation has been completed. For an example of the improved action
+at work, see the before and after pictures below. </p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" alt="" style='width:216.75pt;
+ height:114.75pt'>
+ <v:imagedata src="./category_files/image001.png" o:href="..\..\..\..\DFM%20Actions%20Source%20Material\DFM%20Actions-217.png"/>
+</v:shape><![endif]--><![if !vml]><img width=289 height=153
+src="./category_files/image001.png" v:shapes="_x0000_i1025"><![endif]><span
+style='font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><i><span style='font-size:15.0pt;font-family:Times;color:black'>Enhancements
+to Compensation for Standard Pads <o:p></o:p></span></i></h6>
+
+<p class=body>Standard pads can be flattened on demand and compensated
+according to surface compensation rules. This procedure is controlled by the
+new ERF variable <em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;font-weight:normal'>flatten_standard_pads</span></em>.
+This ERF variable is similar to the existing ERF variable <em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+font-weight:normal'>flatten_special_pads</span></em>, which controls pad
+flattening and compensation for special (non-standard) pads.</p>
+
+<p class=body>&nbsp;</p>
+
+<p class=body>&nbsp;</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>
+

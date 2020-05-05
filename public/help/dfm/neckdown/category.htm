@@ -1,0 +1,404 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1255">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 9">
+<meta name="Originator" content="Microsoft Word 9">
+<link rel="File-List" href="./category_files/filelist.xml">
+<link rel="Edit-Time-Data" href="./category_files/editdata.mso"><!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+
+
+
+<title>Line Width Optimization</title><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Frontline</o:Author>
+  <o:LastAuthor>Frontline</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>6</o:TotalTime>
+  <o:Created>2004-03-21T10:06:00Z</o:Created>
+  <o:LastSaved>2004-03-21T10:12:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>301</o:Words>
+  <o:Characters>1716</o:Characters>
+  <o:Company>Frontline PCB</o:Company>
+  <o:Lines>14</o:Lines>
+  <o:Paragraphs>3</o:Paragraphs>
+  <o:CharactersWithSpaces>2107</o:CharactersWithSpaces>
+  <o:Version>9.6926</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Times;
+	panose-1:0 0 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:"Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1 -369098753 63 0 4129023 0;}
+@font-face
+	{font-family:"\@Arial Unicode MS";
+	mso-font-charset:128;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1 -369098753 63 0 4129023 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-update:auto;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-language:AR-SA;}
+h1
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-7.65pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	mso-list:l0 level1 lfo2;
+	tab-stops:list 46.35pt;
+	font-size:20.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:0pt;
+	mso-bidi-language:AR-SA;}
+h2
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-language:AR-SA;}
+h3
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";}
+h6
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:6;
+	font-size:7.5pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	tab-stops:center 216.0pt right 432.0pt;
+	border:none;
+	mso-border-alt:thin-thick-thin-medium-gap windowtext 9.0pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 0cm 0cm;
+	font-size:36.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-AU;
+	mso-bidi-language:AR-SA;
+	font-weight:bold;}
+em
+	{mso-ansi-font-size:9.5pt;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	font-weight:bold;
+	font-style:normal;}
+p.body, li.body, div.body
+	{mso-style-name:body;
+	mso-style-update:auto;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:Times;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	mso-bidi-language:AR-SA;}
+p.cellbody, li.cellbody, div.cellbody
+	{mso-style-name:cellbody;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Arial Unicode MS";
+	color:black;}
+p.cellheading, li.cellheading, div.cellheading
+	{mso-style-name:cellheading;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.5pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Arial Unicode MS";
+	color:black;
+	font-weight:bold;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:282154719;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1738974644 979897624 67698689 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-style-link:"Heading 1";
+	mso-level-tab-stop:46.35pt;
+	mso-level-number-position:left;
+	text-indent:-7.65pt;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Arial;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]--></head>
+
+<body style="" lang="EN-US">
+
+<div class="Section1">
+
+<h3 style="margin: 20pt 0cm 5pt;"><i><span style="font-size: 19pt; font-family: Helvetica; color: black;">Line Width
+Optimization<o:p></o:p></span></i></h3>
+
+<p class="body">Line Width Optimization is a read-write DFM action designed to
+improve yield by increasing line and arc width to the optimal value without infringing
+on spacing rules.</p>
+
+<h6 style="margin: 15pt 0cm 7pt;"><i><span style="font-size: 12pt; font-family: Helvetica; color: black;">Shaving<o:p></o:p></span></i></h6>
+
+<p class="body">Spacing violations occur when the distance between widened and
+optimal size lines to features in a different net is less than that specified
+by the Spacing Min parameter. In order to avoid spacing violations, a method
+referred to as `shaving' is used. The original line is separated into connected
+segments, each of which may be increased to the optimal width possible without
+causing spacing violations, as shown in the figure below:</p>
+
+<p class="MsoNormal"><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" alt="" style='width:284.25pt;
+ height:125.25pt'>
+ <v:imagedata src="./category_files/image001.png" o:href="..\..\..\..\DFM%20Actions%20Source%20Material\DFM%20Actions-103.png"/>
+</v:shape><![endif]--><img src="./category_files/image001.png" v:shapes="_x0000_i1025" height="167" width="379"><span style="font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></p>
+
+<p class="body">Gaps between such segments are filled by line segments with a
+width defined by the Minimal Width parameter (referred to as Shaves). As
+result, the original line will be replaced with a combination of Optimal Width
+lines and Minimal Width lines.</p>
+
+<p class="body">Line Width Optimization operates on any layer, but is designed
+mainly for signal layers.</p><h6 style="margin: 15pt 0cm 7pt;"><i><i><span style="font-size: 12pt; font-family: Helvetica; color: black;">Arc Features</span></i></i></h6><p class="body">New categories were added to handle arc features in addition to lines.<br>When
+an arc needs to be reduced in width, the connecting arcs are attached
+to the thinned arc with the same radius on either end of the connection.</p><p class="body"><img style="width: 202px; height: 114px;" alt="" src="category_files/image002.png"></p><p class="body"><span style="font-size: 11pt; font-family: Times; color: black;">Arcs that need to be shaved are s</span><!--[endif]--><span style="font-size: 11pt; font-family: Times; color: black;">haved
+on both sides of the arc. Genesis does not support one-sided arc reduction.</span></p><p class="body"><span style="font-size: 11pt; font-family: Times; color: black;"><img style="width: 197px; height: 97px;" alt="" src="category_files/image003.png"></span></p><p class="body"> </p>
+
+<h6 style="margin: 15pt 0cm 7pt;"><i><span style="font-size: 12pt; font-family: Helvetica; color: black;">Special
+Reports<o:p></o:p></span></i></h6>
+
+<p class="body">Histograms for all categories are produced.<o:p></o:p></p>
+
+<h6 style="margin: 15pt 0cm 7pt;"><i><span style="font-size: 12pt; font-family: Helvetica; color: black;">Result
+Attribute<o:p></o:p></span></i></h6>
+
+<p class="body">The following attributes are produced once for each layer and
+once (without layer name in the form of <em><span style="font-size: 9.5pt; font-family: Courier; font-weight: normal;">...</span></em>
+) as a total for the checklist run: <o:p></o:p></p>
+
+<table style="" border="1" cellpadding="0">
+ <tbody><tr>
+  <td style="padding: 0.75pt;">
+  <p class="cellheading">Attribute<o:p></o:p></p>
+  </td>
+  <td style="padding: 0.75pt;">
+  <p class="cellheading">Description<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="padding: 0.75pt;">
+  <p class="cellbody"><em><span style="font-size: 9.5pt; font-family: Courier; font-weight: normal;">...One_sided_neck_down</span></em>
+  <o:p></o:p></p>
+  </td>
+  <td style="padding: 0.75pt;">
+  <p class="cellbody">Measure count for the Shaved Conductor1 category for each
+  layer.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="padding: 0.75pt;">
+  <p class="cellbody"><em><span style="font-size: 9.5pt; font-family: Courier; font-weight: normal;">...two_sided_neck_down</span></em>
+  <o:p></o:p></p>
+  </td>
+  <td style="padding: 0.75pt;">
+  <p class="cellbody">Measure count for the Shaved Conductor2 category for each
+  layer.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="padding: 0.75pt;">
+  <p class="cellbody"><em><span style="font-size: 9.5pt; font-family: Courier; font-weight: normal;">...enlarged_without_shavings</span></em>
+  <o:p></o:p></p>
+  </td>
+  <td style="padding: 0.75pt;">
+  <p class="cellbody">Measure count for the Enlarged Conductor category for each
+  layer.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="padding: 0.75pt;">
+  <p class="cellbody"><em><span style="font-size: 9.5pt; font-family: Courier; font-weight: normal;">...spacing_too_close</span></em>
+  <o:p></o:p></p>
+  </td>
+  <td style="padding: 0.75pt;">
+  <p class="cellbody">Measure count for the Not Enlarged Conductor category for
+  each layer.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="padding: 0.75pt;">
+  <p class="cellbody"><em><span style="font-size: 9.5pt; font-family: Courier; font-weight: normal;">One_sided_neck_down</span></em>
+  <o:p></o:p></p>
+  </td>
+  <td style="padding: 0.75pt;">
+  <p class="cellbody">Total measure count for the Shaved Conductor1 category for
+  all layers.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="padding: 0.75pt;">
+  <p class="cellbody"><em><span style="font-size: 9.5pt; font-family: Courier; font-weight: normal;">two_sided_neck_down</span></em>
+  <o:p></o:p></p>
+  </td>
+  <td style="padding: 0.75pt;">
+  <p class="cellbody">Total measure count for the Shaved Conductor2 category for
+  all layers.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="padding: 0.75pt;">
+  <p class="cellbody"><em><span style="font-size: 9.5pt; font-family: Courier; font-weight: normal;">enlarged_without_shavings</span></em>
+  <o:p></o:p></p>
+  </td>
+  <td style="padding: 0.75pt;">
+  <p class="cellbody">Total measure count for the Enlarged Conductor category for
+  all layers.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="padding: 0.75pt;">
+  <p class="cellbody"><em><span style="font-size: 9.5pt; font-family: Courier; font-weight: normal;">spacing_too_close</span></em>
+  <o:p></o:p></p>
+  </td>
+  <td style="padding: 0.75pt;">
+  <p class="cellbody">Total measure count for the Not Enlarged Conductor category
+  for all layers.<o:p></o:p></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal"><span style="font-family: &quot;Times New Roman&quot;;">&nbsp;<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><o:p></o:p></p>
+
+</div>
+
+</body></html>

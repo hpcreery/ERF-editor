@@ -1,0 +1,433 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1255">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./ERF%20Variables_files/filelist.xml">
+<title>ERF Variables</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Frontline</o:Author>
+  <o:LastAuthor>Frontline</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:Created>2004-03-07T14:36:00Z</o:Created>
+  <o:LastSaved>2004-03-07T14:40:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Company>Frontline PCB</o:Company>
+  <o:Lines>1</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:Version>9.6926</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Times;
+	panose-1:0 0 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:"Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1 -369098753 63 0 4129023 0;}
+@font-face
+	{font-family:"\@Arial Unicode MS";
+	mso-font-charset:128;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1 -369098753 63 0 4129023 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-update:auto;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-language:AR-SA;}
+h1
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-indent:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	mso-list:l0 level1 lfo2;
+	tab-stops:list 18.0pt;
+	font-size:20.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:0pt;
+	mso-bidi-language:AR-SA;}
+h2
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-language:AR-SA;}
+h3
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Arial Unicode MS";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	tab-stops:center 216.0pt right 432.0pt;
+	font-size:36.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	border:double windowtext 9.0pt;
+	mso-border-alt:thin-thick-thin-medium-gap windowtext 9.0pt;
+	padding:0cm;
+	mso-ansi-language:EN-AU;
+	mso-bidi-language:AR-SA;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+em
+	{mso-ansi-font-size:9.5pt;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	font-weight:bold;
+	font-style:normal;}
+p.body, li.body, div.body
+	{mso-style-name:body;
+	mso-style-update:auto;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:Times;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	mso-bidi-language:AR-SA;}
+p.cellbody, li.cellbody, div.cellbody
+	{mso-style-name:cellbody;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.5pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Arial Unicode MS";
+	mso-bidi-font-family:"Arial Unicode MS";
+	color:black;}
+p.cellheading, li.cellheading, div.cellheading
+	{mso-style-name:cellheading;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.5pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Arial Unicode MS";
+	mso-bidi-font-family:"Arial Unicode MS";
+	color:black;
+	font-weight:bold;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:282154719;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1738974644 979897624 67698689 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-style-link:"Heading 1";
+	mso-level-tab-stop:46.35pt;
+	mso-level-number-position:left;
+	text-indent:-7.65pt;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Arial;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<h3 style='margin-top:20.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><i><span style='font-size:19.0pt;font-family:Times;color:black'>ERF
+Variables<o:p></o:p></span></i></h3>
+
+<h1 style='mso-list:none;tab-stops:36.0pt'><span style='font-size:9.0pt;
+font-family:Times;color:black'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></h1>
+
+<table border=0 cellpadding=0 style='mso-cellspacing:1.5pt'>
+ <tr>
+  <td style='background:silver;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>ERF Variable<o:p></o:p></p>
+  </td>
+  <td style='background:silver;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Description<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;font-weight:normal;
+  mso-bidi-font-weight:bold'>rm_npth</span></em> <o:p></o:p></p>
+  </td>
+  <td rowspan=6 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Reliability margins that are used in DRA calculations<o:p></o:p></p>
+  <p class=cellbody>For more details regarding reliability margins and DRA
+  calculations see <a
+  href="\Filer1BooksNCC%20ManualsERF%20EditorAnalysis%20Actions%20Source%20MaterialFabrication%20Analysis.htm#39712">See
+  DRA / RM</a><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;font-weight:normal;
+  mso-bidi-font-weight:bold'>rm_pth </span></em><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;font-weight:normal;
+  mso-bidi-font-weight:bold'>rm_via </span></em><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;font-weight:normal;
+  mso-bidi-font-weight:bold'>rm_pad_pth</span></em> <o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;font-weight:normal;
+  mso-bidi-font-weight:bold'>rm_pad_smd</span></em> <o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;font-weight:normal;
+  mso-bidi-font-weight:bold'>rm_sm </span></em><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;font-weight:normal;
+  mso-bidi-font-weight:bold'>rm_rout</span></em> <o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;font-weight:normal;
+  mso-bidi-font-weight:bold'>max_line_width</span></em> <o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Maximum line width of lines in <em><span style='font-family:
+  Courier;font-weight:normal;mso-bidi-font-weight:bold'>line</span></em>
+  category<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;font-weight:normal;
+  mso-bidi-font-weight:bold'>min_line_len </span></em><o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimum line length of lines in <em><span style='font-family:
+  Courier;font-weight:normal;mso-bidi-font-weight:bold'>line</span></em>
+  category, also minimum overlap between lines to report in parallel spacing<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;font-weight:normal;
+  mso-bidi-font-weight:bold'>len2width_ratio</span></em> <o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Minimum ratio of len to width of a line to be inserted into
+  the <em><span style='font-family:Courier;font-weight:normal;mso-bidi-font-weight:
+  bold'>line</span></em> category<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;font-weight:normal;
+  mso-bidi-font-weight:bold'>v_report_include_</span></em><b><i><span
+  style='font-family:Courier'><br>
+  </span></i></b><em><span style='font-family:Courier;font-weight:normal;
+  mso-bidi-font-weight:bold'>sm_as_zero</span></em> <o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>When <em><span style='font-family:Courier;font-weight:normal;
+  mso-bidi-font-weight:bold'>0,</span></em> the distance between the soldermask
+  clearance that is included inside a silkscreen element is reported as its
+  real distance in the<em><span style='font-family:Arial;mso-bidi-font-family:
+  "Arial Unicode MS";font-weight:normal;mso-bidi-font-weight:bold'> SM
+  Clearance</span></em> category. <o:p></o:p></p>
+  <p class=cellbody>When <em><span style='font-family:Courier;font-weight:normal;
+  mso-bidi-font-weight:bold'>1, </span></em>the distance segment between the
+  soldermask clearance that is included inside a silkscreen element becomes a
+  zero length distance segment, and is therefore reported in the
+  red severity level of the <em><span style='font-family:Arial;
+  mso-bidi-font-family:"Arial Unicode MS";font-weight:normal;mso-bidi-font-weight:
+  bold'>SM Clearance</span></em> category. <o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;font-weight:normal;
+  mso-bidi-font-weight:bold'>v_report_arcs_</span></em><b><i><span
+  style='font-family:Courier'><br>
+  </span></i></b><em><span style='font-family:Courier;font-weight:normal;
+  mso-bidi-font-weight:bold'>with_lines</span></em> <o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>This variable controls in what category arcs and shaved
+  arcs are reported.<o:p></o:p></p>
+  <p class=cellbody><em><span style='font-family:Arial;mso-bidi-font-family:
+  "Arial Unicode MS";font-weight:normal;mso-bidi-font-weight:bold'>No</span></em>
+  <em><span style='font-family:Courier;font-weight:normal;mso-bidi-font-weight:
+  bold'>= </span></em>arcs are reported in the new <em><span style='font-family:
+  Arial;mso-bidi-font-family:"Arial Unicode MS";font-weight:normal;mso-bidi-font-weight:
+  bold'>ss_arc</span></em> category. Shaved<em><span style='font-family:Courier;
+  font-weight:normal;mso-bidi-font-weight:bold'> </span></em>arcs are reported
+  in the new <em><span style='font-family:Arial;mso-bidi-font-family:"Arial Unicode MS";
+  font-weight:normal;mso-bidi-font-weight:bold'>ss_shaved_arc</span></em>
+  category.<o:p></o:p></p>
+  <p class=cellbody><em><span style='font-family:Arial;mso-bidi-font-family:
+  "Arial Unicode MS";font-weight:normal;mso-bidi-font-weight:bold'>Yes</span></em>
+  <em><span style='font-family:Courier;font-weight:normal;mso-bidi-font-weight:
+  bold'>= </span></em>arcs are reported in the <em><span style='font-family:
+  Arial;mso-bidi-font-family:"Arial Unicode MS";font-weight:normal;mso-bidi-font-weight:
+  bold'>ss_line</span></em> category with lines reports. Shaved<em><span
+  style='font-family:Courier;font-weight:normal;mso-bidi-font-weight:bold'> </span></em>arcs
+  are reported in the <em><span style='font-family:Arial;mso-bidi-font-family:
+  "Arial Unicode MS";font-weight:normal;mso-bidi-font-weight:bold'>ss_shaved
+  line</span></em> category along with shaved lines reports.<o:p></o:p></p>
+  <p class=cellbody><em><span style='font-family:Arial;mso-bidi-font-family:
+  "Arial Unicode MS";font-weight:normal;mso-bidi-font-weight:bold'>Note: </span></em>The
+  Arcs and Shaved Arcs reports are subject to line reports limitations:
+  max_line_width, min_line_len, len2width_ratio. <o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;font-weight:normal;
+  mso-bidi-font-weight:bold'>v_check_only_</span></em><b><i><span
+  style='font-family:Courier'><br>
+  </span></i></b><em><span style='font-family:Courier;font-weight:normal;
+  mso-bidi-font-weight:bold'>exposed_drill</span></em> <o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>This variable enables you to define what drill holes to
+  check.<o:p></o:p></p>
+  <p class=cellbody><em><span style='font-family:Arial;mso-bidi-font-family:
+  "Arial Unicode MS";font-weight:normal;mso-bidi-font-weight:bold'>Yes</span></em>
+  (the default value) = the action checks only exposed drill holes. <o:p></o:p></p>
+  <p class=cellbody><em><span style='font-family:Arial;mso-bidi-font-family:
+  "Arial Unicode MS";font-weight:normal;mso-bidi-font-weight:bold'>No</span></em>
+  <em><span style='font-family:Courier;font-weight:normal;mso-bidi-font-weight:
+  bold'>= </span></em>all drill holes are checked.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;font-weight:normal;
+  mso-bidi-font-weight:bold'>v_report_include_</span></em><b><i><span
+  style='font-family:Courier'><br>
+  </span></i></b><em><span style='font-family:Courier;font-weight:normal;
+  mso-bidi-font-weight:bold'>as_zero</span></em> <o:p></o:p></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>This variable enables you to define how to report Silk
+  Screen elements which are fully included inside drill or rout features.<o:p></o:p></p>
+  <p class=cellbody><em><span style='font-family:Arial;mso-bidi-font-family:
+  "Arial Unicode MS";font-weight:normal;mso-bidi-font-weight:bold'>No</span></em>
+  (the default value) = the action reports the measured distance.<o:p></o:p></p>
+  <p class=cellbody><em><span style='font-family:Arial;mso-bidi-font-family:
+  "Arial Unicode MS";font-weight:normal;mso-bidi-font-weight:bold'>Yes</span></em>
+  <em><span style='font-family:Courier;font-weight:normal;mso-bidi-font-weight:
+  bold'>= </span></em>the distance will be reported as zero length distance that
+  will touch the SS element.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>
+

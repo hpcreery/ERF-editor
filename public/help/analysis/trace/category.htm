@@ -1,0 +1,501 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./category_files/filelist.xml">
+<link rel=Edit-Time-Data href="./category_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Trace Analysis Action</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Frontline</o:Author>
+  <o:LastAuthor>Frontline</o:LastAuthor>
+  <o:Revision>12</o:Revision>
+  <o:TotalTime>18</o:TotalTime>
+  <o:Created>2004-08-10T14:38:00Z</o:Created>
+  <o:LastSaved>2004-08-10T15:03:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>256</o:Words>
+  <o:Characters>1463</o:Characters>
+  <o:Company>Frontline PCB</o:Company>
+  <o:Lines>12</o:Lines>
+  <o:Paragraphs>2</o:Paragraphs>
+  <o:CharactersWithSpaces>1796</o:CharactersWithSpaces>
+  <o:Version>9.6926</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Times;
+	panose-1:0 0 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Times-BoldItalic;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:auto;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Arial-BoldMT;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:auto;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Courier-Bold;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:auto;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Helvetica-Bold;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:auto;
+	mso-font-signature:3 0 0 0 1 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-update:auto;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-7.65pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	mso-list:l0 level1 lfo2;
+	tab-stops:list 46.35pt;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:20.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:Arial;
+	mso-font-kerning:0pt;}
+h2
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;}
+h3
+	{mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:18.0pt;
+	font-family:Arial-BoldMT;
+	mso-bidi-font-family:Arial;}
+h4
+	{mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:18.0pt;
+	font-family:Times-BoldItalic;
+	mso-bidi-font-family:Arial;
+	font-style:italic;}
+h5
+	{mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:14.0pt;
+	font-family:Helvetica-Bold;
+	mso-bidi-font-family:Arial;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	tab-stops:center 216.0pt right 432.0pt;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	border:none;
+	mso-border-alt:thin-thick-thin-medium-gap windowtext 9.0pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 0cm 0cm;
+	font-size:36.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-AU;
+	font-weight:bold;}
+em
+	{mso-ansi-font-size:9.5pt;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	font-weight:bold;
+	font-style:normal;}
+p.body, li.body, div.body
+	{mso-style-name:body;
+	mso-style-update:auto;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:18.0pt;
+	mso-pagination:widow-orphan;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:12.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:Times;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:Arial;
+	color:black;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:282154719;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1738974644 979897624 67698689 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-style-link:"Heading 1";
+	mso-level-tab-stop:46.35pt;
+	mso-level-number-position:left;
+	text-indent:-7.65pt;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Arial;}
+@list l0:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<div style='border:double windowtext 9.0pt;mso-border-alt:thin-thick-thin-medium-gap windowtext 9.0pt;
+padding:0cm 0cm 0cm 0cm'>
+
+<p class=MsoHeader><span lang=EN-AU style='border:none windowtext 0cm;
+padding:0cm'><h1>Trace Analysis Action</h1>
+</span><span lang=EN-AU style='border:none windowtext 0cm;
+padding:0cm;mso-bidi-language:AR-SA'><o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal><span style='mso-bidi-language:AR-SA'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><h2>Introduction</h2> </p>
+
+<p class=MsoNormal>Trace Analysis is a new Analysis Action. This test measures
+the length of individual traces for each line width, and reports the longest
+and shortest trace that occurs in each line width. The test analyzes all lines
+in the layer whose line width falls between 0 to the value of the <b>max_line_width
+</b>ERF variable.</p>
+
+<p class=MsoNormal><span style='mso-bidi-language:AR-SA'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1055" type="#_x0000_t75" style='width:252pt;
+ height:171pt'>
+ <v:imagedata src="./category_files/image001.png" o:title="Trace analysis screen"/>
+</v:shape><![endif]--><![if !vml]><img width=336 height=228
+src="./category_files/image001.png" v:shapes="_x0000_i1055"><![endif]></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>What is a trace?</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=body><span style='font-family:Arial'>A <i>trace </i>is a set of lines
+or set of arc features. A trace must begin from a pad. It can end in one of
+four ways:<o:p></o:p></span></p>
+
+<p class=body><span style='font-family:Arial'>1. Enters another Pad.<o:p></o:p></span></p>
+
+<p class=body><span style='font-family:Arial'>2. Stub line (this stub line will
+be taken into consideration when calculating the trace's length).<o:p></o:p></span></p>
+
+<p class=body><span style='font-family:Arial'>3. Enters a Surface or drawn
+area.<o:p></o:p></span></p>
+
+<p class=body><span style='font-family:Arial'>4. Connects with another line /
+arc of the same dimensions, with another line of a different width, or with a
+different symbol.<o:p></o:p></span></p>
+
+<p class=body><span style='font-family:Arial'>The length of a trace is measured
+by the length of the skeleton of the line containing the trace, from the
+beginning of the trace until its end.</span><span style='font-size:10.0pt;
+font-family:Arial'><o:p></o:p></span></p>
+
+<p class=body><span style='font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h3>Notes</h3>
+
+<p class=body><span style='font-family:Arial'>Shaved lines and shaved arcs will
+not be considered as part of a trace.<o:p></o:p></span></p>
+
+<p class=body><span style='font-family:Arial'>Lines / Arcs which are drawn with
+special symbols will not be considered as part of a trace.<o:p></o:p></span></p>
+
+<p class=body><span style='font-family:Arial'>Lines with the following
+attributes will be ignored: <b>.pattern_fill, .sliver_fill, .tear_drop</b>.<o:p></o:p></span></p>
+
+<p class=body><span style='font-family:Arial'>If the pad is fully embedded in
+the line, it will not break the trace.<o:p></o:p></span></p>
+
+<p class=body><span style='font-family:Arial'>If there are features near the
+lines being analyzed that have the attributes <b>.sliver_fill </b>or <b>.tear_drop,
+<br>
+</b>these neighboring features will be ignored.<o:p></o:p></span></p>
+
+<p class=body><span style='font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h4>Filtering Traces</h4>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Any filters that may be applied to this check (apply to
+selected features, run inside window, or usage of mask mechanism)<br>
+<span style="mso-spacerun: yes"> </span>will be applied to the pads that begin
+the trace. For example, if running in <b>inside window mode</b>, any trace that
+begins with a<o:p></o:p></p>
+
+<p class=MsoNormal>pad that is inside the window will be reported, even though
+some of its parts are outside the window.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Reports</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>The action will report, for each line width, the longest
+trace and the shortest trace that was measured.</p>
+
+<p class=MsoNormal>The action will generate for output…<o:p></o:p></p>
+
+<p class=MsoNormal> - two separate categories for each line width tested<o:p></o:p></p>
+
+<p class=MsoNormal> - a table that summaries all measurements.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h3>Summary Report</h3>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>A table which summaries all measurements made. A sample
+table is given below.<o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=body><span style='font-family:Arial'><!--[if gte vml 1]><v:shape id="_x0000_i1057"
+ type="#_x0000_t75" style='width:414.75pt;height:165pt'>
+ <v:imagedata src="./category_files/image002.png" o:title="trace summary report"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=220
+src="./category_files/image003.jpg" v:shapes="_x0000_i1057"><![endif]><o:p></o:p></span></p>
+
+<p class=body><span style='font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><b><i><span style='font-size:19.0pt;font-family:Times-BoldItalic;
+mso-bidi-font-family:Times-BoldItalic'>Attributes<o:p></o:p></span></i></b></p>
+
+<p class=MsoNormal><b><i><span style='font-size:19.0pt;font-family:Times-BoldItalic;
+mso-bidi-font-family:Times-BoldItalic'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></i></b></p>
+
+<p class=body><span style='mso-bidi-font-size:12.0pt;font-family:Arial'>Each
+attribute displays the minimum or maximum trace_length for each line width.<o:p></o:p></span></p>
+
+<p class=body><span style='mso-bidi-font-size:12.0pt;font-family:Arial'>The
+attribute name is composed of the symbol name followed by phrase <b>shortest_trace_len
+</b>or <b>longest_trace_len</b>.<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='font-size:11.0pt;font-family:Helvetica-Bold;
+mso-bidi-font-family:Helvetica-Bold'>Example<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Courier-Bold;
+mso-bidi-font-family:Courier-Bold'>f03_r3.940_shortest_trace_len = 0.416<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Courier-Bold;
+mso-bidi-font-family:Courier-Bold'>f03_r3.940_longest_trace_len = 0.443<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Courier-Bold;
+mso-bidi-font-family:Courier-Bold'>f03_r4.920_shortest_trace_len = 0.007<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Courier-Bold;
+mso-bidi-font-family:Courier-Bold'>f03_r4.920_longest_trace_len = 10.846<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Courier-Bold;
+mso-bidi-font-family:Courier-Bold'>f03_r5.910_shortest_trace_len = 1.517<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Courier-Bold;
+mso-bidi-font-family:Courier-Bold'>f03_r5.910_longest_trace_len = 1.5246</span></b><span
+style='font-size:10.0pt;font-family:Helvetica-Bold;mso-bidi-font-family:Helvetica-Bold'><o:p></o:p></span></p>
+
+<p class=body><span style='mso-bidi-font-size:12.0pt;font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><b><i><span style='font-size:19.0pt;font-family:Times-BoldItalic;
+mso-bidi-font-family:Times-BoldItalic'>Categories<o:p></o:p></span></i></b></p>
+
+<p class=MsoNormal><b><i><span style='font-size:19.0pt;font-family:Times-BoldItalic;
+mso-bidi-font-family:Times-BoldItalic'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></i></b></p>
+
+<p class=body><span style='mso-bidi-font-size:12.0pt;font-family:Arial'>For
+each line width, two dynamic categories will be created - one for
+the longest trace that was measured and one for the shortest trace. Each
+category will contain the shapes that form the measured trace. The category
+name will be in the format:<o:p></o:p></span></p>
+
+<p class=body><b><span style='mso-bidi-font-size:12.0pt;font-family:Arial'>&lt;Shortest/Longest/Single_Trace&gt;_&lt;line
+symbol name&gt;_&lt;Layer's Name&gt;_&lt;length in inch/mm&gt;_&lt;inch/mm&gt;</span></b><span
+style='mso-bidi-font-size:12.0pt;font-family:Arial'>.<o:p></o:p></span></p>
+
+<p class=body><span style='mso-bidi-font-size:12.0pt;font-family:Arial'>To see
+the complete trace, select the desired category and select Show
+All. You can also search through the shapes that form the trace. The
+elements <b>&lt;line symbol name&gt; </b>and <b>&lt;Layer's Name&gt; </b>in the
+category name will be defined according to the units that were used when the
+action was activated.<o:p></o:p></span></p>
+
+<p class=body><span style='mso-bidi-font-size:12.0pt;font-family:Arial'>In
+cases where only one trace was measured for a given line width, the category name
+will begin with Single.<o:p></o:p></span></p>
+
+<p class=body><span style='mso-bidi-font-size:12.0pt;font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=body><span style='mso-bidi-font-size:12.0pt;font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=body><span style='font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=body><span style='font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=body><span style='font-family:Arial;mso-bidi-language:AR-SA'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-bidi-language:AR-SA'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
+

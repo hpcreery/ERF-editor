@@ -89,7 +89,7 @@ class ReadFiles extends Component {
 				if (object === '.colors') {
 				}
 				if (object === '.ranges\r') {
-					const rangearray = invalue.match(/\d+/g)
+					const rangearray = invalue.match(/-?\d+\.?\d*/g)
 					this.colorArraySort(rangearray, inobject)
 				}
 				if (object === '.pdef\r') {
@@ -301,16 +301,17 @@ class ReadFiles extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
+    this.modelstruct() // main model structure
+		this.jsonstruct()
+		this.graphstruct()
+		console.log('there has been an update to the data structures')
 		this.setState({ dir: String(nextProps.dir) })
 		console.log('File parser recieved props')
 		console.log(String(nextProps.dir))
 
 		this.contents = fs.readFileSync(String(nextProps.dir), 'utf8')
 		this.lines = this.contents.split('\n')
-		this.modelstruct() // main model structure
-		this.jsonstruct()
-		this.graphstruct()
-		console.log('there has been an update to the data structures')
+
 	}
 
 	render() {

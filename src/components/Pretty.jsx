@@ -29,7 +29,8 @@ export class Pretty extends Component {
 	constructor(props) {
 		super(props)
 
-		this.opendir = this.props.opendir
+    this.opendir = this.props.opendir
+    this.jsonERF - this.props.jsonERF
 		this.ERFmodels = this.props.ERFmodels
 		this.plotdata = this.props.plotdata
 		this.graphrange = Object.keys(this.plotdata)[0]
@@ -44,7 +45,7 @@ export class Pretty extends Component {
 	handleBasicChange = (e, { id, string }) =>
 		console.log(id + string + e.target.value)
 	rangeSeperator(value, object) {
-		const found = value.match(/\d+/g)
+		const found = value.match(/-?\d+\.?\d*/g)
 		//vendors.some( vendor => vendor['Name'] === 'Magenic' )
 		return found
 	}
@@ -230,7 +231,8 @@ export class Pretty extends Component {
 						this.rangevalue = this.rangeSeperator(
 							jsonERF.string,
 							jsonERF.object
-						)
+            )
+            console.log(this.rangevalue)
 						//this.rangePlotterData(this.rangevalue, jsonERF.object)
 						return (
 							<Grid
@@ -451,14 +453,21 @@ export class Pretty extends Component {
 
 	componentWillReceiveProps(nextProps) {
 		//this.setState({ ERFmodels: nextProps.ERFmodels })
-		this.ERFmodels = nextProps.ERFmodels
-		this.plotdata = nextProps.plotdata
+    this.ERFmodels = nextProps.ERFmodels
+    this.jsonERF = nextProps.jsonERF
+    console.log(this.ERFmodels)
+    this.plotdata = nextProps.plotdata
+    this.graphChange(Object.keys(this.plotdata)[0])
 		this.setState({ dir: String(nextProps.dir) })
 		console.log(this.plotdata)
 	}
-	componentWillMount() {}
+	componentWillMount() {
+    this.jsonERF = this.props.jsonERF
+  }
 
-	componentWillUpdate() {}
+	componentWillUpdate() {
+    
+  }
 	//chartRef = React.createRef()
 	componentDidMount() {
 		// const chartref = this.chartRef.current.getContext('2d')
@@ -513,13 +522,13 @@ export class Pretty extends Component {
 	}
 
 	render() {
-		const { jsonERF, filelength, dir } = this.props
+		//const { jsonERF, filelength, dir } = this.props
 		//console.log(jsonERF)
 		//console.log(JSON.stringify(jsonERF))
 		//this.dir = dir
 
 		return (
-			<div ref={this.titleRef} className="Table">
+			<div ref={this.titleRef} className="Table" id="Table">
 				<Grid columns={3}>
 					<Grid.Column width={3} className="densegrid">
 						<Sticky offset={41} context={this.titleRef}>
@@ -535,7 +544,7 @@ export class Pretty extends Component {
 						</Sticky>
 					</Grid.Column>
 					<Grid.Column width={8} className="densegrid">
-						{jsonERF.map((ERF) => this.contentMaker(ERF))}
+						{this.jsonERF.map((ERF) => this.contentMaker(ERF))}
 					</Grid.Column>
 
 					<Grid.Column width={5} className="densegrid">

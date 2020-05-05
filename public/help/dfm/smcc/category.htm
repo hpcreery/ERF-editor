@@ -1,0 +1,1672 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1255">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./category_files/filelist.xml">
+<link rel=Edit-Time-Data href="./category_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Solder Mask Optimization</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Frontline</o:Author>
+  <o:LastAuthor>Frontline</o:LastAuthor>
+  <o:Revision>29</o:Revision>
+  <o:TotalTime>53</o:TotalTime>
+  <o:Created>2004-03-18T13:09:00Z</o:Created>
+  <o:LastSaved>2004-03-21T10:01:00Z</o:LastSaved>
+  <o:Pages>5</o:Pages>
+  <o:Words>1446</o:Words>
+  <o:Characters>8247</o:Characters>
+  <o:Company>Frontline PCB</o:Company>
+  <o:Lines>68</o:Lines>
+  <o:Paragraphs>16</o:Paragraphs>
+  <o:CharactersWithSpaces>10127</o:CharactersWithSpaces>
+  <o:Version>9.6926</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Times;
+	panose-1:0 0 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:"Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1 -369098753 63 0 4129023 0;}
+@font-face
+	{font-family:"\@Arial Unicode MS";
+	mso-font-charset:128;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1 -369098753 63 0 4129023 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-update:auto;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-language:AR-SA;}
+h1
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-7.65pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	mso-list:l1 level1 lfo2;
+	tab-stops:list 46.35pt;
+	font-size:20.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:0pt;
+	mso-bidi-language:AR-SA;}
+h2
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-language:AR-SA;}
+h3
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";}
+h4
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";}
+h5
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:5;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";}
+h6
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:6;
+	font-size:7.5pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	tab-stops:center 216.0pt right 432.0pt;
+	border:none;
+	mso-border-alt:thin-thick-thin-medium-gap windowtext 9.0pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 0cm 0cm;
+	font-size:36.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-AU;
+	mso-bidi-language:AR-SA;
+	font-weight:bold;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Arial Unicode MS";
+	color:black;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+em
+	{mso-ansi-font-size:9.5pt;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	font-weight:bold;
+	font-style:normal;}
+p.body, li.body, div.body
+	{mso-style-name:body;
+	mso-style-update:auto;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:Times;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	mso-bidi-language:AR-SA;}
+p.cellbody, li.cellbody, div.cellbody
+	{mso-style-name:cellbody;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Arial Unicode MS";
+	color:black;}
+p.cellheading, li.cellheading, div.cellheading
+	{mso-style-name:cellheading;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.5pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Arial Unicode MS";
+	color:black;
+	font-weight:bold;}
+p.anchorincolumn, li.anchorincolumn, div.anchorincolumn
+	{mso-style-name:anchorincolumn;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:Times;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Arial Unicode MS";
+	color:black;}
+p.appendixtoc, li.appendixtoc, div.appendixtoc
+	{mso-style-name:appendixtoc;
+	margin-top:30.0pt;
+	margin-right:0cm;
+	margin-bottom:2.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:15.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:blue;
+	font-weight:bold;
+	font-style:italic;}
+p.bodyindent, li.bodyindent, div.bodyindent
+	{mso-style-name:bodyindent;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.callout-cent, li.callout-cent, div.callout-cent
+	{mso-style-name:callout-cent;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Arial Unicode MS";
+	color:black;}
+p.callout-left, li.callout-left, div.callout-left
+	{mso-style-name:callout-left;
+	margin-top:1.0pt;
+	margin-right:0cm;
+	margin-bottom:1.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:9.5pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Arial Unicode MS";
+	color:black;}
+p.chapovertoc, li.chapovertoc, div.chapovertoc
+	{mso-style-name:chapovertoc;
+	margin-top:36.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:15.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:blue;
+	font-weight:bold;
+	font-style:italic;}
+p.code, li.code, div.code
+	{mso-style-name:code;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:18.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.5pt;
+	font-family:Courier;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.covermain, li.covermain, div.covermain
+	{mso-style-name:covermain;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:20.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Arial Unicode MS";
+	color:black;
+	font-weight:bold;}
+p.coversmall, li.coversmall, div.coversmall
+	{mso-style-name:coversmall;
+	margin-top:7.0pt;
+	margin-right:0cm;
+	margin-bottom:7.0pt;
+	margin-left:0cm;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Arial Unicode MS";
+	color:black;}
+p.footnote, li.footnote, div.footnote
+	{mso-style-name:footnote;
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:27.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-9.0pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.heading1toc, li.heading1toc, div.heading1toc
+	{mso-style-name:heading1toc;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:1.0pt;
+	margin-left:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:13.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:blue;}
+p.heading2toc, li.heading2toc, div.heading2toc
+	{mso-style-name:heading2toc;
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:1.0pt;
+	margin-left:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:blue;}
+p.mapping-table-cell, li.mapping-table-cell, div.mapping-table-cell
+	{mso-style-name:mapping-table-cell;
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:2.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.mapping-table-title, li.mapping-table-title, div.mapping-table-title
+	{mso-style-name:mapping-table-title;
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:2.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tablefootnote, li.tablefootnote, div.tablefootnote
+	{mso-style-name:tablefootnote;
+	margin-top:2.0pt;
+	margin-right:7.2pt;
+	margin-bottom:0cm;
+	margin-left:21.6pt;
+	margin-bottom:.0001pt;
+	text-indent:-14.4pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Arial Unicode MS";
+	color:black;}
+p.xdocnametoc, li.xdocnametoc, div.xdocnametoc
+	{mso-style-name:xdocnametoc;
+	margin-top:18.0pt;
+	margin-right:0cm;
+	margin-bottom:15.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:20.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Arial Unicode MS";
+	color:black;
+	font-weight:bold;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:118453068;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-620062354 -2102778894 1064224264 -1162289710 -2134994716 527069306 2056430572 1217717180 789489792 -743162636;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:28.8pt;
+	mso-level-number-position:left;
+	margin-left:28.8pt;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+@list l0:level2
+	{mso-level-tab-stop:64.8pt;
+	mso-level-number-position:left;
+	margin-left:64.8pt;
+	text-indent:-18.0pt;}
+@list l0:level3
+	{mso-level-tab-stop:100.8pt;
+	mso-level-number-position:left;
+	margin-left:100.8pt;
+	text-indent:-18.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:136.8pt;
+	mso-level-number-position:left;
+	margin-left:136.8pt;
+	text-indent:-18.0pt;}
+@list l0:level5
+	{mso-level-tab-stop:172.8pt;
+	mso-level-number-position:left;
+	margin-left:172.8pt;
+	text-indent:-18.0pt;}
+@list l0:level6
+	{mso-level-tab-stop:208.8pt;
+	mso-level-number-position:left;
+	margin-left:208.8pt;
+	text-indent:-18.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:244.8pt;
+	mso-level-number-position:left;
+	margin-left:244.8pt;
+	text-indent:-18.0pt;}
+@list l0:level8
+	{mso-level-tab-stop:280.8pt;
+	mso-level-number-position:left;
+	margin-left:280.8pt;
+	text-indent:-18.0pt;}
+@list l0:level9
+	{mso-level-tab-stop:316.8pt;
+	mso-level-number-position:left;
+	margin-left:316.8pt;
+	text-indent:-18.0pt;}
+@list l1
+	{mso-list-id:282154719;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1738974644 979897624 67698689 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l1:level1
+	{mso-level-style-link:"Heading 1";
+	mso-level-tab-stop:46.35pt;
+	mso-level-number-position:left;
+	text-indent:-7.65pt;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Arial;}
+@list l2
+	{mso-list-id:286089211;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-556924730 334662786 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l2:level1
+	{mso-level-start-at:2;
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-18.0pt;}
+@list l3
+	{mso-list-id:325793480;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1091144254 -174798396 272677026 -1392474004 651338304 71103154 841762536 -1243319636 -1837745936 -920852212;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+@list l4
+	{mso-list-id:513615323;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-729364000 1029708766 978208828 -1442277510 -872375728 -2009803968 -695683406 1420077878 -896878036 -1039349192;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F02D;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+@list l5
+	{mso-list-id:992180986;
+	mso-list-type:hybrid;
+	mso-list-template-ids:844386634 1029708766 -907372510 -668012070 -1044358102 996021748 -1738230710 30311414 380776922 -89616774;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F02D;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+@list l5:level2
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	margin-left:108.0pt;
+	text-indent:-18.0pt;}
+@list l5:level3
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	margin-left:144.0pt;
+	text-indent:-18.0pt;}
+@list l5:level4
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	margin-left:180.0pt;
+	text-indent:-18.0pt;}
+@list l5:level5
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	margin-left:216.0pt;
+	text-indent:-18.0pt;}
+@list l5:level6
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	margin-left:252.0pt;
+	text-indent:-18.0pt;}
+@list l5:level7
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	margin-left:288.0pt;
+	text-indent:-18.0pt;}
+@list l5:level8
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	margin-left:324.0pt;
+	text-indent:-18.0pt;}
+@list l5:level9
+	{mso-level-tab-stop:360.0pt;
+	mso-level-number-position:left;
+	margin-left:360.0pt;
+	text-indent:-18.0pt;}
+@list l6
+	{mso-list-id:1436167105;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1864733532 1797959802 -342837602 -2090292754 -1629219402 1211163322 -1864188764 2054819832 235147076 364179762;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+@list l7
+	{mso-list-id:1542397565;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1878462920 1622976082 685961086 1829403816 -954537082 -109175068 -1981512154 76579508 -814705876 -2118357514;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+@list l8
+	{mso-list-id:1662738546;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-2031694096 1926146676 -655062774 -1401271978 -769077584 -1181184040 -342988158 1677769728 -130921784 759491628;}
+@list l8:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+@list l9
+	{mso-list-id:1732579527;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-2038554440 -1452766672 -164452564 -1143418508 168220048 -1864196888 -74563534 599450108 650809946 850927900;}
+@list l10
+	{mso-list-id:1774740763;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-214805004 -803456618 -1399031810 -1109784704 196750338 -1195893102 159917498 -1665990888 -1091823652 -1763902886;}
+@list l10:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+@list l11
+	{mso-list-id:1897429309;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-286343668 1523991738 -546432168 1424538394 1870661302 -445985246 -1411603456 647249280 -639320756 -1601165242;}
+@list l11:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+@list l12
+	{mso-list-id:1928538940;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1017060758 -1640563798 874133868 893698406 456543776 2134133934 669693360 -1087454294 89835600 1127745520;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1112"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<h3 style='margin-top:20.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><i><span style='font-size:19.0pt;font-family:Helvetica;color:black'>Solder
+Mask Optimization<o:p></o:p></span></i></h3>
+
+<p class=body>Solder Mask Optimization is a read-write DFM action designed to
+increase yield by providing optimal clearances and optimal coverage wherever
+possible, and compromising only in dense places. It maintains clearances and
+coverage throughout the layer while keeping within the guidelines of the
+specified parameters.</p>
+
+<p class=body>The action enables modification of the solder mask layer to
+achieve manufacturing goals. ERF parameters and their definitions must be well
+understood in order to customize this action.</p>
+
+<p class=body>This action may be used on external signal layers and solder
+paste layers. Negative layers are inverted before processing. Drill layers
+passing through the signal layer and soldermask layers are referenced. Solder
+Mask Optimization has two operation modes: </p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l8 level1 lfo4;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Helvetica;color:black'>*&nbsp;&nbsp;&nbsp;&nbsp; Create Soldermask from scratch.<span style='font:10pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:Helvetica;color:black'>
+</span><span style='mso-bidi-font-size:11.0pt;
+font-family:Times;color:black'></span><span style='font-size:11.0pt;
+font-family:Times;color:black'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l8 level1 lfo4;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>*&nbsp;&nbsp;&nbsp;&nbsp; Improve existing Soldermask.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-bidi-font-size:11.0pt;font-family:
+Helvetica;color:black'><o:p></o:p></span></p>
+
+<p class=body>The following are the functions of the Solder Mask Optimization
+algorithm:</p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l10 level1 lfo6;tab-stops:
+list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:Arial;mso-bidi-font-family:Times;color:black'></span><![endif]>
+<span style='font-family:Helvetica;font-size: 10.0pt;color:black'>* &nbsp;&nbsp;
+To provide optimal clearance for each pad.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l10 level1 lfo6;tab-stops:
+list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:Arial;mso-bidi-font-family:Times;color:black'>*<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-family:Helvetica;font-size: 10.0pt;color:black'>
+For all over-exposed conductors (large
+soldermask opening), to increase coverage by shaving away a portion of the
+soldermask pad that is closest to the conductor, or by decreasing the size of
+soldermask clearance.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l10 level1 lfo6;tab-stops:
+list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:Arial;mso-bidi-font-family:Times;color:black'>*<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-family:Helvetica;font-size:10.0pt;color:black'>
+For adjacent pads from different nets, to
+provide a separating wall - a bridge (spacing between two SMD clearances) over
+a hole in the soldermask cover.<o:p></o:p></span></p>
+
+<h6 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Terminology Bridge <br>
+<o:p></o:p></span></i></h6>
+
+<p class=body>A soldermask wall that separates two signal layer pads. Usually
+represented by a negative line placed over two adjacent pads.</p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Shave<o:p></o:p></span></i></h6>
+
+<p class=body>A negative line placed over a pad to increase cover for a
+conductor.</p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Pad
+type<o:p></o:p></span></i></h6>
+
+<p class=body>Can be a via, NPTH, SMD or fiducial feature, as derived from the
+feature's attribute, or the hole type drilled through the feature.</p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Positive
+Bridge<o:p></o:p></span></i></h6>
+
+<p class=body>A positive line joining two soldermask clearances.</p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Violations<o:p></o:p></span></i></h6>
+
+<p class=body>A violation is a relation between a signal layer feature and a
+soldermask feature that is not maintained according to design rules. For
+example, a clearance/space violation means that the space around the pad is
+less than that prescribed in the relevant parameter.</p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Clearance
+Classification<br>
+<o:p></o:p></span></i></h6>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><span style='font-size:11.0pt;font-family:Helvetica;color:black'><b>Small
+clearance - </b></span><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+font-family:Times;mso-fareast-font-family:"Times New Roman";color:black;
+mso-bidi-language:AR-SA;font-weight:normal'>user-supplied clearance contained
+inside the signal layer pad.<br>
+<o:p></o:p></span></h6>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><span style='font-size:11.0pt;font-family:Helvetica;color:black'><b>
+Normal clearance - </b></span><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+font-family:Times;mso-fareast-font-family:"Times New Roman";color:black;
+mso-bidi-language:AR-SA;font-weight:normal'>user-supplied clearance covering
+the signal layer pad but is covered by the optimal clearance.<br>
+<o:p></o:p></span></h6>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><span style='font-size:11.0pt;font-family:Helvetica;color:black'><b>Partial
+clearance - </b></span><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+font-family:Times;mso-fareast-font-family:"Times New Roman";color:black;
+mso-bidi-language:AR-SA;font-weight:normal'>user- supplied clearance partially
+covering a pad.<br>
+<o:p></o:p></span></h6>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><span style='font-size:11.0pt;font-family:Helvetica;color:black'><b>Huge
+clearance - </b></span><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+font-family:Times;mso-fareast-font-family:"Times New Roman";color:black;
+mso-bidi-language:AR-SA;font-weight:normal'>in at least one dimension the
+user-supplied clearance covers the pad with a margin of<br>
+</span><em><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;font-family:
+Times;mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:Courier;
+color:black;mso-bidi-language:AR-SA'>v_max_oversized_clearance + pp_opt_clear</span></em><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;font-family:Times;mso-fareast-font-family:
+"Times New Roman";color:black;mso-bidi-language:AR-SA;font-weight:normal'> or
+more.<br>
+<o:p></o:p></span></h6>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><span style='font-size:11.0pt;font-family:Helvetica;color:black'><b>Oversized
+clearance - </b></span><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+font-family:Times;mso-fareast-font-family:"Times New Roman";color:black;
+mso-bidi-language:AR-SA;font-weight:normal'>in at least one dimension the
+user-supplied clearance covers the pad clearance with a margin of more than </span><em><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;font-family:Times;mso-fareast-font-family:
+"Times New Roman";mso-bidi-font-family:Courier;color:black;mso-bidi-language:
+AR-SA'>pp_opt_clear</span></em><span style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;font-family:Times;mso-fareast-font-family:"Times New Roman";color:black;
+mso-bidi-language:AR-SA;font-weight:normal'> . (exceeds optimal clearance in
+some places).<br>
+<o:p></o:p></span></h6>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><span style='font-size:11.0pt;font-family:Helvetica;color:black'><b>Simple
+clearance - </b></span><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+font-family:Times;mso-fareast-font-family:"Times New Roman";color:black;
+mso-bidi-language:AR-SA;font-weight:normal'>a single clearance for a single
+pad. <br>
+<o:p></o:p></span></h6>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><span style='font-size:11.0pt;font-family:Helvetica;color:black'><b>Single
+cover - </b></span><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+font-family:Times;mso-fareast-font-family:"Times New Roman";color:black;
+mso-bidi-language:AR-SA;font-weight:normal'>it is possible to separate pads
+clearance from other clearances anyway. From all solder mask shapes touching
+the clearance a single one covers it completely. If it is not a Huge Clearance
+it is likely that it looks similar to the following:<o:p></o:p></span></h6>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" alt="" style='width:281.25pt;
+ height:105.75pt'>
+ <v:imagedata src="./category_files/image001.png" o:href="..\..\..\..\DFM%20Actions%20Source%20Material\DFM%20Actions-80.png"/>
+</v:shape><![endif]-->
+<img src="./category_files/image001.png" width="375" height="141" border="0">
+<span style='font-family:"Times New Roman"'><o:p></o:p></span></p>
+<p class=body>We can process each clearance as a Simple Oversized clearance.</p>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><span style='font-size:10.0pt;font-family:Helvetica;color:black'><b>
+Multi feature clearance - </b> a clearance which consists of more
+than one feature. <br>
+Usually it indicates drawn clearances and picture frames which cover several
+signal layer pads together. <o:p></o:p></span></h6>
+
+<p class=body>&nbsp;</p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Special
+Reports<o:p></o:p></span></i></h6>
+
+<p class=body>Histograms for all categories are produced.</p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Result
+Attributes<o:p></o:p></span></i></h6>
+
+<p class=body>The following attributes are produced once for each layer.</p>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Attribute</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Description</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>...Opt_Both</span></em> </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Violations (Optimal)</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>...Min_Both</span></em> </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Violations (Minimal)</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>...Bridges</span></em> </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Bridges (All)</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>...Opt_Cover</span></em> </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Opt.Cover Only</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>...Opt_Clear</span></em> </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Opt.Clear Only</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>...Too_Dense</span></em> </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Too dense</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>...Too_Tight</span></em> </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Problems</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>...Min_Bridge</span></em> </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Bridges (Violations)</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>...Large_Clears</span></em> </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Oversized Clearances</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>...Partials</span></em> </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Partial Clearances</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>...Small_Clears</span></em> </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Small Clearances</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:9.5pt;font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>...Bridges_Pos</span></em> </p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Bridges (Positive)</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='font-family:"Courier New"'>...Cannot_Bridge<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Count all deleted Bridges</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='font-family:"Courier New"'>...Shaves<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Count all Shaves</p>
+  </td>
+ </tr>
+</table>
+
+<p class=body style='margin-left:0cm'>&nbsp;</p>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><i><span style='font-size:20.0pt;font-family:Times;color:black'>Cover to
+Clearance Compromise - Description<o:p></o:p></span></i></h6>
+
+<p class=body>The essence of Solder Mask Optimization is the search for a best
+possible compromise between two opposing requirements:</p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l12 level1 lfo8;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-family:Times;color:black'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:Times;color:black'>To provide
+sufficient clearance from soldermask for pads<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l12 level1 lfo8;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-family:Times;color:black'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:Times;color:black'>To provide sufficient
+soldermask coverage for conductors<o:p></o:p></span></p>
+
+<p class=body>In the best case, pads in external layers are far enough from
+conductors and from other nets. It is possible to specify wide clearances and
+still maintain a safe distance from the borders of the pads to neighboring
+conductors. But in more densely populated boards this is not the case:
+conductors are very close to pads and it is impossible to provide both the best
+possible coverage and the best possible clearance. Obviously, some kind of
+compromise between those two requirements must be reached.</p>
+
+<p class=body>Assume the following definitions:</p>
+
+<p class=body><em><span style='font-size:9.0pt;font-family:Helvetica;
+mso-bidi-font-family:"Arial Unicode MS"'>opt_clear</span></em><span
+style='mso-bidi-font-size:9.0pt;font-family:Helvetica;mso-bidi-font-family:
+"Arial Unicode MS"'> </span><span style='font-size:11.0pt'>-<span
+style="mso-spacerun: yes">&nbsp; </span></span>optimal clearance</p>
+
+<p class=body><em><span style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:
+Courier'>min_clear</span></em><span style='font-size:11.0pt'> - </span>minimum
+acceptable clearance</p>
+
+<p class=body><em><span style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:
+Courier'>opt_cover</span></em><span style='font-size:11.0pt'> - </span>optimal
+cover</p>
+
+<p class=body><em><span style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:
+Courier'>min_cover</span></em><span style='font-size:11.0pt'> - </span>minimum
+acceptable cover.</p>
+
+<p class=body><em><span style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:
+Courier'>Dist</span></em><span style='font-size:11.0pt'> - </span>distance between
+conductors that should stay covered and the shape which should be cleared.</p>
+
+<p class=body>All <em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;font-weight:normal'>opt_clear,min_clear,opt_cover,min_cover</span></em>
+are derived from corresponding parameters or from relevant range values.</p>
+
+<p class=body>Cover to Clearance compromise is solved differently for three
+cases, as follows:</p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l9 level1 lfo10;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-size:11.0pt;font-family:Times;color:black'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:7.0pt;color:black'><span style="mso-spacerun:
+yes">&nbsp;</span></span><em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;color:black;font-weight:normal'>opt_clear +
+opt_cover &lt;= dist</span></em><span style='font-size:11.0pt;font-family:Times;
+color:black'> <o:p></o:p></span></p>
+
+<p class=body>Both clearance and cover will be optimal. </p>
+
+<p class=body><!--[if gte vml 1]><v:shape id="_x0000_i1026" type="#_x0000_t75"
+ style='width:358.5pt;height:194.25pt'>
+ <v:imagedata src="./category_files/image002.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=478 height=259
+src="./category_files/image003.png" v:shapes="_x0000_i1026"><![endif]></p>
+
+<p class=MsoNormal style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:54.0pt;text-indent:-18.0pt;mso-list:l2 level1 lfo12;tab-stops:list 54.0pt'><![if !supportLists]><span
+style='font-size:11.0pt;font-family:Times;color:black'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black;font-weight:normal'>opt_clear + opt_cover &gt; dist, </span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'>but </span><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black;font-weight:normal'>min_clear + min_cover &lt; dist</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> <o:p></o:p></span></p>
+
+<p class=body>Compromise may be reached without violating <em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+font-weight:normal'>min_clear, min_cover</span></em> .</p>
+
+<p class=body>If this value violates one of the minimums it is forced to the
+corresponding minimal value.</p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Example<o:p></o:p></span></i></h6>
+
+<p class=body>&nbsp;<!--[if gte vml 1]><v:shape id="_x0000_i1027" type="#_x0000_t75"
+ style='width:363pt;height:197.25pt'>
+ <v:imagedata src="./category_files/image004.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=484 height=263
+src="./category_files/image005.png" v:shapes="_x0000_i1027"><![endif]></p>
+
+<p class=MsoNormal style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:36.0pt'><span style='font-size:11.0pt;font-family:Times;color:black'>3.</span><span
+style='font-size:7.0pt;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black;font-weight:normal'>min_clear + min_cover &gt; dist</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> <o:p></o:p></span></p>
+
+<p class=body>The compromise will be reached according to the <em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+font-weight:normal'>v_compromise</span></em> variable in the following way:</p>
+
+<p class=body><!--[if gte vml 1]><v:shape id="_x0000_i1028" type="#_x0000_t75"
+ style='width:359.25pt;height:192pt'>
+ <v:imagedata src="./category_files/image006.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=479 height=256
+src="./category_files/image007.png" v:shapes="_x0000_i1028"><![endif]></p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>SM
+Parameter Ranges<o:p></o:p></span></i></h6>
+
+<p class=body>Starting from Software Version 2.0, the <em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+font-weight:normal'>pad_to_drill_type</span></em> dependency was limited to the
+following ERF variables:</p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l6 level1 lfo14;tab-stops:
+list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Arial;mso-bidi-font-family:Times;color:black'>*<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black;font-weight:normal'>v_enlarge_pth</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l6 level1 lfo14;tab-stops:
+list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Arial;mso-bidi-font-family:Times;color:black'>*<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black;font-weight:normal'>v_enlarge_npth</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l6 level1 lfo14;tab-stops:
+list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Arial;mso-bidi-font-family:Times;color:black'>*<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black;font-weight:normal'>v_enlarge_via</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> <o:p></o:p></span></p>
+
+<p class=body>They define how much the corresponding clearance should be
+enlarged or reduced. If the resulting clearance radius is less than zero, no
+clearance will be produced.</p>
+
+<p class=body>We have added ranges of soldermask parameters according to pad
+type and drill type. Four different range types will be maintained: </p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l7 level1 lfo16;tab-stops:
+list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Arial;mso-bidi-font-family:Times;color:black'>*<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>SMD ranges <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l7 level1 lfo16;tab-stops:
+list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Arial;mso-bidi-font-family:Times;color:black'>*<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>VIA ranges <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l7 level1 lfo16;tab-stops:
+list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Arial;mso-bidi-font-family:Times;color:black'>*<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>PTH ranges <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l7 level1 lfo16;tab-stops:
+list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Arial;mso-bidi-font-family:Times;color:black'>*<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>NPTH ranges. <o:p></o:p></span></p>
+
+<p class=body>A range definition includes its borders definition and a set of
+range parameters (values to control the Solder Mask Optimization process in
+this range). </p>
+
+<p class=body>The following restrictions will be applied to range definitions:</p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l11 level1 lfo18;tab-stops:
+list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Arial;mso-bidi-font-family:Times;color:black'>*<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>Maximum of 10 ranges can
+be defined for each type. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l11 level1 lfo18;tab-stops:
+list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Arial;mso-bidi-font-family:Times;color:black'>*<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>Range borders should not
+overlap. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l11 level1 lfo18;tab-stops:
+list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Arial;mso-bidi-font-family:Times;color:black'>*<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>Range parameter
+definition without corresponding range borders definition is invalid and
+ignored.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l11 level1 lfo18;tab-stops:
+list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Arial;mso-bidi-font-family:Times;color:black'>*<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>SMD ranges are
+classified according to the spacing between SMD pads of the same row (pitch - pad
+size) and VIA, PTH, NPTH ranges according to Annular Ring (distance to the
+closest signal layer feature).<o:p></o:p></span></p>
+
+<p class=body>For each range, the user may define how the range is partitioned
+between minimal clearance, optimal clearance, minimal coverage, and optimal
+coverage.</p>
+
+<p class=body>Also, a bridge value may be supplied for every range type. Ranges
+are numbered from 1 to 10 and three variables are defined for each range. </p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Range
+1<o:p></o:p></span></i></h6>
+
+<p class=body>For example, for range number 1 which covers SMD pads with
+pitches from 2 to 5 mils, the following ERF variables may be supplied:</p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l5 level1 lfo20;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'># range number 1 covers pitches from 2 to 5 mils <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l5 level1 lfo20;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>SMD_1_BORDERS = 2:5 <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l5 level1 lfo20;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'># min clearance is set to 20% of the spacing between SMD pads<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l5 level1 lfo20;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'># opt clearance is set to 60% of the spacing between SMD pads<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l5 level1 lfo20;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'># min coverage is set to 30% of the spacing between SMD pads<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l5 level1 lfo20;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'># opt coverage is set to 40% of the spacing between SMD pads<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l5 level1 lfo20;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>SMD_1_PARTITION = 0.2:0.6 0.3:0.4<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l5 level1 lfo20;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'># Bridge between SMD-features is 20% of the spacing between SMD
+pads <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l5 level1 lfo20;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'># in the row.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l5 level1 lfo20;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>SMD_1_BRIDGE = 0.2<o:p></o:p></span></p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Range
+2<o:p></o:p></span></i></h6>
+
+<p class=body>For range 2, which covers SMD pads with pitches from 7 to 15
+mils, the following ERF-variables may be supplied:</p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo22;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'># range number 1 covers pitches from 2 to 5 mils <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo22;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>SMD_2_BORDERS = 7:15 <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo22;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'># min clearance is set to 10% of the spacing between SMD pads<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo22;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'># opt clearance is set to 40% of the spacing between SMD pads<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo22;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'># min coverage is set to 30% of the spacing between SMD pads<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo22;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'># opt coverage is set to 10% of the spacing between SMD pads<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo22;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>SMD_2_PARTITION = 0.1:0.4 0.3:0.1<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo22;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'># Bridge between smd-features is 10% of the spacing between smd
+pads <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo22;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'># in the row.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo22;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>SMD_2_BRIDGE = 0.1<o:p></o:p></span></p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><i><span style='font-size:12.0pt;font-family:Helvetica;color:black'>Other
+Ranges<o:p></o:p></span></i></h6>
+
+<p class=body>Ranges for other types are defined in the same way.</p>
+
+<p class=code><em><span style='mso-ascii-font-family:Courier;mso-hansi-font-family:
+Courier;mso-bidi-font-family:Courier'>VIA_&lt;x&gt;_BORDERS =
+&lt;from&gt;:&lt;to&gt;</span></em><span style='font-size:11.0pt;font-family:
+Times'> </span><span style='font-size:11.0pt;font-family:Times;mso-bidi-language:
+AR-SA'><o:p></o:p></span></p>
+
+<p class=code><em><span style='mso-ascii-font-family:Courier;mso-hansi-font-family:
+Courier;mso-bidi-font-family:Courier'>VIA_&lt;x&gt;_PARTITION = &lt;min
+clearance&gt;:&lt;opt clearance&gt; &lt;min coverage&gt;:&lt;opt coverage&gt;</span></em><span
+style='font-size:11.0pt;font-family:Times'> </span><span style='font-size:11.0pt;
+font-family:Times;mso-bidi-language:AR-SA'><o:p></o:p></span></p>
+
+<p class=code><em><span style='mso-ascii-font-family:Courier;mso-hansi-font-family:
+Courier;mso-bidi-font-family:Courier'>VIA_&lt;x&gt;_BRIDGE = &lt;bridge&gt;</span></em><span
+style='font-size:11.0pt;font-family:Times'> </span><span style='font-size:11.0pt;
+font-family:Times;mso-bidi-language:AR-SA'><o:p></o:p></span></p>
+
+<p class=code><em><span style='mso-ascii-font-family:Courier;mso-hansi-font-family:
+Courier;mso-bidi-font-family:Courier'>PTH_&lt;x&gt;_BORDERS =
+&lt;from&gt;:&lt;to&gt;</span></em><span style='font-size:11.0pt;font-family:
+Times'> </span><span style='font-size:11.0pt;font-family:Times;mso-bidi-language:
+AR-SA'><o:p></o:p></span></p>
+
+<p class=code><em><span style='mso-ascii-font-family:Courier;mso-hansi-font-family:
+Courier;mso-bidi-font-family:Courier'>PTH_&lt;x&gt;_PARTITION = &lt;min
+clearance&gt;:&lt;opt clearance&gt; &lt;min coverage&gt;:&lt;opt coverage&gt;</span></em><span
+style='font-size:11.0pt;font-family:Times'> </span><span style='font-size:11.0pt;
+font-family:Times;mso-bidi-language:AR-SA'><o:p></o:p></span></p>
+
+<p class=code><em><span style='mso-ascii-font-family:Courier;mso-hansi-font-family:
+Courier;mso-bidi-font-family:Courier'>PTH_&lt;x&gt;_BRIDGE = &lt;bridge&gt;</span></em><span
+style='font-size:11.0pt;font-family:Times'> </span><span style='font-size:11.0pt;
+font-family:Times;mso-bidi-language:AR-SA'><o:p></o:p></span></p>
+
+<p class=code><em><span style='mso-ascii-font-family:Courier;mso-hansi-font-family:
+Courier;mso-bidi-font-family:Courier'>NPTH_&lt;x&gt;_BORDERS =
+&lt;from&gt;:&lt;to&gt;</span></em><span style='font-size:11.0pt;font-family:
+Times'> </span><span style='font-size:11.0pt;font-family:Times;mso-bidi-language:
+AR-SA'><o:p></o:p></span></p>
+
+<p class=code><em><span style='mso-ascii-font-family:Courier;mso-hansi-font-family:
+Courier;mso-bidi-font-family:Courier'>NPTH_&lt;x&gt;_PARTITION = &lt;min
+clearance&gt;:&lt;opt clearance&gt; &lt;min coverage&gt;:&lt;opt coverage&gt;</span></em><span
+style='font-size:11.0pt;font-family:Times'> </span><span style='font-size:11.0pt;
+font-family:Times;mso-bidi-language:AR-SA'><o:p></o:p></span></p>
+
+<p class=code><em><span style='mso-ascii-font-family:Courier;mso-hansi-font-family:
+Courier;mso-bidi-font-family:Courier'>NPTH_&lt;x&gt;_BRIDGE = &lt;bridge&gt;</span></em><span
+style='font-size:11.0pt;font-family:Times'> </span><span style='font-size:11.0pt;
+font-family:Times;mso-bidi-language:AR-SA'><o:p></o:p></span></p>
+
+<p class=body>Where<em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;font-weight:normal'> &lt;x&gt; </span></em>may be <em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+font-weight:normal'>1,2,.... 10</span></em> and stand for any range number. </p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;text-indent:18.0pt'><b><span style='font-size:9.5pt;font-family:
+Helvetica;mso-bidi-font-family:"Arial Unicode MS";color:black;mso-bidi-language:
+HE'>Note:</span></b><span style='font-size:11.0pt;font-family:Times;color:black'>
+Any Annular ring value (or spacing value for SMDs) not covered by one of the
+ranges is treated according to the usual set of parameters: <o:p></o:p></span></p>
+
+<p class=code><em><span style='mso-ascii-font-family:Courier;mso-hansi-font-family:
+Courier'>pp_minimal_clearance </span></em><span style='mso-bidi-font-size:11.0pt'><o:p></o:p></span></p>
+
+<p class=code><em><span style='mso-ascii-font-family:Courier;mso-hansi-font-family:
+Courier'>pp_optimal_clearance </span></em></p>
+
+<p class=code><em><span style='mso-ascii-font-family:Courier;mso-hansi-font-family:
+Courier'>pp_minimal_coverage </span></em></p>
+
+<p class=code><em><span style='mso-ascii-font-family:Courier;mso-hansi-font-family:
+Courier'>pp_optimal_coverage</span></em> </p>
+
+<p class=code><em><span style='mso-ascii-font-family:Courier;mso-hansi-font-family:
+Courier'>pp_bridge. </span></em></p>
+
+<p class=body>If no ranges are defined, the Soldermask Mask Opt action
+functions exactly in the same manner as before. </p>
+
+<p class=body>For each clearance and pad type, default settings may be defined:
+</p>
+
+<p class=code><em><span style='mso-ascii-font-family:Courier;mso-hansi-font-family:
+Courier;mso-bidi-font-family:Courier'>NPTH_BRIDGE = &lt;bridge</span></em><span
+style='font-size:11.0pt;font-family:Times'> &gt;</span><span style='font-size:
+11.0pt;font-family:Times;mso-bidi-language:AR-SA'><o:p></o:p></span></p>
+
+<p class=code><em><span style='mso-ascii-font-family:Courier;mso-hansi-font-family:
+Courier;mso-bidi-font-family:Courier'>NPTH_PARTITION = &lt;min
+clearance&gt;:&lt;opt clearance&gt; &lt;min coverage&gt;:&lt;opt coverage&gt; </span></em><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;font-family:Times;mso-bidi-language:
+AR-SA;font-weight:normal'>will supply data in case only borders are defined for
+the range.<o:p></o:p></span></p>
+
+<p class=body>Additional details:</p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l3 level1 lfo24;tab-stops:
+list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Arial;mso-bidi-font-family:Times;color:black;mso-bidi-language:
+HE'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>Delimiter may be any one
+of: </span><em><span style='font-size:9.5pt;font-family:Courier;color:black;
+mso-bidi-language:HE'>, , ; :.</span></em><span style='font-size:11.0pt;
+font-family:Times;color:black;mso-bidi-language:HE'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l3 level1 lfo24;tab-stops:
+list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Arial;mso-bidi-font-family:Times;color:black'>*<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black'>&lt;min clearance&gt; &lt;= &lt;opt clearance&gt;</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l3 level1 lfo24;tab-stops:
+list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Arial;mso-bidi-font-family:Times;color:black'>*<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black'>&lt;min coverage&gt; &lt;= &lt;opt coverage&gt;</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l3 level1 lfo24;tab-stops:
+list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Arial;mso-bidi-font-family:Times;color:black'>*<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>Only </span><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black'>&lt;min coverage&gt;</span></em><span style='font-size:11.0pt;
+font-family:Times;color:black'> may be supplied in </span><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black'>&lt;XXXXX&gt;_PARTITION</span></em><span style='font-size:11.0pt;
+font-family:Times;color:black'> statements.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l3 level1 lfo24;tab-stops:
+list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Arial;mso-bidi-font-family:Times;color:black'>*<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black'>&lt;opt coverage&gt;</span></em><span style='font-size:11.0pt;
+font-family:Times;color:black'> and </span><em><span style='font-size:9.5pt;
+font-family:Courier;mso-bidi-font-family:Courier;color:black'>&lt;opt
+clearance&gt;</span></em><span style='font-size:11.0pt;font-family:Times;
+color:black'> may be more than </span><em><span style='font-size:9.5pt;
+font-family:Helvetica;color:black;font-weight:normal'>1</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm'><span style='font-size:11.0pt;font-family:Times;color:black'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=body>The following defaults are used:</p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:90.0pt;text-indent:-10.8pt;mso-list:l0 level1 lfo26;tab-stops:list 28.8pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>If &lt;</span><em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;color:black;font-weight:normal'> opt clearance</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> &gt; is missing in the </span><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black;font-weight:normal'>&lt;XXXXX&gt;_PARTITION</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> statement, </span><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black;font-weight:normal'>&lt;opt clearance</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> &gt; is set to </span><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black;font-weight:normal'>&lt;min clearance&gt;</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:90.0pt;text-indent:-10.8pt;mso-list:l0 level1 lfo26;tab-stops:list 28.8pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>If</span><em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;color:black;font-weight:normal'> &lt;min
+coverage&gt;</span></em><span style='font-size:11.0pt;font-family:Times;
+color:black'> is missing in the </span><em><span style='font-size:9.5pt;
+font-family:Courier;mso-bidi-font-family:Courier;color:black;font-weight:normal'>&lt;XXXXX&gt;_PARTITION</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> statement, </span><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black;font-weight:normal'>&lt;min coverage&gt;</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> is set to </span><em><span
+style='font-size:9.5pt;font-family:Helvetica;color:black;font-weight:normal'>1</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> </span><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black;font-weight:normal'>- &lt;opt clearance&gt;</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:90.0pt;text-indent:-10.8pt;mso-list:l0 level1 lfo26;tab-stops:list 28.8pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>If </span><em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;color:black;font-weight:normal'>&lt;opt
+coverage&gt;</span></em><span style='font-size:11.0pt;font-family:Times;
+color:black'> is missing in the </span><em><span style='font-size:9.5pt;
+font-family:Courier;mso-bidi-font-family:Courier;color:black;font-weight:normal'>&lt;XXXXX&gt;_PARTITION</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> statement <br>
+</span><em><span style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:
+Courier;color:black;font-weight:normal'>&lt;opt coverage</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> &gt; is set to </span><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+color:black;font-weight:normal'>&lt;min clearance&gt;</span></em><span
+style='font-size:11.0pt;font-family:Times;color:black'> <o:p></o:p></span></p>
+
+<p class=body>&nbsp;<span style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>
+

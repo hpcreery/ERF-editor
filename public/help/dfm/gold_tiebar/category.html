@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+  <meta http-equiv="Content-Style-Type" content="text/css">
+
+  <meta name="GENERATOR" content="Adobe FrameMaker 7.0/HTML Export Filter">
+
+  <link rel="STYLESHEET" href="category.css" charset="ISO-8859-1" type="text/css">
+  <title>category</title>
+
+
+</head>
+
+
+<body style="background-color: rgb(255, 255, 255);">
+
+<h1 class="ChapterTOC">
+Gold Tie Bars Creation DFM
+Action</h1>
+
+<div>
+<h2 class="Heading1"><a name="pgfId-1000816"></a>Introduction</h2>
+
+<p class="Body">
+<a name="pgfId-1000817"></a>Gold Tie Bars Creation
+is a read-write DFM action. This action:</p>
+
+<ul>
+
+  <li class="Bulleted"> <a name="pgfId-1000818"></a>Adds
+tie bar lines
+from relevant nets to beyond the edge of the board to enable gold
+plating.</li>
+
+  <li class="Bulleted"> <a name="pgfId-1000819"></a>Adds
+test point pads
+to these tie bar lines, thus providing access to the tie bars to run
+electrical tests on them, instead of testing the original Gold Plated
+Pads.</li>
+
+</ul>
+
+<p class="Body">
+<a name="pgfId-1203968"></a>This new action is part
+of the Advanced DFM Actions, and requires a special license option: <em class="BodyBold">
+goldtie</em>
+.</p>
+
+</div>
+
+<div>
+<h2 class="Heading1"><a name="pgfId-1000825"></a>Glossary</h2>
+
+<div>
+<h6 class="AnchorSide"><a name="pgfId-1000826"></a>Gold
+Plated Pad </h6>
+
+<p class="Body">
+<a name="pgfId-1000827"></a>A pad with the attribute
+<em class="BodyBold">.gold_plating</em>
+. </p>
+
+</div>
+
+<div>
+<h6 class="AnchorSide"><a name="pgfId-1000828"></a>Processed
+Nets </h6>
+
+<p class="Body">
+<a name="pgfId-1000829"></a>The action can work on <em class="BodyBold">
+all</em> nets in the step, or on <em class="BodyBold">
+selected</em> nets. Selected nets must have at least one selected
+featureless action will process only nets that have at least one Gold
+Plated Pad. </p>
+
+</div>
+
+<div>
+<h6 class="AnchorSide"><a name="pgfId-1000830"></a>Layer
+Net </h6>
+
+<p class="Body">
+<a name="pgfId-1000831"></a>A group of positive
+features connected to each other in one single Board Copper Layer.</p>
+
+</div>
+
+<div>
+<h6 class="AnchorSide"><a name="pgfId-1000832"></a>Board
+Net</h6>
+
+<p class="Body">
+<a name="pgfId-1000833"></a>One or more Layer Nets
+connected through the board with vertical connections (through-plated
+drills).</p>
+
+</div>
+
+</div>
+
+<div>
+<h2 class="Heading1">Algorithm</h2>
+
+<p class="Body">
+<a name="pgfId-1000836"></a>The action works in
+three stages:</p>
+
+<div>
+<h6 class="HeadingRunIn"><a name="pgfId-1000837"></a>Pre-process</h6>
+
+<p class="Body">
+<a name="pgfId-1000838"></a>Analyzing which nets
+need to be processed.</p>
+
+</div>
+
+<div>
+<h6 class="HeadingRunIn"><a name="pgfId-1000839"></a>Adding
+Tie lines</h6>
+
+<p class="Body">
+<a name="pgfId-1000840"></a>For each net that needs
+to be processed, the action finds the feature that is closest to the
+(specified) edge of the board, and then tries to "draw" a polyline from
+this feature to the edge of the board. </p>
+
+<p class="Body">
+<a name="pgfId-1110380"></a>If no test points need
+to be added, the action will extend every polyline by the value of the
+variable <em class="BodyBold">
+extension length</em>
+. If test points need to be added, the action will draw the polylines
+up to the board limits. </p>
+
+<p class="Body">
+<a name="pgfId-1000842"></a>Each line is assigned
+the <em class="BodyBold">
+.tie </em>
+attribute.&nbsp;<br>
+
+</p>
+
+<p class="Body Note"><a name="pgfId-1204953"></a>If
+adding a tie will
+create a short, and the problematic tie is inside the profile limits,
+the tie will not be added. The net that needs the problematic tie is
+reported in the Failed to Connect category.</p>
+
+<ul>
+
+</ul>
+
+</div>
+
+<div>
+<h6 class="HeadingRunIn"><a name="pgfId-1000843"></a>Adding
+test points and clearances</h6>
+
+<p class="Body">
+<a name="pgfId-1000844"></a>The action sorts all the
+tie lines that were added to each side of the board. For each board
+side, it extends the lines and adds to them the test points and
+clearances. Each test point is assigned the <em class="BodyBold">
+.test_req</em> attribute.</p>
+
+<p class="Body">
+<a name="pgfId-1000845"></a>The connection between
+tie lines and test points will be made by straight lines and not
+diagonal lines. See the example below. </p>
+
+<div>
+<h6 class="AnchorInColumn">&nbsp;<img style="width: 361px; height: 209px;" alt="" src="category_files/image001.png"></h6>
+<br>
+<div>
+<h2 class="Heading1">Limitations</h2>
+
+<ul>
+
+  <li class="Bulleted"> <a name="pgfId-1000851"></a>Step
+must have a
+defined profile.</li>
+
+  <li class="Bulleted"> <a name="pgfId-1000852"></a>Any
+net that has
+features (other than pads) on or outside the profile will not be
+processed.</li>
+
+  <li class="Bulleted"> <a name="pgfId-1000853"></a>Test
+points will
+always be placed outside the profile.</li>
+
+  <li class="Bulleted"> <a name="pgfId-1000854"></a>The
+run mode "Run In
+Window" is not available for this action.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</body>
+</html>

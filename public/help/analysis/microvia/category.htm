@@ -1,0 +1,3283 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1255">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./category_files/filelist.xml">
+<title>Microvia Checks</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Frontline</o:Author>
+  <o:LastAuthor>Frontline</o:LastAuthor>
+  <o:Revision>18</o:Revision>
+  <o:TotalTime>31</o:TotalTime>
+  <o:Created>2004-03-08T08:45:00Z</o:Created>
+  <o:LastSaved>2004-03-09T11:12:00Z</o:LastSaved>
+  <o:Pages>10</o:Pages>
+  <o:Words>2487</o:Words>
+  <o:Characters>14176</o:Characters>
+  <o:Company>Frontline PCB</o:Company>
+  <o:Lines>118</o:Lines>
+  <o:Paragraphs>28</o:Paragraphs>
+  <o:CharactersWithSpaces>17409</o:CharactersWithSpaces>
+  <o:Version>9.6926</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Times;
+	panose-1:0 0 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-update:auto;
+	mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	mso-bidi-language:AR-SA;}
+h1
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	text-indent:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	mso-list:l0 level1 lfo2;
+	tab-stops:list 18.0pt 46.35pt;
+	font-size:20.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:black;
+	mso-font-kerning:0pt;
+	mso-bidi-language:AR-SA;}
+h2
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:26.0pt;
+	margin-right:0cm;
+	margin-bottom:26.0pt;
+	margin-left:108.0pt;
+	text-indent:-108.0pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:26.0pt;
+	font-family:"Times New Roman";
+	color:black;
+	mso-bidi-language:AR-SA;
+	font-style:italic;}
+h3
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	color:black;}
+h4
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:black;}
+h5
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	mso-outline-level:5;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	color:black;}
+h6
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	mso-outline-level:6;
+	font-size:7.5pt;
+	font-family:"Times New Roman";
+	color:black;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	text-align:center;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 216.0pt right 432.0pt;
+	border:none;
+	mso-border-alt:thin-thick-thin-medium-gap windowtext 9.0pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 0cm 0cm;
+	font-size:36.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	mso-ansi-language:EN-AU;
+	mso-bidi-language:AR-SA;
+	font-weight:bold;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+em
+	{mso-ansi-font-size:9.5pt;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	font-weight:bold;
+	font-style:normal;}
+p.body, li.body, div.body
+	{mso-style-name:body;
+	mso-style-update:auto;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	mso-bidi-language:AR-SA;}
+p.anchorincolumn, li.anchorincolumn, div.anchorincolumn
+	{mso-style-name:anchorincolumn;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:18.0pt;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.appendixtoc, li.appendixtoc, div.appendixtoc
+	{mso-style-name:appendixtoc;
+	margin-top:30.0pt;
+	margin-right:0cm;
+	margin-bottom:2.0pt;
+	margin-left:0cm;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:15.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:blue;
+	font-weight:bold;
+	font-style:italic;}
+p.bodyindent, li.bodyindent, div.bodyindent
+	{mso-style-name:bodyindent;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:36.0pt;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.callout-cent, li.callout-cent, div.callout-cent
+	{mso-style-name:callout-cent;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	text-align:center;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+p.callout-left, li.callout-left, div.callout-left
+	{mso-style-name:callout-left;
+	margin-top:1.0pt;
+	margin-right:0cm;
+	margin-bottom:1.0pt;
+	margin-left:0cm;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:9.5pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+p.cellbody, li.cellbody, div.cellbody
+	{mso-style-name:cellbody;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:9.5pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+p.cellheading, li.cellheading, div.cellheading
+	{mso-style-name:cellheading;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:9.5pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.chapovertoc, li.chapovertoc, div.chapovertoc
+	{mso-style-name:chapovertoc;
+	margin-top:34.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:blue;
+	font-weight:bold;
+	font-style:italic;}
+p.code, li.code, div.code
+	{mso-style-name:code;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:18.0pt;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:9.5pt;
+	font-family:Courier;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.covermain, li.covermain, div.covermain
+	{mso-style-name:covermain;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	text-align:center;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:20.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.footnote, li.footnote, div.footnote
+	{mso-style-name:footnote;
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:27.0pt;
+	text-indent:-9.0pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.heading1toc, li.heading1toc, div.heading1toc
+	{mso-style-name:heading1toc;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:1.0pt;
+	margin-left:18.0pt;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:13.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:blue;}
+p.heading2toc, li.heading2toc, div.heading2toc
+	{mso-style-name:heading2toc;
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:1.0pt;
+	margin-left:36.0pt;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:blue;}
+p.mapping-table-cell, li.mapping-table-cell, div.mapping-table-cell
+	{mso-style-name:mapping-table-cell;
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:2.0pt;
+	margin-left:0cm;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.mapping-table-title, li.mapping-table-title, div.mapping-table-title
+	{mso-style-name:mapping-table-title;
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:2.0pt;
+	margin-left:0cm;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tablefootnote, li.tablefootnote, div.tablefootnote
+	{mso-style-name:tablefootnote;
+	margin-top:2.0pt;
+	margin-right:7.2pt;
+	margin-bottom:5.0pt;
+	margin-left:21.6pt;
+	text-indent:-14.4pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+p.xdocname, li.xdocname, div.xdocname
+	{mso-style-name:xdocname;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:white;}
+p.xdocnametoc, li.xdocnametoc, div.xdocnametoc
+	{mso-style-name:xdocnametoc;
+	margin-top:18.0pt;
+	margin-right:0cm;
+	margin-bottom:15.0pt;
+	margin-left:0cm;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:20.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.xfigure, li.xfigure, div.xfigure
+	{mso-style-name:xfigure;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	text-indent:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:282154719;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1738974644 979897624 67698689 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-style-link:"Heading 1";
+	mso-level-tab-stop:46.35pt;
+	mso-level-number-position:left;
+	text-indent:-7.65pt;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Arial;}
+@list l0:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1
+	{mso-list-id:1073820391;
+	mso-list-type:hybrid;
+	mso-list-template-ids:176085842 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-18.0pt;
+	font-family:Arial;}
+@list l2
+	{mso-list-id:1458795872;
+	mso-list-type:hybrid;
+	mso-list-template-ids:2132589428 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-18.0pt;
+	font-family:Arial;}
+@list l3
+	{mso-list-id:1899046402;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1003343156 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-18.0pt;
+	font-family:Arial;}
+@list l4
+	{mso-list-id:2047365666;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1816934288 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-18.0pt;
+	font-family:Arial;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+</head>
+
+<body lang=EN-US link=blue vlink=blue style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<h2><a name=pgfId-1362499></a>Microvia Checks</h2>
+
+<h3 style='margin-top:20.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><a name=pgfId-1362500></a><i><span style='font-size:19.0pt;font-family:
+Times;mso-bidi-font-family:Times'>HDI Drill (Microvia) Analysis <o:p></o:p></span></i></h3>
+
+<p class=body><a name=pgfId-1368513></a>Provides advanced drill analysis for
+HDI design. This includes more detailed drill checks with respect to the
+special microvia requirements. Signal layer and soldermask-related issues are
+checked as well.</p>
+
+<p class=MsoNormal><a name=pgfId-1363161></a><a name=pgfId-1363165></a><a
+name=pgfId-1360634></a><em><span style='mso-ansi-font-size:12.0pt;font-family:
+Times;mso-bidi-font-family:Times;font-weight:normal'>Microvia Checks</span></em>
+assumes that the laser drill is drilled from the outermost layer.<span
+style='font-family:Times'><o:p></o:p></span></p>
+
+<h3 style='margin-top:20.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><a name=pgfId-1363029></a><i><span style='font-size:19.0pt;font-family:
+Times;mso-bidi-font-family:Times'>Definitions <o:p></o:p></span></i></h3>
+
+<p class=body><a name=pgfId-1363030></a>Drill Type is defined according to the <em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+font-weight:normal'>.drill attribute</span></em> value (PTH, NPTH, Via). If a
+hole has no <em><span style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:
+Courier;font-weight:normal'>.drill </span></em><em><span style='mso-ansi-font-size:
+12.0pt;mso-bidi-font-size:12.0pt;font-family:Times;font-weight:normal'>attribute</span></em>
+, the default is PTH for through drills and Via for blind/buried drills. In
+addition, vias can be further classified according to the .<em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+font-weight:normal'>via_type</span></em> attribute (Standard/Micro). If a via
+hole has no <em><span style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:
+Courier;font-weight:normal'>.via_type</span></em> attribute, the default is
+Standard. </p>
+
+<p class=body><a name=pgfId-1363031></a>Check parameters are computed
+implicitly according to the relevant ranges. For example, the maximal PTH to
+Via spacing reported is the green value of the category <em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+font-weight:normal'>pth2via_spacing</span></em> . </p>
+
+<p class=body><a name=pgfId-1363032></a>All spacings are measured edge-to-edge.</p>
+
+<p class=body><a name=pgfId-1363033></a>Aspect Ratio (diameter-to-depth) is
+computed according to the <em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;font-weight:normal'>.depth</span></em> (drill)
+layer attribute, which should keep the total board thickness pierced by this
+drill layer (the actual drill depth). If not defined, a maximal depth for the
+minimal (red) aspect ratio will be reported per drill diameter/type. </p>
+
+<p class=body><a name=pgfId-1363034></a>Annular Ring/Missing Pad side
+(top/bottom) refers to the job matrix and not to the actual drill direction. </p>
+
+<p class=body><a name=pgfId-1363035></a>Drill-to-copper spacing is reported
+only when a drill does not touch copper, and annular ring is reported only when
+a drill is fully covered by copper. Otherwise, drill-touches-copper is
+reported. </p>
+
+<p class=body><a name=pgfId-1363036></a>Measurements reported by checks from
+the Drill Test list are added to input drill layers. Measurements reported by
+checks from Signal and SM Test lists are added to the corresponding Signal/SM
+layer. </p>
+
+<h3 style='margin-top:20.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><a name=pgfId-1372165></a><i><span style='font-size:19.0pt;font-family:
+Times;mso-bidi-font-family:Times'>Tests<o:p></o:p></span></i></h3>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><a name=pgfId-1372186></a><i><span style='font-size:12.0pt;font-family:
+Helvetica;mso-bidi-font-family:Helvetica'>Drill Test List <o:p></o:p></span></i></h6>
+
+<p class=body><a name=pgfId-1372334></a>Drill-related checks that can be
+applied to drill layers. </p>
+
+<p class=body style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo5;
+tab-stops:list 54.0pt'><a name=pgfId-1372187></a><![if !supportLists]><span
+style='font-family:Arial'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><em><span style='font-size:11.0pt;font-family:Times;
+mso-bidi-font-family:Times'>Spacing</span></em> - reports spacing between all
+drills from the input layer and all drill layers piercing at least one common
+board layer (including the input layer itself).</p>
+
+<p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo3;
+tab-stops:list 54.0pt'><a name=pgfId-1372188></a><![if !supportLists]><span
+style='font-family:Arial'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><em><span style='font-size:11.0pt;font-family:Times;
+mso-bidi-font-family:Times'>Overlap</span></em> - reports overlap (full or
+partial) between all drills from the input layer and all drill layers piercing
+at least one common board layer (including the input layer itself).<span
+style='font-family:Times'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo3;
+tab-stops:list 54.0pt'><a name=pgfId-1372189></a><![if !supportLists]><span
+style='font-family:Arial'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><em><span style='font-size:11.0pt;font-family:Times;
+mso-bidi-font-family:Times'>Spatial Spacing</span></em> - reports spacing between
+all drills from the input layer and all drill layers terminating on adjacent
+board layers and NOT piercing a common board layer (for blind/buried drills
+only).<span style='font-family:Times'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo3;
+tab-stops:list 54.0pt'><a name=pgfId-1372190></a><![if !supportLists]><span
+style='font-family:Arial'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><em><span style='font-size:11.0pt;font-family:Times;
+mso-bidi-font-family:Times'>Spatial Overlap</span></em> - reports overlap
+between all drills from the input layer and all drill layers terminating on
+adjacent board layers and NOT piercing a common board layer (for blind/buried
+drills only).<span style='font-family:Times'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo3;
+tab-stops:list 54.0pt'><a name=pgfId-1372191></a><![if !supportLists]><span
+style='font-family:Arial'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><em><span style='font-size:11.0pt;font-family:Times;
+mso-bidi-font-family:Times'>Aspect Ratio</span></em> - reports aspect ratio
+and/or maximum drill depth.<span style='font-family:Times'><o:p></o:p></span></p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><a name=pgfId-1378401></a><i><span style='font-size:12.0pt;font-family:
+Helvetica;mso-bidi-font-family:Helvetica'>Signal Test List<o:p></o:p></span></i></h6>
+
+<p class=body><a name=pgfId-1378402></a>Signal-related checks that can be
+applied to drill layers relative to signal layers pierced by input drill
+layers.</p>
+
+<p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l2 level1 lfo4;
+tab-stops:list 54.0pt'><a name=pgfId-1372193></a><![if !supportLists]><span
+style='font-family:Arial'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><em><span style='font-size:11.0pt;font-family:Times;
+mso-bidi-font-family:Times'>Annular Ring</span></em><em><span style='font-size:
+11.0pt;font-family:Times;mso-bidi-font-family:Times;font-weight:normal'> </span></em>-
+reports annular ring and copper crossed by drill.<span style='font-family:Times'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l2 level1 lfo4;
+tab-stops:list 54.0pt'><a name=pgfId-1372194></a><![if !supportLists]><span
+style='font-family:Arial'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><em><span style='font-size:11.0pt;font-family:Times;
+mso-bidi-font-family:Times'>Copper Spacing</span></em> - reports
+drill-to-copper spacing.<span style='font-family:Times'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l2 level1 lfo4;
+tab-stops:list 54.0pt'><a name=pgfId-1372195></a><![if !supportLists]><span
+style='font-family:Arial'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><em><span style='font-size:11.0pt;font-family:Times;
+mso-bidi-font-family:Times'>Missing Pad</span></em><em><span style='font-size:
+11.0pt;font-family:Times;mso-bidi-font-family:Times;font-weight:normal'> </span></em>-
+reports missing pads for drills.<span style='font-family:Times'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l2 level1 lfo4;
+tab-stops:list 54.0pt'><a name=pgfId-1372196></a><![if !supportLists]><span
+style='font-family:Arial'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><em><span style='font-size:11.0pt;font-family:Times;
+mso-bidi-font-family:Times'>Registration</span></em><em><span style='font-size:
+11.0pt;font-family:Times;mso-bidi-font-family:Times;font-weight:normal'> </span></em>-
+reports drills misregistered relative to pads.<span style='font-family:Times'><o:p></o:p></span></p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><a name=pgfId-1372197></a><i><span style='font-size:12.0pt;font-family:
+Helvetica;mso-bidi-font-family:Helvetica'>SM Test List <o:p></o:p></span></i></h6>
+
+<p class=body><a name=pgfId-1378409></a>Soldermask-related checks that can be
+applied to drill layers. Top/bottom soldermask layers will be checked only if
+the input drill layer pierces a top/bottom board layer. (Genesis assumes that soldermask
+layers are outer layers.)</p>
+
+<p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo6;
+tab-stops:list 54.0pt'><a name=pgfId-1372198></a><![if !supportLists]><span
+style='font-family:Arial'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b>Annular Ring</b> - reports annular ring and soldermask
+crossed by drill.<span style='font-family:Times'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo6;
+tab-stops:list 54.0pt'><a name=pgfId-1372199></a><![if !supportLists]><span
+style='font-family:Arial'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b>Coverage</b> - reports drill-to-soldermask spacing.<span
+style='font-family:Times'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo6;
+tab-stops:list 54.0pt'><a name=pgfId-1372200></a><![if !supportLists]><span
+style='font-family:Arial'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b>Covered Drills</b> - reports covered drills.<span
+style='font-family:Times'><o:p></o:p></span></p>
+
+<p class=body><a name=pgfId-1372170></a>&nbsp;</p>
+
+<h3 style='margin-top:20.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><a name=pgfId-1365141></a><i><span style='font-size:19.0pt;font-family:
+Times;mso-bidi-font-family:Times'>Attributes <o:p></o:p></span></i></h3>
+
+<table border=1 cellpadding=0 width=875 style='width:656.1pt;mso-cellspacing:
+ 1.5pt;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr>
+  <td width=236 colspan=2 style='width:177.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Attribute<a
+  name=pgfId-1365032></a><o:p></o:p></span></p>
+  </td>
+  <td width=633 style='width:474.6pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Description<a
+  name=pgfId-1365034></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=236 colspan=2 style='width:177.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...min_X2Y_spacing</span></em><a
+  name=pgfId-1365036></a><span style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=633 style='width:474.6pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>minimal
+  spacing between drills <a name=pgfId-1365038></a>(X and Y are one of PTH,
+  NPTH, Via, Microvia)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=236 colspan=2 style='width:177.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...typ_X2Y_spacing</span></em><a
+  name=pgfId-1365040></a><span style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=633 style='width:474.6pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>typic<a
+  name=pgfId-1365042></a>al spacing between drills (X and Y are one of PTH,
+  NPTH, Via, Microvia)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=236 colspan=2 style='width:177.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...num_X2Y_overlap</span></em><a
+  name=pgfId-1365044></a><span style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=633 style='width:474.6pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>number of
+  overlaps between drills <a name=pgfId-1365046></a>(X and Y are one of PTH,
+  NPTH, Via, Microvia)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=236 colspan=2 style='width:177.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...min_X2Y_spatial_spacing</span></em><a
+  name=pgfId-1365048></a><span style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=633 style='width:474.6pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>minimal
+  spatial spacing between drills <a name=pgfId-1365050></a><span
+  style="mso-spacerun: yes">&nbsp;</span>(X and Y are o<a name=pgfId-1365051></a>ne
+  of PTH, Via, Microvia)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=236 colspan=2 style='width:177.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...typ_X2Y_spatial_spacing</span></em><a
+  name=pgfId-1365053></a><span style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=633 style='width:474.6pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>typical
+  spatial spacing between drills <a name=pgfId-1365055></a>(X and Y are one of
+  PTH, Via, Microvia)<a name=pgfId-1365056></a> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=236 colspan=2 style='width:177.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...num_X2Y_spatial_overlap</span></em><a
+  name=pgfId-1365058></a><span style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=633 style='width:474.6pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>number of
+  spatial overlaps between drills <a name=pgfId-1365060></a>(X and Y are one of
+  PTH, Via, Microvia)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...min_X_<a name=pgfId-1365062></a>Y_ar</span></em><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=637 colspan=2 style='width:477.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>minimal signal
+  annular ring <a name=pgfId-1365064></a>(X is one of PTH, Via, Microvia, Y is
+  one of top, bottom, inner)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...typ_X_Y_ar</span></em><a name=pgfId-1365066></a><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=637 colspan=2 style='width:477.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>typical signal
+  annular ring <a name=pgfId-1365068></a>(X is one of PTH, Via, Microvia, Y is
+  one of top, bottom, inner)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...min_npth_ar</span></em><a name=pgfId-1365070></a><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=637 colspan=2 style='width:477.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>minimal signal
+  annular ring for<a name=pgfId-1365072></a> NPTH<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...typ_npth_ar</span></em><a name=pgfId-1365074></a><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=637 colspan=2 style='width:477.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>typical signal
+  annular ring for NPTH<a name=pgfId-1365076></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...min_X2cu_spacing</span></em><a
+  name=pgfId-1365078></a><span style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=637 colspan=2 style='width:477.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>minimal drill to
+  copper spacing on signal layer <a name=pgfId-1365080></a>(X is one of PTH,
+  NPTH, Via, Microvia)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...typ_X2cu_spacing</span></em><a
+  name=pgfId-1365082></a><span style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=637 colspan=2 style='width:477.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>typical drill
+  to copper spacing on signal layer<span style="mso-spacerun: yes">&nbsp;
+  </span><a name=pgfId-1365084></a>(X is one of PTH, NPTH, Via, Microvia)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...num_X_missing_Y_pad</span></em><a
+  name=pgfId-1365086></a><span style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=637 colspan=2 style='width:477.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>number of
+  drills with no pads on the corresponding signal layer<span
+  style="mso-spacerun: yes">&nbsp; </span><o:p></o:p></span></p>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>(X is one of
+  PTH, Via, Microvia<a name=pgfId-1365088></a>; Y is one of top, bottom, inner)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...num_npth_missing_pad</span></em><a
+  name=pgfId-1365090></a><span style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=637 colspan=2 style='width:477.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>number of
+  NPTHs with no pads on signal layer<a name=pgfId-1365092></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...num_<a name=pgfId-1365094></a>X_crosses_cu</span></em><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=637 colspan=2 style='width:477.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>number of
+  drills crossing copper<span style="mso-spacerun: yes">&nbsp; </span><a
+  name=pgfId-1365096></a>(X is one of PTH, NPTH, Via, Microvia)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...min_X_reg</span></em><a name=pgfId-1365098></a><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=637 colspan=2 style='width:477.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>minimal drill
+  misregistration relative to the signal layer <a name=pgfId-1365100></a>(X is
+  one of PTH, NPTH, Via, Microvia)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...typ_X_reg</span></em><a name=pgfId-1365102></a><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=637 colspan=2 style='width:477.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>typical drill
+  misregistration relative to<a name=pgfId-1365104></a> the signal layer (X is one
+  of PTH, NPTH, Via, Microvia)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...min_X_sm_ar</span></em><a name=pgfId-1365106></a><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=637 colspan=2 style='width:477.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>minimal
+  soldermask annular ring <a name=pgfId-1365108></a>(X is one of PTH, Via,
+  Microvia)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...typ_X_sm_ar</span></em><a name=pgfId-1365110></a><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=637 colspan=2 style='width:477.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>typical
+  soldermask annular ring<span style="mso-spacerun: yes">&nbsp; </span><a
+  name=pgfId-1365112></a>(X is one of PTH, Via, Microvia)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...num_X_crosses_sm</span></em><a
+  name=pgfId-1365114></a><span style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=637 colspan=2 style='width:477.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>number of dr<a
+  name=pgfId-1365116></a>ills crossing soldermask (X is one of PTH, NPTH, Via,
+  Microvia)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...num_X_covered</span></em><a
+  name=pgfId-1365118></a><span style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=637 colspan=2 style='width:477.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>number of
+  drills covered by soldermask<span style="mso-spacerun: yes">&nbsp; </span><a
+  name=pgfId-1365120></a>(X is one of PTH, Via, Microvia)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...min_X_coverage</span></em><a
+  name=pgfId-1365122></a><span style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=637 colspan=2 style='width:477.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>minimal drill
+  to soldermask opening spacing on soldermask layer <o:p></o:p></span></p>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>(X is one of
+  PTH<a name=pgfId-1365124></a>, NPTH, Via, Microvia)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...typ_X_coverage</span></em><a
+  name=pgfId-1365126></a><span style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=637 colspan=2 style='width:477.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>typical drill
+  to soldermask opening spacing on soldermask layer (X is one of PTH, NPTH,
+  Via, Microvia)<a name=pgfId-1365128></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...min_X_aspect_ratio</span></em><a
+  name=pgfId-1365130></a><span style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=637 colspan=2 style='width:477.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>minimal aspect
+  ratio (X is one of PTH, Via, Microvia)<a name=pgfId-1365132></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...typ_X_aspect_ratio</span></em><a
+  name=pgfId-1365134></a><span style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=637 colspan=2 style='width:477.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>typical a<a
+  name=pgfId-1365136></a>spect ratio (X is one of PTH, Via, Microvia)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>...min_X_max_depth</span></em><a
+  name=pgfId-1365138></a><span style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+  <td width=637 colspan=2 style='width:477.8pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>minimal max
+  depth (X is one of PTH, Via, Microvia)<a name=pgfId-1365140></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=235 style='border:none'></td>
+  <td width=4 style='border:none'></td>
+  <td width=636 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p class=body><a name=pgfId-1369293></a>&nbsp;<a name=pgfId-1367987></a>&nbsp;</p>
+
+<h3 style='margin-top:20.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><a name=pgfId-1367988></a><i><span style='font-size:19.0pt;font-family:
+Times;mso-bidi-font-family:Times'>Categories<o:p></o:p></span></i></h3>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><a name=pgfId-1367989></a><i><span style='font-size:15.0pt;font-family:
+Times;mso-bidi-font-family:Times'>X-to-Y Spacing (Drill Test List / Spacing)-X
+and Y are one of: </span></i><em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;font-weight:normal'>PTH, NPTH, Via, Microvia</span></em><i><span
+style='font-size:15.0pt;font-family:Times;mso-bidi-font-family:Times'> . <o:p></o:p></span></i></h6>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Item<a
+  name=pgfId-1367992></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Details<a
+  name=pgfId-1367994></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Full Name<a
+  name=pgfId-1367996></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>X-to-Y <a
+  name=pgfId-1367998></a>Spacing<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Internal ERF
+  Name<a name=pgfId-1368000></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>X2Y_spacing</span></em><a name=pgfId-1368002></a><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  Shape<a name=pgfId-1368004></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Segment<a
+  name=pgfId-1368006></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  ID(s)<a name=pgfId-1368008></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Pads
+  representing two drills<a name=pgfId-1368010></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Layers
+  Displayed<a name=pgfId-1368012></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Drill layer(s)<a
+  name=pgfId-1368014></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Picture<a
+  name=pgfId-1368016></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1368018></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Purpose<a
+  name=pgfId-1368020></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>To ensure
+  sufficient drill-to-drill spacing on a board layer.<a name=pgfId-1368022></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Function<a
+  name=pgfId-1368024></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Report spacing
+  b<a name=pgfId-1368026></a>etween all drills from the input layer and all
+  drill layers piercing at least one common board layer (including the input
+  layer itself). Max spacing to search is defined by the green range value of
+  the category.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Activation<a
+  name=pgfId-1368028></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Spacing check
+  in Drill Test List<a name=pgfId-1368030></a> is selected.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Known
+  Limitations<a name=pgfId-1368032></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1368034></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=body><a name=pgfId-1375910></a><a name=pgfId-1375912></a>&nbsp;</p>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><a name=pgfId-1376020></a><i><span style='font-size:15.0pt;font-family:
+Times;mso-bidi-font-family:Times'>X-to-Y Overlap (Drill Test List / Overlap)-X
+and Y are one of: </span></i><em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;font-weight:normal'>PTH, NPTH, Via, Microvia</span></em><i><span
+style='font-size:15.0pt;font-family:Times;mso-bidi-font-family:Times'> .</span></i><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+font-weight:normal'> </span></em><i><span style='font-size:15.0pt;font-family:
+Times;mso-bidi-font-family:Times'><o:p></o:p></span></i></h6>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Item<a
+  name=pgfId-1360742></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Details<a
+  name=pgfId-1360744></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Full Name<a
+  name=pgfId-1360746></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>X-to-Y Overlap<a
+  name=pgfId-1360748></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Internal ERF
+  Name<a name=pgfId-1360750></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>X2Y_overlap</span></em><a name=pgfId-1360752></a><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  Shape<a name=pgfId-1360754></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Segmen<a
+  name=pgfId-1360756></a>t<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  ID(s)<a name=pgfId-1360758></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Pads
+  representing two drills<a name=pgfId-1360760></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Layers
+  Displayed<a name=pgfId-1360762></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Drill layer(s)<a
+  name=pgfId-1360764></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Picture<a
+  name=pgfId-1360766></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1360768></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Purpose<a
+  name=pgfId-1360770></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>To find overlapping
+  drills on a board layer.<a name=pgfId-1360772></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Function<a
+  name=pgfId-1360774></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Reports
+  overlaps (full or partial) between all drills from the input layer and all
+  drill layers pi<a name=pgfId-1360776></a>ercing at least one common board
+  layer (including the input layer itself).<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Activation<a
+  name=pgfId-1360778></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Overlap check in
+  Drill Test List is selected.<a name=pgfId-1360780></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Known
+  Limitations<a name=pgfId-1360782></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1360784></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><a name=pgfId-1360785></a><i><span style='font-size:15.0pt;font-family:
+Times;mso-bidi-font-family:Times'>X-to-Y Spatial Spacing (Drill Test List /
+Spatial Spacing) - X and Y are one of: </span></i><em><span style='font-size:
+9.5pt;font-family:Courier;mso-bidi-font-family:Courier;font-weight:normal'>PTH,
+Via, Microvia</span></em><i><span style='font-size:15.0pt;font-family:Times;
+mso-bidi-font-family:Times'> ..<o:p></o:p></span></i></h6>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Item<a
+  name=pgfId-1360788></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Details<a
+  name=pgfId-1360790></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Full Name<a
+  name=pgfId-1360792></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>X-to-Y Spatial
+  Spacing<a name=pgfId-1360794></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Internal ERF
+  Name<a name=pgfId-1360796></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>X2Y_spatial_spacing</span></em><a
+  name=pgfId-1360798></a><span style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  Shape<a name=pgfId-1360800></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Segment<a
+  name=pgfId-1360802></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  ID(s)<a name=pgfId-1360804></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Pads
+  representing two drills<a name=pgfId-1360806></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Layers
+  Displayed<a name=pgfId-1360808></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Drill layer(s)<a
+  name=pgfId-1360810></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Picture<a
+  name=pgfId-1360812></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1360814></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Purpose<a
+  name=pgfId-1360816></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>To ensure
+  sufficient drill-to-drill spaci<a name=pgfId-1360818></a>ng on adjacent board
+  layers where the drills terminate.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Function<a
+  name=pgfId-1360820></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Reports
+  spacing between all drills from the input layer and all drill layers
+  terminating on adjacent board layers and NOT piercing a common board layer.
+  Max spacing to search is defined by t<a name=pgfId-1360822></a>he green range
+  value of the category.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Activation<a
+  name=pgfId-1360824></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Spatial
+  Spacing check in Drill Test List is selected and both drill layers are
+  blind/buried.<a name=pgfId-1360826></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Known
+  Limitations<a name=pgfId-1360828></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1360830></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><a name=pgfId-1360831></a><i><span style='font-size:15.0pt;font-family:
+Times;mso-bidi-font-family:Times'>X-to-Y Spatial Overlap (Drill Test List /
+Spatial Overlap) - X and Y are one of: </span></i><em><span style='font-size:
+9.5pt;font-family:Courier;mso-bidi-font-family:Courier;font-weight:normal'>PTH,
+Via, Microvia</span></em><i><span style='font-size:15.0pt;font-family:Times;
+mso-bidi-font-family:Times'> . <o:p></o:p></span></i></h6>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Item<a
+  name=pgfId-1360834></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Details<a
+  name=pgfId-1360836></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Full Name<a
+  name=pgfId-1360838></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>X-to-Y Spatial
+  Overlap<a name=pgfId-1360840></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Internal ERF
+  Name<a name=pgfId-1360842></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>X2Y_spatial_overlap</span></em><a
+  name=pgfId-1360844></a><span style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  Shape<a name=pgfId-1360846></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Segment<a
+  name=pgfId-1360848></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  ID(s)<a name=pgfId-1360850></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Pads
+  representing two drills<a name=pgfId-1360852></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Layers
+  Displayed<a name=pgfId-1360854></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Drill layer(s)<a
+  name=pgfId-1360856></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Picture<a
+  name=pgfId-1360858></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1360860></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Purpose<a
+  name=pgfId-1360862></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>To find
+  overlapping drills o<a name=pgfId-1360864></a>n adjacent board layers where
+  the drills terminate.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Function<a
+  name=pgfId-1360866></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Reports
+  overlaps (full or partial) between all drills from the input layer and all
+  drill layers terminating on adjacent board layers and NOT piercing a common
+  board layer. <a name=pgfId-1360868></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Activation<a
+  name=pgfId-1360870></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Spatial O<a
+  name=pgfId-1360872></a>verlap check in Drill Test List is selected and both
+  drill layers are blind/buried.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Known
+  Limitations<a name=pgfId-1360874></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1360876></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><a name=pgfId-1360877></a><i><span style='font-size:15.0pt;font-family:
+Times;mso-bidi-font-family:Times'>X Aspect Ratio (Drill Test List / Aspect
+Ratio) - X is one of: </span></i><em><span style='font-size:9.5pt;font-family:
+Courier;mso-bidi-font-family:Courier;font-weight:normal'>PTH, Via, Microvia</span></em><i><span
+style='font-size:15.0pt;font-family:Times;mso-bidi-font-family:Times'> . <o:p></o:p></span></i></h6>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Item<a
+  name=pgfId-1360880></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Details<a
+  name=pgfId-1360882></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Full Name<a
+  name=pgfId-1360884></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>X Aspect Ratio<a
+  name=pgfId-1360886></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Internal ERF
+  Name<a name=pgfId-1360888></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>X_aspe<a name=pgfId-1360890></a>ct_ratio</span></em><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  Shape<a name=pgfId-1360892></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Circle<a
+  name=pgfId-1360894></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  ID(s)<a name=pgfId-1360896></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Pads
+  representing drill<a name=pgfId-1360898></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Layers
+  Displayed<a name=pgfId-1360900></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Drill layer<a
+  name=pgfId-1360902></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Picture<a
+  name=pgfId-1360904></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1360906></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Purpose<a
+  name=pgfId-1360908></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>To ensure that
+  the aspect ratio fits the process requirements.<a name=pgfId-1360910></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Function<a
+  name=pgfId-1360912></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Reports aspect
+  ratio for all drills if </span><a name=pgfId-1360914></a><em><span
+  style='font-family:Courier;mso-bidi-font-family:Courier;font-weight:normal'>v_compute_typ_aspect_ratio</span></em><span
+  style='mso-bidi-font-family:Helvetica'> </span><em><span style='font-family:
+  Courier;mso-bidi-font-family:Courier;font-weight:normal'>= yes,</span></em><span
+  style='mso-bidi-font-family:Helvetica'> and for one drill of each symbol of
+  the given type if <br>
+  </span><em><span style='font-family:Courier;mso-bidi-font-family:Courier;
+  font-weight:normal'>v_compute_typ_aspect_ratio</span></em><span
+  style='mso-bidi-font-family:Helvetica'> </span><em><span style='font-family:
+  Courier;mso-bidi-font-family:Courier;font-weight:normal'>= no.</span></em><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Activation<a
+  name=pgfId-1360916></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Aspect Ratio check
+  in Drill Test List is selected and the .depth attribute is defined for the
+  drill layer.<a name=pgfId-1360918></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Known
+  Limitations<a name=pgfId-1360920></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1360922></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><a name=pgfId-1360923></a><i><span style='font-size:15.0pt;font-family:
+Times;mso-bidi-font-family:Times'>X Max Depth (Drill Test List / Aspect Ratio)
+-X is one of: </span></i><em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;font-weight:normal'>PTH, Via, Microvia</span></em><i><span
+style='font-size:15.0pt;font-family:Times;mso-bidi-font-family:Times'> . <o:p></o:p></span></i></h6>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Item<a
+  name=pgfId-1360926></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Details<a
+  name=pgfId-1360928></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Full Name<a
+  name=pgfId-1360930></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>X Max Depth<a
+  name=pgfId-1360932></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Internal ERF
+  Name<a name=pgfId-1360934></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>X_max_depth</span></em><a name=pgfId-1360936></a><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  Shape<a name=pgfId-1360938></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Circle<a
+  name=pgfId-1360940></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  ID(s)<a name=pgfId-1360942></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Pads
+  representing drill<a name=pgfId-1360944></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Layers
+  Displayed<a name=pgfId-1360946></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Drill layer<a
+  name=pgfId-1360948></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Picture<a
+  name=pgfId-1360950></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1360952></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Pu<a
+  name=pgfId-1360954></a>rpose<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>To ensure that
+  the aspect ratio fits the process requirements.<a name=pgfId-1360956></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Function<a
+  name=pgfId-1360958></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Reports max
+  depth for drill according to the min allowed (red) aspect ratio for all
+  drills if <br>
+  </span><a name=pgfId-1360960></a><em><span style='font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>v_compute_typ_aspect_ratio =
+  yes</span></em><span style='mso-bidi-font-family:Helvetica'> , and for one
+  drill of each symbol of the given type if <br>
+  </span><em><span style='font-family:Courier;mso-bidi-font-family:Courier;
+  font-weight:normal'>v_compute_typ_aspect_ratio = no.</span></em><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Activation<a
+  name=pgfId-1360962></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Aspect Ratio check
+  in Drill Test List is selected and the </span><a name=pgfId-1360964></a><em><span
+  style='font-family:Courier;mso-bidi-font-family:Courier;font-weight:normal'>.depth</span></em><span
+  style='mso-bidi-font-family:Helvetica'> attribute is not defined for the
+  drill layer, or <br>
+  </span><em><span style='font-family:Courier;mso-bidi-font-family:Courier;
+  font-weight:normal'>v_always_check_max_depth = yes</span></em><span
+  style='mso-bidi-font-family:Helvetica'> .<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Known
+  Limitations<a name=pgfId-1360966></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1360968></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm;text-indent:0cm'><a name=pgfId-1360969></a><i><span style='font-size:15.0pt;
+font-family:Times;mso-bidi-font-family:Times'>X Y Annular Ring (Signal Test
+List / Annular Ring) -X is one of PTH, Via, Microvia, Y is one of:</span></i><em><span
+style='font-size:9.5pt;font-family:Courier;mso-bidi-font-family:Courier;
+font-weight:normal'> Top, Bottom, Inner</span></em><i><span style='font-size:
+15.0pt;font-family:Times;mso-bidi-font-family:Times'> . <o:p></o:p></span></i></h6>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Item<a
+  name=pgfId-1360972></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Details<a
+  name=pgfId-1360974></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Full Name<a
+  name=pgfId-1360976></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>X Y Annular
+  Ring<a name=pgfId-1360978></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Internal ERF
+  Name<a name=pgfId-1360980></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>X_Y_ar</span></em><a name=pgfId-1360982></a><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  Shape<a name=pgfId-1360984></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Segment<a
+  name=pgfId-1360986></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  ID(s)<a name=pgfId-1360988></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Signal Layer
+  shape and Pad representing a drill.<a name=pgfId-1360990></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Laye<a
+  name=pgfId-1360992></a>rs Displayed<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Signal Layer
+  and Drill layer<a name=pgfId-1360994></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Picture<a
+  name=pgfId-1360996></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1360998></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Purpose<a
+  name=pgfId-1361000></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>To ensure
+  sufficient annular ring.<a name=pgfId-1361002></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Function<a
+  name=pgfId-1361004></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Reports drills
+  where the annular ring on the corresponding signal layer is less than the
+  green range value of the category. The side of the layer (to<a
+  name=pgfId-1361006></a>p/bottom/inner) is relative to the drill layer as
+  defined in the job matrix.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Activation<a
+  name=pgfId-1361008></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Annular Ring
+  check in Signal Test List is selected.<a name=pgfId-1361010></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Known
+  Limitations<a name=pgfId-1361012></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361014></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><a name=pgfId-1361060></a><i><span style='font-size:15.0pt;font-family:
+Times;mso-bidi-font-family:Times'>NPTH Annular Ring (Signal Test List / Annular
+Ring) <o:p></o:p></span></i></h6>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Item<a
+  name=pgfId-1361017></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Details<a
+  name=pgfId-1361019></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Full Name<a
+  name=pgfId-1361021></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>NPTH Annular
+  Rin<a name=pgfId-1361023></a>g<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Internal ERF
+  Name<a name=pgfId-1361025></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>NPTH_ar</span></em><a name=pgfId-1361027></a><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  Shape<a name=pgfId-1361029></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Segment<a
+  name=pgfId-1361031></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  ID(s)<a name=pgfId-1361033></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Signal Layer
+  shape and Pad representing an NPTH<a name=pgfId-1361035></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Layers
+  Displayed<a name=pgfId-1361037></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Signal Layer
+  and Drill layer<a name=pgfId-1361039></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Picture<a
+  name=pgfId-1361041></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361043></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Purpose<a
+  name=pgfId-1361045></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>To ensure
+  sufficient annular ring<a name=pgfId-1361047></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Function<a
+  name=pgfId-1361049></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Reports
+  non-plated dr<a name=pgfId-1361051></a>ills where the annular ring on the
+  corresponding signal layer is less than the green range value of the
+  category. <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Activation<a
+  name=pgfId-1361053></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Annular Ring check
+  in Signal Test List is selected.<a name=pgfId-1361055></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Known
+  Limitations<a name=pgfId-1361057></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361059></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=body><a name=pgfId-1361061></a>&nbsp;</p>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><a name=pgfId-1361063></a><i><span style='font-size:15.0pt;font-family:
+Times;mso-bidi-font-family:Times'>X Crosses Copper (Signal Test List / Annular
+Ring -X is one of: </span></i><em><span style='font-size:9.5pt;font-family:
+Courier;mso-bidi-font-family:Courier;font-weight:normal'>PTH, NPTH, Via,
+Microvia</span></em><i><span style='font-size:15.0pt;font-family:Times;
+mso-bidi-font-family:Times'> .<o:p></o:p></span></i></h6>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Item<a
+  name=pgfId-1361066></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Details<a
+  name=pgfId-1361068></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Full Name<a
+  name=pgfId-1361070></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>X Crosses
+  Copper<a name=pgfId-1361072></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Internal ERF
+  Name<a name=pgfId-1361074></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-size:10.0pt;font-family:"Courier New";
+  font-weight:normal'>X_crosses_cu</span></em><a name=pgfId-1361076></a><b><span
+  style='font-size:10.0pt;font-family:"Courier New"'> <o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  Shape<a name=pgfId-1361078></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Circle<a
+  name=pgfId-1361080></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  ID(s)<a name=pgfId-1361082></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Signal Layer
+  shape and Pad representing a drill<a name=pgfId-1361084></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Layers
+  Displayed<a name=pgfId-1361086></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Signal Layer
+  and Drill layer<a name=pgfId-1361088></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Pi<a
+  name=pgfId-1361090></a>cture<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361092></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Purpose<a
+  name=pgfId-1361094></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>To find drills
+  crossing copper on a signal layer.<a name=pgfId-1361096></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Function<a
+  name=pgfId-1361098></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Reports drills
+  partially covered by copper.<a name=pgfId-1361100></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Activation<a
+  name=pgfId-1361102></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Annular Ring
+  check in Signal Test List is selected.<a name=pgfId-1361104></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Known
+  Limitations<a name=pgfId-1361106></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361108></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><a name=pgfId-1361109></a><i><span style='font-size:15.0pt;font-family:
+Times;mso-bidi-font-family:Times'>X Missing Y Pad (Signal Test List / Missing
+Pad)- X is one of:</span></i><em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;font-weight:normal'> PTH, Via, Microvia</span></em><i><span
+style='font-size:15.0pt;font-family:Times;mso-bidi-font-family:Times'> ; Y is
+one of:</span></i><em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;font-weight:normal'> Top, Bottom, Inner</span></em><i><span
+style='font-size:15.0pt;font-family:Times;mso-bidi-font-family:Times'> .<o:p></o:p></span></i></h6>
+
+<p class=body><a name=pgfId-1377749></a>&nbsp;</p>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Item<a
+  name=pgfId-1361112></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Details<a
+  name=pgfId-1361114></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Full Name<a
+  name=pgfId-1361116></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>X Missing Y
+  Pad<a name=pgfId-1361118></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Internal Name<a
+  name=pgfId-1361120></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>X_missing_Y</span></em><a name=pgfId-1361122></a><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  Shape<a name=pgfId-1361124></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Circle<a
+  name=pgfId-1361126></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  ID(s)<a name=pgfId-1361128></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Pad
+  representing a drill<a name=pgfId-1361130></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Layers
+  Displayed<a name=pgfId-1361132></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Signal Layer
+  and Drill layer<a name=pgfId-1361134></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Picture<a
+  name=pgfId-1361136></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361138></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Purpose<a
+  name=pgfId-1361140></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>To ensure that
+  drill is covered by pad/copper.<a name=pgfId-1361142></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Function<a
+  name=pgfId-1361144></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Reports drills
+  with no pad in the corresponding signal layer. <br>
+  <a name=pgfId-1361146></a>If </span><em><span style='font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>v_require_pad_X = no</span></em><span
+  style='mso-bidi-font-family:Helvetica'> , only drills which are not covered
+  by copper will be reported. Also, the value of </span><em><span
+  style='font-family:Courier;mso-bidi-font-family:Courier;font-weight:normal'>v_missing_pad_X_mode</span></em><span
+  style='mso-bidi-font-family:Helvetica'> is considered with respect to the
+  layer side relative to the drill layer as defined in the job matrix.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Activation<a
+  name=pgfId-1361148></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Missing Pad
+  check in Signal Test List is selected.<a name=pgfId-1361150></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Known
+  Limitations<a name=pgfId-1361152></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361154></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><a name=pgfId-1361200></a><i><span style='font-size:15.0pt;font-family:
+Times;mso-bidi-font-family:Times'>NPTH Missing Pad (Signal Test List / Missing Pad)
+<o:p></o:p></span></i></h6>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Item<a
+  name=pgfId-1361157></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>D<a
+  name=pgfId-1361159></a>etails<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Full Name<a
+  name=pgfId-1361161></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>NPTH Missing
+  Pad<a name=pgfId-1361163></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Internal ERF
+  Name<a name=pgfId-1361165></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>npth_missing</span></em><a name=pgfId-1361167></a><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  Shape<a name=pgfId-1361169></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Circle<a
+  name=pgfId-1361171></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  ID(s)<a name=pgfId-1361173></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Pad
+  representing a drill<a name=pgfId-1361175></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Layers
+  Displayed<a name=pgfId-1361177></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Signal Layer
+  and Drill layer<a name=pgfId-1361179></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Picture<a
+  name=pgfId-1361181></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361183></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Purpose<a
+  name=pgfId-1361185></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>To ensure that
+  drill is covered by pad/copper.<a name=pgfId-1361187></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Fun<a
+  name=pgfId-1361189></a>ction<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Reports NPTH
+  drills with no pad in the corresponding signal layer.<a name=pgfId-1361191></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Activation<a
+  name=pgfId-1361193></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Missing Pad
+  check in Signal Test List is selected and </span><a name=pgfId-1361195></a><em><span
+  style='font-family:Courier;mso-bidi-font-family:Courier;font-weight:normal'>v_check_missing_pad_npth
+  = yes</span></em><span style='mso-bidi-font-family:Helvetica'> .<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Known
+  Limitations<a name=pgfId-1361197></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361199></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><a name=pgfId-1377758></a><i><span style='font-size:15.0pt;font-family:
+Times;mso-bidi-font-family:Times'>X-to-Copper Spacing (Signal Test List /
+Copper Spacing) - X is one of: </span></i><em><span style='font-size:9.5pt;
+font-family:Courier;mso-bidi-font-family:Courier;font-weight:normal'>PTH, NPTH,
+Via, Microvia</span></em><i><span style='font-size:15.0pt;font-family:Times;
+mso-bidi-font-family:Times'> . <o:p></o:p></span></i></h6>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Item<a
+  name=pgfId-1361204></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Details<a
+  name=pgfId-1361206></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Full Name<a
+  name=pgfId-1361208></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>X-to-Copper
+  Spacing<a name=pgfId-1361210></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Internal ERF
+  Name<a name=pgfId-1361212></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>X2cu_spacing</span></em><a name=pgfId-1361214></a><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  Shape<a name=pgfId-1361216></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Segment<a
+  name=pgfId-1361218></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  ID(s)<a name=pgfId-1361220></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Pad
+  representing a drill and Signal Layer shape<a name=pgfId-1361222></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Layers
+  Displayed<a name=pgfId-1361224></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Signal Layer
+  and Drill layer<a name=pgfId-1361226></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Picture<a
+  name=pgfId-1361228></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361230></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Purpose<a
+  name=pgfId-1361232></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>To ensure
+  sufficient spacing from drill to (unconnected) copper.<a name=pgfId-1361234></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Function<a
+  name=pgfId-1361236></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Reports drills
+  close to the copper which do not cover it. Max spacing to search is defined
+  by the green range value of the category.<br>
+  <a name=pgfId-1361238></a>If </span><em><span style='font-family:Courier;
+  mso-bidi-font-family:Courier;font-weight:normal'>v_report_all_spacings = yes</span></em><span
+  style='mso-bidi-font-family:Helvetica'> , then all spacing violations (less
+  then max) are reported. Otherwise only the smallest spacing violation is
+  reported. <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Activation<a
+  name=pgfId-1361240></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Copper Spacing
+  check in Signal Test List is selected.<a name=pgfId-1361242></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Known
+  Limitations<a name=pgfId-1361244></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361246></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=body><a name=pgfId-1361247></a>&nbsp;<a name=pgfId-1361248></a>&nbsp;</p>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><a name=pgfId-1361249></a><i><span style='font-size:15.0pt;font-family:
+Times;mso-bidi-font-family:Times'>X Registration (Signal Test List /
+Registration) - X is one of: </span></i><em><span style='font-size:9.5pt;
+font-family:Courier;mso-bidi-font-family:Courier;font-weight:normal'>PTH, NPTH,
+Via, Microvia</span></em><i><span style='font-size:15.0pt;font-family:Times;
+mso-bidi-font-family:Times'> .<o:p></o:p></span></i></h6>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Item<a
+  name=pgfId-1361252></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Details<a
+  name=pgfId-1361254></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Full Name<a
+  name=pgfId-1361256></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>X Registration
+  <a name=pgfId-1361258></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Internal ERF
+  Name<a name=pgfId-1361260></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>X_reg</span></em><a name=pgfId-1361262></a><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  Shape<a name=pgfId-1361264></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Segment<a
+  name=pgfId-1361266></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  ID(s)<a name=pgfId-1361268></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Pad
+  representing a drill and Signal Layer pad<a name=pgfId-1361270></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Layers
+  Displayed<a name=pgfId-1361272></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Signal Layer
+  and Drill layer<a name=pgfId-1361274></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Picture<a
+  name=pgfId-1361276></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361278></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Purpose<a
+  name=pgfId-1361280></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>To ensure drill
+  registration relative to the corresponding signal layer pad.<a
+  name=pgfId-1361282></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Function<a
+  name=pgfId-1361284></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Reports drills
+  misregistered relative to the corresponding pad in the signal layer (drill
+  and pad have different centers). Max misregistration to sea<a
+  name=pgfId-1361286></a>rch is defined by the green range value of the
+  category.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Activation<a
+  name=pgfId-1361288></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Registration
+  check in Signal Test List is selected.<a name=pgfId-1361290></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Known
+  Limitations<a name=pgfId-1361292></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361294></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><a name=pgfId-1361295></a><i><span style='font-size:15.0pt;font-family:
+Times;mso-bidi-font-family:Times'>X SM Annular Ring (SMTest List / Annular
+Ring) - X is one of: </span></i><em><span style='font-size:9.5pt;font-family:
+Courier;mso-bidi-font-family:Courier;font-weight:normal'>PTH, Via, Microvia</span></em><i><span
+style='font-size:15.0pt;font-family:Times;mso-bidi-font-family:Times'> .<o:p></o:p></span></i></h6>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Item<a
+  name=pgfId-1361298></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Details<a
+  name=pgfId-1361300></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Full Name<a
+  name=pgfId-1361302></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>X SM A<a
+  name=pgfId-1361304></a>nnular Ring<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Internal ERF
+  Name<a name=pgfId-1361306></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>X_sm_ar</span></em><a name=pgfId-1361308></a><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  Shape<a name=pgfId-1361310></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Segment<a
+  name=pgfId-1361312></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  ID(s)<a name=pgfId-1361314></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>SM Layer shape
+  and Pad representing a drill<a name=pgfId-1361316></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Layers
+  Displayed<a name=pgfId-1361318></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>SM Layer and
+  Drill layer<a name=pgfId-1361320></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Picture<a
+  name=pgfId-1361322></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361324></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Purpose<a
+  name=pgfId-1361326></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>To ensure
+  sufficient annular ring.<a name=pgfId-1361328></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Function<a
+  name=pgfId-1361330></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Reports drills
+  whe<a name=pgfId-1361332></a>re the annular ring on the corresponding sm
+  layer is less than the green range value of the category.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Activation<a
+  name=pgfId-1361334></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Annular Ring
+  check in SM Test List is selected and the drill layer pierces (at least one)
+  outer layer.<a name=pgfId-1361336></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Known
+  Limitations<a name=pgfId-1361338></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361340></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><a name=pgfId-1361342></a><i><span style='font-size:15.0pt;font-family:
+Times;mso-bidi-font-family:Times'>X Crosses SM (SM Test List / Annular Ring) -
+X is one of: </span></i><em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;font-weight:normal'>PTH, NPTH, Via, Microvia</span></em><i><span
+style='font-size:15.0pt;font-family:Times;mso-bidi-font-family:Times'> .<o:p></o:p></span></i></h6>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Item<a
+  name=pgfId-1361345></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Details<a
+  name=pgfId-1361347></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Full Name<a
+  name=pgfId-1361349></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>X Crosses SM<a
+  name=pgfId-1361351></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Internal ERF
+  Name<a name=pgfId-1361353></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>X_crosses_sm</span></em><a name=pgfId-1361355></a><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  Shape<a name=pgfId-1361357></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Circle<a
+  name=pgfId-1361359></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  ID(s)<a name=pgfId-1361361></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>SM Layer shape
+  and Pad representing a drill<a name=pgfId-1361363></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Layers
+  Displayed<a name=pgfId-1361365></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>SM Layer a<a
+  name=pgfId-1361367></a>nd Drill layer<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Picture<a
+  name=pgfId-1361369></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361371></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Purpose<a
+  name=pgfId-1361373></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>To find drills
+  crossing solder.<a name=pgfId-1361375></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Function<a
+  name=pgfId-1361377></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Reports drills
+  partially covered by soldermask.<a name=pgfId-1361379></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Activation<a
+  name=pgfId-1361381></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Annular Ring
+  check in SM Test List is selected.<a name=pgfId-1361383></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Known
+  Limitations<a name=pgfId-1361385></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361387></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><a name=pgfId-1361388></a><i><span style='font-size:15.0pt;font-family:
+Times;mso-bidi-font-family:Times'>Covered X (SM Test List / Covered Drills) - X
+is one of: </span></i><em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;font-weight:normal'>PTH, Via, Microvia</span></em><i><span
+style='font-size:15.0pt;font-family:Times;mso-bidi-font-family:Times'> .<o:p></o:p></span></i></h6>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Item<a
+  name=pgfId-1361391></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Details<a
+  name=pgfId-1361393></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Full Name<a
+  name=pgfId-1361395></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Covered X<a
+  name=pgfId-1361397></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Internal ERF
+  Name<a name=pgfId-1361399></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>X_covered</span></em><a name=pgfId-1361401></a><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  Shape<a name=pgfId-1361403></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Circle<a
+  name=pgfId-1361405></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  ID(s)<a name=pgfId-1361407></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Pad
+  representing a drill<a name=pgfId-1361409></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Layers
+  Displayed<a name=pgfId-1361411></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>SM Layer and
+  Drill layer<a name=pgfId-1361413></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Picture<a
+  name=pgfId-1361415></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361417></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Purpose<a
+  name=pgfId-1361419></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>To ensure that
+  the drill whi<a name=pgfId-1361421></a>ch pierces the outer layer is exposed
+  by the corresponding soldermask.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Function<a
+  name=pgfId-1361423></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Reports drills
+  which are covered by the soldermask (there are no shapes covering the drill
+  in the corresponding sm layer).<a name=pgfId-1361425></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Activation<a
+  name=pgfId-1361427></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Covered Drills
+  check in SM Test List i<a name=pgfId-1361429></a>s selected and the drill
+  layer pierces (at least one) outer layer.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Known
+  Limitations<a name=pgfId-1361431></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361433></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=body><a name=pgfId-1361434></a><a name=pgfId-1361435></a>&nbsp;</p>
+
+<h6 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><a name=pgfId-1361438></a><i><span style='font-size:15.0pt;font-family:
+Times;mso-bidi-font-family:Times'>X Coverage (SM Test List / Coverage) - X is
+one of: </span></i><em><span style='font-size:9.5pt;font-family:Courier;
+mso-bidi-font-family:Courier;font-weight:normal'>PTH, NPTH, Via, Microvia</span></em><i><span
+style='font-size:15.0pt;font-family:Times;mso-bidi-font-family:Times'> . <o:p></o:p></span></i></h6>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Item<a
+  name=pgfId-1361441></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading><span style='mso-bidi-font-family:Helvetica'>Details<a
+  name=pgfId-1361443></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Full Name<a
+  name=pgfId-1361445></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>X Coverage<a
+  name=pgfId-1361447></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Internal ERF
+  Name<a name=pgfId-1361449></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><em><span style='font-family:Courier;mso-bidi-font-family:
+  Courier;font-weight:normal'>X_coverage</span></em><a name=pgfId-1361451></a><span
+  style='mso-bidi-font-family:Helvetica'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  Sha<a name=pgfId-1361453></a>pe<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Segment<a
+  name=pgfId-1361455></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Measurement
+  ID(s)<a name=pgfId-1361457></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Pad
+  representing a drill and SM Layer shape<a name=pgfId-1361459></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Layers
+  Displayed<a name=pgfId-1361461></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>SM Layer and
+  Drill layer<a name=pgfId-1361463></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Picture<a
+  name=pgfId-1361465></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361467></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Purpose<a
+  name=pgfId-1361469></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>To ensure
+  sufficient spacing from drill to the soldermask opening.<a
+  name=pgfId-1361471></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Function<a
+  name=pgfId-1361473></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Reports drills
+  close to the soldermask o<a name=pgfId-1361475></a>pening which do not expose
+  that drill. Max spacing to search is defined by the green range value of the
+  category.<br>
+  If </span><em><span style='font-family:Courier;mso-bidi-font-family:Courier;
+  font-weight:normal'>v_report_all_coverages=yes</span></em><span
+  style='mso-bidi-font-family:Helvetica'> , then all spacing violations (less
+  then max) are reported. Otherwise only the smallest spacing violation is
+  reported.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Activation<a
+  name=pgfId-1361477></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Copper Spacing
+  check in Signal Test List is selected. <a name=pgfId-1361479></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>Known
+  Limitations<a name=pgfId-1361481></a><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody><span style='mso-bidi-font-family:Helvetica'>&nbsp;<a
+  name=pgfId-1361483></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<h3 style='margin-top:20.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><a name=pgfId-1369758></a><a name=pgfId-1381909></a><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></h3>
+
+</div>
+
+</body>
+
+</html>
+

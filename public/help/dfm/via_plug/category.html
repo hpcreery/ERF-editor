@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Plug Hole Mask Creation</title>
+
+</head><body>
+<h2 style="margin: 20pt 0pt 5pt;"><i><span style="font-size: 19pt; font-family: Times; color: black;">Introduction<o:p></o:p></span></i></h2>
+<p class="body"><a name="0_pgfId-1261575"></a><span style="">The Plug Hole Mask Creation is a read-write DFM
+action intended to
+create plug layers for defined drill layers. The DFM action enables you
+to
+define complex filters to specify which drill holes should be plugged,
+and from
+which side to plug a specific drill hole. Using this DFM action will
+save time
+and reduce errors when defining plug layers. &nbsp;</span><span style="">This DFM action requires the license option </span><em><b><span style="font-size: 9.5pt; font-family: Arial;">viapdfm</span></b></em><span style=""> .<o:p></o:p></span></p>
+<p class="body"><a name="0_pgfId-1282466"></a><span style="">Select <em><b>&nbsp;DFM &gt;
+Yield Improvement &gt; Plug Hole Mask Creation</b></em>
+<o:p></o:p></span></p>
+<h6 style="margin: 5pt 0pt 5pt 18pt;"><span style="font-size: 9pt; font-family: Times; color: black;"><o:p></o:p></span></h6>
+<p class="MsoNormal"><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+stroked="f">
+<v:stroke joinstyle="miter"/>
+<v:formulas>
+<v:f eqn="if lineDrawn pixelLineWidth 0"/>
+<v:f eqn="sum @0 1 0"/>
+<v:f eqn="sum 0 0 @1"/>
+<v:f eqn="prod @2 1 2"/>
+<v:f eqn="prod @3 21600 pixelWidth"/>
+<v:f eqn="prod @3 21600 pixelHeight"/>
+<v:f eqn="sum @0 0 1"/>
+<v:f eqn="prod @6 1 2"/>
+<v:f eqn="prod @7 21600 pixelWidth"/>
+<v:f eqn="sum @8 21600 0"/>
+<v:f eqn="prod @7 21600 pixelHeight"/>
+<v:f eqn="sum @10 21600 0"/>
+</v:formulas>
+<v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+<o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" alt="" style='width:286.5pt;
+height:154.5pt'>
+<v:imagedata src="file:///C:/DOCUME~1/tedr/LOCALS~1/Temp/msoclip1/01/clip_image001.gif"
+o:href="file:///Z:/ERF%20Editor%202008/0992c%20HTML%20and%20files/0992c-8.gif"/>
+</v:shape><![endif]--><!--[if !vml]--><img style="width: 382px; height: 206px;" alt="" src="category_files/img001.png" v:shapes="_x0000_i1025"><!--[endif]--></p>
+<h2 style="margin: 20pt 0pt 5pt;"><a name="0_pgfId-1261589"></a><i><span style="font-size: 19pt; font-family: Times; color: black;">Filter
+Types<o:p></o:p></span></i></h2>
+<h5 style="margin: 17pt 0pt 6pt;"><a name="0_pgfId-1264012"></a><i><span style="font-size: 15pt; font-family: Times; color: black;">Simple
+Filters<o:p></o:p></span></i></h5>
+<h6 style="margin: 7pt 0pt 7pt 18pt;"><a name="0_pgfId-1264013"></a><span style="font-size: 11pt; font-family: Times; color: black;">Basic
+filter&nbsp;<o:p></o:p></span></h6>
+<p class="body"><a name="0_pgfId-1264023"></a><span style="">excludes text, arc, and surface features.<o:p></o:p></span></p>
+<h6 style="margin: 7pt 0pt 7pt 18pt;"><a name="0_pgfId-1264014"></a><span style="font-size: 11pt; font-family: Times; color: black;">Slot
+and laservia filter<o:p></o:p></span></h6>
+<p class="body"><a name="0_pgfId-1264026"></a><span style="">Whether slot and laservia features should have
+plugs.<o:p></o:p></span></p>
+<h6 style="margin: 7pt 0pt 7pt 18pt;"><a name="0_pgfId-1263431"></a><span style="font-size: 11pt; font-family: Times; color: black;">Filter
+by size <o:p></o:p></span></h6>
+<ul>
+<li><a name="0_pgfId-1293013"></a><span style="">If the drill hole size is smaller than a defined
+minimum value
+(v_max_must_plug_below), then the drill hole must be plugged without
+considering the Solder Mask design.<o:p></o:p></span></li>
+<li><a name="0_pgfId-1293011"></a><span style="">If the drill hole size is larger than a defined
+maximum value
+(v_not_to_plug_above), then the holes will not be plugged, regardless
+of the
+Solder Mask design.<o:p></o:p></span></li>
+<li><a name="0_pgfId-1293031"></a><span style="">If the drill hole size lies between these minimum
+and maximum values,
+plugging should be considered based on the rules settings in this DFM.<o:p></o:p></span></li>
+</ul>
+<h6 style="margin: 7pt 0pt 7pt 18pt;"><a name="0_pgfId-1263432"></a><span style="font-size: 11pt; font-family: Times; color: black;">Filter
+by attribute <o:p></o:p></span></h6>
+<p class="bodyindent"><a name="0_pgfId-1264031"></a><span style="">If a drill feature includes one or more specified
+attributes, the drill
+should be plugged.<o:p></o:p></span></p>
+<p class="bodyindent"><a name="0_pgfId-1293047"></a><span style="">If a drill feature does not include any of these
+specified attributes,
+than it should not be plugged.<o:p></o:p></span></p>
+<ul>
+<li><a name="0_pgfId-1261594"></a><!--[if !supportLists]--><span style="font-size: 10pt; font-family: Symbol; color: black;"><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;"></span></span><!--[endif]--><span style="font-size: 11pt; font-family: Times; color: black;">Currently,
+attribute filters support
+only the </span><em><b><span style="font-size: 9.5pt; font-family: Arial; color: black;">.drill</span></b></em><span style="font-size: 11pt; font-family: Times; color: black;">
+and </span><em><b><span style="font-size: 9.5pt; font-family: Arial; color: black;">.via_type
+</span></b></em><span style="font-size: 11pt; font-family: Times; color: black;">attributes.
+Other attributes will return an error message.&nbsp;</span></li>
+<li><span style="font-size: 11pt; font-family: Times; color: black;">Slot
+and laservia drill features should be considered as having the</span><em><b><span style="font-size: 9.5pt; font-family: Arial; color: black;">
+.drill=via</span></b></em><span style="font-size: 11pt; font-family: Times; color: black;">
+attribute, even if the user has not explicitly defined it.<o:p></o:p></span></li>
+</ul>
+<h5 style="margin: 17pt 0pt 6pt;"><a name="0_pgfId-1263835"></a><i><span style="font-size: 15pt; font-family: Times; color: black;">Complex
+Filters<o:p></o:p></span></i></h5>
+<h6 style="margin: 6pt 0pt 6pt 18pt;"><a name="0_pgfId-1264069"></a><span style="font-size: 11pt; font-family: Helvetica; color: black;">Filter
+by relation
+between a drill hole and a single reference feature <o:p></o:p></span></h6>
+<p class="body"><a name="0_pgfId-1264070"></a><span style="">This is related to the screen parameter <em><b>Plug
+Hole if Mask
+Clearance </b></em>... Smaller than Hole, Equal to Hole,
+Larger than Hole. This
+filter decides whether or not to plug a drill hole depending on the
+relationship between the drill hole and a single (top </span><em><span style="font-size: 12pt;">or</span></em><span style=""> bottom) reference feature for that drill
+hole. <o:p></o:p></span></p>
+<h6 style="margin: 7pt 0pt 4pt 4.4pt; text-indent: -4.4pt;"><a name="0_pgfId-1263950"></a><span style="font-size: 11pt; font-family: Times; color: black;">To
+implement
+this filter:<o:p></o:p></span></h6>
+<p class="MsoNormal" style="margin: 6pt 0pt 6pt 72pt; text-indent: -12.25pt;"><a name="0_pgfId-1263871"></a><!--[if !supportLists]--><span style="font-size: 11pt; font-family: Times; color: black;">1.<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;
+</span></span><!--[endif]--><span style="font-size: 11pt; font-family: Times; color: black;">The
+size of the annular ring (AR), for both the top and bottom
+reference features, must be smaller than the maximum AR value as
+defined by the
+parameter </span><em><b><span style="font-size: 9.5pt; font-family: Courier; color: black;">pp_max_ar</span></b></em><span style="font-size: 11pt; font-family: Times; color: black;"> .<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 6pt 0pt 6pt 72pt; text-indent: -12.25pt;"><a name="0_pgfId-1263877"></a><!--[if !supportLists]--><span style="font-size: 11pt; font-family: Times; color: black;">2.<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;
+</span></span><!--[endif]--><span style="font-size: 11pt; font-family: Times; color: black;">Examine
+the relationship between the size of the drill hole and
+the mask clearance for either reference feature (top or bottom). See
+examples
+below that illustrate how these relationships appear in the Graphic
+Editor. <o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 6pt 0pt 6pt 72pt; text-indent: -12.25pt;"><a name="0_pgfId-1263992"></a><!--[if !supportLists]--><span style="font-size: 11pt; font-family: Times; color: black;">3.<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;
+</span></span><!--[endif]--><span style="font-size: 11pt; font-family: Times; color: black;">Based
+on the criteria defined in the screen parameter <em><b>Plug
+Hole if Mask Clearance</b></em> ,<em><b> </b></em>decide
+whether you need to
+create a mask plug, or should consider other factors in making your
+decision.<o:p></o:p></span></p>
+<p class="body"><a name="0_pgfId-1271661"></a><span style="">&nbsp;<o:p></o:p></span></p>
+<h6 style="margin: 15pt 0pt 7pt;"><a name="0_pgfId-1271264"></a><i><span style="font-size: 12pt; font-family: Helvetica; color: black;">Examples
+of single-sided filters<o:p></o:p></span></i></h6>
+<h6 style="margin: 5pt 0pt 5pt 18pt;"><a name="0_pgfId-1261584"></a><span style="font-size: 9pt; font-family: Times; color: black;">&nbsp;<o:p></o:p></span></h6>
+<table style="" border="1" cellpadding="0">
+<tbody>
+<tr>
+<td style="padding: 0.75pt;">
+<p class="cellheading"><span style=""><font style="font-weight: bold;" size="-1"><span style="font-family: Helvetica,Arial,sans-serif;">Single-side
+relation</span></font><a name="0_pgfId-1264004"></a><o:p></o:p></span></p>
+</td>
+<td style="padding: 0.75pt;">
+<p class="cellheading"><span style=""><small style="font-weight: bold;"><span style="font-family: Helvetica,Arial,sans-serif;">Illustration</span></small><a name="0_pgfId-1264006"></a><o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style="padding: 0.75pt;">
+<p class="cellbodylarge"><span style="">Mask
+clearance &gt; hole<a name="0_pgfId-1261675"></a><o:p></o:p></span></p>
+</td>
+<td style="padding: 0.75pt;">
+<p class="body"><a name="0_pgfId-1261680"></a><!--[if gte vml 1]><v:shape id="_x0000_i1026"
+type="#_x0000_t75" alt="" style='width:177pt;height:89.25pt'>
+<v:imagedata src="file:///C:/DOCUME~1/tedr/LOCALS~1/Temp/msoclip1/01/clip_image002.gif"
+o:href="file:///Z:/ERF%20Editor%202008/0992c%20HTML%20and%20files/0992c-9.gif"/>
+</v:shape><![endif]--><!--[if !vml]--><img style="width: 236px; height: 119px;" alt="" src="category_files/img002.png" v:shapes="_x0000_i1026"><!--[endif]--><span style="">&nbsp;<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style="padding: 0.75pt;">
+<p class="cellbodylarge"><span style="">Mask
+clearance = hole<a name="0_pgfId-1261682"></a><o:p></o:p></span></p>
+</td>
+<td style="padding: 0.75pt;">
+<p class="body"><a name="0_pgfId-1261687"></a><!--[if gte vml 1]><v:shape id="_x0000_i1027"
+type="#_x0000_t75" alt="" style='width:174.75pt;height:90pt'>
+<v:imagedata src="file:///C:/DOCUME~1/tedr/LOCALS~1/Temp/msoclip1/01/clip_image003.gif"
+o:href="file:///Z:/ERF%20Editor%202008/0992c%20HTML%20and%20files/0992c-10.gif"/>
+</v:shape><![endif]--><!--[if !vml]--><img style="width: 233px; height: 120px;" alt="" src="category_files/img003.png" v:shapes="_x0000_i1027"><!--[endif]--><span style="">&nbsp;<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style="padding: 0.75pt;">
+<p class="cellbodylarge"><span style="">Mask
+clearance &lt; hole<a name="0_pgfId-1261689"></a><o:p></o:p></span></p>
+</td>
+<td style="padding: 0.75pt;">
+<p class="body"><a name="0_pgfId-1261694"></a><!--[if gte vml 1]><v:shape id="_x0000_i1028"
+type="#_x0000_t75" alt="" style='width:176.25pt;height:90pt'>
+<v:imagedata src="file:///C:/DOCUME~1/tedr/LOCALS~1/Temp/msoclip1/01/clip_image004.gif"
+o:href="file:///Z:/ERF%20Editor%202008/0992c%20HTML%20and%20files/0992c-11.gif"/>
+</v:shape><![endif]--><!--[if !vml]--><img style="width: 235px; height: 120px;" alt="" src="category_files/img004.png" v:shapes="_x0000_i1028"><!--[endif]--><span style="">&nbsp;<o:p></o:p></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h6 style="margin: 6pt 0pt 6pt 18pt;"><a name="0_pgfId-1264084"></a><span style="font-size: 11pt; font-family: Helvetica; color: black;">Filter
+by relation
+between drill hole and both reference features<o:p></o:p></span></h6>
+<p class="body"><a name="0_pgfId-1264105"></a><span style="">Related to the screen parameters <em><b>One
+Side is Partially Open, Both
+Sides Fully Open, One Side Not Open and One side Open. </b></em>This
+filter
+decides whether or not to plug a drill hole depending on the
+relationship
+between the drill hole and both (top </span><em><span style="font-size: 12pt;">and </span></em><span style="">bottom) reference features. <o:p></o:p></span></p>
+<h6 style="margin: 15pt 0pt 7pt;"><a name="0_pgfId-1272422"></a><a name="0_56542"></a><i><span style="font-size: 12pt; font-family: Helvetica; color: black;">Example<o:p></o:p></span></i></h6>
+<p class="body"><a name="0_pgfId-1272423"></a><span style="">If one side is partially open, and the other is
+fully open, decide
+whether <o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 5pt 0pt 5pt 90pt; text-indent: -10.8pt;"><a name="0_pgfId-1272424"></a><!--[if !supportLists]--><span style="font-size: 10pt; font-family: Symbol; color: black;">·<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span style="font-size: 11pt; font-family: Times; color: black;">the
+partially open side needs to be
+plugged <o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 5pt 0pt 5pt 90pt; text-indent: -10.8pt;"><a name="0_pgfId-1272425"></a><!--[if !supportLists]--><span style="font-size: 10pt; font-family: Symbol; color: black;">·<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span style="font-size: 11pt; font-family: Times; color: black;">the
+fully open side needs to be plugged<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 5pt 0pt 5pt 90pt; text-indent: -10.8pt;"><a name="0_pgfId-1272426"></a><!--[if !supportLists]--><span style="font-size: 10pt; font-family: Symbol; color: black;">·<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span style="font-size: 11pt; font-family: Times; color: black;">both
+sides need to be plugged<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 5pt 0pt 5pt 90pt; text-indent: -10.8pt;"><a name="0_pgfId-1272427"></a><!--[if !supportLists]--><span style="font-size: 10pt; font-family: Symbol; color: black;">·<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span style="font-size: 11pt; font-family: Times; color: black;">report
+only<o:p></o:p></span></p>
+<p class="body"><a name="0_pgfId-1264283"></a><em><b><span style="">Open</span></b></em><span style=""> --the
+feature from the reference layer fully covers the drill hole, or is the
+same
+size as the drill hole.<o:p></o:p></span></p>
+<p class="body"><a name="0_pgfId-1261708"></a><em><b><span style="">Partial</span></b></em><span style=""> --the
+feature from the reference layer partially covers the drill hole, or is
+smaller
+than the drill hole.<o:p></o:p></span></p>
+<p class="body"><a name="0_pgfId-1261585"></a><em><b><span style="">Close</span></b></em><span style=""> --there
+is no feature in the reference layer above the drill hole.<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 5pt 0pt 5pt 90pt; text-indent: -36pt;"><a name="0_pgfId-1264142"></a><!--[if !supportLists]--><span style="font-size: 10pt; font-family: Symbol; color: black;">·<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span style="font-size: 11pt; font-family: Times; color: black;">If
+there is no reference feature on
+either side of the drill hole (i.e. both sides are <em><b>Closed)</b></em>
+,
+then both sides must be plugged. <o:p></o:p></span></p>
+<p class="body"><a name="0_pgfId-1273138"></a><span style="">The pictures below illustrate these relationships
+in the Graphic Editor.
+<o:p></o:p></span></p>
+<p class="footnote"><a name="0_pgfId-1281068"></a><em><b><span style="font-size: 11pt;">Note&gt;</span></b></em><span style=""> The definitions given above may seem
+contrary to logic, i.e. that an </span><em><b><span style="font-size: 11pt;">open</span></b></em><span style=""> hole is one where "the reference layer fully
+covers the drill
+hole". But note that the reference layer is a </span><em><span style="font-size: 12pt;">negative</span></em><span style=""> layer in Genesis. This means that where
+there is a feature in the layer mask, there is a clearance (an open
+area) above
+the drill on the physical board.<o:p></o:p></span></p>
+<p class="body"><a name="0_pgfId-1281066"></a><span style="">&nbsp;<o:p></o:p></span></p>
+<h6 style="margin: 15pt 0pt 7pt;"><a name="0_pgfId-1273139"></a><i><span style="font-size: 12pt; font-family: Helvetica; color: black;">Examples
+of double-sided filters<o:p></o:p></span></i></h6>
+<h6 style="margin: 5pt 0pt 5pt 18pt;"><a name="0_pgfId-1273180"></a><span style="font-size: 9pt; font-family: Times; color: black;">&nbsp;<o:p></o:p></span></h6>
+<table style="width: 404px; height: 721px;" border="1" cellpadding="0">
+<tbody>
+<tr>
+<td style="padding: 0.75pt;">
+<p><span style=""><font style="font-weight: bold;" size="-1"><span style="font-family: Helvetica,Arial,sans-serif;"> Two-sided relation</span></font>&nbsp;<o:p></o:p></span></p>
+</td>
+<td style="padding: 0.75pt;">
+<p class="cellheading"><a name="0_pgfId-1273144"><span style=""><font style="font-weight: bold;" size="-1"><span style="font-family: Helvetica,Arial,sans-serif;"> Illustration</span></font></span></a><span style=""><a name="0_pgfId-1273144"></a><o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style="padding: 0.75pt;">
+<p class="cellbodylarge"><span style="">One
+side partial - <br>
+<a name="0_pgfId-1273146"></a>one side open<o:p></o:p></span></p>
+</td>
+<td style="padding: 0.75pt;">
+<p class="body"><a name="0_pgfId-1273151"></a><!--[if gte vml 1]><v:shape id="_x0000_i1029"
+type="#_x0000_t75" alt="" style='width:134.25pt;height:66.75pt'>
+<v:imagedata src="file:///C:/DOCUME~1/tedr/LOCALS~1/Temp/msoclip1/01/clip_image005.gif"
+o:href="file:///Z:/ERF%20Editor%202008/0992c%20HTML%20and%20files/0992c-12.gif"/>
+</v:shape><![endif]--><!--[if !vml]--><img style="width: 179px; height: 89px;" alt="" src="category_files/img005.png" v:shapes="_x0000_i1029"><!--[endif]--><span style="">&nbsp;<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style="padding: 0.75pt;">
+<p class="cellbodylarge"><span style="">One
+side partial - <br>
+<a name="0_pgfId-1273153"></a>one side closed<o:p></o:p></span></p>
+</td>
+<td style="padding: 0.75pt;">
+<p class="body"><a name="0_pgfId-1273158"></a><!--[if gte vml 1]><v:shape id="_x0000_i1030"
+type="#_x0000_t75" alt="" style='width:134.25pt;height:66.75pt'>
+<v:imagedata src="file:///C:/DOCUME~1/tedr/LOCALS~1/Temp/msoclip1/01/clip_image006.gif"
+o:href="file:///Z:/ERF%20Editor%202008/0992c%20HTML%20and%20files/0992c-13.gif"/>
+</v:shape><![endif]--><!--[if !vml]--><img style="width: 179px; height: 89px;" alt="" src="category_files/img006.png" v:shapes="_x0000_i1030"><!--[endif]--><span style="">&nbsp;<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style="padding: 0.75pt;">
+<p class="cellbodylarge"><span style="">Both
+sides partial<a name="0_pgfId-1273160"></a><o:p></o:p></span></p>
+</td>
+<td style="padding: 0.75pt;">
+<p class="body"><a name="0_pgfId-1273165"></a><!--[if gte vml 1]><v:shape id="_x0000_i1031"
+type="#_x0000_t75" alt="" style='width:133.5pt;height:66pt'>
+<v:imagedata src="file:///C:/DOCUME~1/tedr/LOCALS~1/Temp/msoclip1/01/clip_image007.gif"
+o:href="file:///Z:/ERF%20Editor%202008/0992c%20HTML%20and%20files/0992c-14.gif"/>
+</v:shape><![endif]--><!--[if !vml]--><img style="width: 178px; height: 88px;" alt="" src="category_files/img007.png" v:shapes="_x0000_i1031"><!--[endif]--><span style="">&nbsp;<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style="padding: 0.75pt;">
+<p class="cellbodylarge"><span style="">Through<a name="0_pgfId-1273167"></a>-hole <br>
+(Both sides open)<o:p></o:p></span></p>
+</td>
+<td style="padding: 0.75pt;">
+<p class="body"><a name="0_pgfId-1273172"></a><!--[if gte vml 1]><v:shape id="_x0000_i1032"
+type="#_x0000_t75" alt="" style='width:132pt;height:66.75pt'>
+<v:imagedata src="file:///C:/DOCUME~1/tedr/LOCALS~1/Temp/msoclip1/01/clip_image008.gif"
+o:href="file:///Z:/ERF%20Editor%202008/0992c%20HTML%20and%20files/0992c-15.gif"/>
+</v:shape><![endif]--><!--[if !vml]--><img style="width: 176px; height: 89px;" alt="" src="category_files/img008.png" v:shapes="_x0000_i1032"><!--[endif]--><span style="">&nbsp;<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style="padding: 0.75pt;">
+<p class="cellbodylarge"><span style="">One
+side open - <br>
+<a name="0_pgfId-1273174"></a>one side closed<o:p></o:p></span></p>
+</td>
+<td style="padding: 0.75pt;">
+<p class="body"><a name="0_pgfId-1273179"></a><!--[if gte vml 1]><v:shape id="_x0000_i1033"
+type="#_x0000_t75" alt="" style='width:128.25pt;height:66.75pt'>
+<v:imagedata src="file:///C:/DOCUME~1/tedr/LOCALS~1/Temp/msoclip1/01/clip_image009.gif"
+o:href="file:///Z:/ERF%20Editor%202008/0992c%20HTML%20and%20files/0992c-16.gif"/>
+</v:shape><![endif]--><!--[if !vml]--><img src="file:///C:/DOCUME%7E1/tedr/LOCALS%7E1/Temp/msoclip1/01/clip_image009.gif" v:shapes="_x0000_i1033" align="bottom" height="89" width="171"><!--[endif]--><span style="">&nbsp;<o:p></o:p></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h6 style="margin: 15pt 0pt 7pt;"><a name="0_pgfId-1272507"></a><i><span style="font-size: 12pt; font-family: Helvetica; color: black;">&nbsp;<o:p></o:p></span></i></h6>
+<h5 style="margin: 17pt 0pt 6pt;"><a name="0_pgfId-1279662"></a><i><span style="font-size: 15pt; font-family: Times; color: black;">How
+to resolve rules that are in
+conflict with each other<o:p></o:p></span></i><span style="font-size: 10pt; font-family: Symbol; color: black;"><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;"></span></span></h5>
+<h5 style="margin: 17pt 0pt 6pt;"><span style="font-size: 10pt; font-family: Symbol; color: black;"><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;</span></span><!--[endif]--><span style="font-size: 11pt; font-family: Times; color: black;">The
+following hypothetical example
+creates a situation where certain drill plug rules conflict, and shows
+how you
+can resolve the situation.<o:p></o:p></span></h5>
+<p class="body"><a name="0_pgfId-1280965"></a><span style="">A drill hole has two reference features. The top
+reference feature
+partially covers the drill hole; the bottom reference feature fully
+covers the
+drill hole (i.e. is open).<o:p></o:p></span></p>
+<p class="body"><a name="0_pgfId-1280966"></a><span style="">The following rules were created to decide whether
+or not to plug the
+hole:<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 6pt 0pt 6pt 72pt; text-indent: -12.25pt;"><a name="0_pgfId-1280967"></a><!--[if !supportLists]--><span style="font-size: 10pt; font-family: Symbol; color: black;">·<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span style="font-size: 11pt; font-family: Times; color: black;">For
+holes with only one reference
+feature, if the hole is open from that side (the reference feature is
+larger
+than the drill hole), there is no need to plug the hole.<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 6pt 0pt 6pt 72pt; text-indent: -12.25pt;"><a name="0_pgfId-1280956"></a><!--[if !supportLists]--><span style="font-size: 10pt; font-family: Symbol; color: black;">·<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span style="font-size: 11pt; font-family: Times; color: black;">For
+holes with two reference features,
+the drill hole must be plugged if one side is open and the other side
+is
+partially open. <o:p></o:p></span></p>
+<p class="body"><a name="0_pgfId-1280993"></a><span style="">In this situation, the rules conflict with each
+other. To resolve such
+cases, there is an order of precedence that specifies, for the various
+items
+that make up the relation between a drill hole and its reference
+features, in
+what situations you should or should not add a hole plug. <o:p></o:p></span></p>
+<h6 style="margin: 7pt 0pt 4pt 4.4pt; text-indent: -4.4pt;"><a name="0_pgfId-1281000"></a><span style="font-size: 11pt; font-family: Times; color: black;">The
+order of
+precedence for resolving plug or no plug decisions:<o:p></o:p></span></h6>
+<p class="body"><a name="0_pgfId-1280994"></a><span style="">Highest priority&gt; size of drill hole<o:p></o:p></span></p>
+<p class="bodyindent"><a name="0_pgfId-1280995"></a><span style="">Next highest priority<em><b> &gt;</b></em>
+relation of drill hole to a
+single reference feature <o:p></o:p></span></p>
+<p class="bodyindent2"><a name="0_pgfId-1280996"></a><span style="">Lowest priority &gt; relation of drill hole to
+both reference features.<o:p></o:p></span></p>
+<p class="body"><a name="0_pgfId-1280989"></a><span style="">In the example given above, the single-sided
+relation has a higher
+priority, in accordance with the rules of precedence defined above. In
+this
+example, the final result is that the top side is without a plug, and
+the
+bottom side has a plug. <o:p></o:p></span></p>
+<h5 style="margin: 17pt 0pt 6pt;"><a name="0_pgfId-1279679"></a><i><span style="font-size: 15pt; font-family: Times; color: black;">If
+no reference feature has been
+defined<o:p></o:p></span></i></h5>
+<p class="body"><a name="0_pgfId-1272872"></a><span style="">If you have not defined both reference features,
+the DFM action will not
+process the mask clearance relation filter. If only one reference layer
+is
+defined, the relation of the drill hole to the undefined side is
+defined by the
+ERF variable </span><em><b><span style="font-size: 9.5pt; font-family: Courier;">v_no_mask_full_open</span></b></em><span style=""> . For a blind drill layer, if the blind
+side completely masks the drill clearance, the single-sided relation is
+defined
+as <em><b>closed</b></em> (i.e. no clearance
+above the drill hole).<o:p></o:p></span></p>
+<p class="MsoNormal"><a name="0_pgfId-1272830"></a><span style="">&nbsp;</span></p>
+</body></html>

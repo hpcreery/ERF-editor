@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>category</title>
+</head>
+<body>
+<font size="+2">Construct Pads (Auto, All Angles)<br>
+</font><span style="font-weight: bold;"></span><font size="+2"><br>
+</font>This function identifies drawn pads (including ones drawn at
+non-90 degree rotation),<br>
+and translates them into flashed pads. You may control what
+types of pads may be created.<br>
+<span style="font-weight: bold;"><br>
+Note:</span> the ability to build Pads in all angles was added to the
+Construct Pad (auto) action,<br>
+and you can use that action instead, if desired..<font size="+2"><br>
+</font><br>
+If most of the drawn pads are placed horizontally or vertically use<br>
+&nbsp;&nbsp;&nbsp; DFM -&gt; Cleanup -&gt; Construct Pads (Auto.)<br>
+<br>
+If the features are drawn with pads instead of lines run<br>
+&nbsp;&nbsp;&nbsp; Edit -&gt; Reshape -&gt; Pad To Line on these
+features first.&nbsp; <br>
+<br>
+To access the Construct Pads Action:<br>
+&#8226; Activate the Graphic Editor<br>
+&#8226; Select DFM &gt; Cleanup &gt; Construct Pads (Auto., All Angles)<br>
+<br>
+<img style="width: 481px; height: 464px;" alt="" src="category.png">&nbsp;&nbsp;
+<br>
+This function runs on one or more layers at once and has the following<br>
+parameters which control its behavior:<br>
+<br>
+Layer:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; layer name or layer
+expression<br>
+<br>
+Apply to:&nbsp;&nbsp;&nbsp;&nbsp; work on all features or on selected
+features only<br>
+<br>
+Minimum:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; smallest drawn feature to
+consider<br>
+<br>
+Maximum:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; largest drawn feature to consider<br>
+<br>
+Tolerance:&nbsp;&nbsp;&nbsp; amount of variance in edges to allow&nbsp;
+<br>
+<br>
+Reference SM: solder mask layer name<br>
+<br>
+Standard Symbol Allowed : types of standard symbol that allowed for
+creation<br>
+<br>
+The reference solder mask is optional. It can help the pad recognition<br>
+and reduce the number of false alarms by considering the pads on the<br>
+solder mask layer. <br>
+<span style="font-weight: bold;">Note:</span> construct pads should be
+run on the solder mask layer first.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<font style="font-style: italic;" size="+2">Reports</font><br>
+None<br>
+<br>
+<br>
+<font style="font-style: italic;" size="+2">Result Attributes</font><br>
+None<br>
+<br>
+<br>
+<br>
+</body>
+</html>

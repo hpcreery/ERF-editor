@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta name="Generator" content="Microsoft Office HTML Filter 2.0">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <meta name="Originator" content="Microsoft Word 9">
+  <title>npth_ar</title>
+  <style>
+<!--
+ 
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Arial;}
+h1
+	{
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:20.0pt;
+	font-family:Arial;}
+h2
+	{
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:Arial;
+	font-style:italic;}
+h3
+	{
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Arial;}
+h4
+	{
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-style:italic;}
+p.body, li.body, div.body
+	{
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:18.0pt;
+	font-size:11.0pt;
+	font-family:Times;
+	color:black;}
+p.cellbody, li.cellbody, div.cellbody
+	{
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:9.5pt;
+	font-family:Helvetica;
+	color:black;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+  </style>
+</head>
+<body lang="EN-US">
+<div class="Section1">
+<table border="1" cellpadding="0">
+  <tbody>
+    <tr>
+      <td
+ style="padding: 0.75pt; background: rgb(166, 166, 166) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">
+      <p class="cellbody"><b>Function</b></p>
+      </td>
+      <td style="padding: 0.75pt;">
+      <p class="cellbody"><img src="./npth_ar_files/image001.png"
+ align="bottom" height="138" width="364"></p>
+      <p class="cellbody">Reports for NPTHs embedded in copper the
+distance to the nearest laminate that is less than the<em><b><span
+ style="font-family: Courier;"> pp_d2c </span></b></em>action
+parameter. </p>
+      <p class="cellbody">If<em><b><span style="font-family: Courier;">
+limited_npth_check </span></b></em>is set to<em><b>No</b></em> , all
+annular rings in the vicinity are reported. If set to <em><b>Yes</b></em>
+, the maximum distance reported is that defined by<em><b><span
+ style="font-family: Courier;"> pp_d2c</span></b></em> .</p>
+      <p class="cellbody">Measurements are distance segments between
+the NPTH and nearest laminate.</p>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="padding: 0.75pt; background: rgb(166, 166, 166) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">
+      <p class="cellbody"><b>Activation</b></p>
+      </td>
+      <td style="padding: 0.75pt;">
+      <p class="cellbody">&nbsp;</p>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="padding: 0.75pt; background: rgb(166, 166, 166) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">
+      <p class="cellbody"><b>Known Limitations</b></p>
+      </td>
+      <td style="padding: 0.75pt;">
+      <p class="cellbody">The action tries to identify the pad that is
+associated with the NPTH and add its ID to the measurement. If it
+cannot (e.g. NPTH drilled thru drawn features), it inserts an <em><b>r0</b></em>
+instead.</p>
+      <p class="cellbody">If there is any copper in the NPTH, then a
+zero annular ring measurement will be reported. This may be considered
+by some to be a false alarm.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="MsoNormal">&nbsp;</p>
+</div>
+</body>
+</html>

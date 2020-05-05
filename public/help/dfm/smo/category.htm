@@ -1,0 +1,1488 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./category_files/filelist.xml">
+<title> </title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Frontline</o:Author>
+  <o:LastAuthor>Frontline</o:LastAuthor>
+  <o:Revision>7</o:Revision>
+  <o:TotalTime>9</o:TotalTime>
+  <o:Created>2004-08-03T11:50:00Z</o:Created>
+  <o:LastSaved>2004-08-09T14:14:00Z</o:LastSaved>
+  <o:Pages>4</o:Pages>
+  <o:Words>1156</o:Words>
+  <o:Characters>6590</o:Characters>
+  <o:Company>Frontline PCB</o:Company>
+  <o:Lines>54</o:Lines>
+  <o:Paragraphs>13</o:Paragraphs>
+  <o:CharactersWithSpaces>8092</o:CharactersWithSpaces>
+  <o:Version>9.6926</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=Stylesheet type="text/css" media=all
+href="..\solder%20mask%20repair%20for%20ERF%20Editor.css">
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Times;
+	panose-1:0 0 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:"Lucida Console";
+	panose-1:2 11 6 9 4 5 4 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-2147482993 6144 0 0 31 0;}
+@font-face
+	{font-family:"Lucida Sans Unicode";
+	panose-1:2 11 6 2 3 5 4 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-2147476737 14699 0 0 63 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p.anchor, li.anchor, div.anchor
+	{mso-style-name:anchor;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.anchorsidetoc, li.anchorsidetoc, div.anchorsidetoc
+	{mso-style-name:anchorsidetoc;
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:1.0pt;
+	margin-left:72.0pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:blue;}
+p.appendixtoc, li.appendixtoc, div.appendixtoc
+	{mso-style-name:appendixtoc;
+	margin-top:30.0pt;
+	margin-right:0cm;
+	margin-bottom:2.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:15.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:blue;
+	font-weight:bold;
+	font-style:italic;}
+p.body, li.body, div.body
+	{mso-style-name:body;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:Times;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.bodyindent, li.bodyindent, div.bodyindent
+	{mso-style-name:bodyindent;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:Times;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.bodyindent2, li.bodyindent2, div.bodyindent2
+	{mso-style-name:bodyindent2;
+	margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:2.0cm;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:Times;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.callout-cent, li.callout-cent, div.callout-cent
+	{mso-style-name:callout-cent;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.callout-left, li.callout-left, div.callout-left
+	{mso-style-name:callout-left;
+	margin-top:1.0pt;
+	margin-right:0cm;
+	margin-bottom:1.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:9.5pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.cellbody, li.cellbody, div.cellbody
+	{mso-style-name:cellbody;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.cellbodylarge, li.cellbodylarge, div.cellbodylarge
+	{mso-style-name:cellbodylarge;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.cellheading, li.cellheading, div.cellheading
+	{mso-style-name:cellheading;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.code, li.code, div.code
+	{mso-style-name:code;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:18.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Courier;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.code-2-narrow, li.code-2-narrow, div.code-2-narrow
+	{mso-style-name:code-2-narrow;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:18.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:"Lucida Console";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+p.code-narrow, li.code-narrow, div.code-narrow
+	{mso-style-name:code-narrow;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:18.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:"Lucida Sans Unicode";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.code-wide, li.code-wide, div.code-wide
+	{mso-style-name:code-wide;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:18.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Courier;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.covermain, li.covermain, div.covermain
+	{mso-style-name:covermain;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:20.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.footnote, li.footnote, div.footnote
+	{mso-style-name:footnote;
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:27.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-9.0pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.heading1toc, li.heading1toc, div.heading1toc
+	{mso-style-name:heading1toc;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:1.0pt;
+	margin-left:18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:13.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:blue;}
+p.heading2toc, li.heading2toc, div.heading2toc
+	{mso-style-name:heading2toc;
+	margin-top:1.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:blue;}
+p.heading3toc, li.heading3toc, div.heading3toc
+	{mso-style-name:heading3toc;
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:1.0pt;
+	margin-left:54.0pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:blue;}
+p.tablefootnote, li.tablefootnote, div.tablefootnote
+	{mso-style-name:tablefootnote;
+	margin-top:2.0pt;
+	margin-right:7.2pt;
+	margin-bottom:0cm;
+	margin-left:21.6pt;
+	margin-bottom:.0001pt;
+	text-indent:-14.4pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.xdocname, li.xdocname, div.xdocname
+	{mso-style-name:xdocname;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:white;}
+p.xdocnametoc, li.xdocnametoc, div.xdocnametoc
+	{mso-style-name:xdocnametoc;
+	margin-top:18.0pt;
+	margin-right:0cm;
+	margin-bottom:15.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:20.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.xfigure, li.xfigure, div.xfigure
+	{mso-style-name:xfigure;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:151915407;
+	mso-list-type:hybrid;
+	mso-list-template-ids:501403046 272382220 -245960124 -1032406098 -1744394594 -1898180458 -1337673350 639015406 -529084142 952531950;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+@list l1
+	{mso-list-id:663243844;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1145084150 -1698376776 -754807426 -1972571048 1750866020 -31798174 -1977730208 1421623400 1079804390 -219501876;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+@list l2
+	{mso-list-id:970476086;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1538406078 -1816476042 1185714108 -1689114220 -2056068792 583283184 717261626 -1746470224 -23845756 657735210;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+@list l3
+	{mso-list-id:1782258048;
+	mso-list-type:hybrid;
+	mso-list-template-ids:277928444 619737360 366740680 -1533641224 128598424 -222281424 741910640 1243769452 846520808 11585112;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+@list l4
+	{mso-list-id:1836217860;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1549741144 2059141224 100554846 1882127054 2072935604 1743292778 251795766 1943818408 -1922165002 679391566;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+@list l5
+	{mso-list-id:1839346726;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1214730360 -1645718880 1065921792 -1888946192 1607778226 -957705886 -246110568 -1099552856 -586519418 -952219564;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+@list l6
+	{mso-list-id:1993099420;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-2107237544 1589810236 1285867566 937331036 718947552 -1874827862 -1621587338 1290017836 1190278400 -959407266;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+<meta http-equiv=Content-Style-Type content="text/css">
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=blue style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<h1 style='margin-top:30.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm'><i><span style='font-size:22.0pt'>Solder Mask Repair<o:p></o:p></span></i></h1>
+
+<h2 style='margin-top:20.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><a name=pgfId-2654200></a><i><span style='font-size:19.0pt;font-family:
+Times;color:black'>Summary of Features<o:p></o:p></span></i></h2>
+
+<p class=body><a name=pgfId-2654109></a>This DFM action includes the following
+features.</p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l0 level1 lfo2;tab-stops:list 36.0pt'><a
+name=pgfId-2654110></a><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:11.0pt;font-family:Arial;mso-bidi-font-family:Times;
+color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>Two values for Bridge size: minimal and optimal.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l0 level1 lfo2;tab-stops:list 36.0pt'><a
+name=pgfId-2654111></a><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:11.0pt;font-family:Arial;mso-bidi-font-family:Times;
+color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>New Range types<o:p></o:p></span></p>
+
+<p class=bodyindent><a name=pgfId-2654157></a>14 range types were introduced in
+this version. A range type was created for each possible combination of a
+specific Pad type and it's neighbors type (13 altogether) and a new, generic,
+range type.</p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l6 level1 lfo4;tab-stops:list 36.0pt'><a
+name=pgfId-2654112></a><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:11.0pt;font-family:Arial;mso-bidi-font-family:Times;
+color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>Separate settings for shaving coverage and bridge according to the
+Pad type. You can disable coverage and bridge shaves according to the Pad type.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l6 level1 lfo4;tab-stops:list 36.0pt'><a
+name=pgfId-2654113></a><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:11.0pt;font-family:Arial;mso-bidi-font-family:Times;
+color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>Clearance vs. Bridge compromise<o:p></o:p></span></p>
+
+<p class=bodyindent><a name=pgfId-2654148></a>Similar to the ability to define
+a compromise between clearance and coverage in cases where there is no room for
+both minimal clearance and minimal coverage, you can now define a compromise
+between minimal clearance and minimal bridge in places where there is no room
+for both.</p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l4 level1 lfo6;tab-stops:list 36.0pt'><a
+name=pgfId-2654178></a><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:11.0pt;font-family:Arial;mso-bidi-font-family:Times;
+color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>A new algorithm enables replacing all individual clearances in a
+row of SMD Pads into one large, continuous clearance.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l4 level1 lfo6;tab-stops:list 36.0pt'><a
+name=pgfId-2744897></a><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:11.0pt;font-family:Arial;mso-bidi-font-family:Times;
+color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>Placing bridge shaves in locations other than in the middle
+between two Pads<o:p></o:p></span></p>
+
+<p class=bodyindent><a name=pgfId-2744899></a>You can specify the location of
+bridge shaves. They do not have to be placed only in the middle between two
+pads. </p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l2 level1 lfo8;tab-stops:list 36.0pt'><a
+name=pgfId-2654116></a><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:11.0pt;font-family:Arial;mso-bidi-font-family:Times;
+color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>Ability to define Pad types to be ignored by the system<o:p></o:p></span></p>
+
+<p class=bodyindent><a name=pgfId-2654193></a>You can define a list of Pad
+types to be ignored during processing. You can also define a list of attributes
+to be ignored.</p>
+
+<p class=bodyindent><a name=pgfId-2721314></a>A Pad will be ignored if it is on
+either list.</p>
+
+<h2 style='margin-top:20.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><a name=pgfId-2654207></a><i><span style='font-size:19.0pt;font-family:
+Times;color:black'>Glossary<o:p></o:p></span></i></h2>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><a name=pgfId-2654208></a><span style='font-size:11.0pt;font-family:
+Times;color:black'>smcc<o:p></o:p></span></h6>
+
+<p class=body><a name=pgfId-2654308></a>Current Solder Mask Optimization DFM
+action</p>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><a name=pgfId-2654209></a><span style='font-size:11.0pt;font-family:
+Times;color:black'>smo<o:p></o:p></span></h6>
+
+<p class=body><a name=pgfId-2654310></a>New Solder Mask Optimization (Solder
+Mask Repair) DFM action</p>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><a name=pgfId-2654307></a><span style='font-size:11.0pt;font-family:
+Times;color:black'>Pad Type<o:p></o:p></span></h6>
+
+<p class=body><a name=pgfId-2654318></a>There are four (4) pad types in the action.</p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:90.0pt;text-indent:-10.8pt;mso-list:l1 level1 lfo10;tab-stops:list 36.0pt'><a
+name=pgfId-2654211></a><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:11.0pt;font-family:Arial;mso-bidi-font-family:Times;
+color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>SMD Pad: Pad with
+attribute <em><b>.smd</b></em> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:90.0pt;text-indent:-10.8pt;mso-list:l1 level1 lfo10;tab-stops:list 36.0pt'><a
+name=pgfId-2654212></a><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:11.0pt;font-family:Arial;mso-bidi-font-family:Times;
+color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>PTH Pad: Pad which is
+drilled by a drill hole with attribute <br>
+<em><b>.drill = pth</b></em> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:90.0pt;text-indent:-10.8pt;mso-list:l1 level1 lfo10;tab-stops:list 36.0pt'><a
+name=pgfId-2654213></a><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:11.0pt;font-family:Arial;mso-bidi-font-family:Times;
+color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>Via Pad: Pad which is
+drilled by a drill hole with attribute <br>
+<em><b>.drill = via</b></em> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:90.0pt;text-indent:-10.8pt;mso-list:l1 level1 lfo10;tab-stops:list 36.0pt'><a
+name=pgfId-2654214></a><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:11.0pt;font-family:Arial;mso-bidi-font-family:Times;
+color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:11.0pt;font-family:Times;color:black'>NPTH Pad: Pad which is
+drilled by a drill hole with attribute <br>
+<em><b>.drill = npth</b></em> <o:p></o:p></span></p>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><a name=pgfId-2654216></a><span style='font-size:11.0pt;font-family:
+Times;color:black'>Small Clearance<o:p></o:p></span></h6>
+
+<p class=body><a name=pgfId-2654369></a>SM clearance that is smaller than its
+corresponding Pad.</p>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><a name=pgfId-2654217></a><span style='font-size:11.0pt;font-family:
+Times;color:black'>Huge Clearance<o:p></o:p></span></h6>
+
+<p class=body><a name=pgfId-2654374></a>SM clearance that is larger in any one
+direction than its corresponding Pad. The clearance must be larger by a value
+larger than <em><b>v_max_oversized_clearance</b></em> .</p>
+
+<h2 style='margin-top:20.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><a name=pgfId-2654105></a><a name=pgfId-2654379></a><a name=pgfId-2654744></a><a
+name=pgfId-2654745></a><a name=pgfId-2654748></a><a name=pgfId-2654664></a><a
+name=pgfId-2656652></a><i><span style='font-size:19.0pt;font-family:Times;
+color:black'>Ranges ERF Variables<o:p></o:p></span></i></h2>
+
+<h5 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><a name=pgfId-2656653></a><i><span style='font-size:15.0pt;font-family:
+Times;color:black'>What are the Ranges ERF variables?<o:p></o:p></span></i></h5>
+
+<p class=body><a name=pgfId-2656654></a>In the Solder Mask Optimization action,
+you could define a special set of optimization values as a percentage of the
+Pad type and the distance to its neighbors. These user-defined values overwrote
+the parameters defined in the action screen. (For more details please look in
+Doc. 0602, <em><span style='font-size:9.5pt;font-family:Helvetica'>Solder Mask
+Optimization</span></em> .)</p>
+
+<p class=body><a name=pgfId-2725696></a>In the Solder Mask Repair action,<em><b>
+</b></em>the ability to define ranges was expanded. You can now define 14
+different types of range variables. Each range is defined according to the
+possible paring of a Pad's type and its neighbor's pad type.</p>
+
+<p class=body><a name=pgfId-2656655></a>Following are the new range prefixes.</p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l3 level1 lfo12;tab-stops:
+list 36.0pt'><a name=pgfId-2656656></a><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>SMD Pad ranges: SMD2SMD, SMD2PTH, SMD2VIA, SMD2OTHER<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l3 level1 lfo12;tab-stops:
+list 36.0pt'><a name=pgfId-2656657></a><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>PTH Pad ranges: PTH2PTH, PTH2VIA, PTH2SMD, PTH2OTHER<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l3 level1 lfo12;tab-stops:
+list 36.0pt'><a name=pgfId-2656658></a><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>Via Pad ranges: VIA2PTH, VIA2VIA, VIA2SMD, VIA2OTHER<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l3 level1 lfo12;tab-stops:
+list 36.0pt'><a name=pgfId-2656659></a><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>NPTH Pad range: NPTH<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-indent:-12.25pt;mso-list:l3 level1 lfo12;tab-stops:
+list 36.0pt'><a name=pgfId-2656660></a><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:Arial;
+mso-bidi-font-family:Times;color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>Generic range: GENERIC<o:p></o:p></span></p>
+
+<h5 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><a name=pgfId-2656661></a><i><span style='font-size:15.0pt;font-family:
+Times;color:black'>How is the Generic range used?<o:p></o:p></span></i></h5>
+
+<p class=body><a name=pgfId-2656662></a>The Generic range, if defined, will be
+used if there is no specific range that fits the current distance.</p>
+
+<h5 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><a name=pgfId-2656663></a><i><span style='font-size:15.0pt;font-family:
+Times;color:black'>What is the format of a range?<o:p></o:p></span></i></h5>
+
+<p class=body><a name=pgfId-2656664></a>A range is a set of 3 variables,
+arranged in the following format.</p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:90.0pt;text-indent:-36.0pt;mso-list:l5 level1 lfo14;tab-stops:list 36.0pt'><a
+name=pgfId-2721137></a><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:11.0pt;font-family:Arial;mso-bidi-font-family:Times;
+color:black'>*<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:11.0pt;font-family:Times;
+color:black'>Each Range set can include up to 10 different sets of variables
+for each type of variable: 10 border variables, 10 partition variables, and 10
+bridge variables.<o:p></o:p></span></p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><a name=pgfId-2656665></a><i><span style='font-size:12.0pt;font-family:
+Helvetica;color:black'>The border variable<o:p></o:p></span></i></h6>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><a name=pgfId-2656666></a><span style='font-size:11.0pt;font-family:
+Times;color:black'>Format<o:p></o:p></span></h6>
+
+<p class=body><a name=pgfId-2677262></a>&nbsp;</p>
+
+<p class=code><a name=pgfId-2656667></a><span style='mso-bidi-font-family:Courier'>&lt;Range
+Name&gt;_&lt;Numeric counter&gt;_&lt; BORDERS&gt; = <br>
+&lt;Lower limit&gt;:&lt;Upper Limit&gt;<o:p></o:p></span></p>
+
+<p class=body><a name=pgfId-2656669></a><em><b><span style='font-size:10.0pt;
+font-family:Courier;mso-bidi-font-family:Courier'>Lower limit</span></b></em>
+and <em><b><span style='font-size:10.0pt;font-family:Courier;mso-bidi-font-family:
+Courier'>Upper limit </span></b></em>are real numbers. They can be in mils or
+in microns, depending on the unit of the model.</p>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><a name=pgfId-2656670></a><span style='font-size:11.0pt;font-family:
+Times;color:black'>Usage<o:p></o:p></span></h6>
+
+<p class=body><a name=pgfId-2677266></a>&nbsp;</p>
+
+<p class=body><a name=pgfId-2677271></a>The border variable defines the
+distance that this range refers to. <br>
+There should be no overlap between two border variables of the same Range sets.</p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><a name=pgfId-2656672></a><i><span style='font-size:12.0pt;font-family:
+Helvetica;color:black'>The partitions variable<o:p></o:p></span></i></h6>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><a name=pgfId-2656673></a><span style='font-size:11.0pt;font-family:
+Times;color:black'>Format<o:p></o:p></span></h6>
+
+<p class=body><a name=pgfId-2677286></a>&nbsp;</p>
+
+<p class=code><a name=pgfId-2656674></a><span style='mso-bidi-font-family:Courier'>&lt;Range
+Name&gt;_&lt;Numeric counter&gt;_&lt;PARTITION&gt; =
+&lt;Min_Clearance&gt;:&lt;Opt_Clearance&gt;<br>
+&lt;Min_Coverage&gt;:&lt;Opt_ Coverage &gt; <o:p></o:p></span></p>
+
+<p class=body><a name=pgfId-2656676></a>These numbers (<em><b><span
+style='font-size:10.0pt;font-family:Courier;mso-bidi-font-family:Courier'>
+Min_Clearance, Opt_Clearance, Min_Coverage, Opt_ Coverage</span></b></em> ) are
+expressed in percentage.</p>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><a name=pgfId-2656677></a><span style='font-size:11.0pt;font-family:
+Times;color:black'>Usage<o:p></o:p></span></h6>
+
+<p class=body><a name=pgfId-2677309></a>&nbsp;</p>
+
+<p class=body><a name=pgfId-2656678></a>This variable defines the
+minimal/optimal clearance and the <br>
+minimal/optimal coverage values as a percentage of the distance between two
+copper features.</p>
+
+<h6 style='margin-top:15.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+0cm'><a name=pgfId-2656679></a><i><span style='font-size:12.0pt;font-family:
+Helvetica;color:black'>The bridge variable<o:p></o:p></span></i></h6>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><a name=pgfId-2656680></a><span style='font-size:11.0pt;font-family:
+Times;color:black'>Format<o:p></o:p></span></h6>
+
+<p class=body><a name=pgfId-2677330></a>&nbsp;</p>
+
+<p class=code><a name=pgfId-2656681></a><span style='mso-bidi-font-family:Courier'>&lt;Range
+Name&gt;_&lt;Numeric counter&gt;_&lt; BRIDGE&gt; =
+&lt;Min_Bridge&gt;:&lt;Opt_Bridge&gt; <o:p></o:p></span></p>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><a name=pgfId-2656683></a><span style='font-size:11.0pt;font-family:
+Times;color:black'>Usage<o:p></o:p></span></h6>
+
+<p class=body><a name=pgfId-2677342></a>&nbsp;</p>
+
+<p class=body><a name=pgfId-2656684></a>Like the partition variable, this
+variable defines the minimal/optimal bridge values as a percentage of the
+distance between two copper features.</p>
+
+<h5 style='margin-top:17.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+0cm'><a name=pgfId-2656688></a><i><span style='font-size:15.0pt;font-family:
+Times;color:black'>How the action uses these ranges<o:p></o:p></span></i></h5>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><a name=pgfId-2656689></a><span style='font-size:11.0pt;font-family:
+Times;color:black'>Clearance<o:p></o:p></span></h6>
+
+<p class=body><a name=pgfId-2677439></a>When the action checks a Pad for
+optimization, it find its closet neighbor. Then, based on the distance between
+the two pads, the action looks for the relevant range that applies to this pair
+of pads. and gets the minimal/optimal clearance values from the selected range.
+</p>
+
+<p class=body><a name=pgfId-2677441></a>If a proper range is not found, the
+action uses the relevant parameters from the Action GUI Screen.</p>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><a name=pgfId-2677442></a><span style='font-size:11.0pt;font-family:
+Times;color:black'>Coverage<o:p></o:p></span></h6>
+
+<p class=body><a name=pgfId-2677577></a>The SM Repair action runs a separate
+scan to locate coverage problems. When the action finds a coverage problem, it
+looks for the relevant range that applies to the distance between the selected
+pad and the feature that is causing the coverage problem. If a suitable range
+is found, its values for the coverage variables are used. </p>
+
+<h6 style='margin-top:7.0pt;margin-right:0cm;margin-bottom:7.0pt;margin-left:
+18.0pt'><a name=pgfId-2656692></a><span style='font-size:11.0pt;font-family:
+Times;color:black'>Bridge<o:p></o:p></span></h6>
+
+<p class=body><a name=pgfId-2677582></a>The bridge values are set according to
+the range that was chosen for the clearance operation.</p>
+
+<h6 style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:
+18.0pt'><a name=pgfId-2656521></a><span style='font-size:11.0pt;font-family:
+Helvetica;color:black'>Example of a Range sets group<o:p></o:p></span></h6>
+
+<p class=body><a name=pgfId-2721331></a>Here is an example of one Range sets group,
+SMD2SMD, with 3 sets of Ranges variables.</p>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>SMD2SMD_1_BORDERS
+  </span></em><a name=pgfId-2721489></a><span style='mso-bidi-font-family:Courier'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>=</span></em><a
+  name=pgfId-2721491></a><span style='mso-bidi-font-family:Courier'> <o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>5.0:5<a
+  name=pgfId-2721493></a>.5</span></em><span style='mso-bidi-font-family:Courier'>
+  <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>SMD2SMD_1_PARTITION
+  </span></em><a name=pgfId-2721495></a><span style='mso-bidi-font-family:Courier'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>=</span></em><a
+  name=pgfId-2721497></a><span style='mso-bidi-font-family:Courier'> <o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>0.51:0.51
+  0.60:0.72 </span></em><a name=pgfId-2721499></a><span style='mso-bidi-font-family:
+  Courier'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>SMD2SMD_1_BRIDGE
+  </span></em><a name=pgfId-2721501></a><span style='mso-bidi-font-family:Courier'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>=</span></em><a
+  name=pgfId-2721503></a><span style='mso-bidi-font-family:Courier'> <o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>0 0</span></em><a
+  name=pgfId-2721505></a><span style='mso-bidi-font-family:Courier'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>SMD2SMD_2_BORDERS
+  </span></em><a name=pgfId-2721507></a><span style='mso-bidi-font-family:Courier'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>=</span></em><a
+  name=pgfId-2721509></a><span style='mso-bidi-font-family:Courier'> <o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>5.5:6.0 </span></em><a
+  name=pgfId-2721511></a><span style='mso-bidi-font-family:Courier'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>SMD2SMD_2_PARTITION
+  </span></em><a name=pgfId-2721513></a><span style='mso-bidi-font-family:Courier'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>=</span></em><a
+  name=pgfId-2721515></a><span style='mso-bidi-font-family:Courier'> <o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>0.51:0.51 0.55:0.66</span></em><a
+  name=pgfId-2721517></a><span style='mso-bidi-font-family:Courier'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>SMD2SMD_2_BRIDGE
+  </span></em><a name=pgfId-2721519></a><span style='mso-bidi-font-family:Courier'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>=</span></em><a
+  name=pgfId-2721521></a><span style='mso-bidi-font-family:Courier'> <o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>0.3 0.35</span></em><a
+  name=pgfId-2721523></a><span style='mso-bidi-font-family:Courier'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>SMD2SMD_3_BORDERS
+  </span></em><a name=pgfId-2721525></a><span style='mso-bidi-font-family:Courier'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>=</span></em><a
+  name=pgfId-2721527></a><span style='mso-bidi-font-family:Courier'> <o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>6.0:6.5 </span></em><a
+  name=pgfId-2721529></a><span style='mso-bidi-font-family:Courier'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>SMD2SMD_3_PARTITION
+  </span></em><a name=pgfId-2721531></a><span style='mso-bidi-font-family:Courier'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>=</span></em><a
+  name=pgfId-2721533></a><span style='mso-bidi-font-family:Courier'> <o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>0.51:0.51
+  0.50:0.60</span></em><a name=pgfId-2721535></a><span style='mso-bidi-font-family:
+  Courier'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>SMD2SMD_3_BRIDGE
+  </span></em><a name=pgfId-2721537></a><span style='mso-bidi-font-family:Courier'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>=</span></em><a
+  name=pgfId-2721539></a><span style='mso-bidi-font-family:Courier'> <o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=code><em><span style='mso-bidi-font-family:Courier'>0.31 0.37</span></em><a
+  name=pgfId-2721541></a><span style='mso-bidi-font-family:Courier'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=body><a name=pgfId-2656916></a>&nbsp;</p>
+
+<p class=body><a name=pgfId-2656917></a>&nbsp;</p>
+
+<h2 style='margin-top:20.0pt;margin-right:0cm;margin-bottom:5.0pt;margin-left:
+0cm'><a name=pgfId-2656522></a><i><span style='font-size:19.0pt;font-family:
+Times;color:black'>Solder Mask Optimization ERF variables retained in Solder Mask
+Repair DFM Action <o:p></o:p></span></i></h2>
+
+<p class=body><a name=pgfId-2726163></a>&nbsp;</p>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Solder Mask Optimization ERF variable<a
+  name=pgfId-2656925></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Retained in Solder Mask Repair<a name=pgfId-2656927></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellheading>Remarks<a name=pgfId-2656929></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_pad_proximity<a name=pgfId-2656931></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_pad_proximity<a name=pgfId-2656933></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2656935></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_enlarge_pth<a name=pgfId-2656937></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_enlarge_pth<a name=pgfId-2656939></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2656941></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_enlarge_pth<a name=pgfId-2656943></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_enlarge_pth<a name=pgfId-2656945></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2656947></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_enlarge_npth<a name=pgfId-2656949></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_enlarge_npth<a name=pgfId-2656951></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2656953></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_enlarge_smd<a name=pgfId-2656955></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_enlarge_smd<a name=pgfId-2656957></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2656959></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_enlarge_smd<a name=pgfId-2656961></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Deleted.<a name=pgfId-2656963></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2656965></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_npth_clear_always<a name=pgfId-2656967></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_npth_clear_always<a name=pgfId-2656969></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2656971></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_compromise<a name=pgfId-2656973></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Became parameter:pp_clear_coverage_comp<a
+  name=pgfId-2656975></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2656977></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_divide_line_into<a name=pgfId-2656979></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Deleted.<a name=pgfId-2656981></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>For dense shaves use v_use_surface_shaves.<a
+  name=pgfId-2656983></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_overlap<a name=pgfId-2656985></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_overlap<a name=pgfId-2656987></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2656989></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_sym_res<a name=pgfId-2656991></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_sym_res<a name=pgfId-2656993></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2656995></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_divide_same_net_pads<a name=pgfId-2656997></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Deleted<a name=pgfId-2656999></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>See v_same_net_bridge_mode<a name=pgfId-2657001></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_bridge_check_net_inter<a name=pgfId-2657003></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Deleted<a name=pgfId-2657005></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>See v_same_net_bridge_mode<a name=pgfId-2657007></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_bridge_crt_if_sm_inter<a name=pgfId-2657009></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Deleted<a name=pgfId-2657011></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>See v_same_net_bridge_mode<a name=pgfId-2657013></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_shave_same_net<a name=pgfId-2657015></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_shave_same_net<a name=pgfId-2657017></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2657019></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_shave_too_tight<a name=pgfId-2657021></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Deleted.<a name=pgfId-2657023></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Dense shave will be only reported in Too Dense
+  category, and not be placed. <a name=pgfId-2657025></a></p>
+  <p class=cellbody>For dense shaves use v_use_surface_shaves.</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_sm_top_layer_name<a name=pgfId-2657027></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_sm_top_layer_name<a name=pgfId-2657029></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2657031></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_sm_bottom_layer_name<a name=pgfId-2657033></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_sm_bottom_layer_name<a name=pgfId-2657035></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2657037></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_join_clearances<a name=pgfId-2657855></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Deleted<a name=pgfId-2657857></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>See v_same_net_bridge_mode<a name=pgfId-2657859></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_replace_oversized<a name=pgfId-2657861></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Deleted<a name=pgfId-2657863></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>See v_max_oversized_clearance<a name=pgfId-2657865></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_max_oversized_clearance<a name=pgfId-2657867></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_max_oversized_clearance<a name=pgfId-2657869></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2657871></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_test_for_partial_cover<a name=pgfId-2657873></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Became parameter:pp_partial<a name=pgfId-2657875></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2657877></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_use_original_shape<a name=pgfId-2658008></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_use_orig_pad_shape<a name=pgfId-2658010></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2658012></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_supply_smcc_alternative<a name=pgfId-2658014></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Deleted<a name=pgfId-2658016></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2658018></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_no_rounded_corners<a name=pgfId-2658020></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_use_rounded_corners<a name=pgfId-2658022></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Opposite options meaning.<a name=pgfId-2658024></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_keep_clearance_shape<a name=pgfId-2658026></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_use_orig_sm_clearance<a name=pgfId-2658028></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2658030></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_do_small_clearances<a name=pgfId-2658032></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_do_small_clearances<a name=pgfId-2658034></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2658036></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_grow_small_pads_pth<a name=pgfId-2658038></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_grow_small_clearance_pth<a name=pgfId-2658040></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2658042></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_grow_small_pads_via<a name=pgfId-2658044></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_grow_small_clearance_via<a name=pgfId-2658046></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2658048></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_grow_small_pads_npth<a name=pgfId-2658050></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_grow_small_clearance_npth<a name=pgfId-2658052></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2658054></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_grow_small_pads_smd<a name=pgfId-2658056></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_grow_small_clearace_smd<a name=pgfId-2658058></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>See also new ERF variable:v_small_smd_clearance_handle_mode<a
+  name=pgfId-2658060></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_shave_clear_below_min<a name=pgfId-2658062></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Deleted<a name=pgfId-2658064></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>See parameter pp_clear_bridge_comp<a name=pgfId-2658066></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_max_shaves_to_surface<a name=pgfId-2658068></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_max_shaves_to_surface<a name=pgfId-2658070></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2658072></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_use_mask_layer<a name=pgfId-2658121></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_use_mask_layer<a name=pgfId-2658123></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2658125></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_keep_nonstandard<a name=pgfId-2658127></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Deleted<a name=pgfId-2658129></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>It always keeps non-standard Pads as non-standard.<a
+  name=pgfId-2658131></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_ignore_attrs<a name=pgfId-2658133></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Became parameter:pp_ignore_attrs<a name=pgfId-2658135></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2658137></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_use_mask_layer<a name=pgfId-2658139></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_use_mask_layer<a name=pgfId-2658141></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>&nbsp;<a name=pgfId-2658143></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_shave_via<a name=pgfId-2658419></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Deleted<a name=pgfId-2658421></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Functionality was split to two parameters: <a
+  name=pgfId-2658423></a>pp_fix_coverage,pp_fix_bridge </p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_shave_smd<a name=pgfId-2658425></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Deleted<a name=pgfId-2658427></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Functionality was split to two parameters: pp_fix_coverage,pp_fix_bridge
+  <a name=pgfId-2658429></a></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>v_reduce_same_net_shaves<a name=pgfId-2658431></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Deleted<a name=pgfId-2658433></a></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=cellbody>Algorithm is always used to delete reduce same net shaves.<a
+  name=pgfId-2658435></a></p>
+  </td>
+ </tr>
+</table>
+
+<p class=body><a name=pgfId-2658446></a>&nbsp;</p>
+
+<p class=body><a name=pgfId-2658458></a><a name=pgfId-2658463></a><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>
+

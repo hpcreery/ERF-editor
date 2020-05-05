@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>category</title>
+</head>
+<body>
+<font size="+2">Punch to Drill</font><br>
+<br>
+This Action modifies the TH layer and removes the punch holes that
+violate the spacing parameters.<br>
+These holes are moved to the *_nth layer.<br>
+<br>
+4 Spacing checks are made.&nbsp; Each check is against a different
+layer.<br>
+<br>
+&nbsp;&nbsp; * Check 1 - Spacing between holes in Punch layer (NTH).
+The holes are checked<br>
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+against each other for spacing between edges.<br>
+<br>
+&nbsp;&nbsp; * Check 2 - Spacing between holes in Punch layer (NTH) and
+holes in Drill layer (TH).<br>
+<br>
+&nbsp;&nbsp; * Check 3 - Spacing between holes in Punch layer (NTH) and
+the rout outline.<br>
+<br>
+&nbsp;&nbsp; * Check 4 - Spacing between Punch hole centers.<br>
+<br>
+<img style="width: 478px; height: 332px;" alt="" src="category.png"><br>
+<br>
+A parameter for minimal spacing is given for every check, and after the
+check<br>
+is complete, all Punch holes (NTH) that violate minimal spacing are
+moved to a new layer, namely the NTH Drill layer.<br>
+This is done after each of checks 1-3 is completed, and the moved holes
+are categorized accordingly.<br>
+<br>
+Documentation (marking) layers are created for each check, named <br>
+<span style="font-family: Courier New,Courier,monospace;">mark_1</span>
+to <span style="font-family: Courier New,Courier,monospace;">mark_4</span>.
+Each contains the marking of check result, in a different
+marking for each check.<br>
+<br>
+NTH Drill layer is created, named as the input drill layer with a
+'_nth' suffix.<br>
+<br>
+If the Previous Punch Layer parameter is not blank, then the Punch
+Layer (after violated holes are moved) <br>
+and the Previous Punch
+Layer are
+compared, to determine where holes were added and deleted.<br>
+The result of the compare is put in 2 documentation layers: added_holes
+and deleted_holes.<br>
+Each layer contains markings at hole locations ('O' for added, 'X' for
+deleted).<br>
+<br>
+<br>
+<font size="+2"><span style="font-style: italic;">Parameters</span></font><br>
+<br>
+&nbsp;Layers: <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Drill Layer - with TH
+drills<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Punch Layer - with NTH for punch fixture<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Rout Later&nbsp; - for board outline<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Previous Punch Layer - This parameter is optional and can be left empty.<br>
+&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+It may contain punch holes of an old fix to be used for comparison.<br>
+<br>
+&nbsp;Minimal Spacing values:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; Edge&nbsp;&nbsp;&nbsp;
+-&nbsp; Minimal Spacing between punch holes edges.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Center&nbsp; -&nbsp; Minimal Spacing between punch holes centers.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Drill&nbsp;&nbsp; -&nbsp; Minimal Spacing between punch holes and Drill
+TH.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Rout&nbsp;&nbsp;&nbsp; -&nbsp; Minimal Spacing between punch holes and
+Rout outline.<br>
+<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>
+<br>
+</body>
+</html>

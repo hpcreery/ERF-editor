@@ -136,6 +136,8 @@ export class Rangegraph extends Component {
 	render() {
 		return (
 			<div>
+				{this.graphrange}
+				{}
 				<canvas id="myChart" ref={this.chartRef} height="200" />
 			</div>
 		)
