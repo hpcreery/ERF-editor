@@ -98,6 +98,7 @@ export class Rangegraph extends Component {
 	}
 
 	componentDidMount() {
+		console.log('Component just Mounted')
 		//this.graphFilter(this.plotdata[this.graphrange])
 		//this.graphFilter(this.plotdata[this.state.currentrange])
 		//console.log(this.plotdata[this.state.currentrange].green)
@@ -105,8 +106,12 @@ export class Rangegraph extends Component {
 		this.buildChart()
 		//this.rangeChart.update()
 	}
+	componentWillMount() {
+		console.log('Component is about to be Mounted')
+	}
 
 	componentDidReceiveProps(nextProps) {
+		console.log('Component just recieved Props')
 		//this.graphFilter(nextProps.plotdata.green)
 		//this.plotdata = nextProps.plotdata
 		//this.graphrange = nextProps.graphrange
@@ -115,6 +120,7 @@ export class Rangegraph extends Component {
 		this.buildChart
 	}
 	componentWillReceiveProps(nextProps) {
+		console.log('Component is about to recieve props')
 		this.plotdata = nextProps.plotdata
 		this.graphrange = nextProps.graphrange
 		this.ERFmodels = nextProps.ERFmodels
@@ -123,21 +129,26 @@ export class Rangegraph extends Component {
 	}
 
 	componentDidUpdate() {
+		console.log('Component just Updated')
 		//this.graphFilter(this.plotdata[this.graphrange])
 		//console.log(this.plotdata[this.graphrange].red)
 
 		console.log(this.plotdata[this.graphrange])
-		console.log('We got something here')
 		//this.rangeChart.update()
 		//this.buildChart()
 		//this.rangeChart.update()
 	}
 
+	componentWillUpdate() {
+		console.log('Component is about to update')
+	}
+
 	render() {
+		console.log('Initiating render method')
+
 		return (
 			<div>
 				{this.graphrange}
-				{}
 				<canvas id="myChart" ref={this.chartRef} height="200" />
 			</div>
 		)

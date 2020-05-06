@@ -7,10 +7,10 @@ const dialog = electron.remote.dialog
 const ipc = electron.ipcRenderer
 
 var dirc =
-//	'/Users/Professional/Documents/MyPrograms/JavaScript/Genesis/erfeditor/ERF-editor/public/cmpetch.erf'
+	'/Users/Professional/Documents/MyPrograms/JavaScript/Genesis/erfeditor/ERF-editor/public/cmpetch.erf'
 //const dirc =
-  //'C:\\Users\\huntercreery\\Documents\\Projects\\JS\\ERF\\editor\\public\\cmpetch.erf'
-  'C:\\Users\\huntercreery\\Downloads\\ERFs\\drill_touch.erf'
+//'C:\\Users\\huntercreery\\Documents\\Projects\\JS\\ERF\\editor\\public\\cmpetch.erf'
+//  'C:\\Users\\huntercreery\\Downloads\\ERFs\\drill_touch.erf'
 
 class App extends Component {
 	state = {
@@ -38,6 +38,8 @@ class App extends Component {
 	componentDidUpdate() {}
 
 	render() {
+		console.log('Initiating render method')
+
 		return (
 			<div>
 				<div className="App">

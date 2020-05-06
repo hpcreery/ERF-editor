@@ -28,15 +28,21 @@ var Chart = require('chart.js')
 export class Pretty extends Component {
 	constructor(props) {
 		super(props)
+		console.log('Starting Construction')
 
-    this.opendir = this.props.opendir
-    this.jsonERF - this.props.jsonERF
+		this.opendir = this.props.opendir
+		this.jsonERF = this.props.jsonERF
 		this.ERFmodels = this.props.ERFmodels
 		this.plotdata = this.props.plotdata
 		this.graphrange = Object.keys(this.plotdata)[0]
+		this.setState({ jsonERF: this.jsonERF })
 		console.log(' this is the first range to graph ' + this.graphrange)
+		this.state = {
+			dir: this.props.dir,
+			graph: this.graphrange,
+			jsonERF: this.jsonERF,
+		}
 	}
-	state = { dir: this.props.dir, graph: this.graphrange }
 
 	static propTypes = {}
 
@@ -231,8 +237,8 @@ export class Pretty extends Component {
 						this.rangevalue = this.rangeSeperator(
 							jsonERF.string,
 							jsonERF.object
-            )
-            console.log(this.rangevalue)
+						)
+						console.log(this.rangevalue)
 						//this.rangePlotterData(this.rangevalue, jsonERF.object)
 						return (
 							<Grid
@@ -452,24 +458,38 @@ export class Pretty extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
+		console.log('Component is about to Recieved Props')
+
 		//this.setState({ ERFmodels: nextProps.ERFmodels })
-    this.ERFmodels = nextProps.ERFmodels
-    this.jsonERF = nextProps.jsonERF
-    console.log(this.ERFmodels)
-    this.plotdata = nextProps.plotdata
-    this.graphChange(Object.keys(this.plotdata)[0])
+		this.ERFmodels = nextProps.ERFmodels
+		this.jsonERF = nextProps.jsonERF
+		this.setState({ jsonERF: this.jsonERF })
+		console.log('Here is when it recieves Data ')
+		console.log(this.jsonERF)
+		this.plotdata = nextProps.plotdata
+		this.graphChange(Object.keys(this.plotdata)[0])
 		this.setState({ dir: String(nextProps.dir) })
-		console.log(this.plotdata)
 	}
+
 	componentWillMount() {
-    this.jsonERF = this.props.jsonERF
-  }
+		console.log('Component is about to be Mounted')
+
+		//this.jsonERF = this.props.jsonERF
+		console.log('Here is when it recieves Data ')
+		//console.log(this.jsonERF)
+	}
 
 	componentWillUpdate() {
-    
-  }
+		console.log('Component is about to update')
+	}
+
+	componentDidUpdate() {
+		console.log('Component just Updated')
+	}
+
 	//chartRef = React.createRef()
 	componentDidMount() {
+		console.log('Component just Mounted')
 		// const chartref = this.chartRef.current.getContext('2d')
 		// new Chart(chartref, {
 		// 	type: 'horizontalBar',
@@ -522,6 +542,8 @@ export class Pretty extends Component {
 	}
 
 	render() {
+		console.log('Initiating render method')
+
 		//const { jsonERF, filelength, dir } = this.props
 		//console.log(jsonERF)
 		//console.log(JSON.stringify(jsonERF))
@@ -544,7 +566,9 @@ export class Pretty extends Component {
 						</Sticky>
 					</Grid.Column>
 					<Grid.Column width={8} className="densegrid">
-						{this.jsonERF.map((ERF) => this.contentMaker(ERF))}
+						{this.state.jsonERF.map((ERF) =>
+							this.contentMaker(ERF)
+						)}
 					</Grid.Column>
 
 					<Grid.Column width={5} className="densegrid">
@@ -560,6 +584,14 @@ export class Pretty extends Component {
 								plotdata={this.plotdata}
 								ERFmodels={this.ERFmodels}
 								graphrange={this.graphrange}
+							/>
+							<Input
+								className="FirstInput"
+								type="text"
+								placeholder="Incrimental Values"
+								fluid
+								size="small"
+								defaultValue={this.graphrange}
 							/>
 							{console.log(this.ERFmodels)}
 						</Sticky>
