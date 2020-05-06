@@ -279,7 +279,7 @@ export class Pretty extends Component {
 												className="FirstInput"
 												type="text"
 												placeholder="Incrimental Values"
-												defaultValue={
+												value={
 													this.rangevalue[0]
 												}
 												fluid
@@ -301,7 +301,7 @@ export class Pretty extends Component {
 												className="SecondInput"
 												type="text"
 												placeholder="Incrimental Values"
-												defaultValue={
+												value={
 													this.rangevalue[1]
 												}
 												fluid
@@ -322,7 +322,7 @@ export class Pretty extends Component {
 												className="ThirdInput"
 												type="text"
 												placeholder="Incrimental Values"
-												defaultValue={
+												value={
 													this.rangevalue[2]
 												}
 												fluid
