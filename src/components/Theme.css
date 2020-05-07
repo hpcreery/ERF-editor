@@ -66,9 +66,10 @@
 	border-width: 0.105rem !important;
 }
 
-.ThirdInput > input::selection {
-	border-color: var(--secondrangecolor) !important;
-	border-width: 1.9px !important;
+
+::-webkit-input-placeholder {
+	color: black !important;
+	font-style: normal;
 }
 
 canvas {

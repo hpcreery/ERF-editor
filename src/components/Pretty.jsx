@@ -1,4 +1,4 @@
-import React, { Component, createRef } from 'react'
+import React, { Component, createRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import {
 	Button,
@@ -23,6 +23,8 @@ import { Link, animateScroll as scroll, scroller } from 'react-scroll'
 import Rangegraph from './Graph'
 import './Theme.css'
 
+
+
 var Chart = require('chart.js')
 
 export class Pretty extends Component {
@@ -40,7 +42,8 @@ export class Pretty extends Component {
 		this.state = {
 			dir: this.props.dir,
 			graph: this.graphrange,
-			jsonERF: this.jsonERF,
+      jsonERF: this.jsonERF,
+      ranges: {}
 		}
 	}
 
@@ -51,7 +54,8 @@ export class Pretty extends Component {
 	handleBasicChange = (e, { id, string }) =>
 		console.log(id + string + e.target.value)
 	rangeSeperator(value, object) {
-		const found = value.match(/-?\d+\.?\d*/g)
+    const found = value.match(/-?\d+\.?\d*/g)
+    //this.setState({ranges: })
 		//vendors.some( vendor => vendor['Name'] === 'Magenic' )
 		return found
 	}
@@ -278,8 +282,7 @@ export class Pretty extends Component {
 											<Input
 												className="FirstInput"
 												type="text"
-												placeholder="Incrimental Values"
-												value={
+												placeholder={
 													this.rangevalue[0]
 												}
 												fluid
@@ -300,10 +303,10 @@ export class Pretty extends Component {
 											<Input
 												className="SecondInput"
 												type="text"
-												placeholder="Incrimental Values"
-												value={
+												placeholder={
 													this.rangevalue[1]
 												}
+
 												fluid
 												id={jsonERF.id}
 												string={jsonERF.string}
@@ -318,22 +321,22 @@ export class Pretty extends Component {
 											width={5}
 											textAlign="right"
 										>
-											<Input
-												className="ThirdInput"
-												type="text"
-												placeholder="Incrimental Values"
-												value={
-													this.rangevalue[2]
-												}
-												fluid
-												id={jsonERF.id}
-												string={jsonERF.string}
-												location="2"
-												onChange={
-													this.handleRangeChange
-												}
-												size="small"
-											/>
+
+                     <Input
+                      className="ThirdInput"
+                      type="text"
+                      placeholder={
+                        this.rangevalue[2]
+                      }
+                      fluid
+                      id={jsonERF.id}
+                      string={jsonERF.string}
+                      location="2"
+                      onChange={
+                        this.handleRangeChange
+                      }
+                      size="small"
+                    />
 										</Grid.Column>
 									</Grid>
 								</Grid.Column>
@@ -439,7 +442,9 @@ export class Pretty extends Component {
 			smooth: true,
 			offset: -100, // Scrolls to element + 50 pixels down the page
 		})
-	}
+  }
+  
+
 
 	linkmaker = (ERFmodel) => {
 		return (
