@@ -23,8 +23,6 @@ import { Link, animateScroll as scroll, scroller } from 'react-scroll'
 import Rangegraph from './Graph'
 import './Theme.css'
 
-
-
 var Chart = require('chart.js')
 
 export class Pretty extends Component {
@@ -37,25 +35,27 @@ export class Pretty extends Component {
 		this.ERFmodels = this.props.ERFmodels
 		this.plotdata = this.props.plotdata
 		this.graphrange = Object.keys(this.plotdata)[0]
-		this.setState({ jsonERF: this.jsonERF })
 		console.log(' this is the first range to graph ' + this.graphrange)
 		this.state = {
 			dir: this.props.dir,
 			graph: this.graphrange,
-      jsonERF: this.jsonERF,
-      ranges: {}
+			jsonERF: this.jsonERF,
+			ranges: {},
 		}
+		this.graphElement = React.createRef()
 	}
 
 	static propTypes = {}
 
-	handleRangeChange = (e, { id, location, string }) =>
+	handleRangeChange = (e, { id, location, string, value }) => {
+		value = e.target.value
 		console.log(id + location + string + e.target.value)
+	}
 	handleBasicChange = (e, { id, string }) =>
 		console.log(id + string + e.target.value)
 	rangeSeperator(value, object) {
-    const found = value.match(/-?\d+\.?\d*/g)
-    //this.setState({ranges: })
+		const found = value.match(/-?\d+\.?\d*(?!o)/g) //-?\d+\.?\d*(?!o)
+		//this.setState({ranges: })
 		//vendors.some( vendor => vendor['Name'] === 'Magenic' )
 		return found
 	}
@@ -67,7 +67,9 @@ export class Pretty extends Component {
 
 	graphChange = (newgraphrange) => {
 		this.graphrange = newgraphrange
-		this.setState({ graph: this.graphrange })
+		//this.setState({ graph: this.graphrange })
+		this.graphElement.current.newGraph(newgraphrange)
+
 		console.log(this.graphrange)
 	}
 
@@ -282,13 +284,12 @@ export class Pretty extends Component {
 											<Input
 												className="FirstInput"
 												type="text"
-												placeholder={
-													this.rangevalue[0]
-												}
+												placeholder={this.rangevalue[0]}
 												fluid
 												size="small"
 												id={jsonERF.id}
 												string={jsonERF.string}
+												value={this.rangevalue[0]}
 												location="0"
 												onChange={
 													this.handleRangeChange
@@ -303,13 +304,11 @@ export class Pretty extends Component {
 											<Input
 												className="SecondInput"
 												type="text"
-												placeholder={
-													this.rangevalue[1]
-												}
-
+												placeholder={this.rangevalue[1]}
 												fluid
 												id={jsonERF.id}
 												string={jsonERF.string}
+												value={this.rangevalue[1]}
 												location="1"
 												onChange={
 													this.handleRangeChange
@@ -321,22 +320,20 @@ export class Pretty extends Component {
 											width={5}
 											textAlign="right"
 										>
-
-                     <Input
-                      className="ThirdInput"
-                      type="text"
-                      placeholder={
-                        this.rangevalue[2]
-                      }
-                      fluid
-                      id={jsonERF.id}
-                      string={jsonERF.string}
-                      location="2"
-                      onChange={
-                        this.handleRangeChange
-                      }
-                      size="small"
-                    />
+											<Input
+												className="ThirdInput"
+												type="text"
+												placeholder={this.rangevalue[2]}
+												fluid
+												id={jsonERF.id}
+												string={jsonERF.string}
+												value={this.rangevalue[2]}
+												location="2"
+												onChange={
+													this.handleRangeChange
+												}
+												size="small"
+											/>
 										</Grid.Column>
 									</Grid>
 								</Grid.Column>
@@ -442,9 +439,7 @@ export class Pretty extends Component {
 			smooth: true,
 			offset: -100, // Scrolls to element + 50 pixels down the page
 		})
-  }
-  
-
+	}
 
 	linkmaker = (ERFmodel) => {
 		return (
@@ -578,25 +573,11 @@ export class Pretty extends Component {
 
 					<Grid.Column width={5} className="densegrid">
 						<Sticky offset={41} context={this.titleRef}>
-							<Menu>
-								<Menu.Item position="left">Range:</Menu.Item>
-							</Menu>
-							<Divider />
-						</Sticky>
-
-						<Sticky offset={115} context={this.titleRef}>
 							<Rangegraph
+								ref={this.graphElement}
 								plotdata={this.plotdata}
 								ERFmodels={this.ERFmodels}
 								graphrange={this.graphrange}
-							/>
-							<Input
-								className="FirstInput"
-								type="text"
-								placeholder="Incrimental Values"
-								fluid
-								size="small"
-								defaultValue={this.graphrange}
 							/>
 							{console.log(this.ERFmodels)}
 						</Sticky>

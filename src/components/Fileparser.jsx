@@ -89,7 +89,7 @@ class ReadFiles extends Component {
 				if (object === '.colors') {
 				}
 				if (object === '.ranges\r') {
-					const rangearray = invalue.match(/-?\d+\.?\d*/g)
+					const rangearray = invalue.match(/-?\d+\.?\d*(?!o)/g) //-?\d+\.?\d*(?!o)
 					this.colorArraySort(rangearray, inobject)
 				}
 				if (object === '.pdef\r') {

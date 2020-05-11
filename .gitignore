@@ -9,6 +9,7 @@ coverage
 # production
 build
 App-win32-x64
+App-darwin-x64
 
 # misc
 .DS_Store

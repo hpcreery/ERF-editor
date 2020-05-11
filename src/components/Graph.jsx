@@ -2,6 +2,25 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 var Chart = require('chart.js')
 import './Theme.css'
+import {
+	Button,
+	Segment,
+	Divider,
+	Input,
+	Label,
+	Sticky,
+	Icon,
+	Popup,
+	Rail,
+	Grid,
+	Menu,
+	Table,
+	Header,
+	Placeholder,
+	Ref,
+	Sidebar,
+	Dropdown,
+} from 'semantic-ui-react'
 
 export class Rangegraph extends Component {
 	constructor(props) {
@@ -10,7 +29,7 @@ export class Rangegraph extends Component {
 		this.ERFmodels = this.props.ERFmodels
 		this.graphrange = this.props.graphrange
 
-		this.state = {}
+		this.state = { graphrange: this.graphrange }
 	}
 	static propTypes = {}
 
@@ -47,14 +66,14 @@ export class Rangegraph extends Component {
 					{
 						label: ' Mils',
 						steppedLine: 'after',
-						data: this.plotdata[this.graphrange].red,
+						data: this.plotdata[this.state.graphrange].red,
 						backgroundColor: 'rgba(99, 10, 10, 0.5)',
 						borderColor: 'rgba(99, 10, 10, 1)',
 						borderWidth: 1,
 					},
 					{
 						label: ' Mils',
-						data: this.plotdata[this.graphrange].yellow,
+						data: this.plotdata[this.state.graphrange].yellow,
 						steppedLine: 'after',
 						backgroundColor: 'rgba(99, 99, 10, 0.5)',
 						borderColor: 'rgba(99, 99, 10, 1)',
@@ -62,7 +81,7 @@ export class Rangegraph extends Component {
 					},
 					{
 						label: ' Mils',
-						data: this.plotdata[this.graphrange].green,
+						data: this.plotdata[this.state.graphrange].green,
 						steppedLine: 'after',
 						backgroundColor: 'rgba(10, 90, 10, 0.5)',
 						borderColor: 'rgba(10, 90, 10, 1)',
@@ -117,15 +136,17 @@ export class Rangegraph extends Component {
 		//this.graphrange = nextProps.graphrange
 		//this.graphFilter(this.plotdata[this.graphrange])
 		//this.rangeChart.update()
-		this.buildChart
+		this.buildChart()
 	}
 	componentWillReceiveProps(nextProps) {
 		console.log('Component is about to recieve props')
 		this.plotdata = nextProps.plotdata
 		this.graphrange = nextProps.graphrange
 		this.ERFmodels = nextProps.ERFmodels
+		this.setState({ graphrange: this.graphrange })
 		console.log(this.plotdata[this.graphrange])
-		this.buildChart()
+
+		//this.buildChart()
 	}
 
 	componentDidUpdate() {
@@ -137,10 +158,21 @@ export class Rangegraph extends Component {
 		//this.rangeChart.update()
 		//this.buildChart()
 		//this.rangeChart.update()
+		this.buildChart()
 	}
 
 	componentWillUpdate() {
 		console.log('Component is about to update')
+		//this.setState({ graphrange: this.graphrange })
+	}
+
+	newGraph = (newgraphrange, newplotdata) => {
+		console.log('Rendering new graph')
+		this.graphrange = newgraphrange
+		this.setState({ graphrange: newgraphrange })
+		console.log(this.state.graphrange)
+
+		//this.plotdata = newplotdata
 	}
 
 	render() {
@@ -148,8 +180,15 @@ export class Rangegraph extends Component {
 
 		return (
 			<div>
-				{this.graphrange}
+				<Sticky offset={41} context={this.titleRef}>
+					<Menu>
+						<Menu.Item position="left">Range:</Menu.Item>
+						<Menu.Item>{this.graphrange}</Menu.Item>
+					</Menu>
+					<Divider />
+				</Sticky>
 				<canvas id="myChart" ref={this.chartRef} height="200" />
+				{this.graphrange}
 			</div>
 		)
 	}
