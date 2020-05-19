@@ -21,6 +21,7 @@ import {
 } from 'semantic-ui-react'
 import { Link, animateScroll as scroll, scroller } from 'react-scroll'
 import Rangegraph from './Graph'
+import PlainRange from './Plainrange'
 import './Theme.css'
 
 var Chart = require('chart.js')
@@ -289,7 +290,7 @@ export class Pretty extends Component {
 												size="small"
 												id={jsonERF.id}
 												string={jsonERF.string}
-												value={this.rangevalue[0]}
+												
 												location="0"
 												onChange={
 													this.handleRangeChange
@@ -308,7 +309,7 @@ export class Pretty extends Component {
 												fluid
 												id={jsonERF.id}
 												string={jsonERF.string}
-												value={this.rangevalue[1]}
+												
 												location="1"
 												onChange={
 													this.handleRangeChange
@@ -327,7 +328,7 @@ export class Pretty extends Component {
 												fluid
 												id={jsonERF.id}
 												string={jsonERF.string}
-												value={this.rangevalue[2]}
+												
 												location="2"
 												onChange={
 													this.handleRangeChange
@@ -580,6 +581,7 @@ export class Pretty extends Component {
 								graphrange={this.graphrange}
 							/>
 							{console.log(this.ERFmodels)}
+							<PlainRange invalue={"this is cool"}/>
 						</Sticky>
 					</Grid.Column>
 				</Grid>

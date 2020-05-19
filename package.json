@@ -7,7 +7,13 @@
 		"electron-devtools-installer": "^3.0.0",
 		"electron-react-devtools": "^0.5.3",
 		"foreman": "^3.0.1",
-		"react-scripts": "0.8.5"
+		"immutable": "^4.0.0-rc.12",
+		"react-scripts": "0.8.5",
+		"slate": "^0.58.1",
+		"slate-history": "^0.58.1",
+		"slate-hyperscript": "^0.58.1",
+		"slate-plain-serializer": "^0.7.13",
+		"slate-react": "^0.58.1"
 	},
 	"dependencies": {
 		"chart.js": "^2.9.3",
