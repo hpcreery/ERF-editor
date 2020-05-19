@@ -21,7 +21,7 @@ import {
 } from 'semantic-ui-react'
 import { Link, animateScroll as scroll, scroller } from 'react-scroll'
 import Rangegraph from './Graph'
-import PlainRange from './Plainrange'
+import PlainRange from './Rangebody'
 import './Theme.css'
 
 var Chart = require('chart.js')
@@ -258,7 +258,7 @@ export class Pretty extends Component {
 									textAlign="right"
 								>
 									<Label
-										size="large"
+										size="small"
 										onClick={() =>
 											this.graphChange(jsonERF.object)
 										}
@@ -268,7 +268,7 @@ export class Pretty extends Component {
 								</Grid.Column>
 								<Grid.Column width={this.col2}>
 									<Grid
-										columns={4}
+										columns={2}
 										verticalAlign="middle"
 										className="densegrid"
 									>
@@ -279,63 +279,13 @@ export class Pretty extends Component {
 											=
 										</Grid.Column>
 										<Grid.Column
-											width={5}
-											textAlign="right"
+											width={15}
+											textAlign="left"
 										>
-											<Input
-												className="FirstInput"
-												type="text"
-												placeholder={this.rangevalue[0]}
-												fluid
-												size="small"
-												id={jsonERF.id}
-												string={jsonERF.string}
-												
-												location="0"
-												onChange={
-													this.handleRangeChange
-												}
-											/>
+
+											<PlainRange invalue={jsonERF.string}/>
 										</Grid.Column>
 
-										<Grid.Column
-											width={5}
-											textAlign="right"
-										>
-											<Input
-												className="SecondInput"
-												type="text"
-												placeholder={this.rangevalue[1]}
-												fluid
-												id={jsonERF.id}
-												string={jsonERF.string}
-												
-												location="1"
-												onChange={
-													this.handleRangeChange
-												}
-												size="small"
-											/>
-										</Grid.Column>
-										<Grid.Column
-											width={5}
-											textAlign="right"
-										>
-											<Input
-												className="ThirdInput"
-												type="text"
-												placeholder={this.rangevalue[2]}
-												fluid
-												id={jsonERF.id}
-												string={jsonERF.string}
-												
-												location="2"
-												onChange={
-													this.handleRangeChange
-												}
-												size="small"
-											/>
-										</Grid.Column>
 									</Grid>
 								</Grid.Column>
 								<Grid.Column width={this.col3}>
@@ -343,7 +293,7 @@ export class Pretty extends Component {
 										content={jsonERF.comment}
 										position="top center"
 										trigger={
-											<Label>
+											<Label size="small">
 												<Icon name="info" />
 												info
 											</Label>
@@ -566,13 +516,13 @@ export class Pretty extends Component {
 							<div ref={this.bodyRef} className="Table"></div>
 						</Sticky>
 					</Grid.Column>
-					<Grid.Column width={8} className="densegrid">
+					<Grid.Column width={7} className="densegrid">
 						{this.state.jsonERF.map((ERF) =>
 							this.contentMaker(ERF)
 						)}
 					</Grid.Column>
 
-					<Grid.Column width={5} className="densegrid">
+					<Grid.Column width={6} className="densegrid">
 						<Sticky offset={41} context={this.titleRef}>
 							<Rangegraph
 								ref={this.graphElement}
@@ -581,6 +531,8 @@ export class Pretty extends Component {
 								graphrange={this.graphrange}
 							/>
 							{console.log(this.ERFmodels)}
+							<PlainRange invalue={"this is cool"}/>
+							<PlainRange invalue={"this is cooler"}/>
 							<PlainRange invalue={"this is cool"}/>
 						</Sticky>
 					</Grid.Column>
