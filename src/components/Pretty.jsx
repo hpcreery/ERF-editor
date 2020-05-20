@@ -21,6 +21,7 @@ import {
 } from 'semantic-ui-react'
 import { Link, animateScroll as scroll, scroller } from 'react-scroll'
 import Rangegraph from './Graph'
+import ParameterMenu from './Parameters'
 import './Theme.css'
 
 var Chart = require('chart.js')
@@ -34,6 +35,7 @@ export class Pretty extends Component {
 		this.jsonERF = this.props.jsonERF
 		this.ERFmodels = this.props.ERFmodels
 		this.plotdata = this.props.plotdata
+		this.paramodel = this.ERFmodels[0]
 		this.graphrange = Object.keys(this.plotdata)[0]
 		console.log(' this is the first range to graph ' + this.graphrange)
 		this.state = {
@@ -54,7 +56,7 @@ export class Pretty extends Component {
 	handleBasicChange = (e, { id, string }) =>
 		console.log(id + string + e.target.value)
 	rangeSeperator(value, object) {
-		const found = value.match(/-?\d+\.?\d*(?!o)/g) //-?\d+\.?\d*(?!o)
+		const found = value.match(/-?\d+\.?\d*(?!o)/ - 54 / g) //-?\d+\.?\d*(?!o) or -?\d+\.?\d*(?=.*\.o)
 		//this.setState({ranges: })
 		//vendors.some( vendor => vendor['Name'] === 'Magenic' )
 		return found
@@ -220,7 +222,7 @@ export class Pretty extends Component {
 									width={this.col1}
 									textAlign="right"
 								>
-									<Label size="large">Parameter</Label>
+									<Button size="tiny">Parameter</Button>
 								</Grid.Column>
 								<Grid.Column width={this.col2}>
 									<Input
@@ -256,14 +258,20 @@ export class Pretty extends Component {
 									width={this.col1}
 									textAlign="right"
 								>
-									<Label
-										size="large"
+									<Button
+										animated
+										size="small"
 										onClick={() =>
 											this.graphChange(jsonERF.object)
 										}
 									>
-										{jsonERF.object}
-									</Label>
+										<Button.Content visible>
+											{jsonERF.object}
+										</Button.Content>
+										<Button.Content hidden>
+											Graph
+										</Button.Content>
+									</Button>
 								</Grid.Column>
 								<Grid.Column width={this.col2}>
 									<Grid
@@ -342,7 +350,7 @@ export class Pretty extends Component {
 										content={jsonERF.comment}
 										position="top center"
 										trigger={
-											<Label>
+											<Label size="medium">
 												<Icon name="info" />
 												info
 											</Label>
@@ -580,6 +588,7 @@ export class Pretty extends Component {
 								graphrange={this.graphrange}
 							/>
 							{console.log(this.ERFmodels)}
+							<ParameterMenu paramodel={this.paramodel} />
 						</Sticky>
 					</Grid.Column>
 				</Grid>
