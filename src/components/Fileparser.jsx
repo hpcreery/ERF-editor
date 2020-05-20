@@ -268,7 +268,8 @@ class ReadFiles extends Component {
 				var inobject = this.lines[i].split(' ').shift()
 				var invalue = invalue.split('#')
 				var comment = invalue[1]
-				var invalue = invalue[0]
+				var invalue = invalue[0].split('=')
+				var invalue = invalue[1]
 				this.jsonERF.push({
 					id: i,
 					type: 'sub',
@@ -281,7 +282,7 @@ class ReadFiles extends Component {
 			}
 		}
 		//console.log(JSON.stringify(this.erf))
-		//console.log(this.jsonERF)
+		console.log(this.jsonERF)
 	}
 
 	componentDidMount() {
