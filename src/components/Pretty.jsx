@@ -57,7 +57,7 @@ export class Pretty extends Component {
 	handleBasicChange = (e, { id, string }) =>
 		console.log(id + string + e.target.value)
 	rangeSeperator(value, object) {
-		const found = value.match(/-?\d+\.?\d*(?!o)/ - 54 / g) //-?\d+\.?\d*(?!o) or -?\d+\.?\d*(?=.*\.o)
+		const found = value.match(/-?\d+\.?\d*(?!o)/g) //-?\d+\.?\d*(?!o) or -?\d+\.?\d*(?=.*\.o)
 		//this.setState({ranges: })
 		//vendors.some( vendor => vendor['Name'] === 'Magenic' )
 		return found
@@ -91,8 +91,8 @@ export class Pretty extends Component {
 	}
 
 	contentMaker = (jsonERF) => {
-		this.col1 = 4
-		this.col2 = 10
+		this.col1 = 6
+		this.col2 = 7
 		this.col3 = 2
 
 		switch (jsonERF.type) {
@@ -110,8 +110,11 @@ export class Pretty extends Component {
 											ERF: {jsonERF.string}
 										</Menu.Item>
 
-										<Menu.Item position="right">
-											{this.state.dir}
+										<Menu.Item
+											position="right"
+											onClick={() => this.opendir()}
+										>
+											Open ERF
 										</Menu.Item>
 									</Menu>
 								</Sticky>
@@ -261,7 +264,7 @@ export class Pretty extends Component {
 								>
 									<Button
 										animated
-										size="small"
+										size="mini"
 										onClick={() =>
 											this.graphChange(jsonERF.object)
 										}
@@ -290,10 +293,10 @@ export class Pretty extends Component {
 											width={15}
 											textAlign="left"
 										>
-
-											<PlainRange invalue={jsonERF.string}/>
+											<PlainRange
+												string={jsonERF.string}
+											/>
 										</Grid.Column>
-
 									</Grid>
 								</Grid.Column>
 								<Grid.Column width={this.col3}>
@@ -513,10 +516,7 @@ export class Pretty extends Component {
 				<Grid columns={3}>
 					<Grid.Column width={3} className="densegrid">
 						<Sticky offset={41} context={this.titleRef}>
-							<Menu vertical>
-								<Menu.Item onClick={() => this.opendir()}>
-									Open ERF
-								</Menu.Item>
+							<Menu size="small" vertical>
 								{this.ERFmodels.map((ERF) =>
 									this.linkmaker(ERF)
 								)}
@@ -539,9 +539,9 @@ export class Pretty extends Component {
 								graphrange={this.graphrange}
 							/>
 							{console.log(this.ERFmodels)}
-							<PlainRange invalue={"this is cool"}/>
-							<PlainRange invalue={"this is cooler"}/>
-							<PlainRange invalue={"this is cool"}/>
+							<PlainRange string={'this is cool'} />
+							<PlainRange string={'this is cooler'} />
+							<PlainRange string={'this is cool'} />
 							<ParameterMenu paramodel={this.paramodel} />
 						</Sticky>
 					</Grid.Column>

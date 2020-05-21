@@ -182,7 +182,7 @@ export class Rangegraph extends Component {
 			<div>
 				<Sticky offset={41} context={this.titleRef}>
 					<Menu>
-						<Menu.Item position="left">Range:</Menu.Item>
+						<Menu.Item>Range:</Menu.Item>
 						<Menu.Item>{this.graphrange}</Menu.Item>
 					</Menu>
 					<Divider />
