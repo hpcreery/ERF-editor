@@ -539,9 +539,9 @@ export class Pretty extends Component {
 								graphrange={this.graphrange}
 							/>
 							{console.log(this.ERFmodels)}
-							<PlainRange string={'this is cool'} />
-							<PlainRange string={'this is cooler'} />
-							<PlainRange string={'this is cool'} />
+							<PlainRange string={'this is cool, 2, 2, 2, '} />
+							<PlainRange string={'this is cooler, 2, 2, 2, '} />
+							<PlainRange string={'this is cool , 1, 2, 2, 2, '} />
 							<ParameterMenu paramodel={this.paramodel} />
 						</Sticky>
 					</Grid.Column>

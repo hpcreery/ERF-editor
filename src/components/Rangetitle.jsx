@@ -11,22 +11,12 @@ const PlainRange = (props) => {
       ],
     },
   ])
-  const editor = useMemo(() => withHistory(withReact(createEditor())), [])
+
   return (
-    <Slate editor={editor} value={value} onChange={value => setValue(value)} >
-      <Editable placeholder="Enter some plain text..." onClick={e => console.log("clicked")}/>
-      {console.log(value[0].children[0].text)}
-    </Slate>
+    <textarea value={value} placeholder="Please dont leave me empty" onClick={e => console.log("clicked")} onChange={value => setValue(value)} />
   )
 }
 
-const initialValue = [
-  {
-    children: [
-      { text: 'This is editable plain text, just like a <textarea>!' },
-      { text: 'This is editable plain text, just like a <textarea>!' },
-    ],
-  },
-]
+
 
 export default PlainRange
