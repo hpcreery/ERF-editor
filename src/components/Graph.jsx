@@ -21,6 +21,7 @@ import {
 	Sidebar,
 	Dropdown,
 } from 'semantic-ui-react'
+import { Slider } from 'react-semantic-ui-range'
 
 export class Rangegraph extends Component {
 	constructor(props) {
@@ -28,8 +29,9 @@ export class Rangegraph extends Component {
 		this.plotdata = this.props.plotdata
 		this.ERFmodels = this.props.ERFmodels
 		this.graphrange = this.props.graphrange
+		this.max = 20
 
-		this.state = { graphrange: this.graphrange }
+		this.state = { graphrange: this.graphrange, max: this.max }
 	}
 	static propTypes = {}
 
@@ -39,12 +41,13 @@ export class Rangegraph extends Component {
 			workingrange[color].forEach(this.filter)
 		})
 		//this.plotdata[this.state.currentrange].green.forEach(this.filter)
-		console.log(workingrange)
+		//console.log(workingrange)
 	}
 
 	filter = (currentValue, index, parentarray) => {
-		if (Number(currentValue) >= 100) {
-			parentarray[index] = null
+		if (Number(currentValue) >= 1000) {
+			//parentarray[index] = null
+			//max =
 			//console.log(currentValue)
 		}
 	}
@@ -70,6 +73,8 @@ export class Rangegraph extends Component {
 						backgroundColor: 'rgba(99, 10, 10, 0.5)',
 						borderColor: 'rgba(99, 10, 10, 1)',
 						borderWidth: 1,
+						maxBarThickness: 40,
+						minBarLength: 1,
 					},
 					{
 						label: ' Mils',
@@ -78,6 +83,8 @@ export class Rangegraph extends Component {
 						backgroundColor: 'rgba(99, 99, 10, 0.5)',
 						borderColor: 'rgba(99, 99, 10, 1)',
 						borderWidth: 1,
+						maxBarThickness: 40,
+						minBarLength: 1,
 					},
 					{
 						label: ' Mils',
@@ -86,6 +93,8 @@ export class Rangegraph extends Component {
 						backgroundColor: 'rgba(10, 90, 10, 0.5)',
 						borderColor: 'rgba(10, 90, 10, 1)',
 						borderWidth: 1,
+						maxBarThickness: 40,
+						minBarLength: 1,
 					},
 				],
 			},
@@ -101,6 +110,11 @@ export class Rangegraph extends Component {
 					xAxes: [
 						{
 							stacked: false,
+							ticks: {
+								max: this.state.max,
+								min: 0,
+								stepSize: 1,
+							},
 						},
 					],
 					yAxes: [
@@ -182,13 +196,29 @@ export class Rangegraph extends Component {
 			<div>
 				<Sticky offset={41} context={this.titleRef}>
 					<Menu>
-						<Menu.Item>Range:</Menu.Item>
-						<Menu.Item>{this.graphrange}</Menu.Item>
+						<Menu.Item>
+							<Icon name='chart bar'></Icon>
+						</Menu.Item>
+						<Menu.Item>Range: {this.graphrange}</Menu.Item>
 					</Menu>
 					<Divider />
 				</Sticky>
-				<canvas id="myChart" ref={this.chartRef} height="200" />
-				{this.graphrange}
+				<canvas id='myChart' ref={this.chartRef} height='200' />
+				<Slider
+					value={this.state.max}
+					color='grey'
+					settings={{
+						start: 2,
+						min: 0,
+						max: 100,
+						step: 1,
+						onChange: (value) => {
+							this.setState({ max: value })
+							console.log(value)
+						},
+					}}
+				/>
+				<div className='Spacer'></div>
 			</div>
 		)
 	}

@@ -28,7 +28,14 @@ export default class ParameterMenu extends Component {
 	render() {
 		return (
 			<div>
-				<Button>{this.paramodel}</Button>
+				<Menu>
+					<Menu.Item>
+						<Icon name='cogs'></Icon>
+					</Menu.Item>
+					<Menu.Item>Model: {this.paramodel}</Menu.Item>
+				</Menu>
+				<Divider />
+
 				{console.log(this.paramodel)}
 			</div>
 		)

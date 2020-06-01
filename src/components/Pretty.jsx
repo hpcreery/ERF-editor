@@ -31,7 +31,6 @@ export class Pretty extends Component {
 	constructor(props) {
 		super(props)
 		console.log('Starting Construction')
-
 		this.opendir = this.props.opendir
 		this.jsonERF = this.props.jsonERF
 		this.ERFmodels = this.props.ERFmodels
@@ -52,10 +51,13 @@ export class Pretty extends Component {
 
 	handleRangeChange = (e, { id, location, string, value }) => {
 		value = e.target.value
-		console.log(id + location + string + e.target.value)
+		//console.log(id + location + string + e.target.value)
 	}
-	handleBasicChange = (e, { id, string }) =>
+
+	handleBasicChange = (e, { id, string }) => {
 		console.log(id + string + e.target.value)
+	}
+
 	rangeSeperator(value, object) {
 		const found = value.match(/-?\d+\.?\d*(?!o)/g) //-?\d+\.?\d*(?!o) or -?\d+\.?\d*(?=.*\.o)
 		//this.setState({ranges: })
@@ -83,7 +85,7 @@ export class Pretty extends Component {
 		return (
 			<div>
 				<Divider />
-				<Segment inverted className="Label">
+				<Segment inverted className='Label'>
 					ERF: {name}
 				</Segment>
 			</div>
@@ -104,14 +106,14 @@ export class Pretty extends Component {
 								<Sticky offset={41} context={this.titleRef}>
 									<Menu>
 										<Menu.Item>
-											<Icon name="file alternate" />
+											<Icon name='file alternate' />
 										</Menu.Item>
 										<Menu.Item>
 											ERF: {jsonERF.string}
 										</Menu.Item>
 
 										<Menu.Item
-											position="right"
+											position='right'
 											onClick={() => this.opendir()}
 										>
 											Open ERF
@@ -126,7 +128,7 @@ export class Pretty extends Component {
 							<div>
 								<Segment
 									secondary
-									className="Label"
+									className='Label'
 									name={jsonERF.string}
 								>
 									UID: {jsonERF.string}
@@ -139,7 +141,7 @@ export class Pretty extends Component {
 							<div>
 								<Segment
 									secondary
-									className="Label"
+									className='Label'
 									name={jsonERF.string}
 								>
 									MENU: {jsonERF.string}
@@ -159,7 +161,7 @@ export class Pretty extends Component {
 										>
 											<Segment
 												secondary
-												className="Label"
+												className='Label'
 											>
 												MODEL: {jsonERF.string}
 											</Segment>
@@ -173,7 +175,7 @@ export class Pretty extends Component {
 						return
 					case '.colors':
 						this.colors = this.colorSeperator(jsonERF.string)
-						console.log(this.colors)
+						//console.log(this.colors)
 						document.documentElement.style.setProperty(
 							'--firstrangecolor',
 							'#' + this.colors[0]
@@ -190,7 +192,7 @@ export class Pretty extends Component {
 					case '.ranges\r':
 						return (
 							<div>
-								<Header dividing className="Headers">
+								<Header dividing className='Headers'>
 									Ranges
 								</Header>
 							</div>
@@ -198,7 +200,7 @@ export class Pretty extends Component {
 					case '.pdef\r':
 						return (
 							<div>
-								<Header dividing className="Headers">
+								<Header dividing className='Headers'>
 									Parameter Defaults
 								</Header>
 							</div>
@@ -206,7 +208,7 @@ export class Pretty extends Component {
 					case '.vars\r':
 						return (
 							<div>
-								<Header dividing className="Headers">
+								<Header dividing className='Headers'>
 									Variables
 								</Header>
 							</div>
@@ -219,22 +221,22 @@ export class Pretty extends Component {
 						return (
 							<Grid
 								columns={3}
-								verticalAlign="middle"
-								className="densegrid"
+								verticalAlign='middle'
+								className='densegrid'
 							>
 								<Grid.Column
 									width={this.col1}
-									textAlign="right"
+									textAlign='right'
 								>
-									<Button size="tiny">Parameter</Button>
+									<Button size='tiny'>Parameter</Button>
 								</Grid.Column>
 								<Grid.Column width={this.col2}>
 									<Input
-										type="text"
-										placeholder="Incrimental Values"
+										type='text'
+										placeholder='Incrimental Values'
 										defaultValue={jsonERF.string}
 										fluid
-										size="small"
+										size='small'
 										id={jsonERF.id}
 										string={jsonERF.string}
 										onChange={this.handleBasicChange}
@@ -250,21 +252,21 @@ export class Pretty extends Component {
 							jsonERF.string,
 							jsonERF.object
 						)
-						console.log(this.rangevalue)
+						//console.log(this.rangevalue)
 						//this.rangePlotterData(this.rangevalue, jsonERF.object)
 						return (
 							<Grid
 								columns={3}
-								verticalAlign="middle"
-								className="densegrid"
+								verticalAlign='middle'
+								className='densegrid'
 							>
 								<Grid.Column
 									width={this.col1}
-									textAlign="right"
+									textAlign='right'
 								>
 									<Button
 										animated
-										size="mini"
+										size='mini'
 										onClick={() =>
 											this.graphChange(jsonERF.object)
 										}
@@ -280,32 +282,38 @@ export class Pretty extends Component {
 								<Grid.Column width={this.col2}>
 									<Grid
 										columns={2}
-										verticalAlign="middle"
-										className="densegrid"
+										verticalAlign='middle'
+										className='densegrid'
 									>
 										<Grid.Column
 											width={1}
-											textAlign="center"
+											textAlign='center'
 										>
 											=
 										</Grid.Column>
 										<Grid.Column
 											width={15}
-											textAlign="left"
+											textAlign='left'
 										>
 											<PlainRange
+												key={this.rangekey}
 												string={jsonERF.string}
+												jsonblock={jsonERF}
 											/>
+											{console.log(
+												'New Value ' +
+													JSON.stringify(jsonERF)
+											)}
 										</Grid.Column>
 									</Grid>
 								</Grid.Column>
 								<Grid.Column width={this.col3}>
 									<Popup
 										content={jsonERF.comment}
-										position="top center"
+										position='top center'
 										trigger={
-											<Label size="small">
-												<Icon name="info" />
+											<Label size='small'>
+												<Icon name='info' />
 												info
 											</Label>
 										}
@@ -317,22 +325,22 @@ export class Pretty extends Component {
 						return (
 							<Grid
 								columns={3}
-								verticalAlign="middle"
-								className="densegrid"
+								verticalAlign='middle'
+								className='densegrid'
 							>
 								<Grid.Column
 									width={this.col1}
-									textAlign="right"
+									textAlign='right'
 								>
-									<Label size="large">{jsonERF.object}</Label>
+									<Label size='large'>{jsonERF.object}</Label>
 								</Grid.Column>
 								<Grid.Column width={this.col2}>
 									<Input
-										type="text"
-										placeholder="Incrimental Values"
+										type='text'
+										placeholder='Incrimental Values'
 										defaultValue={jsonERF.string}
 										fluid
-										size="small"
+										size='small'
 										id={jsonERF.id}
 										string={jsonERF.string}
 										onChange={this.handleBasicChange}
@@ -341,10 +349,10 @@ export class Pretty extends Component {
 								<Grid.Column width={this.col3}>
 									<Popup
 										content={jsonERF.comment}
-										position="top center"
+										position='top center'
 										trigger={
 											<Label>
-												<Icon name="info" />
+												<Icon name='info' />
 												info
 											</Label>
 										}
@@ -356,22 +364,22 @@ export class Pretty extends Component {
 						return (
 							<Grid
 								columns={3}
-								verticalAlign="middle"
-								className="densegrid"
+								verticalAlign='middle'
+								className='densegrid'
 							>
 								<Grid.Column
 									width={this.col1}
-									textAlign="right"
+									textAlign='right'
 								>
-									<Label size="large">{jsonERF.object}</Label>
+									<Label size='large'>{jsonERF.object}</Label>
 								</Grid.Column>
 								<Grid.Column width={this.col2}>
 									<Input
-										type="text"
-										placeholder="Incrimental Values"
+										type='text'
+										placeholder='Incrimental Values'
 										defaultValue={jsonERF.string}
 										fluid
-										size="small"
+										size='small'
 										id={jsonERF.id}
 										string={jsonERF.string}
 										onChange={this.handleBasicChange}
@@ -380,10 +388,10 @@ export class Pretty extends Component {
 								<Grid.Column width={this.col3}>
 									<Popup
 										content={jsonERF.comment}
-										position="top center"
+										position='top center'
 										trigger={
 											<Label>
-												<Icon name="info" />
+												<Icon name='info' />
 												info
 											</Label>
 										}
@@ -406,7 +414,7 @@ export class Pretty extends Component {
 	linkmaker = (ERFmodel) => {
 		return (
 			<Link
-				activeClass="active"
+				activeClass='active'
 				to={ERFmodel}
 				spy={true}
 				smooth={true}
@@ -512,25 +520,25 @@ export class Pretty extends Component {
 		//this.dir = dir
 
 		return (
-			<div ref={this.titleRef} className="Table" id="Table">
+			<div ref={this.titleRef} className='Table' id='Table'>
 				<Grid columns={3}>
-					<Grid.Column width={3} className="densegrid">
+					<Grid.Column width={3} className='densegrid'>
 						<Sticky offset={41} context={this.titleRef}>
-							<Menu size="small" vertical>
+							<Menu size='small' vertical>
 								{this.ERFmodels.map((ERF) =>
 									this.linkmaker(ERF)
 								)}
 							</Menu>
-							<div ref={this.bodyRef} className="Table"></div>
+							<div ref={this.bodyRef} className='Table'></div>
 						</Sticky>
 					</Grid.Column>
-					<Grid.Column width={7} className="densegrid">
+					<Grid.Column width={7} className='densegrid'>
 						{this.state.jsonERF.map((ERF) =>
 							this.contentMaker(ERF)
 						)}
 					</Grid.Column>
 
-					<Grid.Column width={6} className="densegrid">
+					<Grid.Column width={6} className='densegrid'>
 						<Sticky offset={41} context={this.titleRef}>
 							<Rangegraph
 								ref={this.graphElement}
@@ -539,9 +547,6 @@ export class Pretty extends Component {
 								graphrange={this.graphrange}
 							/>
 							{console.log(this.ERFmodels)}
-							<PlainRange string={'this is cool, 2, 2, 2, '} />
-							<PlainRange string={'this is cooler, 2, 2, 2, '} />
-							<PlainRange string={'this is cool , 1, 2, 2, 2, '} />
 							<ParameterMenu paramodel={this.paramodel} />
 						</Sticky>
 					</Grid.Column>

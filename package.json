@@ -10,6 +10,7 @@
 		"foreman": "^3.0.1",
 		"immutable": "^4.0.0-rc.12",
 		"react-scripts": "0.8.5",
+		"react-semantic-ui-range": "^0.7.0",
 		"slate": "^0.58.1",
 		"slate-history": "^0.58.1",
 		"slate-hyperscript": "^0.58.1",

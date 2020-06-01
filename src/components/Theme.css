@@ -23,6 +23,12 @@
 	text-indent: 20px;
 }
 
+.Spacer {
+	font-size: 0;
+	height: 30px;
+	line-height: 0;
+}
+
 .Zero-o {
 	padding: 0px 0px 0px 0px !important;
 }
@@ -65,7 +71,6 @@
 	border-color: var(--thirdrangecolor) !important;
 	border-width: 0.105rem !important;
 }
-
 
 ::-webkit-input-placeholder {
 	color: black !important;
