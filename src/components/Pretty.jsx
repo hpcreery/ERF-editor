@@ -296,14 +296,11 @@ export class Pretty extends Component {
 											textAlign='left'
 										>
 											<PlainRange
-												key={this.rangekey}
+												key={jsonERF.object}
+												dir={this.state.dir}
 												string={jsonERF.string}
 												jsonblock={jsonERF}
 											/>
-											{console.log(
-												'New Value ' +
-													JSON.stringify(jsonERF)
-											)}
 										</Grid.Column>
 									</Grid>
 								</Grid.Column>

@@ -3,6 +3,7 @@ import { Text, createEditor } from 'slate'
 import { Slate, Editable, withReact, Editor } from 'slate-react'
 import { withHistory } from 'slate-history'
 import { css } from 'emotion'
+import lineReplace from 'line-replace'
 
 const PlainRange = (props) => {
 	const ranges = ''
@@ -35,6 +36,19 @@ const PlainRange = (props) => {
 
 	const handleChange = (value) => {
 		setValue(value)
+		console.log(props.jsonblock.id + 1)
+		lineReplace({
+			file: props.dir.toString(),
+			line: props.jsonblock.id + 1,
+			text:
+				props.jsonblock.object +
+				' = ' +
+				value[0].children[0].text +
+				' # ' +
+				props.jsonblock.comment,
+			addNewLine: false,
+			callback: (e) => console.log(e),
+		})
 	}
 
 	// regex ^(?:[^,]*[,]){magicnumber}[^\d]*(\d+)

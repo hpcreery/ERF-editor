@@ -46,7 +46,7 @@ class App extends Component {
 
 		return (
 			<div>
-				<div className="App">
+				<div className='App'>
 					<ReadFiles
 						dir={this.state.dir}
 						opendir={this.directoryopener}

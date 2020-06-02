@@ -38,6 +38,7 @@ export class Rangegraph extends Component {
 	graphFilter = (workingrange) => {
 		var colors = ['red', 'yellow', 'green']
 		colors.forEach((color) => {
+			console.log(workingrange[color])
 			workingrange[color].forEach(this.filter)
 		})
 		//this.plotdata[this.state.currentrange].green.forEach(this.filter)
@@ -56,6 +57,19 @@ export class Rangegraph extends Component {
 	//rangeChart = new Chart()
 
 	buildChart = () => {
+		Chart.Tooltip.positioners.custom = function (elements, position) {
+			if (!elements.length) {
+				return false
+			}
+			var offset = 0
+			//adjust the offset left or right depending on the event position
+			if (elements[0]._chart.width / 2 > position.x) {
+				offset = 2
+			} else {
+				offset = -2
+			}
+			return position
+		}
 		this.graphFilter(this.plotdata[this.graphrange])
 		if (typeof this.rangeChart !== 'undefined') this.rangeChart.destroy()
 
@@ -100,6 +114,10 @@ export class Rangegraph extends Component {
 			},
 			options: {
 				tooltips: {
+					enabled: true,
+					mode: 'index',
+					position: 'custom',
+					intersect: true,
 					backgroundColor: 'rgba(255, 255, 255, 0.9)',
 					titleFontColor: '#000',
 					bodyFontColor: '#000',
@@ -209,7 +227,7 @@ export class Rangegraph extends Component {
 					color='grey'
 					settings={{
 						start: 2,
-						min: 0,
+						min: 1,
 						max: 100,
 						step: 1,
 						onChange: (value) => {

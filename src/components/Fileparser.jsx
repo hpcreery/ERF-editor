@@ -34,8 +34,8 @@ class ReadFiles extends Component {
 		this.opendir = this.props.opendir
 		//console.log(this.state.dir)
 		this.colorarrays = {}
+		this.state = { dir: this.props.dir }
 	}
-	state = { dir: this.props.dir }
 
 	//range.model.color
 	graphstruct = () => {
@@ -329,7 +329,7 @@ class ReadFiles extends Component {
 
 		console.log(this.state.dir)
 		return (
-			<div className="File-Contents">
+			<div className='File-Contents'>
 				<Pretty
 					jsonERF={this.jsonERF}
 					filelength={this.filelength}
