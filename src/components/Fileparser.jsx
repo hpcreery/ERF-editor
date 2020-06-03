@@ -40,8 +40,10 @@ class ReadFiles extends Component {
 	//range.model.color
 	graphstruct = () => {
 		this.plotdata = {}
+
 		for (var i = 0; i < this.lines.length; i++) {
 			this.erf[i] = { string: this.lines[i] }
+			//console.log(this.erf[i])
 
 			if (this.lines[i].startsWith('.')) {
 				var value = this.erf[i].string
@@ -90,6 +92,12 @@ class ReadFiles extends Component {
 				}
 				if (object === '.ranges\r') {
 					const rangearray = invalue.match(/-?\d+\.?\d*(?!o)/g) //-?\d+\.?\d*(?!o)
+					console.log('here is a range')
+					this.colorArraySort(rangearray, inobject)
+				}
+				if (object === '.ranges') {
+					const rangearray = invalue.match(/-?\d+\.?\d*(?!o)/g) //-?\d+\.?\d*(?!o)
+					//console.log('here is a range')
 					this.colorArraySort(rangearray, inobject)
 				}
 				if (object === '.pdef\r') {
@@ -102,6 +110,7 @@ class ReadFiles extends Component {
 	}
 
 	colorArraySort(rangearray, object) {
+		//console.log('umm ' + rangearray + object)
 		if (this.plotdata[object] == undefined) {
 			this.plotdata[object] = { red: [], yellow: [], green: [] }
 		}
@@ -293,6 +302,7 @@ class ReadFiles extends Component {
 	}
 
 	componentWillUpdate() {
+		this.graphstruct() //testing
 		console.log('Component is about to update')
 	}
 
@@ -306,9 +316,10 @@ class ReadFiles extends Component {
 		this.lines = this.contents.split('\n')
 		this.filelength = this.lines.length
 		this.modelstruct() // main model structure
-		this.jsonstruct()
-		this.graphstruct()
+		this.jsonstruct() // flat json structure
+		this.graphstruct() // rearranged data for the graph
 		console.log('there has been an update to the data structures')
+		console.log(this.state.dir)
 	}
 
 	componentWillReceiveProps(nextProps) {

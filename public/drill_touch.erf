@@ -1,0 +1,192 @@
+#--------------------------------------------------------------------------
+# ERF File - Drills Touching Copper Count
+# (For more information see help file and on-line manual 0602 (chapter ?))
+# This version written by Ian Ticehurst (Autom8 Ltd.) - 01/08/00
+# Version 1A
+#
+# This function checks specified drill layers (and specified hole types) and
+# counts how many times each hole touches copper. This function will collect
+# a series of results showing the number of times a drill touches copper. It
+# can also perform two other actions (according to the parameter settings). It
+# can split the existing drill layer(s) into new layers where either the drills
+# touch copper the same number of times (with a new layer being created for
+# all holes that touch copper the same number of times), or two new layers are
+# created where the original holes are divided into holes that touch copper less
+# times than the user defined threshold and holes that touch copper more times.
+# The action can also add .drill_flag attributes (either the number of times
+# that a hole touches copper or a designated value if the touches copper count
+# exceeds the threshold) to the holes.
+#---------------------------------------------------------------------------
+
+# Internal program calls and menu placement definitions (Do not modify these).
+.name NLSE("Drills Touching Copper Count")
+.uid frontline_dfm_drill_touch
+.modify
+.menu 1 NLSE("DFM") 6 NLSE("Custom") 8
+
+# Action screen definition.
+.param layers, pp_drill_layers, 1, NLSE("Drill Layer :")
+.param set,    pp_drill_types,  2, NLSE("Drill Type :"),                      NLSE("PTH");NLSE("NPTH");NLSE("Via")
+.param radio,  pp_report_by,    3, NLSE("Report by :"),                       NLSE("Count");NLSE("Cu volume")
+.param radio,  pp_set_flag,     4, NLSE("Set Drill Flag :"),                  NLSE("No");NLSE("Threshold");NLSE("Count");NLSE("Copper weight")
+.param radio,  pp_flag_exists,  5, NLSE("Existing Drill Flag :"),             NLSE("Overwrite");NLSE("Abort");NLSE("Continue")
+.param radio,  pp_split_layer,  6, NLSE("Split Layer :"),                     NLSE("No");NLSE("Threshold");NLSE("Count");NLSE("Copper weight")
+.param radio,  pp_layer_exists, 7, NLSE("Existing Split Layer :"),            NLSE("Overwrite");NLSE("Abort")
+.param int,    pp_threshold,    8, NLSE("Threshold :"),                       0,1000
+.param menu,   pp_split_cate,   9, NLSE("Split Categories According to :"),   NLSE("Layer groups");NLSE("Copper types");NLSE("Both");NLSE("Neither")
+
+######### advanced parameters definitions ############
+#!vtype int,    v_less_flag,            1,  NLSE("Drill flag value for count > threshold:"),0,2000
+#!vtype int,    v_count_base,           2,  NLSE("Drill Flag base value:"),0,2000
+#!vtype string, v_less_suffix,          3,  NLSE("Suffix for less layer:")
+#!vtype string, v_more_suffix,          4,  NLSE("Suffix for more layer:")
+#!vtype string, v_count_separator,      5,  NLSE("Count separator in layer name:")
+#!vtype int,    v_weight_thickness,     6,  NLSE("Report type:")
+#!vtype int,    v_report_unit,          7,  NLSE("Report unit:")
+#!vtype double, v_cu_threshold1,        8,  NLSE("Threshold1:")
+#!vtype double, v_cu_threshold2,        9,  NLSE("Threshold2:")
+#!vtype double, v_cu_threshold3,        10, NLSE("Threshold3:")
+#!vtype double, v_cu_threshold4,        11, NLSE("Threshold4:")
+#!vtype double, v_cu_threshold5,        12, NLSE("Threshold5:")
+#!vtype double, v_cu_threshold6,        13, NLSE("Threshold6:")
+#!vtype double, v_cu_threshold7,        14, NLSE("Threshold7:")
+#!vtype double, v_cu_threshold8,        15, NLSE("Threshold8:")
+#!vtype double, v_cu_threshold9,        16, NLSE("Threshold9:")
+#!vtype double, v_cu_threshold10,       17, NLSE("Threshold10:")
+#!vtype set,    v_report_by_drill_size, 18, NLSE(""), NLSE("Report Categories by Drill Size")
+#!vtype double, v_min_drill_size,       19, NLSE("Min Drill Size to Report")
+#!vtype double, v_max_drill_size,       20, NLSE("Max Drill Size to Report")
+#!vtype set,    v_report_by_exact_weight,21, NLSE(""), NLSE("Report Exact Copper Weight")
+#!vtype set,    v_neither_mode_report_layer_index,22, NLSE(""), NLSE("Report layer index when run on Neither mode")
+#!vtype set,    v_generate_detailed_attributes,23, NLSE(""), NLSE("Generate detail attributes")
+# Individual model information follows.
+
+################### Start of model Set Drill Flags ######################################
+
+# Initialise model with model name, units, and color definitions.
+.model Set Drill Flags
+.units inch
+.colors 991010 999910 109010            # Colors set to red yellow green.
+
+# Define ranges (how results should be captured / presented).
+.ranges
+summary =  0,0.1,1003         #  Range - report for every hole showing the number of times it touches copper.flag_exists                 = 0,0.1,1000        # Range - if parameter pp_flag_exists is set to Continue, this range will report all holes where the drill flag has not been updated by the action (and therefore may be wrong).
+drills_not_touch_copper     = 0,0.1,1000        # Range - report the drills which don't touch any copper in the layers they go through.
+touch*                      = 0,0.1,1000        # Range - this creates a series of results which shows all holes touching copper 1 time, 2 times, 3 times, 4 times etc.
+touchL*                     = 0,0.1,1000        # Range - report the drills which drill the same layer group L*L*....
+touchpad*plane*             = 0,0.1,1000        # Range - report the drills which drill the same copper types.
+touchpadL*planeL*           = 0,0.1,1000        # Range - report the drills which drill the same layer groups and copper types.
+Drill*to*                   = 0,0.1,1000        # Range - report the drills which drill the Cu volume between * and *[units].
+Drillabove*                 = 0,0.1,1000        # Range - report the drills which drill the Cu volume above *[units].
+*touch*                     = 0,0.1,1000        # Range - this creates a series of results which shows all holes touching copper 1 time, 2 times, 3 times, 4 times etc.
+*touchL*                    = 0,0.1,1000        # Range - report the drills which drill the same layer group L*L*... when "Report Categories by Drill Size" is checked.
+*touchpad*plane*            = 0,0.1,1000        # Range - report the drills which drill the same copper types when "Report Categories by Drill Size" is checked.
+*touchpadL*planeL*          = 0,0.1,1000        # Range - report the drills which drill the same layer groups and copper types when "Report Categories by Drill Size" is checked.
+*Drill*to*                  = 0,0.1,1000        # Range - report the drills which drill the Cu volume between * and *[units] when "Report Categories by Drill Size" is checked.
+*Drillabove*                = 0,0.1,1000        # Range - report the drills which drill the Cu volume above *[units] when "Report Categories by Drill Size" is checked.
+
+# Define parameters to be used in action window on screen.
+.pdef
+pp_drill_layers   = .type=drill&context=board   # Defines which drill layer(s) will be analyzed by the action. 
+pp_drill_types    = .all                        # Defines which hole types to analyze in each drill layers. 
+pp_report_by      = Count                       # Defines report types.
+pp_set_flag       = Count                       # Defines whether to set drill flag.
+pp_flag_exists    = Overwrite                   # Defines what to do if drill flag exists.
+pp_split_layer    = No                          # Defines whether to split layer.
+pp_layer_exists   = Overwrite                   # Defines what to do if drill layer exists.
+pp_threshold      = 4                           # Defines the threshold for splitting drill layers or assigning drill flag by threshold. 
+pp_split_cate     = Neither                     # Defines whether and how to split categories. This is valid only when "Report by" = "Count".
+
+# Set variable values (used to fine-tune the way the function works).
+.vars
+v_less_flag             = 200         # Variable - the drill flag attribute value to be used if the touching copper count exceeds the threshold value.
+v_count_base            = 100         # Variable - when setting the drill flag for the touching copper count add this value to the actual count value (this can ensure the drill flag does not conflict with other drill flag useage).
+v_less_suffix           = +l          # Variable - the layer name suffix to be used for the created layer containing drills which touch copper less than the threshold number.
+v_more_suffix           = +m          # Variable - the layer name suffix to be used for the created layer containing drills which touch copper more than the threshold number.
+v_count_separator       = +           # Variable - the layer name suffix to be used for created layers that contain drills touching copper the same number of times (this is followed by the number of times the drills touch copper).
+v_weight_thickness      = 0           # Variable - 0 - copper weight, 1 - copper thickness, defines whether to use as input the copper weight attribute (in oz) or the copper thickness attribute (in mils or microns).
+v_report_unit           = 0           # Variable - 0 - copper weight, 1 - copper thickness, defines whether to use as result value (for dividing into categories) the copper weight (in oz) or the copper thickness (in mils/microns).
+v_cu_threshold1         = 1.5         # Variable - 1st threshold value
+v_cu_threshold2         = 3           # Variable - 2nd threshold value
+v_cu_threshold3         = 4.5         # Variable - 3rd threshold value
+v_cu_threshold4         =             # Variable - 4th threshold value
+v_cu_threshold5         =             # Variable - 5th threshold value
+v_cu_threshold6         =             # Variable - 6th threshold value
+v_cu_threshold7         =             # Variable - 7th threshold value
+v_cu_threshold8         =             # Variable - 8th threshold value
+v_cu_threshold9         =             # Variable - 9th threshold value
+v_cu_threshold10        =             # Variable - 10th threshold value
+v_report_by_drill_size  = False       # Variable - defines whether to report categories by drill size.
+v_min_drill_size        = 0           # Variable - defines minimal drill size to report.
+v_max_drill_size        = 900         # Variable - defines maximal drill size to report.
+v_report_by_exact_weight= False       # Variable - defines reporting copper weight by range or by exact value. "True" means reporting by exact value, "False" means reporting by range.
+v_neither_mode_report_layer_index = False # Variable - defines whether report layer index information when run on neither mode. if not will report the feature symbol name.
+v_generate_detailed_attributes  = no       # Variable - If checked , will giving specified layers in attribute for category  "Drill on pad/line in * layer(s) & plane in * layer(s)" .
+
+################### End of model Set Drill Flags ######################################
+
+################### Start of model Split PTH Holes ####################################
+
+# Initialise model with model name, units, and color definitions.
+.model Split PTH Holes
+.units inch
+.colors 991010 999910 109010          # Colors set to red yellow green.
+
+# Define ranges (how results should be captured / presented).
+.ranges
+summary                     = 0,0.1,1000        # Range - report for every hole showing the number of times it touches copper.
+flag_exists                 = 0,0.1,1000        # Range - if parameter pp_flag_exists is set to Continue, this range will report all holes where the drill flag has not been updated by the action (and therefore may be wrong).
+drills_not_touch_copper     = 0,0.1,1000        # Range - report the drills which don't touch any copper in the layers they go through.
+touch*                      = 0,0.1,1000        # Range - this creates a series of results which shows all holes touching copper 1 time, 2 times, 3 times, 4 times etc.
+touchL*                     = 0,0.1,1000        # Range - report the drills which drill the same layer group L*L*....
+touchpad*plane*             = 0,0.1,1000        # Range - report the drills which drill the same copper types.
+touchpadL*planeL*           = 0,0.1,1000        # Range - report the drills which drill the same layer groups and copper types.
+Drill*to*                   = 0,0.1,1000        # Range - report the drills which drill the Cu volume between * and *[units].
+Drillabove*                 = 0,0.1,1000        # Range - report the drills which drill the Cu volume above *[units].
+*touch*                     = 0,0.1,1000        # Range - this creates a series of results which shows all holes touching copper 1 time, 2 times, 3 times, 4 times etc.
+*touchL*                    = 0,0.1,1000        # Range - report the drills which drill the same layer group L*L*... when "Report Categories by Drill Size" is checked.
+*touchpad*plane*            = 0,0.1,1000        # Range - report the drills which drill the same copper types when "Report Categories by Drill Size" is checked.
+*touchpadL*planeL*          = 0,0.1,1000        # Range - report the drills which drill the same layer groups and copper types when "Report Categories by Drill Size" is checked.
+*Drill*to*                  = 0,0.1,1000        # Range - report the drills which drill the Cu volume between * and *[units] when "Report Categories by Drill Size" is checked.
+*Drillabove*                = 0,0.1,1000        # Range - report the drills which drill the Cu volume above *[units] when "Report Categories by Drill Size" is checked.
+
+# Define parameters to be used in action window on screen.
+.pdef
+pp_drill_layers   = .type=drill&context=board   # Defines which drill layer(s) will be analyzed by the action. 
+pp_drill_types    = .all;-NPTH                  # Defines which hole types to analyze in each drill layers. 
+pp_report_by      = Count                       # Defines report types.
+pp_set_flag       = Count                       # Defines whether to set drill flag.
+pp_flag_exists    = Overwrite                   # Defines what to do if drill flag exists.
+pp_split_layer    = Count                       # Defines whether to split layer.
+pp_layer_exists   = Overwrite                   # Defines what to do if drill layer exists.
+pp_threshold      = 6                           # Defines the threshold for splitting drill layers or assigning drill flag by threshold.
+pp_split_cate     = Neither                     # Defines whether and how to split categories. This is valid only when "Report by" = "Count".
+
+# Set variable values (used to fine-tune the way the function works).
+.vars
+v_less_flag             = 200         # Variable - the drill flag attribute value to be used if the touching copper count exceeds the threshold value.
+v_count_base            = 100         # Variable - when setting the drill flag for the touching copper count add this value to the actual count value (this can ensure the drill flag does not conflict with other drill flag useage).
+v_less_suffix           = +l          # Variable - the layer name suffix to be used for the created layer containing drills which touch copper less than the threshold number.
+v_more_suffix           = +m          # Variable - the layer name suffix to be used for the created layer containing drills which touch copper more than the threshold number.
+v_count_separator       = +           # Variable - the layer name suffix to be used for created layers that contain drills touching copper the same number of times (this is followed by the number of times the drills touch copper).
+v_weight_thickness      = 0           # Variable - 0 - copper weight, 1 - copper thickness, defines whether to use as input the copper weight attribute (in oz) or the copper thickness attribute (in mils or microns).
+v_report_unit           = 0           # Variable - 0 - copper weight, 1 - copper thickness, defines whether to use as result value (for dividing into categories) the copper weight (in oz) or the copper thickness (in mils/microns).
+v_cu_threshold1         = 1.5         # Variable - 1st threshold value
+v_cu_threshold2         = 3           # Variable - 2nd threshold value
+v_cu_threshold3         = 4.5         # Variable - 3rd threshold value
+v_cu_threshold4         =             # Variable - 4th threshold value
+v_cu_threshold5         =             # Variable - 5th threshold value
+v_cu_threshold6         =             # Variable - 6th threshold value
+v_cu_threshold7         =             # Variable - 7th threshold value
+v_cu_threshold8         =             # Variable - 8th threshold value
+v_cu_threshold9         =             # Variable - 9th threshold value
+v_cu_threshold10        =             # Variable - 10th threshold value
+v_report_by_drill_size  = False       # Variable - defines whether to report categories by drill size.
+v_min_drill_size        = 0           # Variable - defines minimal drill size to report.
+v_max_drill_size        =             # Variable - defines maximal drill size to report.
+v_report_by_exact_weight= False       # Variable - defines reporting copper weight by range or by exact value. "True" means reporting by exact value, "False" means reporting by range.
+v_neither_mode_report_layer_index = False # Variable - defines whether report layer index information when run on neither mode. if not will report the feature symbol name.
+v_generate_detailed_attributes  = no       # Variable - If checked , will giving specified layers in attribute for category  "Drill on pad/line in * layer(s) & plane in * layer(s)" .
+
+################### End of model Split PTH Holes ######################################
+

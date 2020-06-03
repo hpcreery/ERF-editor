@@ -434,6 +434,7 @@ export class Pretty extends Component {
 		console.log('Here is when it recieves Data ')
 		console.log(this.jsonERF)
 		this.plotdata = nextProps.plotdata
+		console.log(this.plotdata)
 		this.graphChange(Object.keys(this.plotdata)[0])
 		this.setState({ dir: String(nextProps.dir) })
 	}
@@ -543,6 +544,9 @@ export class Pretty extends Component {
 								ERFmodels={this.ERFmodels}
 								graphrange={this.graphrange}
 							/>
+							{console.log(this.plotdata[this.graphrange])}
+							{console.log(this.plotdata)}
+							{console.log(this.graphrange)}
 							{console.log(this.ERFmodels)}
 							<ParameterMenu paramodel={this.paramodel} />
 						</Sticky>

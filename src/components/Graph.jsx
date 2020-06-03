@@ -70,6 +70,10 @@ export class Rangegraph extends Component {
 			}
 			return position
 		}
+		console.log('CRITICAL ERROR in this json')
+		console.log(this.plotdata[this.graphrange])
+		console.log(this.plotdata)
+		console.log(this.graphrange)
 		this.graphFilter(this.plotdata[this.graphrange])
 		if (typeof this.rangeChart !== 'undefined') this.rangeChart.destroy()
 
@@ -176,6 +180,8 @@ export class Rangegraph extends Component {
 		this.graphrange = nextProps.graphrange
 		this.ERFmodels = nextProps.ERFmodels
 		this.setState({ graphrange: this.graphrange })
+		console.log(this.plotdata)
+		console.log(this.graphrange)
 		console.log(this.plotdata[this.graphrange])
 
 		//this.buildChart()

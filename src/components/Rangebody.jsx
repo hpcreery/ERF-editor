@@ -13,7 +13,8 @@ const PlainRange = (props) => {
 		},
 	])
 
-	console.log(props.string)
+	// End of lines show as '$' and carriage returns usually show as '^M'.
+	//console.log(props.string)
 
 	// useEffect(() => {
 	//   // Update the document title using the browser API
@@ -138,7 +139,6 @@ const PlainRange = (props) => {
 			value={value}
 			onChange={(value) => handleChange(value)}
 		>
-			{console.log('New Value ' + JSON.stringify(value))}
 			<Editable
 				placeholder='I cant be empty'
 				onClick={(e) => console.log('clicked')}
