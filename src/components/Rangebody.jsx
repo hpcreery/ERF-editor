@@ -4,6 +4,7 @@ import { Slate, Editable, withReact, Editor } from 'slate-react'
 import { withHistory } from 'slate-history'
 import { css } from 'emotion'
 import lineReplace from 'line-replace'
+import { Label, Grid } from 'semantic-ui-react'
 
 const PlainRange = (props) => {
 	const ranges = ''
@@ -12,6 +13,7 @@ const PlainRange = (props) => {
 			children: [{ text: props.string }],
 		},
 	])
+	const [mod, setMod] = useState(false)
 
 	// End of lines show as '$' and carriage returns usually show as '^M'.
 	//console.log(props.string)
@@ -37,6 +39,10 @@ const PlainRange = (props) => {
 
 	const handleChange = (value) => {
 		setValue(value)
+		setMod(true)
+	}
+
+	const writeChange = () => {
 		console.log(props.jsonblock.id + 1)
 		lineReplace({
 			file: props.dir.toString(),
@@ -48,8 +54,28 @@ const PlainRange = (props) => {
 				' # ' +
 				props.jsonblock.comment,
 			addNewLine: false,
-			callback: (e) => console.log(e),
+			callback: (e) => {
+				console.log(e)
+				setMod(false)
+			},
 		})
+	}
+
+	const labelRender = () => {
+		if (mod == true) {
+			return (
+				<Label
+					color='red'
+					horizontal
+					as='a'
+					onClick={console.log('write')}
+				>
+					Write
+				</Label>
+			)
+		} else {
+			return
+		}
 	}
 
 	// regex ^(?:[^,]*[,]){magicnumber}[^\d]*(\d+)
@@ -134,19 +160,25 @@ const PlainRange = (props) => {
 	const editor = useMemo(() => withHistory(withReact(createEditor())), [])
 
 	return (
-		<Slate
-			editor={editor}
-			value={value}
-			onChange={(value) => handleChange(value)}
-		>
-			<Editable
-				placeholder='I cant be empty'
-				onClick={(e) => console.log('clicked')}
-				decorate={decorate}
-				renderLeaf={(props) => <Leaf {...props} />}
-			/>
-			{/* {console.log(value[0].children[0].text)} */}
-		</Slate>
+		<Grid columns={2}>
+			<Grid.Column width={11}>
+				<Slate
+					editor={editor}
+					value={value}
+					onChange={(value) => handleChange(value)}
+				>
+					<Editable
+						placeholder='I cant be empty'
+						onClick={(e) => console.log('clicked')}
+						decorate={decorate}
+						renderLeaf={(props) => <Leaf {...props} />}
+					/>
+					{/* {console.log(value[0].children[0].text)} */}
+				</Slate>
+			</Grid.Column>
+
+			<Grid.Column width={5}>{labelRender()}</Grid.Column>
+		</Grid>
 	)
 }
 

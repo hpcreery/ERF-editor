@@ -16,12 +16,12 @@ function lineReplace({ file, line, text, addNewLine = true, callback }) {
 		// Replace.
 		if (currentLine === line) {
 			replacedText = originalLine
-			if (addNewLine) return writeStream.write(`${text}\r\n`) // added \r\n to support windows file formats and not break my stream -HC
-			return writeStream.write(`${text}\r\n`)
+			if (addNewLine) return writeStream.write(`${text}\r`) // added \r\n to support windows file formats and not break my stream -HC
+			return writeStream.write(`${text}`)
 		}
 
 		// Save original line.
-		writeStream.write(`${originalLine}\r\n`) // added \r\n to support windows file formats and not break my stream -HC
+		writeStream.write(`${originalLine}\r`) // added \r\n to support windows file formats and not break my stream -HC
 	})
 
 	rl.on('close', () => {
@@ -29,7 +29,20 @@ function lineReplace({ file, line, text, addNewLine = true, callback }) {
 		// Replace original file with fixed file (the temp file).
 		writeStream.end(() => {
 			try {
-				fs.unlink(file, (err) => fs.renameSync(tempFile, file)) // Delete original file.
+				fs.unlink(file, (err) => console.log(err)) // Delete original file.
+				// if (fs.existsSync(path)) {
+				//   //file exists
+				// }
+				const checkTime = 40
+				const timerId = setInterval(() => {
+					const isExists = fs.existsSync(file, 'utf8')
+					if (isExists) {
+						// do something here
+						clearInterval(timerId)
+					} else {
+						fs.renameSync(tempFile, file) // Rename temp file with original file name.
+					}
+				}, checkTime)
 				//fs.renameSync(tempFile, file) // Rename temp file with original file name.
 			} catch (e) {
 				throw e

@@ -94,8 +94,8 @@ export class Pretty extends Component {
 
 	contentMaker = (jsonERF) => {
 		this.col1 = 6
-		this.col2 = 7
-		this.col3 = 2
+		this.col2 = 8
+		this.col3 = 1
 
 		switch (jsonERF.type) {
 			case 'header':
@@ -288,9 +288,7 @@ export class Pretty extends Component {
 										<Grid.Column
 											width={1}
 											textAlign='center'
-										>
-											=
-										</Grid.Column>
+										></Grid.Column>
 										<Grid.Column
 											width={15}
 											textAlign='left'
@@ -309,9 +307,11 @@ export class Pretty extends Component {
 										content={jsonERF.comment}
 										position='top center'
 										trigger={
-											<Label size='small'>
-												<Icon name='info' />
-												info
+											<Label size='small' as='a'>
+												<Icon
+													name='info'
+													fitted='true'
+												/>
 											</Label>
 										}
 									/>
