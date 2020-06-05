@@ -4,7 +4,8 @@ import { Slate, Editable, withReact, Editor } from 'slate-react'
 import { withHistory } from 'slate-history'
 import { css } from 'emotion'
 import lineReplace from 'line-replace'
-import { Label, Grid } from 'semantic-ui-react'
+import { Label, Grid, Icon } from 'semantic-ui-react'
+import './Theme.css'
 
 const PlainRange = (props) => {
 	const ranges = ''
@@ -39,8 +40,27 @@ const PlainRange = (props) => {
 
 	const handleChange = (value) => {
 		setValue(value)
-		setMod(true)
 	}
+
+	const keyPress = (e) => {
+		// also do not allow character
+		// console.log('pushed ', e.keyCode)
+		if (e.keyCode == 13) {
+			 console.log('write', e.target.value);
+			 e.preventDefault()
+			 setMod(false)
+		} else if (mod !== true) {
+			console.log('changing mod' + mod)
+			setMod(true)
+		}
+
+		if (e.keyCode < 48 || e.keyCode > 57) {
+			if (e.keyCode != 188 && e.keyCode != 8 && e.keyCode != 37 && e.keyCode != 39 && e.keyCode != 35 && e.keyCode != 36) { // only allow l, r, comma, and backspace
+				e.preventDefault()
+			}
+
+		} 
+ }
 
 	const writeChange = () => {
 		console.log(props.jsonblock.id + 1)
@@ -77,6 +97,7 @@ const PlainRange = (props) => {
 			return
 		}
 	}
+
 
 	// regex ^(?:[^,]*[,]){magicnumber}[^\d]*(\d+)
 	// or capture all digits (\d+)
@@ -166,10 +187,12 @@ const PlainRange = (props) => {
 					editor={editor}
 					value={value}
 					onChange={(value) => handleChange(value)}
+					
 				>
 					<Editable
 						placeholder='I cant be empty'
 						onClick={(e) => console.log('clicked')}
+						onKeyDown={(e) => keyPress(e)}
 						decorate={decorate}
 						renderLeaf={(props) => <Leaf {...props} />}
 					/>
@@ -177,7 +200,20 @@ const PlainRange = (props) => {
 				</Slate>
 			</Grid.Column>
 
-			<Grid.Column width={5}>{labelRender()}</Grid.Column>
+			<Grid.Column width={5}>
+				{
+				mod && 
+				<Label
+					size='small'
+					color='red'
+					className='Labelright'>
+						<Icon
+							name='upload'
+							fitted='true'
+						/>
+				</Label>
+				}
+			</Grid.Column>
 		</Grid>
 	)
 }

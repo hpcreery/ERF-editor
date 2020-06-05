@@ -84,3 +84,8 @@ canvas {
 .OverCanvas {
 	z-index: 20 !important;
 }
+
+.Labelright {
+	float: right !important;
+	padding-right: 15px !important;
+}
