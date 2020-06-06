@@ -78,6 +78,10 @@ export class Pretty extends Component {
 		console.log(this.graphrange)
 	}
 
+	graphDataChange = () => {
+		this.graphElement.current.newGraphData(this.state.dir)
+	}
+
 	titleRef = createRef()
 	bodyRef = createRef()
 
@@ -298,6 +302,9 @@ export class Pretty extends Component {
 												dir={this.state.dir}
 												string={jsonERF.string}
 												jsonblock={jsonERF}
+												graphdatachange={() =>
+													this.graphDataChange()
+												}
 											/>
 										</Grid.Column>
 									</Grid>

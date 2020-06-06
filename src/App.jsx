@@ -7,7 +7,7 @@ const dialog = electron.remote.dialog
 const ipc = electron.ipcRenderer
 
 var dirc =
-	'/Users/Professional/Documents/MyPrograms/JavaScript/Genesis/erfeditor/ERF-editor/public/cmpetch.erf'
+	'/Users/Professional/Documents/MyPrograms/JavaScript/Genesis/erfeditor/ERF-editor/public/newcrcmpetch.erf'
 //const dirc =
 //'C:\\Users\\huntercreery\\Documents\\Projects\\JS\\ERF\\editor\\public\\cmpetch.erf'
 //  'C:\\Users\\huntercreery\\Downloads\\ERFs\\drill_touch.erf'

@@ -22,6 +22,7 @@ import {
 	Dropdown,
 } from 'semantic-ui-react'
 import { Slider } from 'react-semantic-ui-range'
+import Graphdata from './Graphdata'
 
 export class Rangegraph extends Component {
 	constructor(props) {
@@ -31,7 +32,11 @@ export class Rangegraph extends Component {
 		this.graphrange = this.props.graphrange
 		this.max = 20
 
-		this.state = { graphrange: this.graphrange, max: this.max }
+		this.state = {
+			graphrange: this.graphrange,
+			max: this.max,
+			plotdata: this.plotdata,
+		}
 	}
 	static propTypes = {}
 
@@ -71,10 +76,10 @@ export class Rangegraph extends Component {
 			return position
 		}
 		console.log('CRITICAL ERROR in this json')
-		console.log(this.plotdata[this.graphrange])
-		console.log(this.plotdata)
+		console.log(this.state.plotdata[this.graphrange])
+		console.log(this.state.plotdata)
 		console.log(this.graphrange)
-		this.graphFilter(this.plotdata[this.graphrange])
+		this.graphFilter(this.state.plotdata[this.graphrange])
 		if (typeof this.rangeChart !== 'undefined') this.rangeChart.destroy()
 
 		const chartref = this.chartRef.current.getContext('2d')
@@ -87,7 +92,7 @@ export class Rangegraph extends Component {
 					{
 						label: ' Mils',
 						steppedLine: 'after',
-						data: this.plotdata[this.state.graphrange].red,
+						data: this.state.plotdata[this.state.graphrange].red,
 						backgroundColor: 'rgba(99, 10, 10, 0.5)',
 						borderColor: 'rgba(99, 10, 10, 1)',
 						borderWidth: 1,
@@ -96,7 +101,7 @@ export class Rangegraph extends Component {
 					},
 					{
 						label: ' Mils',
-						data: this.plotdata[this.state.graphrange].yellow,
+						data: this.state.plotdata[this.state.graphrange].yellow,
 						steppedLine: 'after',
 						backgroundColor: 'rgba(99, 99, 10, 0.5)',
 						borderColor: 'rgba(99, 99, 10, 1)',
@@ -106,7 +111,7 @@ export class Rangegraph extends Component {
 					},
 					{
 						label: ' Mils',
-						data: this.plotdata[this.state.graphrange].green,
+						data: this.state.plotdata[this.state.graphrange].green,
 						steppedLine: 'after',
 						backgroundColor: 'rgba(10, 90, 10, 0.5)',
 						borderColor: 'rgba(10, 90, 10, 1)',
@@ -117,6 +122,7 @@ export class Rangegraph extends Component {
 				],
 			},
 			options: {
+				animation: false,
 				tooltips: {
 					enabled: true,
 					mode: 'index',
@@ -180,6 +186,7 @@ export class Rangegraph extends Component {
 		this.graphrange = nextProps.graphrange
 		this.ERFmodels = nextProps.ERFmodels
 		this.setState({ graphrange: this.graphrange })
+		this.setState({ plotdata: this.plotdata })
 		console.log(this.plotdata)
 		console.log(this.graphrange)
 		console.log(this.plotdata[this.graphrange])
@@ -211,6 +218,13 @@ export class Rangegraph extends Component {
 		console.log(this.state.graphrange)
 
 		//this.plotdata = newplotdata
+	}
+
+	newGraphData = (dir) => {
+		this.plotdata = Graphdata(dir)
+		this.setState({ plotdata: this.plotdata })
+		console.log('updating Graph as well')
+		//this.setState()
 	}
 
 	render() {

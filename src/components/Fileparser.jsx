@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './Theme.css'
 import Pretty from './Pretty'
+import Graphdata from './Graphdata'
 
 const fs = window.require('fs')
 const electron = window.require('electron').remote
@@ -39,74 +40,8 @@ class ReadFiles extends Component {
 
 	//range.model.color
 	graphstruct = () => {
-		this.plotdata = {}
-
-		for (var i = 0; i < this.lines.length; i++) {
-			this.erf[i] = { string: this.lines[i] }
-			//console.log(this.erf[i])
-
-			if (this.lines[i].startsWith('.')) {
-				var value = this.erf[i].string
-					.split(' ')
-					.slice(1)
-					.join(' ')
-					.concat('')
-				var object = this.erf[i].string.split(' ').shift()
-				if (
-					object === '.name' ||
-					object === '.uid' ||
-					object === '.menu' ||
-					object === '.modify'
-				) {
-				}
-				if (object === '.param') {
-				}
-				if (object === '.model') {
-				}
-				if (object === '.ranges\r') {
-					//this.plotdata[object] = {}
-					var workingrange = object
-				}
-				if (object === '.pdef\r') {
-				}
-				if (object === '.vars\r') {
-				}
-			} else if (this.lines[i].startsWith('#')) {
-			} else if (this.lines[i].startsWith(' ')) {
-			} else if (this.lines[i].startsWith('\r')) {
-			} else {
-				var invalue = this.erf[i].string
-					.split(' ')
-					.slice(1)
-					.join(' ')
-					.concat('')
-				var inobject = this.erf[i].string.split(' ').shift()
-				var invalue = invalue.split('#')
-				var comment = invalue[1]
-				var invalue = invalue[0]
-
-				// Line format:
-				// object + ' ' + value + '#' + comment
-
-				if (object === '.colors') {
-				}
-				if (object === '.ranges\r') {
-					const rangearray = invalue.match(/-?\d+\.?\d*(?!o)/g) //-?\d+\.?\d*(?!o)
-					console.log('here is a range')
-					this.colorArraySort(rangearray, inobject)
-				}
-				if (object === '.ranges') {
-					const rangearray = invalue.match(/-?\d+\.?\d*(?!o)/g) //-?\d+\.?\d*(?!o)
-					//console.log('here is a range')
-					this.colorArraySort(rangearray, inobject)
-				}
-				if (object === '.pdef\r') {
-				}
-				if (object === '.vars\r') {
-				}
-			}
-		}
-		console.log(this.plotdata)
+		this.plotdata = Graphdata(this.state.dir)
+		//console.log(this.plotdata)
 	}
 
 	colorArraySort(rangearray, object) {

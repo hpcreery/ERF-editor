@@ -16,12 +16,15 @@ function lineReplace({ file, line, text, addNewLine = true, callback }) {
 		// Replace.
 		if (currentLine === line) {
 			replacedText = originalLine
-			if (addNewLine) return writeStream.write(`${text}\r`) // added \r\n to support windows file formats and not break my stream -HC
-			return writeStream.write(`${text}`)
+			if (addNewLine) {
+				return writeStream.write(`${text}\n`) // added \n to preexisting \r to create a CR-LF file format -HC
+			} else {
+				return writeStream.write(`${text}\n`)
+			}
 		}
 
 		// Save original line.
-		writeStream.write(`${originalLine}\r`) // added \r\n to support windows file formats and not break my stream -HC
+		writeStream.write(`${originalLine}\r\n`) // added \n to preexisting \r to create a CR-LF file format -HC
 	})
 
 	rl.on('close', () => {

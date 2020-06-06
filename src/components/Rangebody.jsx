@@ -7,6 +7,9 @@ import lineReplace from 'line-replace'
 import { Label, Grid, Icon } from 'semantic-ui-react'
 import './Theme.css'
 
+// TESTING
+import Graphdata from './Graphdata'
+
 const PlainRange = (props) => {
 	const ranges = ''
 	const [value, setValue] = useState([
@@ -46,21 +49,29 @@ const PlainRange = (props) => {
 		// also do not allow character
 		// console.log('pushed ', e.keyCode)
 		if (e.keyCode == 13) {
-			 console.log('write', e.target.value);
-			 e.preventDefault()
-			 setMod(false)
+			console.log('write', e.target.value)
+			e.preventDefault()
+			//setMod(false)
+			writeChange()
 		} else if (mod !== true) {
-			console.log('changing mod' + mod)
+			//console.log('changing mod' + mod)
 			setMod(true)
 		}
 
 		if (e.keyCode < 48 || e.keyCode > 57) {
-			if (e.keyCode != 188 && e.keyCode != 8 && e.keyCode != 37 && e.keyCode != 39 && e.keyCode != 35 && e.keyCode != 36) { // only allow l, r, comma, and backspace
+			if (
+				e.keyCode != 188 &&
+				e.keyCode != 8 &&
+				e.keyCode != 37 && //left
+				e.keyCode != 39 && //right
+				e.keyCode != 35 && //
+				e.keyCode != 36 &&
+				e.keyCode != 32
+			) {
 				e.preventDefault()
 			}
-
-		} 
- }
+		}
+	}
 
 	const writeChange = () => {
 		console.log(props.jsonblock.id + 1)
@@ -77,6 +88,9 @@ const PlainRange = (props) => {
 			callback: (e) => {
 				console.log(e)
 				setMod(false)
+				console.log(props.dir)
+				//Graphdata(props.dir)
+				props.graphdatachange()
 			},
 		})
 	}
@@ -97,7 +111,6 @@ const PlainRange = (props) => {
 			return
 		}
 	}
-
 
 	// regex ^(?:[^,]*[,]){magicnumber}[^\d]*(\d+)
 	// or capture all digits (\d+)
@@ -187,7 +200,6 @@ const PlainRange = (props) => {
 					editor={editor}
 					value={value}
 					onChange={(value) => handleChange(value)}
-					
 				>
 					<Editable
 						placeholder='I cant be empty'
@@ -201,18 +213,11 @@ const PlainRange = (props) => {
 			</Grid.Column>
 
 			<Grid.Column width={5}>
-				{
-				mod && 
-				<Label
-					size='small'
-					color='red'
-					className='Labelright'>
-						<Icon
-							name='upload'
-							fitted='true'
-						/>
-				</Label>
-				}
+				{mod && (
+					<Label size='small' color='red' className='Labelright'>
+						<Icon name='upload' fitted='true' />
+					</Label>
+				)}
 			</Grid.Column>
 		</Grid>
 	)

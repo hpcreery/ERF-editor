@@ -31,8 +31,8 @@
 .colors 991010 999910 109010 
 
 .ranges
-enlarge_smd =   0 , 1 , 1001 #  Range - smd pads that have been enlarged. (Note: this function operates on all rect. and oval pads - they do not need the .smd attribute).  
-enlarge_pad    =  0 , 1 , 1000# Range - round and square pads that have been enlarged.  
+enlarge_smd =        0 , 12 , 15      #       Range - smd pads that have been enlarged. (Note: this function operates on all rect. and oval pads - they do not need the .smd attribute).  
+enlarge_pad =    0 , 13 , 1000  #   Range - round and square pads that have been enlarged.  
 enlarge_line    =  0 , 1 , 1000# Range - lines and arcs that have been enlarged. (Note: text is included in this catagory, but can be ignored by using the parameters).  
 enlarge_text    =  0 , 1 , 1000# Range - not used after  Genesis version 3.2. Included to maintain backwards compatability.  
 enlarge_surface    =  0 , 1 , 1000# Range - surfaces that have been enlarged.  
