@@ -80,9 +80,9 @@ const PlainRange = (props) => {
 			line: props.jsonblock.id + 1,
 			text:
 				props.jsonblock.object +
-				' = ' +
+				' =' +
 				value[0].children[0].text +
-				' # ' +
+				' #' +
 				props.jsonblock.comment,
 			addNewLine: false,
 			callback: (e) => {
