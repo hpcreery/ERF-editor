@@ -11,6 +11,7 @@ const url = require('url')
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
+let helpWindow
 
 function createWindow() {
 	// Create the browser window.
@@ -59,7 +60,29 @@ function createWindow() {
 		mainWindow = null
 	})
 
-	// Install React Dev Tools
+	// Create the help window
+	helpWindow = new BrowserWindow({
+		width: 1025,
+		height: 800,
+		webPreferences: { nodeIntegration: true },
+		titleBarStyle: 'hidden', //frameless
+	})
+
+	// and load the help.htm necessary
+	const starthelpUrl = url.format({
+		pathname: path.join(__dirname, '/../public/enlarge_pad.htm'),
+		protocol: 'file:',
+		slashes: true,
+	})
+	helpWindow.loadURL(starthelpUrl)
+
+	// Emitted when the window is closed.
+	helpWindow.on('closed', function () {
+		// Dereference the window object, usually you would store windows
+		// in an array if your app supports multi windows, this is the time
+		// when you should delete the corresponding element.
+		helpWindow = null
+	})
 }
 
 // This method will be called when Electron has finished

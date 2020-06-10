@@ -23,6 +23,7 @@ import { Link, animateScroll as scroll, scroller } from 'react-scroll'
 import Rangegraph from './Graph'
 import PlainRange from './Rangebody'
 import ParameterMenu from './Parameters'
+import PlainParamter from './Parameterbody'
 import './Theme.css'
 
 var Chart = require('chart.js')
@@ -141,6 +142,12 @@ export class Pretty extends Component {
 							</div>
 						)
 					case '.menu':
+						// Heavenly regex : ^(?:[^,\r\n]*[,]){#}[^\w]*([^,\r\n]+)
+						// var regexp = new RegExp(
+						// 	'^(?:[^,]*[,]){' + i + '}[^\\d]*(\\d+(\\.\\d)?)',
+						// 	'g'
+						// )
+						// type = regexp.exec(value[0].children[0].text)
 						return (
 							<div>
 								<Segment
@@ -327,42 +334,9 @@ export class Pretty extends Component {
 						)
 					case '.pdef\r':
 						return (
-							<Grid
-								columns={3}
-								verticalAlign='middle'
-								className='densegrid'
-							>
-								<Grid.Column
-									width={this.col1}
-									textAlign='right'
-								>
-									<Label size='large'>{jsonERF.object}</Label>
-								</Grid.Column>
-								<Grid.Column width={this.col2}>
-									<Input
-										type='text'
-										placeholder='Incrimental Values'
-										defaultValue={jsonERF.string}
-										fluid
-										size='small'
-										id={jsonERF.id}
-										string={jsonERF.string}
-										onChange={this.handleBasicChange}
-									/>
-								</Grid.Column>
-								<Grid.Column width={this.col3}>
-									<Popup
-										content={jsonERF.comment}
-										position='top center'
-										trigger={
-											<Label>
-												<Icon name='info' />
-												info
-											</Label>
-										}
-									/>
-								</Grid.Column>
-							</Grid>
+							<div>
+								<PlainParamter jsonERF={jsonERF} />
+							</div>
 						)
 					case '.vars\r':
 						return (

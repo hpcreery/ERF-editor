@@ -17,7 +17,6 @@ function Graphdata(dir) {
 	}
 
 	const graphstruct = (dir) => {
-		console.log('THIS IS STRANGE' + dir)
 		var contents = fs.readFileSync(dir, 'utf8')
 		var lines = contents.split('\n')
 		var filelength = lines.length

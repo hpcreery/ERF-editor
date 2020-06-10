@@ -19,6 +19,7 @@ import {
 	Dropdown,
 } from 'semantic-ui-react'
 import './Theme.css'
+import '../../public/enlarge_pad.htm'
 
 export default class ParameterMenu extends Component {
 	constructor(props) {
