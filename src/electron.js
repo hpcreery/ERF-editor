@@ -62,12 +62,38 @@ function createWindow() {
 
 	// Create the help window
 	helpWindow = new BrowserWindow({
-		width: 1025,
-		height: 800,
+		width: 600,
+		height: 400,
 		webPreferences: { nodeIntegration: true },
 		titleBarStyle: 'hidden', //frameless
 	})
+	helpWindow.removeMenu()
+	// and load the help.htm necessary
+	const starthelpUrl = url.format({
+		pathname: path.join(__dirname, '/../public/enlarge_pad.htm'),
+		protocol: 'file:',
+		slashes: true,
+	})
+	helpWindow.loadURL(starthelpUrl)
 
+	// Emitted when the window is closed.
+	helpWindow.on('closed', function () {
+		// Dereference the window object, usually you would store windows
+		// in an array if your app supports multi windows, this is the time
+		// when you should delete the corresponding element.
+		helpWindow = null
+	})
+}
+
+function createhelpWindow(helphtm) {
+	// Create the help window
+	helpWindow = new BrowserWindow({
+		width: 600,
+		height: 400,
+		webPreferences: { nodeIntegration: true },
+		titleBarStyle: 'hidden', //frameless
+	})
+	helpWindow.removeMenu()
 	// and load the help.htm necessary
 	const starthelpUrl = url.format({
 		pathname: path.join(__dirname, '/../public/enlarge_pad.htm'),

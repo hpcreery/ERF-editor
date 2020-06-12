@@ -26,6 +26,13 @@ import ParameterMenu from './Parameters'
 import PlainParamter from './Parameterbody'
 import './Theme.css'
 
+const electron = window.require('electron')
+const BrowserWindow = electron.remote.BrowserWindow
+const dialog = electron.remote.dialog
+const ipc = electron.ipcRenderer
+const path = require('path')
+const url = require('url')
+
 var Chart = require('chart.js')
 
 export class Pretty extends Component {
@@ -49,6 +56,34 @@ export class Pretty extends Component {
 	}
 
 	static propTypes = {}
+
+
+	createhelpWindow(helphtm) {
+		// Create the help window
+		let helpWindow
+		helpWindow = new BrowserWindow({
+			width: 600,
+			height: 400,
+			webPreferences: { nodeIntegration: true },
+			titleBarStyle: 'hidden', //frameless
+		})
+		helpWindow.removeMenu()
+		// and load the help.htm necessary
+		const starthelpUrl = url.format({
+			pathname: path.join(__dirname, '/../public/enlarge_pad.htm'),
+			protocol: 'file:',
+			slashes: true,
+		})
+		helpWindow.loadURL(starthelpUrl)
+	
+		// Emitted when the window is closed.
+		helpWindow.on('closed', function () {
+			// Dereference the window object, usually you would store windows
+			// in an array if your app supports multi windows, this is the time
+			// when you should delete the corresponding element.
+			helpWindow = null
+		})
+	}
 
 	handleRangeChange = (e, { id, location, string, value }) => {
 		value = e.target.value
@@ -259,10 +294,6 @@ export class Pretty extends Component {
 				}
 				switch (jsonERF.parent) {
 					case '.ranges\r':
-						this.rangevalue = this.rangeSeperator(
-							jsonERF.string,
-							jsonERF.object
-						)
 						//console.log(this.rangevalue)
 						//this.rangePlotterData(this.rangevalue, jsonERF.object)
 						return (
@@ -321,7 +352,7 @@ export class Pretty extends Component {
 										content={jsonERF.comment}
 										position='top center'
 										trigger={
-											<Label size='small' as='a'>
+											<Label size='small' as='a'  onClick={() => this.createhelpWindow()}>
 												<Icon
 													name='info'
 													fitted='true'

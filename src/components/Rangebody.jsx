@@ -162,6 +162,7 @@ const PlainRange = (props) => {
 				// console.log(
 				// 	search + ' ' + regexp + ' ' + offset + ' ' + search.length
 				// )
+				
 				ranges.push({
 					anchor: { path, offset: offset - search.length },
 					focus: { path, offset },
@@ -169,6 +170,9 @@ const PlainRange = (props) => {
 					color: colors[i],
 				})
 			} catch (err) {
+				console.log(props.jsonblock.id)
+				presearch = regexp.exec(value[0].children[0].text)
+				console.log(props.jsonblock)
 				// method if range is not completex
 			}
 		}
