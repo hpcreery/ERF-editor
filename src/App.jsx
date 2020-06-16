@@ -5,6 +5,7 @@ import ReadFiles from './components/Fileparser' // Components can only live in s
 const electron = window.require('electron')
 const dialog = electron.remote.dialog
 const ipc = electron.ipcRenderer
+const { execSync, exec } = window.require("child_process")
 
 var dirc =
 //	'/Users/Professional/Documents/MyPrograms/JavaScript/Genesis/erfeditor/ERF-editor/public/newcrcmpetch.erf'
@@ -15,6 +16,21 @@ var dirc =
 class App extends Component {
 	state = {
 		dir: dirc,
+	}
+
+	fileconvert = () => {
+	// 	execSync("ls -la", (error, stdout, stderr) => {
+	// 		if (error) {
+	// 				console.log(`error: ${error.message}`);
+	// 				return;
+	// 		}
+	// 		if (stderr) {
+	// 				console.log(`stderr: ${stderr}`);
+	// 				return;
+	// 		}
+	// 		console.log(`stdout: ${stdout}`);
+	// });
+	console.log(execSync("ls -la").toString())
 	}
 
 	directoryopener = () => {
@@ -38,7 +54,9 @@ class App extends Component {
 			console.log(arg) // prints "pong"
 		})
 	}
-	componentWillMount() {}
+	componentWillMount() {
+		this.fileconvert()
+	}
 	componentDidUpdate() {}
 
 	render() {

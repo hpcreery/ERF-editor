@@ -59,6 +59,9 @@ export class Pretty extends Component {
 
 
 	createhelpWindow(helphtm) {
+		console.log(path.join(__dirname, '/../public/enlarge_pad.htm'))
+		// let mainfile = path.parse(this.state.dir).name
+		// console.log(mainfile)
 		// Create the help window
 		let helpWindow
 		helpWindow = new BrowserWindow({
@@ -262,36 +265,36 @@ export class Pretty extends Component {
 				}
 
 			case 'sub':
-				switch (jsonERF.object) {
-					case '.param':
-						return (
-							<Grid
-								columns={3}
-								verticalAlign='middle'
-								className='densegrid'
-							>
-								<Grid.Column
-									width={this.col1}
-									textAlign='right'
-								>
-									<Button size='tiny'>Parameter</Button>
-								</Grid.Column>
-								<Grid.Column width={this.col2}>
-									<Input
-										type='text'
-										placeholder='Incrimental Values'
-										defaultValue={jsonERF.string}
-										fluid
-										size='small'
-										id={jsonERF.id}
-										string={jsonERF.string}
-										onChange={this.handleBasicChange}
-									/>
-								</Grid.Column>
-								<Grid.Column width={this.col3}></Grid.Column>
-							</Grid>
-						)
-				}
+				// switch (jsonERF.object) {
+				// 	case '.param':
+				// 		return (
+				// 			<Grid
+				// 				columns={3}
+				// 				verticalAlign='middle'
+				// 				className='densegrid'
+				// 			>
+				// 				<Grid.Column
+				// 					width={this.col1}
+				// 					textAlign='right'
+				// 				>
+				// 					<Button size='tiny'>Parameter</Button>
+				// 				</Grid.Column>
+				// 				<Grid.Column width={this.col2}>
+				// 					<Input
+				// 						type='text'
+				// 						placeholder='Incrimental Values'
+				// 						defaultValue={jsonERF.string}
+				// 						fluid
+				// 						size='small'
+				// 						id={jsonERF.id}
+				// 						string={jsonERF.string}
+				// 						onChange={this.handleBasicChange}
+				// 					/>
+				// 				</Grid.Column>
+				// 				<Grid.Column width={this.col3}></Grid.Column>
+				// 			</Grid>
+				// 		)
+				// }
 				switch (jsonERF.parent) {
 					case '.ranges\r':
 						//console.log(this.rangevalue)

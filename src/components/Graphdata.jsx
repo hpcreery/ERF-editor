@@ -3,7 +3,7 @@ const fs = window.require('fs')
 
 function Graphdata(dir) {
 	const colorArraySort = (rangearray, object, plotdata) => {
-		//console.log('umm ' + rangearray + object)
+		console.log('umm ' + rangearray + object)
 		if (plotdata[object] == undefined) {
 			plotdata[object] = { red: [], yellow: [], green: [] }
 		}
@@ -13,7 +13,7 @@ function Graphdata(dir) {
 			plotdata[object].green.push(rangearray[2])
 		}
 		//console.log(plotdata)
-		return null
+		return plotdata
 	}
 
 	const graphstruct = (dir) => {
@@ -57,11 +57,11 @@ function Graphdata(dir) {
 			} else if (lines[i].startsWith('\r')) {
 			} else {
 				var invalue = erf.string
-					.split(' ')
+					.split('=')
 					.slice(1)
-					.join(' ')
+					.join('=')
 					.concat('')
-				var inobject = erf.string.split(' ').shift()
+				var inobject = erf.string.split('=').shift().trim()
 				var invalue = invalue.split('#')
 				var comment = invalue[1]
 				var invalue = invalue[0]
@@ -73,7 +73,12 @@ function Graphdata(dir) {
 				}
 				if (object === '.ranges\r') {
 					const rangearray = invalue.match(/-?\d+\.?\d*(?!o)/g) //-?\d+\.?\d*(?!o)
-					//console.log('here is a range')
+					//console.log('here is a range' + rangearray)
+					colorArraySort(rangearray, inobject, plotdata)
+				}
+				if (object === '.ranges') {
+					const rangearray = invalue.match(/-?\d+\.?\d*(?!o)/g) //-?\d+\.?\d*(?!o)
+					//console.log('here is a range' + rangearray)
 					colorArraySort(rangearray, inobject, plotdata)
 				}
 				if (object === '.pdef\r') {

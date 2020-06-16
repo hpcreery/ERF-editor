@@ -29,6 +29,17 @@ const dialog = electron.dialog
 // .vars	.o	#
 // =======
 
+
+
+
+// Q: What style files do Genesis use on Windows?
+//    DOS style (CR-LF) or Unix style (LF)
+// A: Genesis works with both.  The c-shell has
+//    some problem with DOS style files.  A utility /bin/remove_cr has been
+//    provided to convert files from DOS to Unix.
+
+
+
 class ReadFiles extends Component {
 	constructor(props) {
 		super(props)
@@ -39,8 +50,9 @@ class ReadFiles extends Component {
 	}
 
 	//range.model.color
-	graphstruct = () => {
-		this.plotdata = Graphdata(this.state.dir)
+	graphstruct = (dir) => {
+		console.log(dir)
+		this.plotdata = Graphdata(dir.toString())
 		//console.log(this.plotdata)
 	}
 
@@ -205,15 +217,14 @@ class ReadFiles extends Component {
 			} else if (this.lines[i].startsWith('\r')) {
 			} else {
 				var invalue = this.lines[i]
-					.split(' ')
+					.split('=')
 					.slice(1)
-					.join(' ')
+					.join('=')
 					.concat('')
-				var inobject = this.lines[i].split(' ').shift()
+				var inobject = this.lines[i].split('=').shift().trim()
 				var invalue = invalue.split('#')
 				var comment = invalue[1]
-				var invalue = invalue[0].split('=')
-				var invalue = invalue[1]
+				var invalue = invalue[0]
 				this.jsonERF.push({
 					id: i,
 					type: 'sub',
@@ -237,7 +248,7 @@ class ReadFiles extends Component {
 	}
 
 	componentWillUpdate() {
-		this.graphstruct() //testing
+		//this.graphstruct(this.state.dir) //testing
 		console.log('Component is about to update')
 	}
 
@@ -252,7 +263,7 @@ class ReadFiles extends Component {
 		this.filelength = this.lines.length
 		this.modelstruct() // main model structure
 		this.jsonstruct() // flat json structure
-		this.graphstruct() // rearranged data for the graph
+		this.graphstruct(this.state.dir) // rearranged data for the graph
 		console.log('there has been an update to the data structures')
 		console.log(this.state.dir)
 	}
@@ -263,7 +274,7 @@ class ReadFiles extends Component {
 		this.lines = this.contents.split('\n')
 		this.modelstruct() // main model structure
 		this.jsonstruct()
-		this.graphstruct()
+		this.graphstruct(nextProps.dir)
 		console.log('there has been an update to the data structures')
 		this.setState({ dir: String(nextProps.dir) })
 		console.log('File parser recieved props')

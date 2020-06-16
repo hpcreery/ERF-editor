@@ -32,7 +32,7 @@ function lineReplace({ file, line, text, addNewLine = true, callback }) {
 		// Replace original file with fixed file (the temp file).
 		writeStream.end(() => {
 			try {
-				fs.unlink(file, (err) => console.log(err)) // Delete original file.
+				fs.unlinkSync(file) // Delete original file.
 				// if (fs.existsSync(path)) {
 				//   //file exists
 				// }
@@ -43,7 +43,7 @@ function lineReplace({ file, line, text, addNewLine = true, callback }) {
 						// do something here
 						clearInterval(timerId)
 					} else {
-						fs.renameSync(tempFile, file) // Rename temp file with original file name.
+						fs.rename(tempFile, file, () => callback({ file, line, replacedText, text })) // Rename temp file with original file name.
 					}
 				}, checkTime)
 				//fs.renameSync(tempFile, file) // Rename temp file with original file name.
@@ -51,9 +51,11 @@ function lineReplace({ file, line, text, addNewLine = true, callback }) {
 				throw e
 			}
 
-			callback({ file, line, replacedText, text })
+			
 		})
+		
 	})
+	
 }
 
 module.exports = lineReplace

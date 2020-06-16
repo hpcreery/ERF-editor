@@ -35,7 +35,7 @@ function PlainParameter(props) {
 				size='mini'
 				id={jsonERF.id}
 				string={jsonERF.string}
-				onChange={console.log('changed')}
+				onChange={ () => console.log('changed')}
 			/>
 		)
 	}
