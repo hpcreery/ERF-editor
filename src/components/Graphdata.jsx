@@ -1,9 +1,9 @@
 import React from 'react'
 const fs = window.require('fs')
 
+// Updates plotdatat from directory given as a prop
 function Graphdata(dir) {
 	const colorArraySort = (rangearray, object, plotdata) => {
-		console.log('umm ' + rangearray + object)
 		if (plotdata[object] == undefined) {
 			plotdata[object] = { red: [], yellow: [], green: [] }
 		}
@@ -12,7 +12,6 @@ function Graphdata(dir) {
 			plotdata[object].yellow.push(rangearray[1])
 			plotdata[object].green.push(rangearray[2])
 		}
-		//console.log(plotdata)
 		return plotdata
 	}
 
@@ -20,15 +19,13 @@ function Graphdata(dir) {
 		var contents = fs.readFileSync(dir, 'utf8')
 		var lines = contents.split('\n')
 		var filelength = lines.length
-		//console.log(filelength)
-		//graphstruct() // rearranged data for the graph
 		console.log('there has been an update to the graph data structure')
 		var plotdata = {}
 		var erf
 
+		// Iterate throght each line in .erf
 		for (var i = 0; i < lines.length; i++) {
 			var erf = { string: lines[i] }
-			//console.log(erf)
 
 			if (lines[i].startsWith('.')) {
 				var value = erf.string.split(' ').slice(1).join(' ').concat('')
@@ -72,8 +69,7 @@ function Graphdata(dir) {
 				if (object === '.colors') {
 				}
 				if (object === '.ranges') {
-					const rangearray = invalue.match(/-?\d+\.?\d*(?!o)/g) //-?\d+\.?\d*(?!o)
-					//console.log('here is a range' + rangearray)
+					const rangearray = invalue.match(/-?\d+\.?\d*(?!o)/g) // old: -?\d+\.?\d*(?!o)
 					colorArraySort(rangearray, inobject, plotdata)
 				}
 				if (object === '.pdef') {
@@ -82,7 +78,6 @@ function Graphdata(dir) {
 				}
 			}
 		}
-		//console.log(plotdata)
 		return plotdata
 	}
 	return graphstruct(dir)

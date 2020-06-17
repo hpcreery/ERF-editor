@@ -3,23 +3,10 @@ import PropTypes from 'prop-types'
 var Chart = require('chart.js')
 import './Theme.css'
 import {
-	Button,
-	Segment,
 	Divider,
-	Input,
-	Label,
 	Sticky,
 	Icon,
-	Popup,
-	Rail,
-	Grid,
 	Menu,
-	Table,
-	Header,
-	Placeholder,
-	Ref,
-	Sidebar,
-	Dropdown,
 } from 'semantic-ui-react'
 import { Slider } from 'react-semantic-ui-range'
 import Graphdata from './Graphdata'
@@ -40,27 +27,26 @@ export class Rangegraph extends Component {
 	}
 	static propTypes = {}
 
+	// INACTIVE: can be used to filter points to chart
 	graphFilter = (workingrange) => {
 		var colors = ['red', 'yellow', 'green']
 		colors.forEach((color) => {
 			console.log(workingrange[color])
 			workingrange[color].forEach(this.filter)
 		})
-		//this.plotdata[this.state.currentrange].green.forEach(this.filter)
-		//console.log(workingrange)
 	}
 
+	// INACTIVE: can be used to filter points to chart
 	filter = (currentValue, index, parentarray) => {
 		if (Number(currentValue) >= 1000) {
 			//parentarray[index] = null
-			//max =
-			//console.log(currentValue)
 		}
 	}
 
 	chartRef = React.createRef()
-	//rangeChart = new Chart()
 
+
+	// Main Method for Range Chart using Chart.js
 	buildChart = () => {
 		Chart.Tooltip.positioners.custom = function (elements, position) {
 			if (!elements.length) {
@@ -75,10 +61,6 @@ export class Rangegraph extends Component {
 			}
 			return position
 		}
-		console.log('CRITICAL ERROR in this json')
-		console.log(this.state.plotdata[this.graphrange])
-		console.log(this.state.plotdata)
-		console.log(this.graphrange)
 		this.graphFilter(this.state.plotdata[this.graphrange])
 		if (typeof this.rangeChart !== 'undefined') this.rangeChart.destroy()
 
@@ -158,73 +140,18 @@ export class Rangegraph extends Component {
 		})
 	}
 
-	componentDidMount() {
-		console.log('Component just Mounted')
-		//this.graphFilter(this.plotdata[this.graphrange])
-		//this.graphFilter(this.plotdata[this.state.currentrange])
-		//console.log(this.plotdata[this.state.currentrange].green)
-
-		this.buildChart()
-		//this.rangeChart.update()
-	}
-	componentWillMount() {
-		console.log('Component is about to be Mounted')
-	}
-
-	componentDidReceiveProps(nextProps) {
-		console.log('Component just recieved Props')
-		//this.graphFilter(nextProps.plotdata.green)
-		//this.plotdata = nextProps.plotdata
-		//this.graphrange = nextProps.graphrange
-		//this.graphFilter(this.plotdata[this.graphrange])
-		//this.rangeChart.update()
-		this.buildChart()
-	}
-	componentWillReceiveProps(nextProps) {
-		console.log('Component is about to recieve props')
-		this.plotdata = nextProps.plotdata
-		this.graphrange = nextProps.graphrange
-		this.ERFmodels = nextProps.ERFmodels
-		this.setState({ graphrange: this.graphrange })
-		this.setState({ plotdata: this.plotdata })
-		console.log(this.plotdata)
-		console.log(this.graphrange)
-		console.log(this.plotdata[this.graphrange])
-
-		//this.buildChart()
-	}
-
-	componentDidUpdate() {
-		console.log('Component just Updated')
-		//this.graphFilter(this.plotdata[this.graphrange])
-		//console.log(this.plotdata[this.graphrange].red)
-
-		console.log(this.plotdata[this.graphrange])
-		//this.rangeChart.update()
-		//this.buildChart()
-		//this.rangeChart.update()
-		this.buildChart()
-	}
-
-	componentWillUpdate() {
-		console.log('Component is about to update')
-		//this.setState({ graphrange: this.graphrange })
-	}
-
+	// Called from Pretty to update Range to Graph
 	newGraph = (newgraphrange, newplotdata) => {
 		console.log('Rendering new graph')
 		this.graphrange = newgraphrange
 		this.setState({ graphrange: newgraphrange })
-		console.log(this.state.graphrange)
-
-		//this.plotdata = newplotdata
 	}
 
+	// Called from Pretty to update Grah Data dn Range
 	newGraphData = (dir) => {
+		console.log('Rendering new graph with new data')
 		this.plotdata = Graphdata(dir)
 		this.setState({ plotdata: this.plotdata })
-		console.log('updating Graph as well')
-		//this.setState()
 	}
 
 	render() {
@@ -260,6 +187,38 @@ export class Rangegraph extends Component {
 			</div>
 		)
 	}
+
+	// Life-Cycle Methods
+	componentDidMount() {
+		console.log('Component just Mounted')
+		this.buildChart()
+	}
+	componentWillMount() {
+		console.log('Component is about to be Mounted')
+	}
+
+	componentWillReceiveProps(nextProps) {
+		console.log('Component is about to recieve props')
+		this.plotdata = nextProps.plotdata
+		this.graphrange = nextProps.graphrange
+		this.ERFmodels = nextProps.ERFmodels
+		this.setState({ graphrange: this.graphrange })
+		this.setState({ plotdata: this.plotdata })
+		console.log(this.plotdata)
+		console.log(this.graphrange)
+		console.log(this.plotdata[this.graphrange])
+	}
+
+	componentDidUpdate() {
+		console.log('Component just Updated')
+		console.log(this.plotdata[this.graphrange])
+		this.buildChart()
+	}
+
+	componentWillUpdate() {
+		console.log('Component is about to update')
+	}
+
 }
 
 export default Rangegraph

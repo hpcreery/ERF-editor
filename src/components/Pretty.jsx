@@ -4,27 +4,21 @@ import {
 	Button,
 	Segment,
 	Divider,
-	Input,
 	Label,
 	Sticky,
 	Icon,
 	Popup,
-	Rail,
 	Grid,
 	Menu,
 	Table,
 	Header,
-	Placeholder,
-	Ref,
-	Sidebar,
-	Dropdown,
+	Dimmer,
+	Loader
 } from 'semantic-ui-react'
 import { SemanticToastContainer, toast } from 'react-semantic-toasts';
 import { Link, animateScroll as scroll, scroller } from 'react-scroll'
 import Rangegraph from './Graph'
 import PlainRange from './Rangebody'
-import ParameterMenu from './Parameters'
-import PlainParamter from './Parameterbody'
 
 import './Theme.css'
 import 'semantic-ui-css/components/reset.min.css';
@@ -37,8 +31,6 @@ import 'react-semantic-toasts/styles/react-semantic-alert.css';
 
 const electron = window.require('electron')
 const BrowserWindow = electron.remote.BrowserWindow
-const dialog = electron.remote.dialog
-const ipc = electron.ipcRenderer
 const path = window.require('path')
 const url = window.require('url')
 const fs = window.require('fs')
@@ -67,27 +59,22 @@ export class Pretty extends Component {
 
 	static propTypes = {}
 
+	// Whole method in creating a help window with error logging
 	createhelpWindow(dir, range) {
 		__dirname = path.resolve()
-		//var dir = dir.replace(`\\\\`, `/`)
 		var dir = dir.replace(/\\/g, '/')
-		//console.log(dir + 'this it chief?')
 		var filearray = dir.split('/')
 		var file = filearray.pop().split('.')[0]
 		var type = filearray.pop()
 		var range = range.split('*').join('')
-		console.log(type + ' ' + file + ' ' + range)
 		var wholehelpdir = path.join(
 			__dirname,
 			`/public/help/${type}/${file}/ranges/${range}.htm`
 		)
 
 		try {
+			// To call seperate method if file does not exist
 			if (fs.existsSync(wholehelpdir)) {
-				//file exists
-
-				// let mainfile = path.parse(this.state.dir).name
-				// console.log(mainfile)
 				// Create the help window
 				let helpWindow
 
@@ -96,8 +83,11 @@ export class Pretty extends Component {
 					height: 400,
 					webPreferences: { nodeIntegration: true },
 				})
+
+				// Don't need menu to see static document
 				helpWindow.removeMenu()
-				// and load the help.htm necessary
+
+				// and load the help.htm
 				const starthelpUrl = url.format({
 					pathname: wholehelpdir,
 					protocol: 'file:',
@@ -108,9 +98,6 @@ export class Pretty extends Component {
 
 				// Emitted when the window is closed.
 				helpWindow.on('closed', function () {
-					// Dereference the window object, usually you would store windows
-					// in an array if your app supports multi windows, this is the time
-					// when you should delete the corresponding element.
 					helpWindow = null
 				})
 			}
@@ -120,14 +107,14 @@ export class Pretty extends Component {
 							type: 'warning',
 							icon: 'medkit',
 							size: 'small',
-							title: 'Warning Toast',
+							title: 'Missing Info',
 							description: 'Sorry, no help found',
 							animation: 'fly left',
 					});
 			}, 5);
 			}
 		} catch (err) {
-			console.error('No Window')
+			console.error(err)
 		}
 	}
 
@@ -152,14 +139,13 @@ export class Pretty extends Component {
 		return found
 	}
 
+	// Change current active range for graph
 	graphChange = (newgraphrange) => {
 		this.graphrange = newgraphrange
-		//this.setState({ graph: this.graphrange })
 		this.graphElement.current.newGraph(newgraphrange)
-
-		console.log(this.graphrange)
 	}
 
+	// Method called by Rangebody to call Graphdata and update graph with fresh data
 	graphDataChange = () => {
 		this.graphElement.current.newGraphData(this.state.dir)
 	}
@@ -167,17 +153,8 @@ export class Pretty extends Component {
 	titleRef = createRef()
 	bodyRef = createRef()
 
-	titleBar = (name) => {
-		return (
-			<div>
-				<Divider />
-				<Segment inverted className='Label'>
-					ERF: {name}
-				</Segment>
-			</div>
-		)
-	}
 
+	// Method to iterate thougth each line and render it in document based on type
 	contentMaker = (jsonERF) => {
 		this.col1 = 6
 		this.col2 = 8
@@ -209,26 +186,21 @@ export class Pretty extends Component {
 								<Divider />
 							</div>
 						)
-					case '.uid':
-						return (
-							<div>
-								<Segment
-									secondary
-									className='Label'
-									name={jsonERF.string}
-								>
-									UID: {jsonERF.string}
-								</Segment>
-								<Divider />
-							</div>
-						)
+					// case '.uid':
+					// 	return (
+					// 		<div>
+					// 			<Segment
+					// 				secondary
+					// 				className='Label'
+					// 				name={jsonERF.string}
+					// 			>
+					// 				UID: {jsonERF.string}
+					// 			</Segment>
+					// 			<Divider />
+					// 		</div>
+					// 	)
 					case '.menu':
 						// Heavenly regex : ^(?:[^,\r\n]*[,]){#}[^\w]*([^,\r\n]+)
-						// var regexp = new RegExp(
-						// 	'^(?:[^,]*[,]){' + i + '}[^\\d]*(\\d+(\\.\\d)?)',
-						// 	'g'
-						// )
-						// type = regexp.exec(value[0].children[0].text)
 						return (
 							<div>
 								<Segment
@@ -238,7 +210,6 @@ export class Pretty extends Component {
 								>
 									MENU: {jsonERF.string}
 								</Segment>
-								<Divider />
 							</div>
 						)
 					case '.model':
@@ -478,6 +449,7 @@ export class Pretty extends Component {
 	linkmaker = (ERFmodel) => {
 		return (
 			<Link
+				key={ERFmodel}
 				activeClass='active'
 				to={ERFmodel}
 				spy={true}
@@ -486,106 +458,18 @@ export class Pretty extends Component {
 				offset={-93}
 				isDynamic={true}
 			>
-				<Menu.Item as='a'>{ERFmodel}</Menu.Item>
+				<Menu.Item as='a' key={ERFmodel}>{ERFmodel}</Menu.Item>
 			</Link>
 		)
 	}
 
-	componentWillReceiveProps(nextProps) {
-		console.log('Component is about to Recieved Props')
-
-		//this.setState({ ERFmodels: nextProps.ERFmodels })
-		this.ERFmodels = nextProps.ERFmodels
-		this.jsonERF = nextProps.jsonERF
-		this.setState({ jsonERF: this.jsonERF })
-		console.log('Here is when it recieves Data ')
-		console.log(this.jsonERF)
-		this.plotdata = nextProps.plotdata
-		console.log(this.plotdata)
-		this.graphChange(Object.keys(this.plotdata)[0])
-		this.setState({ dir: String(nextProps.dir) })
-	}
-
-	componentWillMount() {
-		console.log('Component is about to be Mounted')
-
-		//this.jsonERF = this.props.jsonERF
-		console.log('Here is when it recieves Data ')
-		//console.log(this.jsonERF)
-	}
-
-	componentWillUpdate() {
-		console.log('Component is about to update')
-	}
-
-	componentDidUpdate() {
-		console.log('Component just Updated')
-	}
-
-	//chartRef = React.createRef()
-	componentDidMount() {
-		console.log('Component just Mounted')
-		// const chartref = this.chartRef.current.getContext('2d')
-		// new Chart(chartref, {
-		// 	type: 'horizontalBar',
-		// 	data: {
-		// 		labels: ['Red', 'Blue', 'Yellow', 'Green'],
-		// 		datasets: [
-		// 			{
-		// 				label: ' Severity || Mils',
-		// 				steppedLine: 'after',
-		// 				data: [1, 1, 3, 5],
-		// 				backgroundColor: 'rgba(255, 99, 132, 0.2)',
-		// 				borderColor: 'rgba(255, 99, 132, 1)',
-		// 				borderWidth: 1,
-		// 			},
-		// 			{
-		// 				label: ' Severity || Mils',
-		// 				data: [12, 9, 13, 25],
-		// 				steppedLine: 'after',
-		// 				backgroundColor: 'rgba(75, 192, 192, 0.2)',
-		// 				borderColor: 'rgba(75, 192, 192, 1)',
-		// 				borderWidth: 1,
-		// 			},
-		// 		],
-		// 	},
-		// 	options: {
-		// 		tooltips: {
-		// 			backgroundColor: 'rgba(255, 255, 255, 0.9)',
-		// 			titleFontColor: '#000',
-		// 			bodyFontColor: '#000',
-		// 			borderColor: 'rgba(0, 0, 0, 0.3)',
-		// 			borderWidth: 1,
-		// 		},
-		// 		scales: {
-		// 			xAxes: [
-		// 				{
-		// 					stacked: false,
-		// 				},
-		// 			],
-		// 			yAxes: [
-		// 				{
-		// 					stacked: true,
-		// 					ticks: {
-		// 						beginAtZero: true,
-		// 					},
-		// 				},
-		// 			],
-		// 		},
-		// 	},
-		// })
-	}
 
 	render() {
 		console.log('Initiating render method')
 
-		//const { jsonERF, filelength, dir } = this.props
-		//console.log(jsonERF)
-		//console.log(JSON.stringify(jsonERF))
-		//this.dir = dir
-
 		return (
 			<div ref={this.titleRef} className='Table' id='Table'>
+				
 				<Grid columns={3}>
 					<Grid.Column width={3} className='densegrid'>
 						<Sticky offset={41} context={this.titleRef}>
@@ -619,10 +503,45 @@ export class Pretty extends Component {
 						</Sticky>
 					</Grid.Column>
 				</Grid>
+
 				<SemanticToastContainer position='bottom-right'/>
 			</div>
 		)
 	}
+
+		// Life-Cycle Methods
+		componentWillReceiveProps(nextProps) {
+			console.log('Component is about to Recieved Props')
+	
+			//this.setState({ ERFmodels: nextProps.ERFmodels })
+			this.ERFmodels = nextProps.ERFmodels
+			this.jsonERF = nextProps.jsonERF
+			this.setState({ jsonERF: this.jsonERF })
+			console.log('Here is when it recieves Data ')
+			console.log(this.jsonERF)
+			this.plotdata = nextProps.plotdata
+			console.log(this.plotdata)
+			this.graphChange(Object.keys(this.plotdata)[0])
+			this.setState({ dir: String(nextProps.dir) })
+		}
+	
+		componentWillMount() {
+			console.log('Component is about to be Mounted')
+			console.log('Here is when it recieves Data ')
+			
+		}
+	
+		componentWillUpdate() {
+			console.log('Component is about to update')
+		}
+	
+		componentDidUpdate() {
+			console.log('Component just Updated')
+		}
+	
+		componentDidMount() {
+			console.log('Component just Mounted')
+		}
 }
 
 export default Pretty

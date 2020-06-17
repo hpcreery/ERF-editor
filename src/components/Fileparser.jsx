@@ -40,47 +40,22 @@ class ReadFiles extends Component {
 	constructor(props) {
 		super(props)
 		this.opendir = this.props.opendir
-		//console.log(this.state.dir)
 		this.colorarrays = {}
 		this.state = { dir: this.props.dir }
 	}
 
+	// Converts Any mishap dos files to unix. Genesis Uses both but prefers Unix
 	fileConvert = (dir) => {
-		// 	exec("ls -la", (error, stdout, stderr) => {
-		// 		if (error) {
-		// 				console.log(`error: ${error.message}`);
-		// 				return;
-		// 		}
-		// 		if (stderr) {
-		// 				console.log(`stderr: ${stderr}`);
-		// 				return;
-		// 		}
-		// 		console.log(`stdout: ${stdout}`);
-		// });
 		console.log(execSync(`dos2unix ${dir}`).toString())
 		console.log('Converting: ' + dir)
 	}
 
-	//range.model.color
+	// Called GrpahDtat functional method to update plotdata
 	graphstruct = (dir) => {
 		console.log(dir)
 		this.plotdata = Graphdata(dir.toString())
-		//console.log(this.plotdata)
 	}
 
-	colorArraySort(rangearray, object) {
-		//console.log('umm ' + rangearray + object)
-		if (this.plotdata[object] == undefined) {
-			this.plotdata[object] = { red: [], yellow: [], green: [] }
-		}
-		if (object) {
-			this.plotdata[object].red.push(rangearray[0])
-			this.plotdata[object].yellow.push(rangearray[1])
-			this.plotdata[object].green.push(rangearray[2])
-		}
-		//console.log(this.colorarrays)
-		return null
-	}
 	// This Data model is out not used due to convoluted methods
 	jsonstruct = () => {
 		this.rawjsonERF = {
@@ -197,7 +172,6 @@ class ReadFiles extends Component {
 				}
 			}
 		}
-		//console.log(JSON.stringify(this.erf))
 		console.log(this.rawjsonERF)
 	}
 
@@ -218,9 +192,7 @@ class ReadFiles extends Component {
 					object: object,
 					string: value,
 				})
-				//this.erf.push({'string': this.lines[i] })
 				if (object === '.model') {
-					//this.jsonERF.models[value] = {'id': i, 'object': object, 'value': value}
 					var workingmodel = value
 					this.ERFmodels.push(value)
 				}
@@ -248,19 +220,35 @@ class ReadFiles extends Component {
 				})
 			}
 		}
-		//console.log(JSON.stringify(this.erf))
-		console.log(this.jsonERF)
 	}
 
+
+
+	render() {
+		console.log('Initiating render method')
+
+		console.log(this.state.dir)
+		return (
+			<div className='File-Contents'>
+				<Pretty
+					jsonERF={this.jsonERF}
+					filelength={this.filelength}
+					ERFmodels={this.ERFmodels}
+					dir={this.state.dir}
+					opendir={this.props.opendir}
+					plotdata={this.plotdata}
+				/>
+				{console.log(this.plotdata)}
+			</div>
+		)
+	}
+
+	// Life-Cycle Methods
 	componentDidMount() {
 		console.log('Component just Mounted')
-		//console.log(dialog.showOpenDialog())
-		//this.jsonstruct() // run after react mount to init data
-		//this.modelstruct()
 	}
 
 	componentWillUpdate() {
-		//this.graphstruct(this.state.dir) //testing
 		console.log('Component is about to update')
 	}
 
@@ -293,25 +281,6 @@ class ReadFiles extends Component {
 		this.setState({ dir: String(nextProps.dir) })
 		console.log('File parser recieved props')
 		console.log(String(nextProps.dir))
-	}
-
-	render() {
-		console.log('Initiating render method')
-
-		console.log(this.state.dir)
-		return (
-			<div className='File-Contents'>
-				<Pretty
-					jsonERF={this.jsonERF}
-					filelength={this.filelength}
-					ERFmodels={this.ERFmodels}
-					dir={this.state.dir}
-					opendir={this.props.opendir}
-					plotdata={this.plotdata}
-				/>
-				{console.log(this.plotdata)}
-			</div>
-		)
 	}
 }
 

@@ -7,9 +7,6 @@ import lineReplace from 'line-replace'
 import { Label, Grid, Icon } from 'semantic-ui-react'
 import './Theme.css'
 
-// TESTING
-import Graphdata from './Graphdata'
-
 const PlainRange = (props) => {
 	const ranges = ''
 	const [value, setValue] = useState([
@@ -18,62 +15,44 @@ const PlainRange = (props) => {
 		},
 	])
 	const [mod, setMod] = useState(false)
+	const [icon, setIcon] = useState('download')
+	const [load, setLoad] = useState(false)
 
-	// End of lines show as '$' and carriage returns usually show as '^M'.
-	//console.log(props.string)
-
-	// useEffect(() => {
-	//   // Update the document title using the browser API
-	//   document.title = `You clicked ${count} times`;
-	// });
-
-	// need to add a catch if no number values are returned and support negaives
-	// const regexp1 = /(\d+)/g
-	// var number = 0
-	// var regexp2 = /^(?:[^,]*[,]){(number)}[^\d]*(\d+(\.\d)?)/g // either one of these work
-	// var regexp3 = new RegExp(
-	// 	'^(?:[^,]*[,]){' + number + '}[^\\d]*(\\d+(\\.\\d)?)',
-	// 	'g'
-	// )
-	// var result = regexp3.exec(value[0].children[0].text)
-	// console.log(regexp3 + regexp3.lastIndex) // gives number for positon of last number focus offset
-	// console.log(result) // string of mathced => find length to get offset anchor
-	// const search = result[1] // result[1] returns first group match
-	// console.log(search)
-
+	// If range was edited, set state to show edit alert
 	const handleChange = (value) => {
 		setValue(value)
 	}
 
+	// Prevent Default key press actions when editing range values. Custom Key actions are set here
 	const keyPress = (e) => {
-		// also do not allow character
-		// console.log('pushed ', e.keyCode)
-		if (e.keyCode == 13) {
+		if (e.keyCode === 13) {
 			console.log('write', e.target.value)
 			e.preventDefault()
-			//setMod(false)
 			writeChange()
 		} else if (mod !== true) {
-			//console.log('changing mod' + mod)
 			setMod(true)
+
 		}
 
 		if (e.keyCode < 48 || e.keyCode > 57) {
 			if (
-				e.keyCode != 188 &&
-				e.keyCode != 8 &&
-				e.keyCode != 37 && //left
-				e.keyCode != 39 && //right
-				e.keyCode != 35 && //
-				e.keyCode != 36 &&
-				e.keyCode != 32
+				e.keyCode !== 188 &&
+				e.keyCode !== 8 &&
+				e.keyCode !== 37 &&
+				e.keyCode !== 39 &&
+				e.keyCode !== 35 &&
+				e.keyCode !== 36 &&
+				e.keyCode !== 32
 			) {
 				e.preventDefault()
 			}
 		}
 	}
 
+	// Method to write changes, this is where line-replace comes in play
 	const writeChange = () => {
+		setLoad(true)
+		setIcon('sync')
 		console.log(props.jsonblock.id + 1)
 		lineReplace({
 			file: props.dir.toString(),
@@ -89,8 +68,10 @@ const PlainRange = (props) => {
 				console.log(e)
 				setMod(false)
 				console.log(props.dir)
-				//Graphdata(props.dir)
 				props.graphdatachange()
+				setLoad(false)
+				setIcon('download')
+
 			},
 		})
 	}
@@ -117,27 +98,6 @@ const PlainRange = (props) => {
 
 	const decorate = useCallback(([node, path]) => {
 		const ranges = []
-
-		// if (search && Text.isText(node)) {
-		// 	const { text } = node
-		// 	const parts = text.split(search)
-		// 	let offset = 0
-		// 	//console.log(parts)
-
-		// 	parts.forEach((part, i) => {
-		// 		//console.log(i)
-		// 		if (i !== 0) {
-		// 			ranges.push({
-		// 				anchor: { path, offset: offset - search.length },
-		// 				focus: { path, offset },
-		// 				highlight: true,
-		// 			})
-		// 		}
-
-		// 		offset = offset + part.length + search.length
-		// 	})
-		// }
-
 		var i
 		var search
 		var presearch
@@ -159,10 +119,6 @@ const PlainRange = (props) => {
 				presearch = regexp.exec(value[0].children[0].text)
 				search = presearch[1]
 				offset = regexp.lastIndex
-				// console.log(
-				// 	search + ' ' + regexp + ' ' + offset + ' ' + search.length
-				// )
-				
 				ranges.push({
 					anchor: { path, offset: offset - search.length },
 					focus: { path, offset },
@@ -173,14 +129,13 @@ const PlainRange = (props) => {
 				console.log(props.jsonblock.id)
 				presearch = regexp.exec(value[0].children[0].text)
 				console.log(props.jsonblock)
-				// method if range is not completex
 			}
 		}
-
-		//console.log(ranges)
 		return ranges
 	})
 
+	// This sets highlights colors to text
+	// Strange Slate.js method
 	const Leaf = ({ attributes, children, leaf }) => {
 		return (
 			<span
@@ -212,28 +167,18 @@ const PlainRange = (props) => {
 						decorate={decorate}
 						renderLeaf={(props) => <Leaf {...props} />}
 					/>
-					{/* {console.log(value[0].children[0].text)} */}
 				</Slate>
 			</Grid.Column>
 
 			<Grid.Column width={5}>
 				{mod && (
 					<Label size='small' color='red' className='Labelright'>
-						<Icon name='download' fitted='true' />
+						<Icon name={icon} fitted='true' loading={load}/>
 					</Label>
 				)}
 			</Grid.Column>
 		</Grid>
 	)
 }
-
-const initialValue = [
-	{
-		children: [
-			{ text: 'This is editable plain text, just like a <textarea>!' },
-			{ text: 'This is editable plain text, just like a <textarea>!' },
-		],
-	},
-]
 
 export default PlainRange
