@@ -30,8 +30,9 @@ const electron = window.require('electron')
 const BrowserWindow = electron.remote.BrowserWindow
 const dialog = electron.remote.dialog
 const ipc = electron.ipcRenderer
-const path = require('path')
-const url = require('url')
+const path = window.require('path')
+const url = window.require('url')
+const fs = window.require('fs')
 
 var Chart = require('chart.js')
 
@@ -57,35 +58,53 @@ export class Pretty extends Component {
 
 	static propTypes = {}
 
+	createhelpWindow(dir, range) {
+		__dirname = path.resolve()
+		var dir = dir.replace('\\', '/')
+		var filearray = dir.split('/')
+		var file = filearray.pop().split('.')[0]
+		var type = filearray.pop()
+		console.log(type + ' ' + file)
+		var wholehelpdir = path.join(
+			__dirname,
+			`/public/help/${type}/${file}/ranges/${range}.htm`
+		)
 
-	createhelpWindow(helphtm) {
-		console.log(path.join(__dirname, '/../public/enlarge_pad.htm'))
-		// let mainfile = path.parse(this.state.dir).name
-		// console.log(mainfile)
-		// Create the help window
-		let helpWindow
-		helpWindow = new BrowserWindow({
-			width: 600,
-			height: 400,
-			webPreferences: { nodeIntegration: true },
-			titleBarStyle: 'hidden', //frameless
-		})
-		helpWindow.removeMenu()
-		// and load the help.htm necessary
-		const starthelpUrl = url.format({
-			pathname: path.join(__dirname, '/../public/enlarge_pad.htm'),
-			protocol: 'file:',
-			slashes: true,
-		})
-		helpWindow.loadURL(starthelpUrl)
-	
-		// Emitted when the window is closed.
-		helpWindow.on('closed', function () {
-			// Dereference the window object, usually you would store windows
-			// in an array if your app supports multi windows, this is the time
-			// when you should delete the corresponding element.
-			helpWindow = null
-		})
+		try {
+			if (fs.existsSync(wholehelpdir)) {
+				//file exists
+
+				// let mainfile = path.parse(this.state.dir).name
+				// console.log(mainfile)
+				// Create the help window
+				let helpWindow
+
+				helpWindow = new BrowserWindow({
+					width: 600,
+					height: 400,
+					webPreferences: { nodeIntegration: true },
+				})
+				helpWindow.removeMenu()
+				// and load the help.htm necessary
+				const starthelpUrl = url.format({
+					pathname: wholehelpdir,
+					protocol: 'file:',
+					slashes: true,
+				})
+
+				helpWindow.loadURL(starthelpUrl)
+
+				// Emitted when the window is closed.
+				helpWindow.on('closed', function () {
+					// Dereference the window object, usually you would store windows
+					// in an array if your app supports multi windows, this is the time
+					// when you should delete the corresponding element.
+					helpWindow = null
+				})
+			}
+		} catch (err) {
+			console.error(err)
+		}
 	}
 
 	handleRangeChange = (e, { id, location, string, value }) => {
@@ -238,7 +257,7 @@ export class Pretty extends Component {
 							'#' + this.colors[2]
 						)
 						return
-					case '.ranges\r':
+					case '.ranges':
 						return (
 							<div>
 								<Header dividing className='Headers'>
@@ -246,22 +265,22 @@ export class Pretty extends Component {
 								</Header>
 							</div>
 						)
-					case '.pdef\r':
-						return (
-							<div>
-								<Header dividing className='Headers'>
-									Parameter Defaults
-								</Header>
-							</div>
-						)
-					case '.vars\r':
-						return (
-							<div>
-								<Header dividing className='Headers'>
-									Variables
-								</Header>
-							</div>
-						)
+					// case '.pdef':
+					// 	return (
+					// 		<div>
+					// 			<Header dividing className='Headers'>
+					// 				Parameter Defaults
+					// 			</Header>
+					// 		</div>
+					// 	)
+					// case '.vars':
+					// 	return (
+					// 		<div>
+					// 			<Header dividing className='Headers'>
+					// 				Variables
+					// 			</Header>
+					// 		</div>
+					// 	)
 				}
 
 			case 'sub':
@@ -296,7 +315,7 @@ export class Pretty extends Component {
 				// 		)
 				// }
 				switch (jsonERF.parent) {
-					case '.ranges\r':
+					case '.ranges':
 						//console.log(this.rangevalue)
 						//this.rangePlotterData(this.rangevalue, jsonERF.object)
 						return (
@@ -355,7 +374,16 @@ export class Pretty extends Component {
 										content={jsonERF.comment}
 										position='top center'
 										trigger={
-											<Label size='small' as='a'  onClick={() => this.createhelpWindow()}>
+											<Label
+												size='small'
+												as='a'
+												onClick={() =>
+													this.createhelpWindow(
+														this.state.dir,
+														jsonERF.object
+													)
+												}
+											>
 												<Icon
 													name='info'
 													fitted='true'
@@ -366,51 +394,51 @@ export class Pretty extends Component {
 								</Grid.Column>
 							</Grid>
 						)
-					case '.pdef\r':
-						return (
-							<div>
-								<PlainParamter jsonERF={jsonERF} />
-							</div>
-						)
-					case '.vars\r':
-						return (
-							<Grid
-								columns={3}
-								verticalAlign='middle'
-								className='densegrid'
-							>
-								<Grid.Column
-									width={this.col1}
-									textAlign='right'
-								>
-									<Label size='large'>{jsonERF.object}</Label>
-								</Grid.Column>
-								<Grid.Column width={this.col2}>
-									<Input
-										type='text'
-										placeholder='Incrimental Values'
-										defaultValue={jsonERF.string}
-										fluid
-										size='small'
-										id={jsonERF.id}
-										string={jsonERF.string}
-										onChange={this.handleBasicChange}
-									/>
-								</Grid.Column>
-								<Grid.Column width={this.col3}>
-									<Popup
-										content={jsonERF.comment}
-										position='top center'
-										trigger={
-											<Label>
-												<Icon name='info' />
-												info
-											</Label>
-										}
-									/>
-								</Grid.Column>
-							</Grid>
-						)
+					// case '.pdef':
+					// 	return (
+					// 		<div>
+					// 			<PlainParamter jsonERF={jsonERF} />
+					// 		</div>
+					// 	)
+					// case '.vars':
+					// 	return (
+					// 		<Grid
+					// 			columns={3}
+					// 			verticalAlign='middle'
+					// 			className='densegrid'
+					// 		>
+					// 			<Grid.Column
+					// 				width={this.col1}
+					// 				textAlign='right'
+					// 			>
+					// 				<Label size='large'>{jsonERF.object}</Label>
+					// 			</Grid.Column>
+					// 			<Grid.Column width={this.col2}>
+					// 				<Input
+					// 					type='text'
+					// 					placeholder='Incrimental Values'
+					// 					defaultValue={jsonERF.string}
+					// 					fluid
+					// 					size='small'
+					// 					id={jsonERF.id}
+					// 					string={jsonERF.string}
+					// 					onChange={this.handleBasicChange}
+					// 				/>
+					// 			</Grid.Column>
+					// 			<Grid.Column width={this.col3}>
+					// 				<Popup
+					// 					content={jsonERF.comment}
+					// 					position='top center'
+					// 					trigger={
+					// 						<Label>
+					// 							<Icon name='info' />
+					// 							info
+					// 						</Label>
+					// 					}
+					// 				/>
+					// 			</Grid.Column>
+					// 		</Grid>
+					// 	)
 				}
 		}
 	}
@@ -563,7 +591,7 @@ export class Pretty extends Component {
 							{console.log(this.plotdata)}
 							{console.log(this.graphrange)}
 							{console.log(this.ERFmodels)}
-							<ParameterMenu paramodel={this.paramodel} />
+							{/* <ParameterMenu paramodel={this.paramodel} /> */}
 						</Sticky>
 					</Grid.Column>
 				</Grid>

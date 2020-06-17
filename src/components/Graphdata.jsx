@@ -44,17 +44,17 @@ function Graphdata(dir) {
 				}
 				if (object === '.model') {
 				}
-				if (object === '.ranges\r') {
+				if (object === '.range') {
 					//this.plotdata[object] = {}
 					var workingrange = object
 				}
-				if (object === '.pdef\r') {
+				if (object === '.pdef') {
 				}
-				if (object === '.vars\r') {
+				if (object === '.vars') {
 				}
 			} else if (lines[i].startsWith('#')) {
 			} else if (lines[i].startsWith(' ')) {
-			} else if (lines[i].startsWith('\r')) {
+			} else if (lines[i].startsWith('\n')) {
 			} else {
 				var invalue = erf.string
 					.split('=')
@@ -71,19 +71,14 @@ function Graphdata(dir) {
 
 				if (object === '.colors') {
 				}
-				if (object === '.ranges\r') {
-					const rangearray = invalue.match(/-?\d+\.?\d*(?!o)/g) //-?\d+\.?\d*(?!o)
-					//console.log('here is a range' + rangearray)
-					colorArraySort(rangearray, inobject, plotdata)
-				}
 				if (object === '.ranges') {
 					const rangearray = invalue.match(/-?\d+\.?\d*(?!o)/g) //-?\d+\.?\d*(?!o)
 					//console.log('here is a range' + rangearray)
 					colorArraySort(rangearray, inobject, plotdata)
 				}
-				if (object === '.pdef\r') {
+				if (object === '.pdef') {
 				}
-				if (object === '.vars\r') {
+				if (object === '.vars') {
 				}
 			}
 		}

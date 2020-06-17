@@ -5,32 +5,16 @@ import ReadFiles from './components/Fileparser' // Components can only live in s
 const electron = window.require('electron')
 const dialog = electron.remote.dialog
 const ipc = electron.ipcRenderer
-const { execSync, exec } = window.require("child_process")
 
 var dirc =
-//	'/Users/Professional/Documents/MyPrograms/JavaScript/Genesis/erfeditor/ERF-editor/public/newcrcmpetch.erf'
+	'/Users/Professional/Documents/MyPrograms/JavaScript/Genesis/erfeditor/ERF-editor/public/newcrcmpetch.erf'
 //const dirc =
 //'C:\\Users\\huntercreery\\Documents\\Projects\\JS\\ERF\\editor\\public\\cmpetch.erf'
-  'C:\\Users\\huntercreery\\Downloads\\ERFs\\drill_touch.erf'
+//  'C:\\Users\\huntercreery\\Downloads\\ERFs\\drill_touch.erf'
 
 class App extends Component {
 	state = {
 		dir: dirc,
-	}
-
-	fileconvert = () => {
-	// 	execSync("ls -la", (error, stdout, stderr) => {
-	// 		if (error) {
-	// 				console.log(`error: ${error.message}`);
-	// 				return;
-	// 		}
-	// 		if (stderr) {
-	// 				console.log(`stderr: ${stderr}`);
-	// 				return;
-	// 		}
-	// 		console.log(`stdout: ${stdout}`);
-	// });
-	console.log(execSync("ls -la").toString())
 	}
 
 	directoryopener = () => {
@@ -54,9 +38,7 @@ class App extends Component {
 			console.log(arg) // prints "pong"
 		})
 	}
-	componentWillMount() {
-		this.fileconvert()
-	}
+	componentWillMount() {}
 	componentDidUpdate() {}
 
 	render() {

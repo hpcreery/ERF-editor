@@ -6,6 +6,7 @@ import Graphdata from './Graphdata'
 const fs = window.require('fs')
 const electron = window.require('electron').remote
 const dialog = electron.dialog
+const { execSync, exec } = window.require('child_process')
 
 // 0205 p. 1002
 // Init
@@ -29,16 +30,11 @@ const dialog = electron.dialog
 // .vars	.o	#
 // =======
 
-
-
-
 // Q: What style files do Genesis use on Windows?
 //    DOS style (CR-LF) or Unix style (LF)
 // A: Genesis works with both.  The c-shell has
 //    some problem with DOS style files.  A utility /bin/remove_cr has been
 //    provided to convert files from DOS to Unix.
-
-
 
 class ReadFiles extends Component {
 	constructor(props) {
@@ -47,6 +43,22 @@ class ReadFiles extends Component {
 		//console.log(this.state.dir)
 		this.colorarrays = {}
 		this.state = { dir: this.props.dir }
+	}
+
+	fileConvert = (dir) => {
+		// 	exec("ls -la", (error, stdout, stderr) => {
+		// 		if (error) {
+		// 				console.log(`error: ${error.message}`);
+		// 				return;
+		// 		}
+		// 		if (stderr) {
+		// 				console.log(`stderr: ${stderr}`);
+		// 				return;
+		// 		}
+		// 		console.log(`stdout: ${stdout}`);
+		// });
+		console.log(execSync(`dos2unix ${dir}`).toString())
+		console.log(dir)
 	}
 
 	//range.model.color
@@ -117,19 +129,19 @@ class ReadFiles extends Component {
 
 					//this.modelgraph.push(value)
 				}
-				if (object === '.ranges\r') {
+				if (object === '.range') {
 					this.rawjsonERF.models[workingmodel].ranges = {
 						id: i,
 						object: object,
 					}
 				}
-				if (object === '.pdef\r') {
+				if (object === '.pdef') {
 					this.rawjsonERF.models[workingmodel].pdef = {
 						id: i,
 						object: object,
 					}
 				}
-				if (object === '.vars\r') {
+				if (object === '.vars') {
 					this.rawjsonERF.models[workingmodel].vars = {
 						id: i,
 						object: object,
@@ -137,7 +149,7 @@ class ReadFiles extends Component {
 				}
 			} else if (this.lines[i].startsWith('#')) {
 			} else if (this.lines[i].startsWith(' ')) {
-			} else if (this.lines[i].startsWith('\r')) {
+			} else if (this.lines[i].startsWith('\n')) {
 			} else {
 				var invalue = this.erf[i].string
 					.split(' ')
@@ -159,7 +171,7 @@ class ReadFiles extends Component {
 						value: value,
 					}
 				}
-				if (object === '.ranges\r') {
+				if (object === '.range') {
 					this.rawjsonERF.models[workingmodel].ranges[inobject] = {
 						id: i,
 						object: inobject,
@@ -167,7 +179,7 @@ class ReadFiles extends Component {
 						comment: comment,
 					}
 				}
-				if (object === '.pdef\r') {
+				if (object === '.pdef') {
 					this.rawjsonERF.models[workingmodel].pdef[inobject] = {
 						id: i,
 						object: inobject,
@@ -175,7 +187,7 @@ class ReadFiles extends Component {
 						comment: comment,
 					}
 				}
-				if (object === '.vars\r') {
+				if (object === '.vars') {
 					this.rawjsonERF.models[workingmodel].vars[inobject] = {
 						id: i,
 						object: inobject,
@@ -214,7 +226,7 @@ class ReadFiles extends Component {
 				}
 			} else if (this.lines[i].startsWith('#')) {
 			} else if (this.lines[i].startsWith(' ')) {
-			} else if (this.lines[i].startsWith('\r')) {
+			} else if (this.lines[i] == '') {
 			} else {
 				var invalue = this.lines[i]
 					.split('=')
@@ -258,6 +270,7 @@ class ReadFiles extends Component {
 
 	componentWillMount() {
 		console.log('Component is about to be Mounted')
+		this.fileConvert(this.state.dir)
 		this.contents = fs.readFileSync(this.state.dir, 'utf8')
 		this.lines = this.contents.split('\n')
 		this.filelength = this.lines.length
@@ -270,6 +283,7 @@ class ReadFiles extends Component {
 
 	componentWillReceiveProps(nextProps) {
 		console.log('Component is about to Recieved Props')
+		this.fileConvert(String(nextProps.dir))
 		this.contents = fs.readFileSync(String(nextProps.dir), 'utf8')
 		this.lines = this.contents.split('\n')
 		this.modelstruct() // main model structure
