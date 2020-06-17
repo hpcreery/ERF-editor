@@ -19,12 +19,21 @@ import {
 	Sidebar,
 	Dropdown,
 } from 'semantic-ui-react'
+import { SemanticToastContainer, toast } from 'react-semantic-toasts';
 import { Link, animateScroll as scroll, scroller } from 'react-scroll'
 import Rangegraph from './Graph'
 import PlainRange from './Rangebody'
 import ParameterMenu from './Parameters'
 import PlainParamter from './Parameterbody'
+
 import './Theme.css'
+import 'semantic-ui-css/components/reset.min.css';
+import 'semantic-ui-css/components/site.min.css';
+import 'semantic-ui-css/components/container.min.css';
+import 'semantic-ui-css/components/icon.min.css';
+import 'semantic-ui-css/components/message.min.css';
+import 'semantic-ui-css/components/header.min.css';
+import 'react-semantic-toasts/styles/react-semantic-alert.css';
 
 const electron = window.require('electron')
 const BrowserWindow = electron.remote.BrowserWindow
@@ -60,11 +69,14 @@ export class Pretty extends Component {
 
 	createhelpWindow(dir, range) {
 		__dirname = path.resolve()
-		var dir = dir.replace('\\', '/')
+		//var dir = dir.replace(`\\\\`, `/`)
+		var dir = dir.replace(/\\/g, '/')
+		//console.log(dir + 'this it chief?')
 		var filearray = dir.split('/')
 		var file = filearray.pop().split('.')[0]
 		var type = filearray.pop()
-		console.log(type + ' ' + file)
+		var range = range.split('*').join('')
+		console.log(type + ' ' + file + ' ' + range)
 		var wholehelpdir = path.join(
 			__dirname,
 			`/public/help/${type}/${file}/ranges/${range}.htm`
@@ -102,8 +114,20 @@ export class Pretty extends Component {
 					helpWindow = null
 				})
 			}
+			else {
+				setTimeout(() => {
+					toast({
+							type: 'warning',
+							icon: 'medkit',
+							size: 'small',
+							title: 'Warning Toast',
+							description: 'Sorry, no help found',
+							animation: 'fly left',
+					});
+			}, 5);
+			}
 		} catch (err) {
-			console.error(err)
+			console.error('No Window')
 		}
 	}
 
@@ -462,7 +486,7 @@ export class Pretty extends Component {
 				offset={-93}
 				isDynamic={true}
 			>
-				<Menu.Item>{ERFmodel}</Menu.Item>
+				<Menu.Item as='a'>{ERFmodel}</Menu.Item>
 			</Link>
 		)
 	}
@@ -595,6 +619,7 @@ export class Pretty extends Component {
 						</Sticky>
 					</Grid.Column>
 				</Grid>
+				<SemanticToastContainer position='bottom-right'/>
 			</div>
 		)
 	}

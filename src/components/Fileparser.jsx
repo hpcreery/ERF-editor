@@ -58,7 +58,7 @@ class ReadFiles extends Component {
 		// 		console.log(`stdout: ${stdout}`);
 		// });
 		console.log(execSync(`dos2unix ${dir}`).toString())
-		console.log(dir)
+		console.log('Converting: ' + dir)
 	}
 
 	//range.model.color

@@ -219,7 +219,7 @@ const PlainRange = (props) => {
 			<Grid.Column width={5}>
 				{mod && (
 					<Label size='small' color='red' className='Labelright'>
-						<Icon name='upload' fitted='true' />
+						<Icon name='download' fitted='true' />
 					</Label>
 				)}
 			</Grid.Column>

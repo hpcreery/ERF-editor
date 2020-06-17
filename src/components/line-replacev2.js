@@ -24,7 +24,7 @@ function lineReplace({ file, line, text, addNewLine = true, callback }) {
 		}
 
 		// Save original line.
-		writeStream.write(`${originalLine}\r\n`) // added \n to preexisting \r to create a CR-LF file format -HC
+		writeStream.write(`${originalLine}\n`) // added \n to preexisting \r to create a CR-LF file format -HC
 	})
 
 	rl.on('close', () => {
