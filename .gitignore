@@ -10,6 +10,7 @@ coverage
 build
 App-win32-x64
 App-darwin-x64
+RangeFinder
 
 # misc
 .DS_Store

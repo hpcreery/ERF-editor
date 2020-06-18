@@ -67,6 +67,10 @@ export class Pretty extends Component {
 		var file = filearray.pop().split('.')[0]
 		var type = filearray.pop()
 		var range = range.split('*').join('')
+		console.log('looking in here for help ' + path.join(
+			__dirname,
+			`/public/help/${type}/${file}/ranges/${range}.htm`
+		))
 		var wholehelpdir = path.join(
 			__dirname,
 			`/public/help/${type}/${file}/ranges/${range}.htm`

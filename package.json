@@ -23,15 +23,19 @@
 		"slate-react": "^0.58.1"
 	},
 	"dependencies": {
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-es2015": "^6.24.1",
 		"chart.js": "^2.9.3",
 		"electron-packager": "^14.2.1",
 		"react": "^16.1.1",
 		"react-dom": "^16.1.1",
 		"react-scripts": "0.8.5",
-		"react-scroll": "^1.7.16"
+		"react-scroll": "^1.7.16",
+		"semantic-ui-css": "^2.4.1",
+		"semantic-ui-react": "^0.88.2"
 	},
 	"homepage": "./",
-	"main": "src/electron.js",
+	"main": "./src/electron.js",
 	"scripts": {
 		"start": "nf start",
 		"dev": "node src/electron-wait-react",
@@ -39,8 +43,8 @@
 		"start-electron": "electron .",
 		"pack": "build --dir",
 		"build": "react-scripts build",
-		"build_osx": "electron-packager . App --platform=darwin --arch=x64 --overwrite --icon=icon.ico ; echo 'Built for OSX'",
-		"build_linux": "electron-packager . App --platform=linux  --arch=x64 --overwrite --icon=icon.ico ; echo 'Built for LINUX'",
-		"build_win": "electron-packager . App --platform=win32  --arch=x64 --overwrite --icon=icon.ico ; echo 'Built for WIN'"
+		"build_osx": "electron-packager . RangeFinder --platform=darwin --arch=x64 --overwrite --icon=public/favicon.ico ; echo 'Built for OSX'",
+		"build_linux": "electron-packager . RangeFinder --platform=linux  --arch=x64 --overwrite --icon=public/favicon.ico ; echo 'Built for LINUX'",
+		"build_win": "electron-packager . RangeFinder --platform=win32  --arch=x64 --overwrite --icon=public/favicon.ico ; echo 'Built for WIN'"
 	}
 }
