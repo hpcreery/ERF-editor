@@ -80,6 +80,7 @@ const PlainRange = (props) => {
 		if (mod == true) {
 			return (
 				<Label
+					inverted
 					color='red'
 					horizontal
 					as='a'
@@ -103,9 +104,9 @@ const PlainRange = (props) => {
 		var presearch
 		var offset
 		var colors = [
-			'rgba(99, 10, 10, 0.25)',
-			'rgba(99, 99, 10, 0.25)',
-			'rgba(10, 90, 10, 0.25)',
+			'rgba(99, 10, 10, 1)',
+			'rgba(99, 99, 10, 1)',
+			'rgba(10, 90, 10, 1)',
 		]
 		for (i = 0; i < 3; i++) {
 			const { text } = node
@@ -172,7 +173,7 @@ const PlainRange = (props) => {
 
 			<Grid.Column width={5}>
 				{mod && (
-					<Label size='small' color='red' className='Labelright'>
+					<Label as='a' size='small' color='red' className='Labelright' onClick={() => writeChange()}>
 						<Icon name={icon} fitted='true' loading={load}/>
 					</Label>
 				)}

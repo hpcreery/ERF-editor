@@ -171,7 +171,7 @@ export class Pretty extends Component {
 						return (
 							<div>
 								<Sticky offset={41} context={this.titleRef}>
-									<Menu>
+									<Menu inverted>
 										<Menu.Item>
 											<Icon name='file alternate' />
 										</Menu.Item>
@@ -208,6 +208,7 @@ export class Pretty extends Component {
 						return (
 							<div>
 								<Segment
+								inverted
 									secondary
 									className='Label'
 									name={jsonERF.string}
@@ -220,13 +221,14 @@ export class Pretty extends Component {
 						return (
 							<div>
 								<Divider />
-								<Table>
+								<Table inverted>
 									<Table.Header name={jsonERF.string}>
 										<Sticky
 											offset={93}
 											context={this.titleRef}
 										>
 											<Segment
+											inverted
 												secondary
 												className='Label'
 											>
@@ -259,7 +261,7 @@ export class Pretty extends Component {
 					case '.ranges':
 						return (
 							<div>
-								<Header dividing className='Headers'>
+								<Header inverted dividing className='Headers'>
 									Ranges
 								</Header>
 							</div>
@@ -328,6 +330,7 @@ export class Pretty extends Component {
 									textAlign='right'
 								>
 									<Button
+										color='black'
 										animated
 										size='mini'
 										onClick={() =>
@@ -370,10 +373,12 @@ export class Pretty extends Component {
 								</Grid.Column>
 								<Grid.Column width={this.col3}>
 									<Popup
+									inverted
 										content={jsonERF.comment}
 										position='top center'
 										trigger={
 											<Label
+												color='black'
 												size='small'
 												as='a'
 												onClick={() =>
@@ -477,7 +482,7 @@ export class Pretty extends Component {
 				<Grid columns={3}>
 					<Grid.Column width={3} className='densegrid'>
 						<Sticky offset={41} context={this.titleRef}>
-							<Menu size='small' vertical>
+							<Menu inverted size='small' vertical>
 								{this.ERFmodels.map((ERF) =>
 									this.linkmaker(ERF)
 								)}

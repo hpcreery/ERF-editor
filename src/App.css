@@ -4,11 +4,12 @@ body {
 	margin: 3px;
 	padding: 20px 20px 20px 20px !important;
 	margin-top: 20px;
+	background: #2D2D2D !important;
 }
 
 .App {
 	flex: auto !important;
-	background-color: white;
+	background-color: #2D2D2D;
 	text-align: center;
 }
 
@@ -20,4 +21,8 @@ body {
 
 .Side-bar {
 	flex: auto;
+}
+
+::-webkit-scrollbar {
+	display: none;
 }

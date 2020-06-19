@@ -75,7 +75,7 @@ export class Rangegraph extends Component {
 						label: ' Mils',
 						steppedLine: 'after',
 						data: this.state.plotdata[this.state.graphrange].red,
-						backgroundColor: 'rgba(99, 10, 10, 0.5)',
+						backgroundColor: 'rgba(99, 10, 10, 1)',
 						borderColor: 'rgba(99, 10, 10, 1)',
 						borderWidth: 1,
 						maxBarThickness: 40,
@@ -85,7 +85,7 @@ export class Rangegraph extends Component {
 						label: ' Mils',
 						data: this.state.plotdata[this.state.graphrange].yellow,
 						steppedLine: 'after',
-						backgroundColor: 'rgba(99, 99, 10, 0.5)',
+						backgroundColor: 'rgba(99, 99, 10, 1)',
 						borderColor: 'rgba(99, 99, 10, 1)',
 						borderWidth: 1,
 						maxBarThickness: 40,
@@ -95,7 +95,7 @@ export class Rangegraph extends Component {
 						label: ' Mils',
 						data: this.state.plotdata[this.state.graphrange].green,
 						steppedLine: 'after',
-						backgroundColor: 'rgba(10, 90, 10, 0.5)',
+						backgroundColor: 'rgba(10, 90, 10, 1)',
 						borderColor: 'rgba(10, 90, 10, 1)',
 						borderWidth: 1,
 						maxBarThickness: 40,
@@ -124,15 +124,26 @@ export class Rangegraph extends Component {
 								max: this.state.max,
 								min: 0,
 								stepSize: 1,
+								fontColor: "white",
 							},
-						},
+							gridLines: { color: "#707275" },
+							scaleLabel: {
+								display: true,
+								labelString: 'Mils',
+								fontColor:'#FFFFFF',
+								fontSize: 10
+							},
+						}
+						,
 					],
 					yAxes: [
 						{
 							stacked: true,
 							ticks: {
 								beginAtZero: true,
+								fontColor: "white",
 							},
+							gridLines: { color: "#707275" }
 						},
 					],
 				},
@@ -160,7 +171,7 @@ export class Rangegraph extends Component {
 		return (
 			<div>
 				<Sticky offset={41} context={this.titleRef}>
-					<Menu>
+					<Menu inverted>
 						<Menu.Item>
 							<Icon name='chart bar'></Icon>
 						</Menu.Item>
