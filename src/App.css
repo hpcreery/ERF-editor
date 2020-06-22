@@ -4,12 +4,12 @@ body {
 	margin: 3px;
 	padding: 20px 20px 20px 20px !important;
 	margin-top: 20px;
-	background: #2D2D2D !important;
+	background: #2d2d2d !important;
 }
 
 .App {
 	flex: auto !important;
-	background-color: #2D2D2D;
+	background-color: #2d2d2d;
 	text-align: center;
 }
 
@@ -21,6 +21,34 @@ body {
 
 .Side-bar {
 	flex: auto;
+}
+
+.ui.inverted.menu .item,
+.ui.inverted.menu {
+	border-radius: 4px !important;
+}
+
+a.item:hover {
+	background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+a.item:active {
+	background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.ui.black.button:hover {
+	background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.ui.secondary.inverted.segment {
+	background: linear-gradient(
+		rgba(73, 73, 74, 1) 0,
+		rgba(73, 73, 74, 1) 100%
+	) !important;
+}
+
+a.ui.black.label:hover {
+	background-color: rgba(255, 255, 255, 0.2) !important;
 }
 
 ::-webkit-scrollbar {

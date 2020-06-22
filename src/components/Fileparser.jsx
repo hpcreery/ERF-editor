@@ -3,7 +3,9 @@ import './Theme.css'
 import Pretty from './Pretty'
 import Graphdata from './Graphdata'
 
+//const fixPath = require('fix-path')
 const fs = window.require('fs')
+const process = window.require('process')
 const electron = window.require('electron').remote
 const dialog = electron.dialog
 const { execSync, exec } = window.require('child_process')
@@ -46,8 +48,10 @@ class ReadFiles extends Component {
 
 	// Converts Any mishap dos files to unix. Genesis Uses both but prefers Unix
 	fileConvert = (dir) => {
+		//fixPath()
+		console.log(process.env.PATH)
 		console.log(execSync(`dos2unix ${dir}`).toString())
-		console.log('Converting: ' + dir)
+		// console.log('Converting: ' + dir)
 	}
 
 	// Called GrpahDtat functional method to update plotdata
@@ -221,8 +225,6 @@ class ReadFiles extends Component {
 			}
 		}
 	}
-
-
 
 	render() {
 		console.log('Initiating render method')
