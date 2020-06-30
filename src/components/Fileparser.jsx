@@ -38,6 +38,9 @@ const { execSync, exec } = window.require('child_process')
 //    some problem with DOS style files.  A utility /bin/remove_cr has been
 //    provided to convert files from DOS to Unix.
 
+// Later version to clean up ERFs. 
+// Clean redundant comment lines - regex: "\n {5,}# *" replace with " "
+
 class ReadFiles extends Component {
 	constructor(props) {
 		super(props)
