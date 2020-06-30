@@ -42,7 +42,9 @@ const PlainRange = (props) => {
 				e.keyCode !== 39 &&
 				e.keyCode !== 35 &&
 				e.keyCode !== 36 &&
-				e.keyCode !== 32
+				e.keyCode !== 32 &&
+				e.keyCode !== 190 &&
+				e.keyCode !== 189
 			) {
 				e.preventDefault()
 			}
@@ -112,7 +114,7 @@ const PlainRange = (props) => {
 			const { text } = node
 			var offset = 0
 			var regexp = new RegExp(
-				'^(?:[^,]*[,]){' + i + '}[^\\d]*(\\d+(\\.\\d)?)',
+				'^(?:[^,]*[,]){' + i + '}[^\\d]*(\\d+(\\.\\d+)?)',
 				'g'
 			)
 
